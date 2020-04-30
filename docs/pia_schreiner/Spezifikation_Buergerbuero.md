@@ -1,7 +1,8 @@
 # Bürgerbüro - Anforderungs- und Entwurfsspezifikation
 
-* Pia Schreiner
-* [Link zum Code Repository](https://github.com/SGSE-2020/MS_Buergerbuero)
+* **Titel:** SmartCity - Bürgerbüro
+* **Author:** Pia Schreiner
+* **Source Code:** [Link zum Code Repository](https://github.com/SGSE-2020/MS_Buergerbuero)
 
 # Inhaltsverzeichnis
 
@@ -99,28 +100,26 @@ Prüfbarkeit |X|-|-|-|
 
 ## 2.5 Anforderungen im Detail
 
-- User Stories mit Akzeptanzkritierien 
-- Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
-- Strukturierung der User Stories in funktionale Gruppen
+### Bürger
 
-### Schablone für User Stories
+| Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Priorität |
+| --| --| -- | -- | -- | -- |
+| Registrierung/Anmeldung | Bürger | mich beim Bürgerbüro registrieren| für mich ein Konto erstellt wird | Registrierung möglich | Hoch |
+| Ummeldung| Bürger | mich beim Bürgerbüro anmelden | ich auf meine Daten zugreifen kann, um diese zu ändern | Änderung meiner Daten möglich | Hoch |
+| Abmeldung | Bürger | mich beim Bürgerbüro abmelden | mein Nutzerkonto gelöscht wird | Nutzerkonto wird gelöscht | Hoch |
+| Schwarzes Brett lesen| Bürger | Zugriff auf das schwarze Brett haben | ich das Fundbüro nutzen kann und wichtige Aushänge sehen kann | Schwarzes Brett ist zugänglich | Mittel |
+| Aushang abgeben | Bürger | einen Aushang für das schwarze Brett im Bürgerbüro abgeben | ich meine Anliegen für alle Bürger teilen kann| Aushang muss angenommen werden | Mittel |
+| Fundbüro Annahme | Bürger | Dinge im Fundbüro des Bürgerbüros abgeben können | Bürger, die etwas verloren haben, dies abholen können | Bürger hat gefundenen Gegenstand abgegeben und Aushang am schwarzen Brett ist erstellt wordenm | Niedrig |
+| Fundbüro Rückgabe | Bürger | Dinge im Fundbüro des Bürgerbüros abholen | Dinge wieder zum rechtmäßigen Besitzer zurückgelangen können | Bürger hat gefundenen Gegenstand abgeholt und Aushang ist vom schwarzen Brett entfernt | Niedrig |
 
-| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
-| :------ | :----- | :------ | :-------- |
-| Wer | Was | Warum | Wann akzeptiert |
 
-### Beispiel 1
+### Bürgerbüro Mitarbeiter
 
-| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
-| :------ | :----- | :------ | :-------- |
-| Benutzer | bei Fehleingabe die Lösung angezeigt bekommen | ich lernen kann | Lösung wird angezeigt |
-
-### Beispiel 2
-
-| **Name**| **In meiner Rolle als**...|   ...**möchte ich**...   | ..., **so dass**... | **Erfüllt, wenn**... | **Priorität**   |
-|:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
-| Lernen  |Benutzer| bei Fehleingabe die Lösung angezeigt bekommen|ich lernen kann| Lösung wird angezeigt | Muss |
-
+| Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Priorität |
+| --| --| -- | -- | -- | -- |
+| Schwarzes Brett lesen| Bürgerbüro Mitarbeiter | Zugriff auf das schwarze Brett haben | ich das Fundbüro nutzen kann und wichtige Aushänge sehen kann | Schwarzes Brett ist zugänglich | Mittel |
+| Aushang aushängen | Bürgerbüro Mitarbeiter | abgegebene oder gesendete Aushänge am schwarzen Brett anbringen | alle Bürger diese sehen können| Aushang ist am schwarzen Brett zu sehen | Mittel|
+| Aushang entfernen | Bürgerbüro Mitarbeiter | Aushänge vom schwarzen Brett wieder entfernen | Bürger diese nicht mehr einsehen können | Aushang ist vom schwarzen Brett entfernt | Mittel |
 
 # 3 Technische Beschreibung
 
@@ -175,34 +174,8 @@ Prüfbarkeit |X|-|-|-|
 - Einschränkungen, Betriebsbedingungen und Faktoren, die die Entwicklung beeinflussen (Betriebssysteme, Entwicklungsumgebung)
 - Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
 
-## 4.2 Verantwortlichkeiten
 
-- Zuordnung von Personen zu Softwarebausteinen aus Kapitel 3.1 und 3.2
-- Rollendefinition und Zuordnung
-
-| Softwarebaustein | Person(en) |
-|----------|-----------|
-| Komponente A | Thomas Mustermann |
-
-### Rollen
-
-#### Softwarearchitekt
-Entwirft den Aufbau von Softwaresystemen und trifft Entscheidungen über das Zusammenspiel der Softwarebausteine.
-
-#### Frontend-Entwickler
-Entwickelt graphische oder andere Benutzerschnittstellen, insbesondere das Layout einer Anwendung.
-
-#### Backend-Entwickler
-Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse Datenquellen und externe Dienste integriert und für die Anwendung bereitgestellt.
-
-### Rollenzuordnung
-
-| Name     | Rolle     |
-|----------|-----------|
-| Thomas Mustermann | Softwarearchitekt |
-
-
-## 4.3 Grober Projektplan
+## 4.2 Grober Projektplan
 
 - Meilensteine
 
