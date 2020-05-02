@@ -112,12 +112,6 @@ Prüfbarkeit |X|-|-|-|
 
 ## 2.5 Anforderungen im Detail
 
-- User Stories mit Akzeptanzkritierien 
-- Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
-- Strukturierung der User Stories in funktionale Gruppen
-
-### Schablone für User Stories
-
 **Kundenportal**
 
 | **In meiner Rolle als** | **möchte ich** | , **so dass** | **Erfüllt, wenn** | **Priorität** |
@@ -169,20 +163,6 @@ Prüfbarkeit |X|-|-|-|
 | Physiotherapeut | die Kunden-Behandlungsakte einsehen können | ich die Behandlung basierten auf diesen Daten anpassen kann | Akte angezeigt | mittel |
 | Physiotherapeut | die Kunden-Behandlungsakte bearbeiten können | ich neue Erkenntnisse für Folgebehandlungen speichern kann | Akte geändert | mittel |
 | Physiotherapeut | die Anmeldungen zur Therapie ansehen können | ein Termin vereinbaren zu können und eine erste Behandlung auf Grundlage der Anamnese erstellen kann | Termin-anfrage angezeigt | mittel |
-
-
-### Beispiel 1
-
-| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
-| :------ | :----- | :------ | :-------- |
-| Benutzer | bei Fehleingabe die Lösung angezeigt bekommen | ich lernen kann | Lösung wird angezeigt |
-
-### Beispiel 2
-
-| **Name**| **In meiner Rolle als**...|   ...**möchte ich**...   | ..., **so dass**... | **Erfüllt, wenn**... | **Priorität**   |
-|:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
-| Lernen  |Benutzer| bei Fehleingabe die Lösung angezeigt bekommen|ich lernen kann| Lösung wird angezeigt | Muss |
-
 
 # 3 Technische Beschreibung
 
