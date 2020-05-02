@@ -120,9 +120,9 @@ Prüfbarkeit |X|-|-|-|
 | Kunde | eine Liste der verschiedenen Kurse angezeigt bekommen | mehr Informationen über den jeweiligen Kurs erhalte. | Liste der Kurse mit Beschreibung angezeigt wird | hoch |
 | Kunde | die Standorte anschauen können | die mehr über die verschiedenen Möglichkeiten erfahre. | Die verschiedenen Standorte angezeigt (und ausgewählt werden können) | mittel |
 | Kunde | die verschiedenen Abonnement-Möglichkeiten ansehen können | für mich am besten passende Angebot auswählen kann. | Abonnements angezeigt werden | hoch |
-| Kunde | einen Termin beim Physiotherapeuten beantragen können | behandelte werden kann. | Anmeldungsformular für Physiotherapeuten vorhanden | hoch |
-| Kunde | einen neuen Trainingsplan beantragen können | ich mein Training an meine aktuelle Verfassung anpassen kann. | Antragsformular für Trainingsplan vorhanden | hoch |
-| Kunde | meine Trainingspläne  einsehen können | ich meine Fortschritte sehen kann. | Persönlicher Trainingsplan angezeigt wird | hoch |
+| Kunde | einen Termin beim Physiotherapeuten beantragen können | behandelte werden kann. | Anmeldungsformular für Physiotherapeuten vorhanden | optional |
+| Kunde | einen neuen Trainingsplan beantragen können | ich mein Training an meine aktuelle Verfassung anpassen kann. | Antragsformular für Trainingsplan vorhanden | optional |
+| Kunde | meine Trainingspläne  einsehen können | ich meine Fortschritte sehen kann. | Persönlicher Trainingsplan angezeigt wird | optional |
 
 **Allgemeine Verwaltung**
 
@@ -144,25 +144,25 @@ Prüfbarkeit |X|-|-|-|
 | :------ | :----- | :------ | :-------- | ------- |
 | Trainer/ Chef/ Physiotherapeut | neue Mitglieder einfügen können | neue Kunden verzeichnet werden und sie die verschiedenen Angebote annehmen können | Mitglied eingefügt werden | hoch |
 | Trainer/ Chef/ Physiotherapeut | Mitglieder ansehen können | ich die jeweiligen Mitglieder optimal beraten kann | Mitglieder angezeigt werden | hoch |
-| Trainer/ Chef/ Physiotherapeut | Mitglieder bearbeiten können | ich neue Information einfügen und veraltete entfernen kann | Mitglieder werden bearbeitet | hoch |
+| Trainer/ Chef/ Physiotherapeut | Mitglieder bearbeiten können | ich neue Information einfügen und veraltete entfernen kann | Mitglieder werden bearbeitet | mittel |
 | Trainer/ Chef/ Physiotherapeut | Mitglieder entfernen können | Persönlich Daten nicht gespeichert werden müssen, wenn es nicht nötig ist | Mitglieder werden gelöscht | hoch |
-| Chef | Trainerrollen vergeben können | neue Trainer alle wichtige Funktionen nutzen können | Trainerrolle hinzufügen | mittel |
-| Chef | Trainerrollen entfernen können | ehemalige Trainer keinen Zugriff auf persönliche Daten haben | Trainerrolle entfernen | mittel |
-| Chef | Physiotherapeuten-rolle vergeben können | neue Physiotherapeuten alle wichtige Funktionen nutzen können | Physiotherapeuten hinzufügen | mittel |
-| Chef | Physiotherapeuten-rolle entfernen können | ehemalige Physiotherapeuten keinen Zugriff auf persönliche Daten haben | Physiotherapeuten entfernen | mittel |
-| Chef | neue Chefs hinzufügen können | neue Führungspersonen auf alle Funktionen zugreifen können | Chef hinzufügen | niedrig |
-| Chef | Chefs entfernen können | ehemalige Führungspersonen keinen Zugriff auf persönliche Daten haben | Chef entfernen | niedrig |
+| Chef | Trainerrollen vergeben können | neue Trainer alle wichtige Funktionen nutzen können | Trainerrolle hinzufügen | niedrig |
+| Chef | Trainerrollen entfernen können | ehemalige Trainer keinen Zugriff auf persönliche Daten haben | Trainerrolle entfernen | niedrig |
+| Chef | Physiotherapeuten-rolle vergeben können | neue Physiotherapeuten alle wichtige Funktionen nutzen können | Physiotherapeuten hinzufügen | niedrig |
+| Chef | Physiotherapeuten-rolle entfernen können | ehemalige Physiotherapeuten keinen Zugriff auf persönliche Daten haben | Physiotherapeuten entfernen | optional |
+| Chef | neue Chefs hinzufügen können | neue Führungspersonen auf alle Funktionen zugreifen können | Chef hinzufügen | optional |
+| Chef | Chefs entfernen können | ehemalige Führungspersonen keinen Zugriff auf persönliche Daten haben | Chef entfernen | optional |
 
 **Trainer und Therapeuten Funktionen**
 
 | **In meiner Rolle als** | **möchte ich** | , **so dass** | **Erfüllt, wenn** | **Priorität** |
 | :------ | :----- | :------ | :-------- | ------- |
-| Trainer/ Physiotherapeut | Mitgliedern neue Trainingspläne hinzufügen können | diese und ihr neues Trainingsprogramm einsehen können | Trainings-plan eingefügt        | hoch |
-| Trainer/ Physiotherapeut | Trainingsplänen von Mitgliedern ändern können | auf Rück- und Fortschritte eingegangen werden kann | Trainings-plan geändert | hoch |
-| Trainer/ Physiotherapeut | die Anträge für neue Trainingspläne ansehen können | erste Ideen auf Grundlage der Anamnese vorbereitet werden können | Training-plan-anträge angezeigt | hoch |
-| Physiotherapeut | die Kunden-Behandlungsakte einsehen können | ich die Behandlung basierten auf diesen Daten anpassen kann | Akte angezeigt | mittel |
-| Physiotherapeut | die Kunden-Behandlungsakte bearbeiten können | ich neue Erkenntnisse für Folgebehandlungen speichern kann | Akte geändert | mittel |
-| Physiotherapeut | die Anmeldungen zur Therapie ansehen können | ein Termin vereinbaren zu können und eine erste Behandlung auf Grundlage der Anamnese erstellen kann | Termin-anfrage angezeigt | mittel |
+| Trainer/ Physiotherapeut | Mitgliedern neue Trainingspläne hinzufügen können | diese und ihr neues Trainingsprogramm einsehen können | Trainings-plan eingefügt        | mittel |
+| Trainer/ Physiotherapeut | Trainingsplänen von Mitgliedern ändern können | auf Rück- und Fortschritte eingegangen werden kann | Trainings-plan geändert | mittel |
+| Trainer/ Physiotherapeut | die Anträge für neue Trainingspläne ansehen können | erste Ideen auf Grundlage der Anamnese vorbereitet werden können | Training-plan-anträge angezeigt | niedrig |
+| Physiotherapeut | die Kunden-Behandlungsakte einsehen können | ich die Behandlung basierten auf diesen Daten anpassen kann | Akte angezeigt | optional |
+| Physiotherapeut | die Kunden-Behandlungsakte bearbeiten können | ich neue Erkenntnisse für Folgebehandlungen speichern kann | Akte geändert | optional |
+| Physiotherapeut | die Anmeldungen zur Therapie ansehen können | ein Termin vereinbaren zu können und eine erste Behandlung auf Grundlage der Anamnese erstellen kann | Termin-anfrage angezeigt | optional |
 
 # 3 Technische Beschreibung
 
