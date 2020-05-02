@@ -91,20 +91,20 @@ Prüfbarkeit |X|-|-|-
 
 ## 2.5 Anforderungen im Detail
 
-| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
-| :------ | :----- | :------ | :-------- |
-| Zivilist | die Einsatzhistorie einsehen | ich mich über Einsätze informieren kann | Must |
-| Sanitäter | Einsätze annehmen können | ich Notfällen helfen kann | Must |
-| Sanitäter | die Route zum Einsatz angezeigt bekommen | ich mich nicht unnötig verfahre | Must |
-| Sanitäter | Patienteninfos abrufen können | ich den Patient bestmöglichst behandeln kann | Must |
-| Sanitäter | freie Plätze in den Krankenhäuser finden | ich meinen Patienten in ohne Wartezeit einliefern kann | Must |
-| Sanitäter | meinen Patienten im Krankenhaus anmelden | diese die Behandlung frühzeitig vorbereiten können | Must |
-| Sanitäter | einen Einsatzbericht schreiben | eine Protokollierung des Einsatzes für spätere Fragen möglich ist | Must |
-| Sanitäter | einen Patienten für Tot erklären können | andere Dienste übernehmen können | Must |
-| Sanitäter | einen Einsatz beenden können | ich für neue Einsätze zur Verfügung stehe | Must |
-| Leistelle | den Status der Einsatzkräfte überprüfen | ich Einsätze planen kann | Must |
-| Leitstelle | Einsätze erstellen | diese übernommen werden können | Must |
-| Leitstelle | Einsätze zuteilen | eine bestmögliche Abarbeitung erfolgen kann | Must |
+| **Als** | **möchte ich** | **so dass** | Akzeptanz | **P**riorität |
+| :------ | :----- | :------ | :-------- | --------- |
+| Zivilist | die Einsatzhistorie einsehen | ich mich über Einsätze informieren kann | Übersicht einsehbar | Must |
+| Sanitäter | Einsätze annehmen können | ich Notfällen helfen kann | Einsätze annehmbar | Must |
+| Sanitäter | die Route zum Einsatz angezeigt bekommen | ich mich nicht unnötig verfahre | Route anzeigbar | Must |
+| Sanitäter | Patienteninfos abrufen können | ich den Patient bestmöglichst behandeln kann | Infos abrufbar | Must |
+| Sanitäter | freie Plätze in den Krankenhäuser finden | ich meinen Patienten in ohne Wartezeit einliefern kann | Frei Plätze anfragbar | Must |
+| Sanitäter | meinen Patienten im Krankenhaus anmelden | diese die Behandlung frühzeitig vorbereiten können | Patient kann angemeldet werden | Must |
+| Sanitäter | einen Einsatzbericht schreiben | eine Protokollierung des Einsatzes für spätere Fragen möglich ist | Bericht schreibbar | Must |
+| Sanitäter | einen Patienten für Tot erklären können | andere Dienste übernehmen können | Patient kann als tot erklärt werden | Must |
+| Sanitäter | einen Einsatz beenden können | ich für neue Einsätze zur Verfügung stehe | Einsatz kann beendet werden | Must |
+| Leistelle | den Status der Einsatzkräfte überprüfen | ich Einsätze planen kann | Status überprüfbar | Must |
+| Leitstelle | Einsätze erstellen | diese übernommen werden können | Einsatz kann erstellt werden | Must |
+| Leitstelle | Einsätze zuteilen | eine bestmögliche Abarbeitung erfolgen kann | Einsatzkräfte können Einsatz zugeteilt werden | Must |
 
 ### 
 
