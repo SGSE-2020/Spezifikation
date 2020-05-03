@@ -30,13 +30,13 @@ Die zentrale Anlaufstelle für alle Bürger, spielt in jeder Gemeinde eine groß
 ## 2.2 Funktionale Anforderungen
 
 ### Interessent
-<img src="./img/UseCase_Interessent.jpg" width="1000">
+![UseCase_Interessent](./img/UseCase_Interessent.jpg ':size=800x400')
 
 ### Bürger
-<img src="./img/UseCase_Buerger.jpg" width="1000">
+![UseCase_Buerger](./img/UseCase_Buerger.jpg ':size=800x400')
 
 ### Mitarbeiter Bürgerbüro
-<img src="./img/UseCase_Mitarbeiter.jpg" width="1000">
+![UseCase_Mitarbeiter](./img/UseCase_Mitarbeiter.jpg ':size=800x400')
 
 ## 2.3 Nicht-funktionale Anforderungen 
 
