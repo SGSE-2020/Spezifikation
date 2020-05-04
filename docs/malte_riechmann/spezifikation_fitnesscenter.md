@@ -1,23 +1,17 @@
 # Anforderungs- und Entwurfsspezifikation ("Pflichtenheft")
 
-* Fitnesscenter, Malte Riechmann, Inhaltsverzeichnis
-* Link zum Source Code Repository
+* Titel: SmartCity - Fitnesscenter
+* Autor: Malte Riechmann
+* Repository: https://github.com/SGSE-2020/MS_Fitnesscenter
 
 # 1 Einführung
 
 ## 1.1 Beschreibung
 
-* Projektname
-* Darstellung der Produktvision in Prosa (5-10 Sätze)
-* Ziele
-* Für wen ist das Produkt/der Service?
-* Was ist das Bedürfnis? 
-* Was ist das Produkt/der Service?
-* Warum sollte der Kunde dieses Produkt/den Service „kaufen“ oder nutzen?
-* Im Gegensatz zu welchen anderen Produkten/Services steht dies?
-* Was macht dieses Produkt/der Service anders?
-* Warum ist das Projekt sinnvoll?
-* Welche Stakeholder sind betroffen und wie stehen Sie zu der Projektidee?
+Der Microservice des Fitnesscenters erfüllt die verschiedensten Aufgaben. Grundsätzlich ist es ein Informationsportal für Kunden. Über die Website können diese sich über die Möglichkeiten, die sie in dem Fitnessstudio haben informieren. Dies umfasst die verschiedenen Geräte, die in dem Fitnessstudio vorhanden sind und die verschiedenen Kurse, die die Kunden besuchen können. Außerdem können die verschiedenen Abonnement Möglichkeiten aufgezeigt werden. Für angemeldete Nutzer erfüllt der Service weitere Möglichkeit. So können Trainer einem Mitglied einen Trainingsplan auf dessen Profil zur Verfügung stellen. Außerdem kann ein Physiotherapeut auf wichtige Behandlungsdaten über den Service Zugreifen. Gerade diese Accounts für Kunden sind neu und bei anderen Fitness Centern nicht anzufinden. Sie erleichtern den Umgang mit den Kunden und ermöglichen eine optimierte, personalisierte Betreuung und effizienteres Training.
+
+
+
 * Welche alternativen Lösungsideen existieren für den identifizierten Bedarf?
 * Wie hoch sind Aufwand und erwarteter Nutzen und stehen sie in einem sinnvollen Verhältnis? (Lohnt sich das Projekt?)
 * Verfügen wir über die notwendigen Kompetenzen? (Umsetzbarkeit)
@@ -25,10 +19,9 @@
 
 ## 1.2 Ziele
 
-- Anwendungsbereiche, Motivation, Umfang, Alleinstellungsmerkmale, Marktanforderungen
-- Informationen zu Zielbenutzergruppen und deren Merkmale (Bildung, Erfahrung, Sachkenntnis)
-- Abgrenzung (Was ist das Softwaresystem _nicht_)
-- ggfs. SWOT-Analyse
+Das Ziel soll Trainer, Physiotherapeuten und die Kunden an einer Stelle vereinen, um die Trainings- und Behandlungsprozesse für den Kunden so angenehm wie möglich Zu gestallten. Das umfasst Trainingspläne, Informationen über die Behandlung und allgemeine Informationen zu dem Fitnesscenter. In der Form, hat das bis jetzt kein Fitnesscenter implementiert. Die Trainer und Therapeuten sind besitzen große Fachkenntnisse, allerdings wenig Erfahrung im Umgang mit Computersystemen. Der Erfahrungsgrad der Kunden ist unbekannt und kann von keine Erfahrung bis sehr Erfahren gehen. 
+
+Das System soll die persönliche Kommunikation zwischen Kunde und Trainer/Physiotherapeut nicht ersetzen. Diese ist unerlässlich für Trainer/Physiotherapeuten für ein gutes Trainingsprogramm. Das Programm soll Trainer/Physiotherapeuten lediglich unterstützen durch zur Verfügungstellung relevanter persönlicher Daten des Kundens. Desweitern bekommen Kunden die Möglichkeit sich über die Website ihren Trainingsplan, der in Zusammenarbeit mit dem Trainer ausgearbeitet wurde einzusehen.
 
 # 2 Anforderungen
 
@@ -36,16 +29,10 @@
 
 | Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
 |---|---|---|---|---|
-|  |   |   |    |   |
-
-
-### Beispiel
-
-| Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
-|---|---|---|---|---|
-| Leiter der Bibliothek, Fachlicher Entscheider  |  Herr Bauer | Tel. 409000, Von 9-19 Uhr telefonisch erreichbar, Mitarbeit zu 30% möglich, Nürnberg  | Kennt das Altsystem aus der Anwendersicht, soll mit dem System arbeiten  | Vereinfachung der Ausleihprozesse  |
-| Administrator, Informationslieferant bzgl. Wartungsanforderungen  | Herr Heiner  | Heiner@gmx.net, Per E-Mail, immer erreichbar, Verfügbarkeit 50%, Nürnberg  | Vertraut mit vergleichbarer Verwaltungssoftware   |  Stabiles System, geringer Wartungsaufwand |
-| Product-Owner, Entscheider - als Koordinator der Stakeholderanforderungen   | Paul Ottmer  |  po@ottmer.de, Per E-Mail und tel. tagsüber, Verfügbarkeit 100%, Nürnberg  | Koordinator für die Inputs der Stakeholder  | ROI des Systems sicherstellen  |
+| Trainer im Fitnesscenter und dessen Besitzer | Herr Marshall Oconnell | Tel. 3738472520 von 8 - 20 Uhr, per E-Mail m.oconnell@web.de | Kennt die organisatorischen Abläufe im Fitnesscenter | Bessere Verwaltung der Trainer |
+| Trainer im Fitnesscenter | Herr Johan Forbes | Tel. 3251259494 von 10 - 18 Uhr, per E-Mail johan.forbes@gmail.com | Erfahren im Umgang und Betreuung der Kunden und weiß, was alles dazugehört | Einfacherer Umgang mit Kunden |
+| Leitende Physiotherapeutin im Fitnesscenter | Frau Katy Fletcher | Tel. 3469381411 von 8 - 18 Uhr, per E-Mail k.fletcher@gmail.com | Vertraut mit Verfahren zur Speicherung und Veraltung von Behandlungsakten | Einfacherer Umgang mit Kunden |
+| Mitglied des Fitnesscenter | Herr Tommy-Lee Crosby | Tel. 3359273642 tagsüber, per E-Mail tl.crosby@hotmail.com | Kennt die Abläufe als trainierendes Mitglied und die Umständliche Trainingsplan Gestaltung | Personalisiertes Training |
 
 ## 2.2 Funktionale Anforderungen
 
@@ -75,7 +62,9 @@
 
 ### 2.3.2 Betriebsbedingungen
 
-- Vorgaben des Kunden (z.B. Web Browser / Betriebssystem Versionen, Programmiersprache)
+- Website für Desktop und Mobile Nutzer
+- Schnittstelle zu Hausärzten um Kunden zu überweisen
+- Datenbank um wichtige Daten zu speichern
 
 ### 2.3.3 Qualitätsmerkmale
 
@@ -83,32 +72,60 @@
 
 Qualitätsmerkmal | sehr gut | gut | normal | nicht relevant
 ---|---|---|---|---
-**Zuverlässigkeit** | | | | |
-Fehlertoleranz |X|-|-|-|
-Wiederherstellbarkeit |X|-|-|-|
-Ordnungsmäßigkeit |X|-|-|-|
-Richtigkeit |X|-|-|-|
-Konformität |-|X|-|-|
-**Benutzerfreundlichkeit** | | | | |
-Installierbarkeit |-|-|X|-|
-Verständlichkeit |X|-|-|-|
-Erlernbarkeit |-|X|-|-|
-Bedienbarkeit |-|X|-|-|
-**Performance** | | | | |
-Zeitverhalten |-|-|X|-|
-Effizienz|-|-|-|X|
-**Sicherheit** | | | | |
-Analysierbarkeit |X|-|-|-|
-Modifizierbarkeit |-|-|-|X|
-Stabilität |X|-|-|-|
-Prüfbarkeit |X|-|-|-|
+**Zuverlässigkeit** | | | | 
+Fehlertoleranz |-|-|X|-
+Wiederherstellbarkeit |-|-|X|-
+Ordnungsmäßigkeit |-|-|X|-
+Richtigkeit |-|-|X|-
+Konformität |-|X|-|-
+**Benutzerfreundlichkeit** | | | | 
+Installierbarkeit |-|-|-| X              
+Verständlichkeit |X|-|-|-
+Erlernbarkeit |X|-|-|-
+Bedienbarkeit |X|-|-|-
+**Performance** | | | | 
+Zeitverhalten |-|X|-|-
+Effizienz|-|-|X|-
+**Sicherheit** | | | | 
+Analysierbarkeit |-|-|X|-
+Modifizierbarkeit |-|-|-|X
+Stabilität |-|X|-|-
+Prüfbarkeit |-|-|X|-
 
 ## 2.4 Graphische Benutzerschnittstelle
 
-- GUI-Mockups passend zu User Stories
-- Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
-- Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
+### Mockups
+
+PDF-Version mit Verlinkung im Projekt Repository
+
+#### Home
+
+![abos](./img/mockups/home.png)
+
+#### Geräte
+
+![abos](./img/mockups/geraete.png)
+
+#### Kurse
+
+![abos](./img/mockups/kurse.png)
+
+#### Abos
+
+![abos](./img/mockups/abos.png)
+
+#### Profil
+
+![abos](./img/mockups/profil.png)
+
+#### Mitglieder
+
+![abos](./img/mockups/mitglieder.png)
+
+#### Mitglied Details
+
+![abos](./img/mockups/mitglied_detail.png)
+
 
 ## 2.5 Anforderungen im Detail
 
