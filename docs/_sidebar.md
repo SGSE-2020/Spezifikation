@@ -4,3 +4,4 @@
 * [Bürgerbüro](./pia_schreiner/Spezifikation_Buergerbuero.md)
 * [Rettungsdienst](./patrick_poppe/Spezifikation_Rettungsdienst.md)
 * [Fitness Center](./malte_riechmann/spezifikation_fitnesscenter.md)
+* [Restaurants](./andre_kirsch/spezifikation_restaurants.md)
