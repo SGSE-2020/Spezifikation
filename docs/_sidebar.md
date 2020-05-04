@@ -5,3 +5,4 @@
 * [Rettungsdienst](./patrick_poppe/Spezifikation_Rettungsdienst.md)
 * [Parkplatz](./sven_simikin/Spezifikation_Parkplatz.md)
 * [Fitness Center](./malte_riechmann/spezifikation_fitnesscenter.md)
+* [Strassenverkehrsamt](./benedikt_struzek/Spezifikation_Strassenverkehrsamt.md)
