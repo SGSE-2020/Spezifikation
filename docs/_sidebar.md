@@ -3,4 +3,5 @@
 * [Ordnungsamt](./philipp_clausing/Spezifikation_Ordnungsamt.md)
 * [Bürgerbüro](./pia_schreiner/Spezifikation_Buergerbuero.md)
 * [Rettungsdienst](./patrick_poppe/Spezifikation_Rettungsdienst.md)
+* [Parkplatz](./sven_simikin/Spezifikation_Parkplatz.md)
 * [Fitness Center](./malte_riechmann/spezifikation_fitnesscenter.md)
