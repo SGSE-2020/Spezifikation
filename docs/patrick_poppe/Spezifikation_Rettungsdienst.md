@@ -10,21 +10,13 @@
 
 Der Rettungsdienst in der SmartCity stellt einen wesentlichen Faktor im Bereich der öffentlichen Dienste da. Ein zuverlässiges System kann die anstehenden Einsätze begleiten und Fehler verhindern. Somit kann eine Informationskette im Zusammenspiel mit Hausarzt und Krankenhaus über die komplette Behandlungsphase des Patienten erfolgen. Das System ist somit für die Bedürfnisse der Leitstelle wie auch der Sanitäter angepasst. Gleichzeitig dient es den Bürgern als Anlaufstelle für offizielle Informationen zu vergangenen Einsätzen. 
 
-* Projektname
-* Darstellung der Produktvision in Prosa (5-10 Sätze)
-* Ziele
-* Für wen ist das Produkt/der Service?
-* Was ist das Bedürfnis? 
-* Was ist das Produkt/der Service?
-* Warum sollte der Kunde dieses Produkt/den Service „kaufen“ oder nutzen?
-* Im Gegensatz zu welchen anderen Produkten/Services steht dies?
-* Was macht dieses Produkt/der Service anders?
-* Warum ist das Projekt sinnvoll?
-* Welche Stakeholder sind betroffen und wie stehen Sie zu der Projektidee?
-* Welche alternativen Lösungsideen existieren für den identifizierten Bedarf?
-* Wie hoch sind Aufwand und erwarteter Nutzen und stehen sie in einem sinnvollen Verhältnis? (Lohnt sich das Projekt?)
-* Verfügen wir über die notwendigen Kompetenzen? (Umsetzbarkeit)
-* Welche Risiken und negativen Nebeneffekte sind zu erwarten?
+
+
+Da heutzutage das Handy immer am Mann ist, ist so auch eine lückenlose Alarmierung im Stadtgebiet möglich. Die Benutzung soll einfach und selbsterklärend sein, sodass eine fehlerfreie Benutzung auch bei einem Einsatz unter hohem Druck gewährleistet ist. Durch das Abfragen der Patienteninformationen können bereits bei der Erstversorgung zuverlässig Fehlbehandlungen ausgeschlossen werden. Die Suche nach einem freien Krankenhaus wird ebenfalls optimiert, es kann sich durchgehend um den Patienten gekümmert werden.
+
+
+
+Eine digitale Alarmierung gibt es mittlerweile in vielen Städten und Gemeinden. Häufig basiert die Alarmierung jedoch noch auf Pagern. Dadurch ist immer ein zusätzliches Gerät am Mann zu tragen. Und die Möglichkeit einer fehlerfreien Alarmierung liegt im Interesse aller. Sowohl der Stadtverwaltung, die einen Rettungsdienst zur Verfügung stellen muss. Den Sanitätern, die helfen wollen, und den Bürgern der Stadt, die zum Notfall werden können.
 
 ## 1.2 Ziele
 
@@ -56,7 +48,16 @@ Die Alarmierung von Einsatzkräften spielt in vielen Gemeinden eine große Rolle
 
 ### 2.3.2 Betriebsbedingungen
 
-- Vorgaben des Kunden (z.B. Web Browser / Betriebssystem Versionen, Programmiersprache)
+- Verfügbar auf aktuellen Android-Tablets per App
+  - Rettungswagen mit Tablet ausgerüstet
+- Zugriff auf Webversion über zentrales Portal für Zivilisten
+- Zugriff auf Leitstellenversion per Desktop-Anwendung
+
+Über den persönlichen Zugang über das Smart-City-Portal soll nur die Einsatzhistorie einsehbar sein. Hier soll es keine Unterscheidung geben zwischen Sanitätern und Zivilisten. So soll gewährleistet werden, dass Sanitäter in ihrer Freizeit keine schutzwürdigen Informationen von Patienten weitergeben. 
+
+Die Anwendungen für Leitstelle und Rettungswagen sollen per Hand auf dem Zielgerät installiert werden. So soll das unbefugte Zugreifen auf das System von außerhalb erschwert werden. Es kann somit sichergestellt werden, dass eine Installation nur auf berechtigten Geräten stattfindet. 
+
+Da die Rettungswache nur aus Vollzeitarbeitskräften besteht ist eine Alarmierung von Rettungskräften in der Freizeit nicht vorgesehen. Die Mitarbeiter haben somit auch die Gewissheit, sich nicht aus versehen auf dem Privathandy als "einsatzbereit" zu melden. 
 
 ### 2.3.3 Qualitätsmerkmale
 
@@ -84,10 +85,25 @@ Prüfbarkeit |X|-|-|-
 
 ## 2.4 Graphische Benutzerschnittstelle
 
-- GUI-Mockups passend zu User Stories
-- Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
-- Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
+#### Zivilisten
+
+##### Historie ansehen
+
+![Historie ansehen](./img/MockupHistorieWeb.png)
+
+#### Sanitäter
+
+##### Hauptmenü
+
+![Hauptmenü Sanitäter](./img/MockupMainMenuSani.png)
+
+##### Einsatz Annehmen
+
+![Einsatz Annehmen](./img/MockupEinsatzAnnehmen.png)
+
+##### Hauptmenü Einsatz
+
+
 
 ## 2.5 Anforderungen im Detail
 
