@@ -280,6 +280,8 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 ## 4.3 Grober Projektplan
 
 ### Meilensteine
+* __KW 19__ _(08.05.2020)_
+  * Fertigstellung Api-Schnittstellen-Spezifikation
 * __KW 20__ _(11.05.2020)_
   * Abgabe Software-Spezifikation
 * __KW 24__ _(08.06.2020)_
