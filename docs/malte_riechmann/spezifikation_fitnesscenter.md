@@ -185,7 +185,8 @@ PDF-Version mit Verlinkung im Projekt Repository
 
 ## 3.1 Systemübersicht
 
-- Systemarchitekturdiagramm ("Box-And-Arrow" Diagramm)
+![system](./img/system.png)
+
 - Kommunikationsprotokolle, Datenformate
 
 ## 3.2 Softwarearchitektur
@@ -204,8 +205,8 @@ PDF-Version mit Verlinkung im Projekt Repository
 ## 3.4 Datenmodell 
 
 - Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
-- Modellierung des physikalischen Datenmodells 
-  - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
+
+![model](D:\Uni\SE\Repos\Spezifikation\docs\malte_riechmann\img\model.png)
 
 ## 3.5 Abläufe
 
