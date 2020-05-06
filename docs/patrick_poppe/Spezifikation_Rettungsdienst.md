@@ -129,8 +129,7 @@ Prüfbarkeit |X|-|-|-
 
 ## 3.1 Systemübersicht
 
-- Systemarchitekturdiagramm ("Box-And-Arrow" Diagramm)
-- Kommunikationsprotokolle, Datenformate
+![Systemarchitektur](./img/Sys-Architektur.png)
 
 ## 3.2 Softwarearchitektur
 
@@ -138,8 +137,51 @@ Prüfbarkeit |X|-|-|-
 
 ## 3.3 Schnittstellen
 
-- Schnittstellenbeschreibung (API)
-- Auflistung der nach außen sichtbaren Schnittstelle der Softwarebausteine
+### Einsatzbericht abfragen
+
+"sgse.models.rettungsdienst.einsatzbericht":{
+
+​	"description": "Returns a  specific mission report", 
+
+​	"fields": [
+
+​		{"name": "missionID", "type": "string", "required": true}
+
+​	]
+
+}
+
+### Notruf auslösen
+
+"sgse.models.rettungsdienst.emergency":{
+
+​	"description" : "Create an emergency",
+
+​	"fields":[
+
+​		{"name": "location", "type": "string", "required": true},
+
+​		{"name": "patientID", "type": "string", "required": false}
+
+​	]
+
+}
+
+### Krankentransport anmelden
+
+"sgse.models.rettungsdienst.transport":{
+
+​	"description" : "Create a transport for a patient",
+
+​	"fields":[
+
+​		{"name": "location", "type": "string", "required": true},
+
+​		{"name": "patientID", "type": "string", "required": true}
+
+​	]
+
+}
 
 ## 3.3.1 Ereignisse
 
