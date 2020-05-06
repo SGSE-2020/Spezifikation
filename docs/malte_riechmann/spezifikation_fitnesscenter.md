@@ -195,6 +195,31 @@ PDF-Version mit Verlinkung im Projekt Repository
 
 ## 3.3 Schnittstellen
 
+### Trainingsplan anfordern
+
+````json
+"sgse.model.fitness_center.trainingsplan_antrag": {
+    "description": "Object to request a new training plan",
+    "fields": [
+      {"name": "member_id", "type": "string", "required": true},
+      {"name": "date", "type": "date", "required": true}  
+    ]
+}
+````
+
+### Physiotherapeuten Termin anfordern
+````json
+"sgse.model.fitness_center.physiotherapeut_antrag": {
+    "description": "Object to request an appointment with the physiotherapist",
+    "fields": [
+      {"name": "member_id", "type": "string", "required": true},
+      {"name": "date", "type": "date", "required": true},
+      {"name": "note", "type": "string", "required": false}
+    ]
+}
+````
+
+
 - Schnittstellenbeschreibung (API)
 - Auflistung der nach außen sichtbaren Schnittstelle der Softwarebausteine
 
@@ -242,7 +267,7 @@ PDF-Version mit Verlinkung im Projekt Repository
 
 | Softwarebaustein | Person(en) |
 |----------|-----------|
-| Komponente A | Thomas Mustermann |
+| Komponente A-Z | Malte Riechmann |
 
 ### Rollen
 
@@ -259,21 +284,17 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 
 | Name     | Rolle     |
 |----------|-----------|
-| Thomas Mustermann | Softwarearchitekt |
+| Malte Riechmann | Softwarearchitekt, Frontend-Entwickler, Backend-Entwickler |
 
 
 ## 4.3 Grober Projektplan
 
-- Meilensteine
-
 ### Meilensteine
-* KW 43 (21.10)
+* KW 43 (11.05)
   * Abgabe Pflichtenheft
-* KW 44 (28.10) / Projekt aufsetzen
-  * Repository Struktur
-* KW 45 (4.11) / Implementierung
-  * Implementierung #3 (Final)
-* KW 48 (18.12) / Abnahmetests
+* KW 45 (08.06) / Implementierung
+  * Implementierung #3 
+* KW 48 (03.07) / Abnahmetests
   * manuelle Abnahmetestss
   * Präsentation / Software-Demo
 
