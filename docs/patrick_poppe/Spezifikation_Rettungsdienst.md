@@ -2,7 +2,7 @@
 
 * __Titel:__ SmartCity-Rettungsdienst
 * __Author:__ Patrick Poppe
-* __Source Code:__ [Code Repository](https://github.com/SGSE-2020/MS_Rettungsdienst.git)
+* __Source Code:__  [Code Repository](https://github.com/SGSE-2020/MS_Rettungsdienst.git)
 
 # 1 Einführung
 
@@ -12,7 +12,7 @@ Der Rettungsdienst in der SmartCity stellt einen wesentlichen Faktor im Bereich 
 
 
 
-Da heutzutage das Handy immer am Mann ist, ist so auch eine lückenlose Alarmierung im Stadtgebiet möglich. Die Benutzung soll einfach und selbsterklärend sein, sodass eine fehlerfreie Benutzung auch bei einem Einsatz unter hohem Druck gewährleistet ist. Durch das Abfragen der Patienteninformationen können bereits bei der Erstversorgung zuverlässig Fehlbehandlungen ausgeschlossen werden. Die Suche nach einem freien Krankenhaus wird ebenfalls optimiert, es kann sich durchgehend um den Patienten gekümmert werden.
+Da heutzutage das Handy immer am Mann ist, ist so auch eine lückenlose Alarmierung im Stadtgebiet möglich. Die Benutzung soll einfach und selbsterklärend sein, sodass eine fehlerfreie Benutzung auch bei einem Einsatz unter hohem Druck gewährleistet ist. Durch das Abfragen der Patienteninformationen können bereits bei der Erstversorgung zuverlässig Fehlbehandlungen ausgeschlossen werden. Das Anmelden der Patienten im Krankenhaus gewährleistet eine lückenlose Übergabe zwischen Krankenhaus und Rettungsdienst. Mit der Eingabe des Einsatzberichtes kann der Einsatz abgeschlossen werden und eine weitere Verpflegung des Patienten sichergestellt werden.
 
 
 
@@ -20,7 +20,17 @@ Eine digitale Alarmierung gibt es mittlerweile in vielen Städten und Gemeinden.
 
 ## 1.2 Ziele
 
-Die Alarmierung von Einsatzkräften spielt in vielen Gemeinden eine große Rolle. Eine lückenlose Alarmierungsmöglichkeit ohne die gesamte Bevölkerung zu unterrichten sind wichtige Eigenschaften eines modernen Systems. Das System soll die Mitarbeiter des Rettungsdienstes bei Einsätzen unterstützen. Hierzu zählt die Aufnahme eines Notfalls, die Benachrichtigung des Rettungswagen, sowie Maßnahmen vor Ort. Hierzu zählt das Abrufen der Patientenakte oder das Finden eines freien Krankenhauses. Im Abschluss kann der Einsatz mit einem Einsatzbericht abgeschlossen werden. 
+Die Alarmierung von Einsatzkräften spielt in vielen Gemeinden eine große Rolle. Eine lückenlose Alarmierungsmöglichkeit ohne die gesamte Bevölkerung zu unterrichten sind wichtige Eigenschaften eines modernen Systems. Das System soll die Mitarbeiter des Rettungsdienstes bei Einsätzen unterstützen. Hierzu zählt die Aufnahme eines Notfalls, die Benachrichtigung des Rettungswagen, sowie Maßnahmen vor Ort. Hierzu zählt das Abrufen der Patientenakte oder das Anmelden des Patienten in einem Krankenhaus. 
+
+
+
+Die Benutzer des Systems sind vor allem die Mitarbeiter in der Leitstelle, die einen Notruf aufnehmen und die Sanitäter im Einsatz. Da bei Notrufen ein erhöhter Stresspegel vorliegt und die User nur eine Allgemeinbildung in IT-System haben, muss der Workflow hier einfach und intuitiv angelegt sein, um Fehler zu vermeiden. Die Seiten sollen deswegen nur wenige Elemente enthalten, damit die Hauptkonzentration dem Patienten gelten kann.
+
+Zusätzlich können Krankentransporte in Auftrag gegeben werden. Diese werden automatisch von dem System bearbeitet und an den nächsten freien Sanitäter vergeben.
+
+
+
+Das System soll jedoch keine Notrufe automatisch verteilen. Die Erfahrung und besonders wichtig die Einflussnahme des Leitstellenmitarbeiters auf Opfer, bzw. Ersthelfer, stellen einen wichtigen Teil in der Erstversorgung da. Auch soll das System keine Diagnose vor Ort erstellen, sondern nur bereits vorhandene Patientendaten abrufen. Hierzu können zum Beispiel Allergien gehören. So sollen Fehler bei der Behandlung vermieden werden.
 
 # 2 Anforderungen
 
@@ -30,7 +40,6 @@ Die Alarmierung von Einsatzkräften spielt in vielen Gemeinden eine große Rolle
 |---|---|---|---|---|
 | Leiterin Leitstelle | Frau Emeg | Tel. 036356, E-Mail: emeg@leitstelle.de , Von 6-18 Uhr telefonisch  und per Mail erreichbar | Kennt das Altsystem, soll mit dem System arbeiten | Vereinfachung der Alarmierung und Einsatzplanung |
 | Sanitäter | Rudolf Retter | Tel. 73683, Von 5-13 Uhr telefonisch erreichbar | Kennt das Altsystem | Unterstützung bei Einsätzen, Vereinfachung der Einsatzpflege |
-|  |  |  |  |  |
 
 
 
@@ -44,20 +53,14 @@ Die Alarmierung von Einsatzkräften spielt in vielen Gemeinden eine große Rolle
 
 ### 2.3.1 Rahmenbedingungen
 
-- Normen, Standards, Protokolle, Hardware, externe Vorgaben
+- Kommunikation mit anderen Microservices:
+  - Asynchron: RabbitMQ
+  - Synchron: gRPC
 
 ### 2.3.2 Betriebsbedingungen
 
-- Verfügbar auf aktuellen Android-Tablets per App
-  - Rettungswagen mit Tablet ausgerüstet
-- Zugriff auf Webversion über zentrales Portal für Zivilisten
-- Zugriff auf Leitstellenversion per Desktop-Anwendung
-
-Über den persönlichen Zugang über das Smart-City-Portal soll nur die Einsatzhistorie einsehbar sein. Hier soll es keine Unterscheidung geben zwischen Sanitätern und Zivilisten. So soll gewährleistet werden, dass Sanitäter in ihrer Freizeit keine schutzwürdigen Informationen von Patienten weitergeben. 
-
-Die Anwendungen für Leitstelle und Rettungswagen sollen per Hand auf dem Zielgerät installiert werden. So soll das unbefugte Zugreifen auf das System von außerhalb erschwert werden. Es kann somit sichergestellt werden, dass eine Installation nur auf berechtigten Geräten stattfindet. 
-
-Da die Rettungswache nur aus Vollzeitarbeitskräften besteht ist eine Alarmierung von Rettungskräften in der Freizeit nicht vorgesehen. Die Mitarbeiter haben somit auch die Gewissheit, sich nicht aus versehen auf dem Privathandy als "einsatzbereit" zu melden. 
+- Verfügbar per Webzugriff mit einem aktuellen Browser (z.B. Google Chrome 81.0.4044)
+- optimierte Darstellung für Mobilgeräte
 
 ### 2.3.3 Qualitätsmerkmale
 
@@ -103,7 +106,25 @@ Prüfbarkeit |X|-|-|-
 
 ##### Hauptmenü Einsatz
 
+![Hauptmenü Einsatz](./img/MockupEinsatzHauptmenu.png)
 
+##### Einsatz Weg Anzeigen
+
+![Weg anzeigen](./img/MockupWegAnzeigen.png)
+
+##### Patientendaten abrufen
+
+![Patientendaten abrufen](./img/MockupPatientinfos.png)
+
+##### Einsatzbericht schreiben
+
+![EInsatzbericht schreiben](./img/MockupEinsatzberichtSchreiben.png)
+
+#### Leitstelle
+
+##### Einsatz erstellen
+
+![Einsatz erstellen](./img/EinsatzErstellen.png)
 
 ## 2.5 Anforderungen im Detail
 
@@ -113,7 +134,6 @@ Prüfbarkeit |X|-|-|-
 | Sanitäter | Einsätze annehmen können | ich Notfällen helfen kann | Einsätze annehmbar | Must |
 | Sanitäter | die Route zum Einsatz angezeigt bekommen | ich mich nicht unnötig verfahre | Route anzeigbar | Must |
 | Sanitäter | Patienteninfos abrufen können | ich den Patient bestmöglichst behandeln kann | Infos abrufbar | Must |
-| Sanitäter | freie Plätze in den Krankenhäuser finden | ich meinen Patienten in ohne Wartezeit einliefern kann | Frei Plätze anfragbar | Must |
 | Sanitäter | meinen Patienten im Krankenhaus anmelden | diese die Behandlung frühzeitig vorbereiten können | Patient kann angemeldet werden | Must |
 | Sanitäter | einen Einsatzbericht schreiben | eine Protokollierung des Einsatzes für spätere Fragen möglich ist | Bericht schreibbar | Must |
 | Sanitäter | einen Patienten für Tot erklären können | andere Dienste übernehmen können | Patient kann als tot erklärt werden | Must |
@@ -121,6 +141,7 @@ Prüfbarkeit |X|-|-|-
 | Leistelle | den Status der Einsatzkräfte überprüfen | ich Einsätze planen kann | Status überprüfbar | Must |
 | Leitstelle | Einsätze erstellen | diese übernommen werden können | Einsatz kann erstellt werden | Must |
 | Leitstelle | Einsätze zuteilen | eine bestmögliche Abarbeitung erfolgen kann | Einsatzkräfte können Einsatz zugeteilt werden | Must |
+| System | Einsätze erstellen | um Krankentransporte entgegennehmen zu können | Einsätze werden automatisch erstellt | Must |
 
 ### 
 
@@ -133,92 +154,143 @@ Prüfbarkeit |X|-|-|-
 
 ## 3.2 Softwarearchitektur
 
-- Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
+![Software Architektur](./img/SoftwareArchitektur.png)
 
 ## 3.3 Schnittstellen
 
 ### Einsatzbericht abfragen
-
+```json
 "sgse.models.rettungsdienst.einsatzbericht":{
 
-​	"description": "Returns a  specific mission report", 
+	"description": "Returns a  specific mission report", 
 
-​	"fields": [
+	"fields": [
 
-​		{"name": "missionID", "type": "string", "required": true}
+		{"name": "missionID", "type": "string", "required": true}
 
-​	]
+	]
 
 }
+```
 
 ### Notruf auslösen
 
+```json
+
 "sgse.models.rettungsdienst.emergency":{
 
-​	"description" : "Create an emergency",
+	"description" : "Create an emergency",
 
-​	"fields":[
+	"fields":[
 
-​		{"name": "location", "type": "string", "required": true},
+		{"name": "location", "type": "string", "required": true},
 
-​		{"name": "patientID", "type": "string", "required": false}
+		{"name": "patientID", "type": "string", "required": false}
 
-​	]
+	]
 
-}
+} 
+```
 
 ### Krankentransport anmelden
 
+```json
 "sgse.models.rettungsdienst.transport":{
 
-​	"description" : "Create a transport for a patient",
+	"description" : "Create a transport for a patient",
 
-​	"fields":[
+	"fields":[
 
-​		{"name": "location", "type": "string", "required": true},
+		{"name": "location", "type": "string", "required": true},
 
-​		{"name": "patientID", "type": "string", "required": true}
+		{"name": "patientID", "type": "string", "required": true}
 
-​	]
+	]
 
 }
+```
 
 ## 3.3.1 Ereignisse
 
-- In Event-gesteuerten Systemen: Definition der Ereignisse und deren Attribute
+#### Senden
+
+##### Patient verstorben
+
+Name Event: Patient verstorben
+
+Payload: PatientenID (BürgerID)
+
+##### Einsatzbericht verfügbar
+
+Name Event: EInsatzbericht Verfügbar
+
+Payload: EinsatzNr
+
+#### Empfangen
+
+##### Bürger verstorben
+
+Details siehe Bürgerbüro
 
 ## 3.4 Datenmodell 
 
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
-- Modellierung des physikalischen Datenmodells 
-  - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
+### Einsatzbericht
+
+```json
+"sgse.rettungsdienst.einsatz": {
+    "description": "An emergency report",
+    "fields": [
+        {"name": "einsatzID", "type": "string", "required": true},
+        {"name": "patientenID", "type": "string", "required": false},
+        {"name": "adresse", "type": "string", "required": true},
+        {"name": "einsatzbegin", "type": "Date", "required": true},
+        {"name": "einsatzende", "type": "Date", "required": false},
+        {"name": "sanitaeter", "type": "string", "required": true},
+        {"name": "patientenID", "type": "string", "required": false},
+        {"name": "symptome", "type": "string", "required": false},
+        {"name": "medikamente", "type": "string", "required": false}
+    ]
+}
+```
+
+#### Rollenzuweisung
+
+```json
+"sgse.rettungsdienst.user": {
+    "description": "Role for every user",
+    "fields": [
+        {"name": "userID", "type": "string", "required": true},
+        {"name": "role", "type": "int", "required": true}
+    ]
+}
+```
+
+##### ENUM-Rolle
+
+1 = Sanitäter
+
+2 = Leitstelle
 
 ## 3.5 Abläufe
 
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
-
-## 3.6 Entwurf
-
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
+![Aktivitätsdiagramm Einsatz](./img/AktiEinsatz.png)
 
 ## 3.7 Fehlerbehandlung 
 
-* Mögliche Fehler / Exceptions auflisten
+Keine Verbindung zum Sanitäter --> Neuen Sanitäter zuweisen
 
-## 3.8 Validierung
+Keine Verbindung zur Datenbank --> Daten zwischenspeichern
 
-* Relevante (Integrations)-Testfälle, die aus den Use Cases abgeleitet werden können
+Keine Verbindung zum Krankenhaus --> keine Fehlerbehandlung, Fehlermeldung ausgeben
+
+Keine Verbindung zum Hausarzt --> Fehlermeldung ausgeben
 
 # 4 Projektorganisation
 
 ## 4.1 Annahmen
 
-- Nicht durch den Kunden definierte spezifische Annahmen, Anforderungen und Abhängigkeiten
-- Verwendete Technologien (Programmiersprache, Frameworks, etc.)
+- Verwendete Technologien: HTML, JavaScript, Vue.js, sweetAlert2, Socket.io,node.js, MongoDB
 - Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen 
-- Einschränkungen, Betriebsbedingungen und Faktoren, die die Entwicklung beeinflussen (Betriebssysteme, Entwicklungsumgebung)
-- Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
 
 ## 4.2 Verantwortlichkeiten
 
@@ -227,7 +299,9 @@ Prüfbarkeit |X|-|-|-
 
 | Softwarebaustein | Person(en) |
 |----------|-----------|
-| Komponente A | Thomas Mustermann |
+| Frontend | Patrick Poppe |
+| Backend | Patrick Poppe |
+| Datenbank | Patrick Poppe |
 
 ### Rollen
 
@@ -240,27 +314,29 @@ Entwickelt graphische oder andere Benutzerschnittstellen, insbesondere das Layou
 #### Backend-Entwickler
 Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse Datenquellen und externe Dienste integriert und für die Anwendung bereitgestellt.
 
+#### Datenbank-Entwickler
+
+Implementiert und entwirft anhängende Datenbanken für den Dienst.
+
 ### Rollenzuordnung
 
 | Name     | Rolle     |
 |----------|-----------|
-| Thomas Mustermann | Softwarearchitekt |
+| Patrick Poppe | Softwarearchitekt |
+| Patrick Poppe | Frontend-Entwickler |
+| Patrick Poppe | Backend-Entwickler |
+| Patrick Poppe | Datenbank-Entwickler |
 
 
 ## 4.3 Grober Projektplan
 
-- Meilensteine
-
 ### Meilensteine
-* KW 43 (21.10)
+* 11.05.2020
   * Abgabe Pflichtenheft
-* KW 44 (28.10) / Projekt aufsetzen
-  * Repository Struktur
-* KW 45 (4.11) / Implementierung
-  * Implementierung #3 (Final)
-* KW 48 (18.12) / Abnahmetests
-  * manuelle Abnahmetestss
-  * Präsentation / Software-Demo
+* 08.06.2020
+  * Abgabe Prototyp
+* 03.07.2020
+  * Softwareübergabe
 
 # 5 Anhänge
 
