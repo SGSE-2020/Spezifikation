@@ -107,12 +107,12 @@ Begleitperson.
 
 ### Abgrenzung
 Das Softwaresystem erlaubt es Kunden nicht Parkplätze dauerhaft zu reservieren, zu blockieren, hinzuzufügen, zu 
-entfernen, Verlängerungen zu beantragen, Beschwerden und Verbesserungen einzureichen sowie Schäden und Vorfälle zu 
-melden. Ebenfalls ist das freie Wählen oder wechseln von Parkplätzen nicht vorgesehen, sodass lediglich das einfache 
-Zuordnen von Parkplätzen ermöglicht wird. Entitäten (andere Services) stellen vorhandene Parkflächen zentral über eine 
-Schnittstelle dem __Parkplatz__ Service bereit. Das Benachrichtigen von Kunden über freie, verfügbare, belegte, 
-stornierte, unverfügbare oder geänderte Parkplätze ist kein Bestandteil des Services. Eine Validierung von 
-Führerscheinen und Fahrberechtigungen ist nicht vorgesehen.
+entfernen, Verlängerungen zu beantragen, Verbesserungen einzureichen sowie Schäden und Vorfälle zu melden. Ebenfalls ist 
+das freie Wählen oder wechseln von Parkplätzen nicht vorgesehen, sodass lediglich das einfache Zuordnen von Parkplätzen 
+ermöglicht wird. Entitäten (andere Services) stellen vorhandene Parkflächen zentral über eine Schnittstelle dem 
+__Parkplatz__ Service bereit. Das Benachrichtigen von Kunden über freie, verfügbare, belegte, stornierte, unverfügbare 
+oder geänderte Parkplätze ist kein Bestandteil des Services. Eine Validierung von Führerscheinen und Fahrberechtigungen 
+ist nicht vorgesehen.
 
 # 2 Anforderungen
 
@@ -180,6 +180,7 @@ Anforderungen.
 ### Entität (Microservice)
 | Funktion                 | Als     | möchte ich                                      | so dass                                                      | Akzeptanz                                         | Priorität |
 | ------------------------ | ------- | ----------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------- | --------- |
+| Auslastung abfragen      | Entität | die Auslastung einer Parkfläche abfragen        | ich mir einen überblick über freie Plätze verschaffen kann   | Übersicht über Parkplatzauslastung erhalten       | Hoch      |
 | Parkplatz reservieren    | Entität | einen Parkplatz für meinen Kunden reservieren   | ein Parkplatz für meinen Kunden reserviert wird              | Parkplatz wird für Zeitraum reserviert            | Hoch      |
 | Reservierung stornieren  | Entität | eine existierende Reservierung Stornieren       | eine Reservierung wird für meinen Kunden storniert wird      | Reservierung wird storniert                       | Mittel    |
 | Parkfläche bereitstellen | Entität | Parkflächen dem Parkplatz-Service bereitstellen | eine Parkflächen dem Parkplatz-Service bereitgestellt wird   | Parkflächen sind im System verfügbar              | Hoch      |
@@ -189,6 +190,8 @@ Anforderungen.
 ### Kunde
 | Funktion                | Als     | möchte ich                                | so dass                                | Akzeptanz                              | Priorität |
 | ----------------------- | ------- | ----------------------------------------- | -------------------------------------- | -------------------------------------- | --------- |
+| Auslastung abfragen     | Kunde   | die Auslastung einer Parkfläche abfragen  | ich sehe, ob es freie Parkplätze gibt  | Übersicht der freien plätze erhalten   | Hoch      |
+| Falschparker melden     | Kunde   | Falschparker melden                       | Falschparker belangt werden            | Falschparkermeldung wird akzeptiert    | Hoch      |
 | Parkplatz reservieren   | Kunde   | einen Parkplatz für mich reservieren      | ein Parkplatz für mich reserviert wird | Parkplatz wird für Zeitraum reserviert | Hoch      |
 | Reservierungen anzeigen | Kunde   | meine reservierungen anzeigen lassen      | ich eine Übersicht erhalte             | Reservierungen werden angezeigt        | Mittel    |
 | Reservierung stornieren | Kunde   | eine existierende Reservierung Stornieren | meine Reservierung storniert wird      | Reservierung wird storniert            | Mittel    |
@@ -277,6 +280,8 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 ## 4.3 Grober Projektplan
 
 ### Meilensteine
+* __KW 19__ _(08.05.2020)_
+  * Fertigstellung Api-Schnittstellen-Spezifikation
 * __KW 20__ _(11.05.2020)_
   * Abgabe Software-Spezifikation
 * __KW 24__ _(08.06.2020)_
