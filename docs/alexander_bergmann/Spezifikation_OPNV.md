@@ -27,7 +27,7 @@ Ziel dieses Microservices ist die Bereitstellung einer einheitlichen Plattform i
 
 ## 2.2 Funktionale Anforderungen
 
-![UseCases Rettungsdienst](./img/UseCase.png)
+![UseCases Rettungsdienst](img/UseCase.png)
 
 
 
@@ -35,14 +35,17 @@ Ziel dieses Microservices ist die Bereitstellung einer einheitlichen Plattform i
 
 ### 2.3.1 Rahmenbedingungen
 
-```java
-// TODO: Normen, Standards, Protokolle, Hardware, externe Vorgaben
-```
+- Kommunikation mit anderen Microservices:
+  - Asynchron: RabbitMQ
+  - Synchron: gRPC
+- Sicherheit
+  - Verwendung von HTTPS, TLS
 
 ### 2.3.2 Betriebsbedingungen
-```java
-// TODO: Vorgaben des Kunden (z.B. Web Browser / Betriebssystem Versionen, Programmiersprache)
-```
+
+- Drei Instanzen für die Microservice Architektur
+  - Docker-fähig Linux Distribution
+  - optimierte Darstellung für Mobilgeräte
 
 ### 2.3.3 Qualitätsmerkmale
 
@@ -72,6 +75,12 @@ Prüfbarkeit |-|X|-|-
 
 ![startpage](img/mockups/startpage.png)
 
+![schedule](img/mockups/schedule.png)
+
+![tickets](img/mockups/tickets.png)
+
+![carsharing](img/mockups/carsharing.png)
+
 ## 2.5 Anforderungen im Detail
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
@@ -82,8 +91,6 @@ Prüfbarkeit |-|X|-|-
 | Bürger | mir die Fahrpläne von Bus und Bahn anzeigen lassen | ich weiß wann meine Linie abfährt und wo sie hält | Muss |
 | Bürger | mir die verfügbaren City Roller der Stadt auf eine Karte anzeigen lassen | ich erkennen kann ob ein freier City Roller in meiner Nähe zu Verfügung steht | Kann |
 | Bürger | mir die Carsharing Angebote anderer Bürger anschauen | ich mir eine Mitfahrgelegenheit suchen kann | Kann |
-| Unternehmen | Werbeflächen (Bus/Bahn) mieten können | Werbung für mein Unternehmen in der Stadt veröffentlichen kann | Muss |
-| Unternehmen | gemietete Werbeflächen (Bus/Bahn) wieder Freigeben können | ich diese nicht mehr bezahlen muss | Muss |
 | Bürger | freie City Roller mieten und freigeben können | ich diese für einen bestimmten Zeitraum nutzen kann | Kann |
 | Bürger | Fahrkarten für Bus und Bahn erwerben können | ich die öffentlichen Verkehrsmittel nutzen kann | Muss |
 | Bürger | eine Monatskarte erwerben können | ich bei häufiger Nutzung des ÖPNV eine Vergünstigung erhalte | Muss |
@@ -95,13 +102,11 @@ Prüfbarkeit |-|X|-|-
 
 ## 3.1 Systemübersicht
 
-![SysArch](/Users/alex/Git/sgse/Spezifikation/docs/alexander_bergmann/img/SysArch.png)
+![SysArch](img/SysArch.png)
 
 ## 3.2 Softwarearchitektur
 
-```java
-// TODO: Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
-```
+![SysArchDetail](img/SysArchDetail.png)
 
 ## 3.3 Schnittstellen
 
@@ -145,6 +150,7 @@ Beispiel: Bearbeiten eines Carsharing Angebots
     "description": "Request to change a existing carsharing offer ",
     "fields": [
       {"name": "offer_id", "type": "number", "required": true},
+      {"name": "user_id", "type": "number", "required": true},
       {"name": "date", "type": "date", "required": false},
       {"name": "time", "type": "datetime", "required": false},
       {"name": "passengers", "type": "number", "required": false},
@@ -175,23 +181,9 @@ Beispiel: Bearbeiten eines Carsharing Angebots
 
 ...
 
-
-
-## 3.3.1 Ereignisse
-
-```java
-// TODO: In Event-gesteuerten Systemen: Definition der Ereignisse und deren Attribute
-```
-
 ## 3.4 Datenmodell 
 
-```java
-// TODO: 
-
-// Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
-
-// Modellierung des physikalischen Datenmodells ER-Diagramm oder JSON-Schema
-```
+![Datamodel](img/Datamodel.png)
 
 ## 3.5 Abläufe
 
@@ -225,19 +217,8 @@ Beispiel: Bearbeiten eines Carsharing Angebots
 
 ## 4.1 Annahmen
 
-```java
-// TODO: 
-
-// Nicht durch den Kunden definierte spezifische Annahmen, Anforderungen und Abhängigkeiten
-
-// Verwendete Technologien (Programmiersprache, Frameworks, etc.)
-
-// Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen
-
-// Einschränkungen, Betriebsbedingungen und Faktoren, die die Entwicklung beeinflussen (Betriebssysteme, Entwicklungsumgebung)
-
-// Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
-```
+- Verwendete Technologien: HTML, CSS, JavaScript, Vue.js, GO ,node.js, PostgreSQL
+- Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen
 
 ## 4.2 Verantwortlichkeiten
 
