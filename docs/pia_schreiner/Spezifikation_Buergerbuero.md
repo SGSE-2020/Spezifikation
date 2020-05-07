@@ -10,14 +10,17 @@
 
 ## 1.1 Beschreibung
 
-Das Bürgerbüro ist ein Service innerhalb der Smart City. Er dient als Anlaufstelle für alle Bürgerinnen und Bürger die
-neu in die Stadt einziehen wollen oder schon in der Stadt wohnen. 
-Bürgerinnen und Bürger können sich mittels des Bürgerbüros in der Stadt anmelden, sich ummelden oder auch wieder abmelden.
-Außerdem bietet das Bürgerbüro Zugang zu allen wichtigen Informationen rund um die Smart City.
+Das Bürgerbüro ist ein Service innerhalb der Smart City. Er dient als Anlaufstelle für alle Bürgerinnen und Bürger die neu in die Stadt einziehen wollen oder schon in der Stadt wohnen. Jeder Interessent der in die Smart City einziehen möchte kann im Bürgerbüro ein zentrales Nutzerkonto eröffnen, welches für alles Dienstleister innerhalb der Smart City genutzt wird. Außerdem steht jedem die Einsicht auf das schwarze Brett offen, an welchem Infos über die neusten Informationen, sowie abgegebene Fundgestände zu finden sind. 
+
+Bürgerinnen und Bürger, welche bereits in der Smart City wohnen und ein Nutzerkonto besitzen können Ihre Daten anpassen, sowie eigene Aushänge für das schwarze Brett erstellen. Zudem können sie Fundgegenstände abgeben oder auch abholen.
 
 ## 1.2 Ziele
 
-Die zentrale Anlaufstelle für alle Bürger, spielt in jeder Gemeinde eine große Rolle. Es dient dazu, eine zentrale Organisation für alle Bürgerdaten zur Verfügung zu stellen, sowie die neusten Informationen aus anderen Services zu sammeln und auf einem schwarzen Brett auszuhängen. Ziel ist es, dass alle Bürger hier her kommen um Organisatorische Themen zu klären oder sich über neue Aushänge zu informieren.
+Die zentrale Anlaufstelle für alle Bürger, spielt in jeder Gemeinde eine große Rolle. Das Ziel des Bürgerbüros ist es eine zentrale Organisation zu bieten und die Informationen über alle Bürgerinnen und Bürger, sowie alle Informationen zentral zu sammeln und zur Verfügung zu stellen. 
+
+Weiterhin sollen alle Bürgerinnen und Bürger einfach und ohne viel Zeitaufwand Ihre eigenen Daten zu aktualisieren oder das schwarze Brett nutzen können um immer auf dem neusten Stand zu sein.
+
+Ziel ist es, dass alle Bürger hier her kommen um Organisatorische Themen zu klären oder sich über neue Aushänge zu informieren.
 
 # 2 Anforderungen
 
@@ -61,34 +64,31 @@ Zwischen Dienstleitern werden Messagequeues mit Hilfe von RabbitMQ für asynchro
 
 ### 2.3.2 Betriebsbedingungen
 
-- Verfügbar per Webzugriff mit einem aktuellen Browser (optimiert für Google Chrome)
-- optimierte Darstellung für Mobilgeräte
+Die Anwendung ist per Webzugriff mit einem aktuellen Browser (optimiert für Google Chrome) nutzbar. Für die Ansicht auf mobilen Endgeräten ist die Darstellung optimiert. 
 
 ### 2.3.3 Qualitätsmerkmale
 
-- Externe Qualitätsanforderungen (z.B. Performance, Sicherheit, Zuverlässigkeit, Benutzerfreundlichkeit)
-
 Qualitätsmerkmal | sehr gut | gut | normal | nicht relevant
 ---|---|---|---|---
-**Zuverlässigkeit** | | | | |
-Fehlertoleranz |X|-|-|-|
-Wiederherstellbarkeit |X|-|-|-|
-Ordnungsmäßigkeit |X|-|-|-|
-Richtigkeit |X|-|-|-|
-Konformität |-|X|-|-|
-**Benutzerfreundlichkeit** | | | | |
-Installierbarkeit |-|-|X|-|
-Verständlichkeit |X|-|-|-|
-Erlernbarkeit |-|X|-|-|
-Bedienbarkeit |-|X|-|-|
-**Performance** | | | | |
-Zeitverhalten |-|-|X|-|
-Effizienz|-|-|-|X|
-**Sicherheit** | | | | |
-Analysierbarkeit |X|-|-|-|
-Modifizierbarkeit |-|-|-|X|
-Stabilität |X|-|-|-|
-Prüfbarkeit |X|-|-|-|
+**Zuverlässigkeit** | | | | 
+Fehlertoleranz |X|-|-|-
+Wiederherstellbarkeit |X|-|-|-
+Ordnungsmäßigkeit |X|-|-|-
+Richtigkeit |X|-|-|-
+Konformität |-|X|-|-
+**Benutzerfreundlichkeit** | | | | 
+Installierbarkeit |-|-|-|X
+Verständlichkeit |X|-|-|-
+Erlernbarkeit |X|-|-|-
+Bedienbarkeit |X|-|-|-
+**Performance** | | | | 
+Zeitverhalten |-|X|-|-
+Effizienz|-|-|X|-
+**Sicherheit** | | | | 
+Analysierbarkeit |-|-|-|X
+Modifizierbarkeit |-|-|X|-
+Stabilität |-|X|-|-
+Prüfbarkeit |X|-|-|-
 
 ## 2.4 Graphische Benutzerschnittstelle
 
@@ -142,6 +142,12 @@ Prüfbarkeit |X|-|-|-|
 
 
 
+### Zustandsdiagramm
+
+![Mitarbeiter_](./img/ZustandsdiagrammGUI.svg)
+
+
+
 ## 2.5 Anforderungen im Detail
 
 ### Interessent
@@ -188,7 +194,7 @@ Prüfbarkeit |X|-|-|-|
 
 ## 3.2 Softwarearchitektur
 
-- Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
+![Interessent_Foyer](./img/SWArchitecture.svg)
 
 ## 3.3 Schnittstellen
 
@@ -258,15 +264,50 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzun
 ### Senden
 
 - Nutzer verifizieren
-
 - Nutzerdaten rausgeben
 
-  
+### Messagequeues mit RabbitMQ
+
+- Bürgerdaten haben sich aktualisiert (Adressänderung, Namensänderung)
+- Nutzer wurde für tot erklärt (Nutzerkonto wurde deaktiviert)
 
 ## 3.4 Datenmodell 
 
-- Nutzer
-- Aushang
+### Nutzer
+
+```json
+"sgse.models.buergerbuero.user":{
+	"description": "Represents a dataset for one user", 
+	"fields": [
+		{"name": "uid", "type": "string", "required": true},
+        {"name": "prename", "type": "string", "required": true},
+        {"name": "lastname", "type": "string", "required": true},
+        {"name": "email", "type": "string", "required": true},
+        {"name": "birthdate", "type": "date", "required": false},
+        {"name": "street", "type": "string", "required": true},
+        {"name": "streetnr", "type": "int", "required": true},
+        {"name": "zipcode", "type": "int", "required": true},
+        {"name": "location", "type": "string", "required": true},
+        {"name": "phonenr", "type": "string", "required": false}
+	]
+}
+```
+
+### Aushang
+
+```json
+"sgse.models.buergerbuero.announcement":{
+	"description": "Represents an anouncement on the blackboard", 
+	"fields": [
+		{"name": "id", "type": "string", "required": true},
+        {"name": "title", "type": "string", "required": true},
+        {"name": "text", "type": "string", "required": true},
+        {"name": "type", "type": "string", "required": true}
+	]
+}
+```
+
+
 
 ## 3.5 Abläufe
 
@@ -279,34 +320,40 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzun
 
 ## 3.7 Fehlerbehandlung 
 
-* Mögliche Fehler / Exceptions auflisten
-
-## 3.8 Validierung
-
-* Relevante (Integrations)-Testfälle, die aus den Use Cases abgeleitet werden können
+### 
 
 # 4 Projektorganisation
 
 ## 4.1 Annahmen
 
-- Nicht durch den Kunden definierte spezifische Annahmen, Anforderungen und Abhängigkeiten
-- Verwendete Technologien (Programmiersprache, Frameworks, etc.)
-- Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen 
-- Einschränkungen, Betriebsbedingungen und Faktoren, die die Entwicklung beeinflussen (Betriebssysteme, Entwicklungsumgebung)
-- Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
+### Verwendete Technologien
+
+- HTML
+- JavaScript
+- TypeScript
+- SQL
+
+### Aufteilung
+
+- Unterordner im Repository gemäß Software- und Systemarchitektur und Softwarebausteinen 
+  - NodeJS Server
+  - Angular Webanwendung
+  - PostgreSQL Database
 
 
 ## 4.2 Grober Projektplan
-
-- Meilensteine
 
 ### Meilensteine
 * __KW 20__ _(11.05.2020)_
   * Abgabe Software-Spezifikation
 * __KW 24__ _(08.06.2020)_
-  * Abgabe Softwareprodukt (Version 0)
+  * Fertigstellung und Präsentation vom Prototyp
+* **KW 27**  (30.06.2020)
+  * Fertigstellung vom Mikro-Service
+* **KW 27** (02.07.2020)
+  * Einbindung ist vollständig
 * __KW 27__ _(03.07.2020)_
-  * Abgabe Softwareprodukt
+  * Finale Abgabe und Präsentation
 
 # 5 Anhänge
 
