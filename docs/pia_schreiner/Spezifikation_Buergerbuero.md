@@ -6,8 +6,6 @@
 
 
 
-[TOC]
-
 # 1 Einführung
 
 ## 1.1 Beschreibung
@@ -98,37 +96,37 @@ Prüfbarkeit |X|-|-|-|
 
 #### Foyer Ansicht
 
-![Interessent_Foyer](D:\GIT\SGSE\Spezifikation\docs\pia_schreiner\img\mockups\Interessent_Foyer.png)
+![Interessent_Foyer](./img/mockups/Interessent_Foyer.png)
 
 #### Aushänge Übersicht
 
-![Interessent_Aushaenge](D:\GIT\SGSE\Spezifikation\docs\pia_schreiner\img\mockups\Interessent_Aushänge.png)
+![Interessent_Aushaenge](./img/mockups/Interessent_Aushänge.png)
 
 #### Detailansicht von Aushang
 
-![Interessent_Aushangdetail](D:\GIT\SGSE\Spezifikation\docs\pia_schreiner\img\mockups\Interessent_Aushänge_Detail.png)
+![Interessent_Aushangdetail](./img/mockups/Interessent_Aushänge_Detail.png)
 
 #### Registrierung
 
-![Interessent_Registrierung](D:\GIT\SGSE\Spezifikation\docs\pia_schreiner\img\mockups\Foyer_Anmeldung.png)
+![Interessent_Registrierung](./img/mockups/Foyer_Anmeldung.png)
 
 #### Anmeldung
 
-![Interessent_Anmeldung](D:\GIT\SGSE\Spezifikation\docs\pia_schreiner\img\mockups\Foyer_Login.png)
+![Interessent_Anmeldung](./img/mockups/Foyer_Login.png)
 
 ### Bürger
 
 #### Nutzerkonto - Übersicht
 
-![Buerger_Nutzerkonto](D:\GIT\SGSE\Spezifikation\docs\pia_schreiner\img\mockups\Buerger_Konto.png)
+![Buerger_Nutzerkonto](./img/mockups/Buerger_Konto.png)
 
 #### Nutzerkonto - Daten anpassen
 
-![Buerger_Nutzerkonto_DatenAnpassen](D:\GIT\SGSE\Spezifikation\docs\pia_schreiner\img\mockups\Buerger_Konto_DatenAnpassen.png)
+![Buerger_Nutzerkonto_DatenAnpassen](./img/mockups/Buerger_Konto_DatenAnpassen.png)
 
 #### Nutzerkonto - Neuen Aushang erstellen
 
-![Buerger_Nutzerkonto_neuerAushang](D:\GIT\SGSE\Spezifikation\docs\pia_schreiner\img\mockups\Buerger_neuerAushang.png)
+![Buerger_Nutzerkonto_neuerAushang](./img/mockups/Buerger_neuerAushang.png)
 
 
 
@@ -136,11 +134,11 @@ Prüfbarkeit |X|-|-|-|
 
 #### Mitarbeiter - Aushänge Übersicht
 
-![Mitarbeiter_](D:\GIT\SGSE\Spezifikation\docs\pia_schreiner\img\mockups\Mitarbeiter_Aushänge.png)
+![Mitarbeiter_](./img/mockups/Mitarbeiter_Aushänge.png)
 
 #### Mitarbeiter - Work Stack
 
-![Mitarbeiter_](D:\GIT\SGSE\Spezifikation\docs\pia_schreiner\img\mockups\Mitarbeiter_Work.png)
+![Mitarbeiter_](./img/mockups/Mitarbeiter_Work.png)
 
 
 
