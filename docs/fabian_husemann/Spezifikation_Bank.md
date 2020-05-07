@@ -4,7 +4,9 @@
 
 * Autor: Fabian Husemann
 
-  
+* Repository: [Repo](https://github.com/SGSE-2020/MS_Bank.git)
+
+   
 
 # 1 Einführung
 
@@ -39,17 +41,56 @@
 
 | Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
 |---|---|---|---|---|
-|  |   |   |    |   |
+| Kundenberatung | Fabian Husemann | Tel.: 0400805 4646 <br />Email: fabian@husemann-web.de<br />von 8 - 20 Uhr erreichbar | Kennt sich mit dem Bankportal gut aus | Gute Kundenübersicht,  Einfacher Kontakt mit Kunden |
 
 ## 2.2 Funktionale Anforderungen
+
+## ![uc diagram](./img/Benutzer_Story.jpg)
+
+![uc diagram](./img/Admin_Story.jpg)
+
+
 
 ## 2.3 Nicht-funktionale Anforderungen 
 
 ### 2.3.1 Rahmenbedingungen
 
+* Kommunikation
+  * Synchron: gRPC
+  * Asynchron: RabbitMQ
+* WebAnwendung
+
 ### 2.3.2 Betriebsbedingungen
 
+* Um auf den MicroService: Bank zu zugreifen, muss über einen Browser die URL aufgerufen werden.
+
+* Als Client kann dabei ein Computer oder auch eine Handy Browser benutzt werden.
+
+  
+
 ### 2.3.3 Qualitätsmerkmale
+
+| Qualitätsmerkmal           | sehr gut | gut  | normal | nicht relevant |
+| -------------------------- | -------- | ---- | ------ | -------------- |
+| **Zuverlässigkeit**        |          |      |        |                |
+| Fehlertoleranz             | X        | -    | -      | -              |
+| Wiederherstellbarkeit      | -        | -    | X      | -              |
+| Ordnungsmäßigkeit          | X        | -    | -      | -              |
+| Richtigkeit                | X        | -    | -      | -              |
+| Konformität                | -        | X    | -      | -              |
+| **Benutzerfreundlichkeit** |          |      |        |                |
+| Installierbarkeit          | -        | X    | -      | -              |
+| Verständlichkeit           | X        | -    | -      | -              |
+| Erlernbarkeit              | -        | -    | X      | -              |
+| Bedienbarkeit              | -        | X    | -      | -              |
+| **Performance**            |          |      |        |                |
+| Zeitverhalten              | -        | X    | -      | -              |
+| Effizienz                  | -        | X    | -      | -              |
+| **Sicherheit**             |          |      |        |                |
+| Analysierbarkeit           | -        | -    | X      | -              |
+| Modifizierbarkeit          | -        | -    | X      | -              |
+| Stabilität                 | X        | -    | -      | -              |
+| Prüfbarkeit                | -        | X    | -      | -              |
 
 ## 2.4 Graphische Benutzerschnittstelle
 
@@ -110,21 +151,47 @@
 | Administrator | Kunden Konten einsehen                                       | einen Überblick über die Kunden Konten habe                  | Admin Zugriff | hoch      |
 | Administrator | Kunden Konten bearbeiten                                     | der Kunde sein Konto einstellen kann                         | Admin Zugriff | hoch      |
 
-## User Storys
-
-## ![uc diagram](./img/Benutzer_Story.jpg)
-
-![uc diagram](./img/Admin_Story.jpg)
-
-
-
 # 3 Technische Beschreibung
 
 ## 3.1 Systemübersicht
 
+![Systemübersicht](./img/Systemübersicht.png)
+
 ## 3.2 Softwarearchitektur
 
+![Softwarearchitektur](./img/Systemarchitektur.png)
+
 ## 3.3 Schnittstellen
+
+### Überweisung tätigen
+
+```json
+"bank.ueberweisung":{
+    "iban": "DE46 4585 4585 2000 5145 20",
+    "purpose": "Einkauf",  
+    
+    "dest_name": "Supermarkt",
+    "dest_iban": "DE46 7845 2998 2554 8461 20",
+    "amount": "20.00",
+}
+```
+
+### Terminale Überweisung tätigen
+
+```json
+"bank.ueberweisung":{
+    "iban": "DE46 4585 4585 2000 5145 20",
+    "purpose": "Einkauf",  
+    
+    "name": "Supermarkt",
+    "dest_iban": "DE46 7845 2998 2554 8461 20",
+    "amount": "20.00",
+    "start_date": "07.05.2020",
+    "repeat": "monthly | daily | yearly"
+}
+```
+
+
 
 * Zugriff auf jedes Microservice mit Geldanbindung
 
