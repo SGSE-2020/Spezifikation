@@ -8,4 +8,5 @@
 * [Restaurants](./andre_kirsch/Spezifikation_Restaurants.md)
 * [Strassenverkehrsamt](./benedikt_struzek/Spezifikation_Strassenverkehrsamt.md)
 * [ÖPNV](./alexander_bergmann/Spezifikation_OPNV.md)
+* [Bank](./fabian_husemann/Spezifikation_Bank.md)
 
