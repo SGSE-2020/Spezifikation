@@ -1,8 +1,8 @@
-# Anforderungs- und Entwurfsspezifikation ("Pflichtenheft")
+# ‚Anforderungs- und Entwurfsspezifikation ("Pflichtenheft")
 
 * __Titel:__ SmartCity-ÖPNV
 * __Author:__ Alexander Bergmann
-* __Source Code:__ [Code Repository](https://github.com/SGSE-2020/MS_OPNV.git)
+* __Source Code:__ [Repo MS_OPNV](https://github.com/SGSE-2020/MS_OPNV.git), [Repo Spezifikation](https://github.com/SGSE-2020/Spezifikation/tree/master/docs/alexander_bergmann), [Repo Projekttagebuch](https://github.com/SGSE-2020/Praktikumstagebuch/tree/master/alexander_bergmann)
 
 # 1 Einführung
 
@@ -10,25 +10,9 @@
 
 Die Plattform für den öffentlichen Personennahverkehr der Smart City bietet nicht nur die möglichkeit zum Erwerb von Fahrkarten für Buse und Bahnen, sondern bezieht auch moderne Fortbewegungsmöglichkeiten ein. Das mieten von City Rollern oder Angebote zum Carsharing können einfach über dieses Portal verwaltet werden. Zudem ist das Informationsangebot rund um den allgemeinen Personenverkehr in der Stadt sehr Vielfältig. Es werden Informationen zu den Verfügbaren Taxiunternehmen der Stadt aufgelistet und allgemeine Verkehrsinformationen angezeigt. Außerdem können freie Parkplätze schnell und einfach eingesehen werden. Die Werbeflächen auf Bussen und Bahnen können Unternehmen der Stadt ebenfalls über dieses Portal buchen. Der Micro Service ÖPNV dient dem Bürger der Smart City als zentrale Anlaufstelle in Sachen Fortbewegung.
 
-* Projektname
-* Darstellung der Produktvision in Prosa (5-10 Sätze)
-* Ziele
-* Für wen ist das Produkt/der Service?
-* Was ist das Bedürfnis? 
-* Was ist das Produkt/der Service?
-* Warum sollte der Kunde dieses Produkt/den Service „kaufen“ oder nutzen?
-* Im Gegensatz zu welchen anderen Produkten/Services steht dies?
-* Was macht dieses Produkt/der Service anders?
-* Warum ist das Projekt sinnvoll?
-* Welche Stakeholder sind betroffen und wie stehen Sie zu der Projektidee?
-* Welche alternativen Lösungsideen existieren für den identifizierten Bedarf?
-* Wie hoch sind Aufwand und erwarteter Nutzen und stehen sie in einem sinnvollen Verhältnis? (Lohnt sich das Projekt?)
-* Verfügen wir über die notwendigen Kompetenzen? (Umsetzbarkeit)
-* Welche Risiken und negativen Nebeneffekte sind zu erwarten?
-
 ## 1.2 Ziele
 
-Die Alarmierung von Einsatzkräften spielt in vielen Gemeinden eine große Rolle. Eine lückenlose Alarmierungsmöglichkeit ohne die gesamte Bevölkerung zu unterrichten sind wichtige Eigenschaften eines modernen Systems. Das System soll die Mitarbeiter des Rettungsdienstes bei Einsätzen unterstützen. Hierzu zählt die Aufnahme eines Notfalls, die Benachrichtigung des Rettungswagen, sowie Maßnahmen vor Ort. Hierzu zählt das Abrufen der Patientenakte oder das Finden eines freien Krankenhauses. Im Abschluss kann der Einsatz mit einem Einsatzbericht abgeschlossen werden. 
+Ziel dieses Microservices ist die Bereitstellung einer einheitlichen Plattform in Sachen Personennahverkehr für die Bürger der Smart City. Außerdem ist die vollständig digitale Abwicklung der Angebote umzusetzen(digitale Tickets für Bus/ Bahn, ... ), da man so etwas gegen die Umweltbelastung der Stadt tun kann.
 
 # 2 Anforderungen
 
@@ -36,7 +20,8 @@ Die Alarmierung von Einsatzkräften spielt in vielen Gemeinden eine große Rolle
 
 | Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
 |---|---|---|---|---|
-|  |      |  |  |  |
+| Bürgermeister der Smart City | Konrad Bürgermeister | boss@smartcity.io | Kennt die Probleme des ÖPNV und die Politischen Interessen | Möchte das die Bürger zufrieden mit dem Angebot des ÖPNV sind |
+| Leiter ÖPNV | Bernd Bus | bb@opnv.smartcity.io | 25 Jahre Erfahrung in ÖPNV Verwaltung | Zufriedene Kunden und Angestellte |
 
 
 
@@ -50,11 +35,14 @@ Die Alarmierung von Einsatzkräften spielt in vielen Gemeinden eine große Rolle
 
 ### 2.3.1 Rahmenbedingungen
 
-- Normen, Standards, Protokolle, Hardware, externe Vorgaben
+```java
+// TODO: Normen, Standards, Protokolle, Hardware, externe Vorgaben
+```
 
 ### 2.3.2 Betriebsbedingungen
-
-- Vorgaben des Kunden (z.B. Web Browser / Betriebssystem Versionen, Programmiersprache)
+```java
+// TODO: Vorgaben des Kunden (z.B. Web Browser / Betriebssystem Versionen, Programmiersprache)
+```
 
 ### 2.3.3 Qualitätsmerkmale
 
@@ -82,10 +70,7 @@ Prüfbarkeit |-|X|-|-
 
 ## 2.4 Graphische Benutzerschnittstelle
 
-- GUI-Mockups passend zu User Stories
-- Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
-- Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
+![startpage](img/mockups/startpage.png)
 
 ## 2.5 Anforderungen im Detail
 
@@ -110,63 +95,153 @@ Prüfbarkeit |-|X|-|-
 
 ## 3.1 Systemübersicht
 
-- Systemarchitekturdiagramm ("Box-And-Arrow" Diagramm)
-- Kommunikationsprotokolle, Datenformate
+![SysArch](/Users/alex/Git/sgse/Spezifikation/docs/alexander_bergmann/img/SysArch.png)
 
 ## 3.2 Softwarearchitektur
 
-- Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
+```java
+// TODO: Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
+```
 
 ## 3.3 Schnittstellen
 
-- Schnittstellenbeschreibung (API)
-- Auflistung der nach außen sichtbaren Schnittstelle der Softwarebausteine
+Beispiel: Erstellen eines Carsharing Angebots mit GeoJSON
+
+````json
+"sgse.model.opnv.create_carsharing_offer": {
+    "description": "Request to create a carsharing offer ",
+    "fields": [
+      {"name": "user_id", "type": "number", "required": true},
+      {"name": "date", "type": "date", "required": true},
+      {"name": "time", "type": "datetime", "required": true},
+      {"name": "passengers", "type": "number", "required": true},
+      {"name": "route", 
+      	"type": {
+      	"type": "FeatureCollection",
+          "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "Arbeitesstelle",
+              "address": "Hochstr. 11",
+              "marker-color": "#008800",
+              "marker-symbol": "commercial"
+            },
+            "geometry": {
+              "type": "Line",
+              "coordinates": [7.0069, 51.1623],[16.0000, 32.1623]
+            }
+          }
+        ]
+      	}, 
+      	"required": true}
+    ]
+}
+````
+Beispiel: Bearbeiten eines Carsharing Angebots
+
+````json
+"sgse.model.opnv.change_carsharing_offer": {
+    "description": "Request to change a existing carsharing offer ",
+    "fields": [
+      {"name": "offer_id", "type": "number", "required": true},
+      {"name": "date", "type": "date", "required": false},
+      {"name": "time", "type": "datetime", "required": false},
+      {"name": "passengers", "type": "number", "required": false},
+      {"name": "route", 
+      	"type": {
+      	"type": "FeatureCollection",
+          "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "Arbeitesstelle",
+              "address": "Hochstr. 11",
+              "marker-color": "#008800",
+              "marker-symbol": "commercial"
+            },
+            "geometry": {
+              "type": "Line",
+              "coordinates": [7.0069, 51.1623],[16.0000, 32.1623]
+            }
+          }
+        ]
+      	}, 
+      	"required": true}
+    ]
+}
+````
+
+
+...
+
+
 
 ## 3.3.1 Ereignisse
 
-- In Event-gesteuerten Systemen: Definition der Ereignisse und deren Attribute
+```java
+// TODO: In Event-gesteuerten Systemen: Definition der Ereignisse und deren Attribute
+```
 
 ## 3.4 Datenmodell 
 
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
-- Modellierung des physikalischen Datenmodells 
-  - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
+```java
+// TODO: 
+
+// Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
+
+// Modellierung des physikalischen Datenmodells ER-Diagramm oder JSON-Schema
+```
 
 ## 3.5 Abläufe
 
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
+```java
+// TODO: 
+
+// Aktivitätsdiagramme für relevante Use Cases
+
+// Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
+```
 
 ## 3.6 Entwurf
 
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
+```java
+// TODO: Detaillierte UML-Diagramme für relevante Softwarebausteine
+```
 
 ## 3.7 Fehlerbehandlung 
 
-* Mögliche Fehler / Exceptions auflisten
+```java
+// TODO: Mögliche Fehler / Exceptions auflisten
+```
 
 ## 3.8 Validierung
 
-* Relevante (Integrations)-Testfälle, die aus den Use Cases abgeleitet werden können
+```java
+// TODO: Relevante (Integrations)-Testfälle, die aus den Use Cases abgeleitet werden können
+```
 
 # 4 Projektorganisation
 
 ## 4.1 Annahmen
 
-- Nicht durch den Kunden definierte spezifische Annahmen, Anforderungen und Abhängigkeiten
-- Verwendete Technologien (Programmiersprache, Frameworks, etc.)
-- Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen 
-- Einschränkungen, Betriebsbedingungen und Faktoren, die die Entwicklung beeinflussen (Betriebssysteme, Entwicklungsumgebung)
-- Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
+```java
+// TODO: 
+
+// Nicht durch den Kunden definierte spezifische Annahmen, Anforderungen und Abhängigkeiten
+
+// Verwendete Technologien (Programmiersprache, Frameworks, etc.)
+
+// Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen
+
+// Einschränkungen, Betriebsbedingungen und Faktoren, die die Entwicklung beeinflussen (Betriebssysteme, Entwicklungsumgebung)
+
+// Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
+```
 
 ## 4.2 Verantwortlichkeiten
 
-- Zuordnung von Personen zu Softwarebausteinen aus Kapitel 3.1 und 3.2
-- Rollendefinition und Zuordnung
-
-| Softwarebaustein | Person(en) |
-|----------|-----------|
-| Komponente A | Thomas Mustermann |
+Für alle Softwarebausteine und Komponenten des Microservice ist Alexander Bergmann zuständig.
 
 ### Rollen
 
@@ -183,35 +258,24 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 
 | Name     | Rolle     |
 |----------|-----------|
-| Thomas Mustermann | Softwarearchitekt |
-
+| Alexander Bergmann | Softwarearchitekt |
+| Alexander Bergmann | Backend-Entwickler |
+| Alexander Bergmann | Frontend-Entwickler |
 
 ## 4.3 Grober Projektplan
 
-- Meilensteine
-
 ### Meilensteine
-* KW 43 (21.10)
-  * Abgabe Pflichtenheft
-* KW 44 (28.10) / Projekt aufsetzen
-  * Repository Struktur
-* KW 45 (4.11) / Implementierung
-  * Implementierung #3 (Final)
-* KW 48 (18.12) / Abnahmetests
-  * manuelle Abnahmetestss
-  * Präsentation / Software-Demo
+
+- KW 43 (11.05)
+  - Abgabe Pflichtenheft
+- KW 45 (08.06) 
+  - Implementierung
+- KW 48 (03.07)
+  - manuelle Abnahmetestss
+  - Präsentation / Software-Demo
+
 
 # 5 Anhänge
-
-## 5.1 Glossar 
-
-- Definitionen, Abkürzungen, Begriffe
-
-## 5.2 Referenzen
-
-- Handbücher, Gesetze
-
-## 5.3 Index
 
 
 
