@@ -53,6 +53,36 @@
 
 ## 2.4 Graphische Benutzerschnittstelle
 
+#### Login
+
+![Bank Login](./img/Login.png)
+
+#### Überschicht ( Hauptseite )
+
+![Kontoübersicht](./img/Übersicht.png)
+
+#### Kontoübersicht
+
+![](./img/Kontoübersicht.png)
+
+#### Konteneinstellungen
+
+![Kontoübersicht](./img/Kontoeinstellung.png)
+
+#### Überweisungen
+
+![Kontoübersicht](./img/Überweisungen.png)
+
+#### Ein-/Auszahlungen
+
+![Kontoübersicht](./img/Ein-_Auszahlung.png)
+
+#### Kontakt
+
+![Kontoübersicht](./img/Kontakt.png)
+
+
+
 ## 2.5 Anforderungen im Detail
 
 #### Benutzer
