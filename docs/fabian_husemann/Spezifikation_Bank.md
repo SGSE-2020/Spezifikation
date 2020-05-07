@@ -1,8 +1,10 @@
 # Anforderungs- und Entwurfsspezifikation - SmartCity - Bank
 
 * Titel: SmartCity - Bank
+
 * Autor: Fabian Husemann
-* 
+
+  
 
 # 1 Einführung
 
@@ -77,6 +79,14 @@
 | Administrator | mir eine Liste von Kunden anzeigen die sich Geld leihen wollen | ich ihre Konten einsehen kann und ihn ein Darlehen gewähren kann. | Admin Zugriff | mittel    |
 | Administrator | Kunden Konten einsehen                                       | einen Überblick über die Kunden Konten habe                  | Admin Zugriff | hoch      |
 | Administrator | Kunden Konten bearbeiten                                     | der Kunde sein Konto einstellen kann                         | Admin Zugriff | hoch      |
+
+## User Storys
+
+## ![uc diagram](./img/Benutzer_Story.jpg)
+
+![uc diagram](./img/Admin_Story.jpg)
+
+
 
 # 3 Technische Beschreibung
 
