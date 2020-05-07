@@ -6,32 +6,17 @@
 
 # 1 Einführung
 
-Das Krankehaus in der SmartCity stellt einen wesentlichen Faktor im Bereich der öffentlichen ärztlichen Versorgung dar. Ein zuverlässiges System kann die ärztliche Versorgung eines Patienten begleiten, um einen effizienten Informationsaustausch zu gewährleisten.  Somit kann eine Informationskette im Zusammenspiel mit Hausarzt und Rettungsdienst über die komplette Behandlungsphase des Patienten erfolgen. Das System dient zusätzlich als anlaufstelle für Bürger, die sich über Veranstelltungen im Krankehaus und dessen Abteilungen informieren wollen.
-
 ## 1.1 Beschreibung
 
-* Projektname
-* Darstellung der Produktvision in Prosa (5-10 Sätze)
-* Ziele
-* Für wen ist das Produkt/der Service?
-* Was ist das Bedürfnis? 
-* Was ist das Produkt/der Service?
-* Warum sollte der Kunde dieses Produkt/den Service „kaufen“ oder nutzen?
-* Im Gegensatz zu welchen anderen Produkten/Services steht dies?
-* Was macht dieses Produkt/der Service anders?
-* Warum ist das Projekt sinnvoll?
-* Welche Stakeholder sind betroffen und wie stehen Sie zu der Projektidee?
-* Welche alternativen Lösungsideen existieren für den identifizierten Bedarf?
-* Wie hoch sind Aufwand und erwarteter Nutzen und stehen sie in einem sinnvollen Verhältnis? (Lohnt sich das Projekt?)
-* Verfügen wir über die notwendigen Kompetenzen? (Umsetzbarkeit)
-* Welche Risiken und negativen Nebeneffekte sind zu erwarten?
+Das Krankehaus in der SmartCity stellt einen wesentlichen Faktor im Bereich der öffentlichen ärztlichen Versorgung dar. Ein zuverlässiges System kann die ärztliche Versorgung eines Patienten begleiten, um einen effizienten Informationsaustausch zu gewährleisten.  Somit kann eine Informationskette im Zusammenspiel mit Hausarzt und Rettungsdienst über die komplette Behandlungsphase des Patienten erfolgen. Das System dient zusätzlich als Anlaufstelle für Bürger, die sich über Veranstelltungen im Krankehaus und dessen Abteilungen informieren wollen.
 
 ## 1.2 Ziele
 
-- Anwendungsbereiche, Motivation, Umfang, Alleinstellungsmerkmale, Marktanforderungen
-- Informationen zu Zielbenutzergruppen und deren Merkmale (Bildung, Erfahrung, Sachkenntnis)
-- Abgrenzung (Was ist das Softwaresystem _nicht_)
-- ggfs. SWOT-Analyse
+Das System dient als schnittstellen zwischen Bürgern der SmartCity und dem medizinischen Personal des Krankenhauses. Es richtet sich somit an Bürger und Personal gleichermaßen und soll die Kommunikation zwischen diesen vördern.
+
+Bürger sollen über im Krankenhaus stattfindene Veranstalltungen informiert werden und an diesen Teilnehmen können. Die Bürger sollen sich ebenfalls über das Personal, Fachbereiche und medizinische Ausrüstung informieren und Termine vereinbareren können.
+
+Das System soll nicht der kompletten Verwaltung eines Krankenhauses dienen. Es ist dementspechend nicht für das Erstellen eines OP-Planes, der Verwaltung des technischen Personals und ähnlichem zuständig.
 
 # 2 Anforderungen
 
@@ -39,16 +24,8 @@ Das Krankehaus in der SmartCity stellt einen wesentlichen Faktor im Bereich der 
 
 | Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
 |---|---|---|---|---|
-|  |   |   |    |   |
-
-
-### Beispiel
-
-| Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
-|---|---|---|---|---|
-| Leiter der Bibliothek, Fachlicher Entscheider  |  Herr Bauer | Tel. 409000, Von 9-19 Uhr telefonisch erreichbar, Mitarbeit zu 30% möglich, Nürnberg  | Kennt das Altsystem aus der Anwendersicht, soll mit dem System arbeiten  | Vereinfachung der Ausleihprozesse  |
-| Administrator, Informationslieferant bzgl. Wartungsanforderungen  | Herr Heiner  | Heiner@gmx.net, Per E-Mail, immer erreichbar, Verfügbarkeit 50%, Nürnberg  | Vertraut mit vergleichbarer Verwaltungssoftware   |  Stabiles System, geringer Wartungsaufwand |
-| Product-Owner, Entscheider - als Koordinator der Stakeholderanforderungen   | Paul Ottmer  |  po@ottmer.de, Per E-Mail und tel. tagsüber, Verfügbarkeit 100%, Nürnberg  | Koordinator für die Inputs der Stakeholder  | ROI des Systems sicherstellen  |
+| Chefarzt der Dermatologie | Prof. Dr. Heinrich Heiler | Tel. 555 4312, E-Mail: heiler@krankenhaus.de, Von 6-20 Uhr telefonisch und per Mail erreichbar | Kennt das Altsystem, soll mit dem System arbeiten | Übersicht über die eigenen Patienten |
+| Bürger von SmartCity | Kurt Knoche | Tel. 555 336622, E-Mail: kKnoche@city.de, Von 7-18 Uhr telefonisch und per Mail erreichbar | Kennt das Altsystem | Vereinvaren eines Termins zur Nachbehandlung |
 
 ## 2.2 Funktionale Anforderungen
 
@@ -58,11 +35,13 @@ Das Krankehaus in der SmartCity stellt einen wesentlichen Faktor im Bereich der 
 
 ### 2.3.1 Rahmenbedingungen
 
-- Normen, Standards, Protokolle, Hardware, externe Vorgaben
+- Kommunikation mit anderen Microservices:
+  - Asynchron: RabbitMQ
+  - Synchron: gRPC
 
 ### 2.3.2 Betriebsbedingungen
 
-- Vorgaben des Kunden (z.B. Web Browser / Betriebssystem Versionen, Programmiersprache)
+- Verfügbar per Webzugriff mit einem aktuellen Browser (z.B. Google Chrome 81.0.4044)
 
 ### 2.3.3 Qualitätsmerkmale
 
@@ -70,32 +49,39 @@ Das Krankehaus in der SmartCity stellt einen wesentlichen Faktor im Bereich der 
 
 Qualitätsmerkmal | sehr gut | gut | normal | nicht relevant
 ---|---|---|---|---
-**Zuverlässigkeit** | | | | |
-Fehlertoleranz |X|-|-|-|
-Wiederherstellbarkeit |X|-|-|-|
-Ordnungsmäßigkeit |X|-|-|-|
-Richtigkeit |X|-|-|-|
-Konformität |-|X|-|-|
-**Benutzerfreundlichkeit** | | | | |
-Installierbarkeit |-|-|X|-|
-Verständlichkeit |X|-|-|-|
-Erlernbarkeit |-|X|-|-|
-Bedienbarkeit |-|X|-|-|
-**Performance** | | | | |
-Zeitverhalten |-|-|X|-|
-Effizienz|-|-|-|X|
-**Sicherheit** | | | | |
-Analysierbarkeit |X|-|-|-|
-Modifizierbarkeit |-|-|-|X|
-Stabilität |X|-|-|-|
-Prüfbarkeit |X|-|-|-|
+**Zuverlässigkeit** | | | | 
+Fehlertoleranz |X|-|-|-
+Wiederherstellbarkeit |X|-|-|-
+Ordnungsmäßigkeit |X|-|-|-
+Richtigkeit |X|-|-|-
+Konformität |-|X|-|-
+**Benutzerfreundlichkeit** | | | | 
+Installierbarkeit |-|-|X|-
+Verständlichkeit |X|-|-|-
+Erlernbarkeit |-|X|-|-
+Bedienbarkeit |-|X|-|-
+**Performance** | | | | 
+Zeitverhalten |-|-|X|-
+Effizienz|-|-|-|X
+**Sicherheit** | | | | 
+Analysierbarkeit |-|-|X|-
+Modifizierbarkeit |-|-|X|-
+Stabilität |X|-|-|-
+Prüfbarkeit |-|-|X|-
 
 ## 2.4 Graphische Benutzerschnittstelle
 
-- GUI-Mockups passend zu User Stories
-- Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
-- Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
+![Login](img/Login.png)
+
+![Übersicht](img/Übersicht.png)
+
+![Essen](img/Essen.png)
+
+![Personal](img/Personal.png)
+
+![Termine](img/Termine.png)
+
+![Veranstalltungen](/Users/jendrikmuller/Documents/Master/SGSE/Spezifikation/docs/jendrik_mueller/img/Veranstalltungen.png)
 
 ## 2.5 Anforderungen im Detail
 
@@ -141,6 +127,7 @@ Die Hilfe zur Anwendung muss jederzeit erreichbar sein.
 | Termin verschieben | Patient  | einen bestehenden Termin verschieben können | einen bestehenden Termin ein neuer Zeitpunkt zugewiesen wird | Termin verschiebbar | soll      |
 | Termin absagen     | Patient  | einen Termin absagen können                 | sodass ein vorhandener Termin wieder entfernt wird           | Termin löschen      | muss      |
 | Termin bestätigen  | Personal | Einen Termin bestätigen können              | um Patienten Termine zuweisen zu können                      | Termin zuweisen     | muss      |
+| Termin eintragen   | Personal | Einen Termin erstellen können               | perönlich mit dem Patienten vereinbarte Termine berücksichtigt werden | Termin erstellen    | muss      |
 
 
 
@@ -175,8 +162,7 @@ Die Hilfe zur Anwendung muss jederzeit erreichbar sein.
 
 ## 3.1 Systemübersicht
 
-- Systemarchitekturdiagramm ("Box-And-Arrow" Diagramm)
-- Kommunikationsprotokolle, Datenformate
+![boxArrow](img/boxArrow.png)
 
 ## 3.2 Softwarearchitektur
 
@@ -220,20 +206,16 @@ Die Hilfe zur Anwendung muss jederzeit erreichbar sein.
 
 ## 4.1 Annahmen
 
-- Nicht durch den Kunden definierte spezifische Annahmen, Anforderungen und Abhängigkeiten
-- Verwendete Technologien (Programmiersprache, Frameworks, etc.)
-- Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen 
-- Einschränkungen, Betriebsbedingungen und Faktoren, die die Entwicklung beeinflussen (Betriebssysteme, Entwicklungsumgebung)
-- Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
+- Verwendete Technologien: HTML, JavaScript, Angular, PostgreSQL, gRPC, RabbitMQ, GraphQL, Python
+- Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen
 
 ## 4.2 Verantwortlichkeiten
 
-- Zuordnung von Personen zu Softwarebausteinen aus Kapitel 3.1 und 3.2
-- Rollendefinition und Zuordnung
-
-| Softwarebaustein | Person(en) |
+| Softwarebaustein | Person(en)Frontend |
 |----------|-----------|
-| Komponente A | Thomas Mustermann |
+| Frontend | Jendrik Müller |
+| Backend | Jendrik Müller |
+| Dantenbank | Jendrik Müller |
 
 ### Rollen
 
@@ -250,23 +232,21 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 
 | Name     | Rolle     |
 |----------|-----------|
-| Thomas Mustermann | Softwarearchitekt |
+| Jendrik Müller | Softwarearchitekt |
+| Jendrik Müller | Frontend-Entwickler |
+| Jendrik Müller | Backend-Entwickler |
+| Jendrik Müller | Datenbank-Entwickler |
 
 
 ## 4.3 Grober Projektplan
 
-- Meilensteine
-
 ### Meilensteine
-* KW 43 (21.10)
-  * Abgabe Pflichtenheft
-* KW 44 (28.10) / Projekt aufsetzen
-  * Repository Struktur
-* KW 45 (4.11) / Implementierung
-  * Implementierung #3 (Final)
-* KW 48 (18.12) / Abnahmetests
-  * manuelle Abnahmetestss
-  * Präsentation / Software-Demo
+- 11.05.2020
+  - Abgabe Pflichtenheft
+- 08.06.2020
+  - Abgabe Prototyp
+- 03.07.2020
+  - Softwareübergabe
 
 # 5 Anhänge
 
