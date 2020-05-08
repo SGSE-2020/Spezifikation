@@ -26,11 +26,11 @@ Der SmartCity Service Restaurant soll Restaurantbesitzer ermöglichen, eine Onli
 
 ##### Kundenportal
 
-<img src="./img/UseCases_User.png" alt="UseCases_User" style="zoom: 50%;" />
+<img src="andre_kirsch\img\UseCases_User.png" alt="UseCases_User" style="zoom: 50%;" />
 
 ##### Restaurantverwaltung
 
-<img src="./img/UseCases_Besitzer.png" alt="UseCases_Besitzer" style="zoom: 50%;" />
+<img src="andre_kirsch\img\UseCases_Besitzer.png" alt="UseCases_Besitzer" style="zoom: 50%;" />
 
 ## 2.3 Nicht-funktionale Anforderungen 
 
@@ -132,6 +132,8 @@ Prüfbarkeit |-|-|X|-
 ![Systemarchitektur](img\Systemarchitektur.png)
 
 ## 3.2 Softwarearchitektur
+
+![softwarearchitekturdiagramm](G:\Informatik\Master 1\Softwareengineering\Spezifikation\docs\andre_kirsch\img\softwarearchitekturdiagramm.png)
 
 ## 3.3 Schnittstellen
 
