@@ -75,17 +75,30 @@ Prüfbarkeit |-|-|X|-
 
 ## 2.4 Graphische Benutzerschnittstelle
 
+### Allgemein
+
 ![Login](img/Login.png)
 
 ![Übersicht](img/Übersicht.png)
 
-![Essen](img/Essen.png)
-
 ![Personal](img/Personal.png)
+
+![Fachbereiche](img/Fachbereiche.png)
+
+###Patienten
 
 ![Termine](img/Termine.png)
 
-![Veranstalltungen](/Users/jendrikmuller/Documents/Master/SGSE/Spezifikation/docs/jendrik_mueller/img/Veranstalltungen.png)
+![Rechnungen](img/Rechnungen.png)
+
+### Personal
+
+![Patienten](img/Patienten.png)
+
+![PatientenDetails](img/PatientenDetails.png)
+
+![TerminePersonal](img/TerminePersonal.png)
+
 
 ## 2.5 Anforderungen im Detail
 
