@@ -36,19 +36,19 @@ Das System soll die persönliche Kommunikation zwischen Kunde und Trainer/Physio
 
 ## 2.2 Funktionale Anforderungen
 
-**Kundenportal**
+#### Kundenportal
 
 ![UseCaseKunde](./img/kundenportal.png)
 
-**Allgemeine Verwaltung**
+#### Allgemeine Verwaltung
 
 ![UseCaseVerwaltung](./img/verwaltung.png)
 
-**Mitgliederverwaltung**
+#### Mitgliederverwaltung
 
 ![UseCaseMitglieder](./img/mitgliederverwaltung.png)
 
-**Trainer und Therapeuten Funktionen**
+#### Trainer und Therapeuten Funktionen
 
 ![UseCaseTrainerTherapeut](./img/trainer_therapeut.png)
 
@@ -63,7 +63,7 @@ Das System soll die persönliche Kommunikation zwischen Kunde und Trainer/Physio
 ### 2.3.2 Betriebsbedingungen
 
 - Website für Desktop und Mobile Nutzer
-- Schnittstelle zu Hausärzten um Kunden zu überweisen
+- Schnittstelle zu Hausärzten um Kunden überwiesen zu bekommen
 - Datenbank um wichtige Daten zu speichern
 
 ### 2.3.3 Qualitätsmerkmale
@@ -235,8 +235,19 @@ PDF-Version mit Verlinkung im Projekt Repository
 
 ## 3.5 Abläufe
 
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
+An dieser Stellen werden drei wichtige Abläufe in Form von Aktivitätsdiagrammen dargestellt. Es gibt je ein Aktivitätsdiagramm aus der *Mitgliederverwaltung*, dem *Benutzerportal* und dem *Trainer und Physiotherapeuten Portal*. Die ausgewählten sind repräsentativ für die jeweiligen Funktionen und enthalten die wichtigsten Schritte. Die anderen Abläufe können durch kleiner Anpassungen ebenfalls durch das Aktivitätsdiagramm dargestellt werden. Triviale Abläufe wie einfache Datenbankoperationen sind nicht aufgeführt. Aus diesem Grund gibt es auch keine Diagramme zu der *allgemeinen Verwaltung*.
+
+#### Mitglied einfügen
+
+![mitglied_einfuegen](./img/activity/mitglied_einfuegen.png)
+
+#### Trainingsplan anfordern
+
+![mitglied_einfuegen](./img/activity/trainingsplan_anfordern.png)
+
+#### Behandlungsakte erweitern
+
+![mitglied_einfuegen](./img/activity/behandlungs_akte_erweitern.png)
 
 ## 3.6 Entwurf
 
@@ -254,11 +265,11 @@ PDF-Version mit Verlinkung im Projekt Repository
 
 ## 4.1 Annahmen
 
-- Nicht durch den Kunden definierte spezifische Annahmen, Anforderungen und Abhängigkeiten
-- Verwendete Technologien (Programmiersprache, Frameworks, etc.)
-- Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen 
-- Einschränkungen, Betriebsbedingungen und Faktoren, die die Entwicklung beeinflussen (Betriebssysteme, Entwicklungsumgebung)
-- Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
+- Das Frontend wird mit JavaScript entwickelt
+- Für den API-Server wird das Ruby on the Rails Framework verwendet
+- Die Software sollte einfach zu erweitern sein, da Funktionen zur Steigerung der Personalisierung wahrscheinlich sind
+- Die Bausteine müssen als Docker Container vorliegen
+- Für die Kommunikation mit andere Prozessen wir gRPC verwendet
 
 ## 4.2 Verantwortlichkeiten
 
