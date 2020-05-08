@@ -5,7 +5,7 @@
     <id>UMLDeployment</id>
     <coordinates>
       <x>460</x>
-      <y>150</y>
+      <y>110</y>
       <w>200</w>
       <h>120</h>
     </coordinates>
@@ -18,9 +18,9 @@
     <id>UMLDeployment</id>
     <coordinates>
       <x>460</x>
-      <y>300</y>
+      <y>260</y>
       <w>200</w>
-      <h>280</h>
+      <h>320</h>
     </coordinates>
     <panel_attributes>halign=left
 *Backend*
@@ -224,7 +224,7 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>470</x>
-      <y>190</y>
+      <y>150</y>
       <w>170</w>
       <h>70</h>
     </coordinates>
@@ -235,7 +235,7 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>480</x>
-      <y>220</y>
+      <y>180</y>
       <w>150</w>
       <h>30</h>
     </coordinates>
@@ -246,9 +246,9 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>470</x>
-      <y>340</y>
+      <y>300</y>
       <w>170</w>
-      <h>230</h>
+      <h>270</h>
     </coordinates>
     <panel_attributes>Node</panel_attributes>
     <additional_attributes/>
@@ -257,12 +257,12 @@
     <id>Relation</id>
     <coordinates>
       <x>620</x>
-      <y>220</y>
+      <y>180</y>
       <w>80</w>
-      <h>180</h>
+      <h>220</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-&gt;&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;60.0;10.0;60.0;160.0;10.0;160.0</additional_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;200.0;10.0;200.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
@@ -274,6 +274,17 @@
     </coordinates>
     <panel_attributes>valign=center
 RabbitMQ</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>480</x>
+      <y>330</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Firebase-Auth Client</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

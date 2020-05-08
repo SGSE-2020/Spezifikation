@@ -113,10 +113,26 @@ Anforderungen.
 
 ## 2.4 Graphische Benutzerschnittstelle
 
-- GUI-Mockups passend zu User Stories
-- Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
-- Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
+## Login
+![login](img/login.png)
+
+## Meine Reservierungen
+![my_reservations](img/my_reservations.png)
+
+Behandelt User Stories: Reservierungen anzeigen, Reservierung stornieren 
+
+## Neue Reservierung
+![news_reservation](img/new_reservation.png)
+
+Behandelt User Stories: Parkplatz reservieren, Auslastung abfragen
+
+## Melden
+![news_reservation](img/report.png)
+
+Behandelt User Stories: Falschparker melden
+
+### Zustandsdiagramm
+![use_case_state_chart](img/use_case_state_chart.png)
 
 ## 2.5 Anforderungen im Detail
 
@@ -173,9 +189,9 @@ Die resultierende Payload dieser Schnittstelle ist wie folgt definiert:
 }
 ```
 
-### Reservierungen anzeigen
+### Reservierungshistorie
 
-Diese Schnittstelle dient dazu, Kunden einen Überblick über Ihre Reservierungen zu verschaffen. Sie ist ausschließlich 
+Diese Schnittstelle dient dazu, Kunden einen Überblick über ihre Reservierungen zu verschaffen. Sie ist ausschließlich 
 für den internen Gebrauch, sowie für die Verwendung durch den aktuell im System authentifizierten Kunden vorgesehen, 
 sodass das Abfragen von Reservierungen beliebiger Kunden durch weitere __MS__ der Microservice-Architektur verhindert 
 wird. Es werden aktuelle Reservierungen als auch Reservierungen der Vergangenheit durch diese Schnittstelle vermittelt 
@@ -192,6 +208,112 @@ Die resultierende Payload dieser Schnittstelle ist wie folgt definiert:
         {"name": "location", "type": "string"},
         {"name": "state", "type": "string"},
         {"name": "cost", "type": "number"}
+    ]
+}
+```
+
+### Reservierung
+
+Diese Schnittstelle erlaubt Kunden und Entitäten das Reservieren von Parkplätzen. Es ist erforderlich, dass Kunden und 
+Entitäten sich der Schnittstelle Authentifizieren, sodass sichergestellt werden, kann das alle Reservierungen 
+authentisch sind. Die als benötigt definierten Parameter sind zwingend erforderlich. Für den Fall, dass Parameter, 
+welche nicht als benötigt markiert sind, keine Werte übergeben werden, werden an deren Stelle Standardwerte verwendet.
+
+Die folgenden Parameter erlauben die Kommunikation mit der Schnittstelle:
+
+```json
+"sgse.models.parkplatz.reservation":{
+	"description": "Represents a reservation record.", 
+	"fields": [
+        {"name": "userUUID", "type": "string", "required": true},
+        {"name": "location", "type": "string", "required": true},
+        {"name": "datetime", "type": "string", "default": "now"},
+        {"name": "duration", "type": "number", "default": "60"}
+    ]
+}
+```
+
+### Parkfläche bereitstellen
+
+Diese Schnittstelle erlaubt Entitäten das Bereitstellen von Parkflächen für das Parkplatzsystem.
+
+Die folgenden Parameter erlauben die Kommunikation mit der Schnittstelle:
+
+```json
+"sgse.models.parkplatz.area.provision":{
+	"description": "Represents a record for the provison of a parking area by a entity.", 
+	"fields": [
+        {"name": "location", "type": "string", "required": true},
+        {"name": "name", "type": "string", "required": true},
+        {"name": "address", "type": "string"},
+        {"name": "capacity", "type": "number"}
+    ]
+}
+```
+
+### Parkfläche bearbeiten
+
+Diese Schnittstelle erlaubt Entitäten das Bearbeiten von bereitgestellten Parkflächen für das Parkplatzsystem.
+
+Die folgenden Parameter erlauben die Kommunikation mit der Schnittstelle:
+
+```json
+"sgse.models.parkplatz.area.revision":{
+	"description": "Represents a record for the provison of a parking area by a entity.", 
+	"fields": [
+        {"name": "location", "type": "string", "required": true},
+        {"name": "name", "type": "string"},
+        {"name": "address", "type": "string"},
+        {"name": "capacity", "type": "number"}
+    ]
+}
+```
+
+### Falschparker Meldung
+
+Diese Schnittstelle erlaubt Kunden, Falschparker dem System zu melden. Sie ist ausschließlich für den internen Gebrauch, 
+sowie für die Verwendung durch den aktuell im System authentifizierten Kunden vorgesehen, sodass das Melden von 
+Falschparkern nicht missbraucht wird. Alle Parameter dieser Schnittstelle sind zwingend erforderlich.
+
+Die folgenden Parameter erlauben die Kommunikation mit der Schnittstelle:
+
+```json
+"sgse.models.parkplatz.abuse":{
+	"description": "Represents a absue report record.", 
+	"fields": [
+        {"name": "userUUID", "type": "string", "required": true},
+        {"name": "location", "type": "string", "required": true},
+        {"name": "message", "type": "string", "required": true}
+    ]
+}
+```
+
+### Stornierung
+
+Diese Schnittstelle erlaubt Kunden und Entitäten, bestehende Reservierungen zu stornieren. 
+
+Die folgenden Parameter erlauben die Kommunikation mit der Schnittstelle:
+
+```json
+"sgse.models.parkplatz.cancellation":{
+	"description": "Represents a cancellation record.", 
+	"fields": [
+        {"name": "reservationUUID", "type": "string", "required": true}
+    ]
+}
+```
+
+### Parkfläche entfernen
+
+Diese Schnittstelle erlaubt Entitäten, bestehende Parkflächen aus dem System zu entfernen. 
+
+Die folgenden Parameter erlauben die Kommunikation mit der Schnittstelle:
+
+```json
+"sgse.models.parkplatz.area.removal":{
+	"description": "Represents a record for the removel of a parking area provided by a entity.", 
+	"fields": [
+        {"name": "parkingAreaUUID", "type": "string", "required": true}
     ]
 }
 ```
@@ -252,7 +374,18 @@ Die resultierende Payload dieses Ereignisses ist wie folgt definiert:
 
 ## 3.7 Fehlerbehandlung 
 
-* Mögliche Fehler / Exceptions auflisten
+* Der Service(Backend) ist nicht Verfügbar
+* Der Benutzer kann sich nicht einloggen
+* Der Benutzer kann sich nicht ausloggen
+* Benutzerdaten konnten nicht abgerufen werden
+* Es konnte kein Parkplatz reserviert werden
+* Falschparker konnten nicht gemeldet werden
+* Die Reservierungshistorie kann nicht angezeigt werden
+* Eine Reservierung konnte nicht bearbeitet werden
+* Eine Reservierung konnte nicht storniert werden
+* Parkfläche konnte nicht bereitgestellt werden
+* Parkfläche konnte nicht bearbeitet werden
+* Parkfläche konnte nicht entfernt werden
 
 ## 3.8 Validierung
 
