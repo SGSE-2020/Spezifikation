@@ -25,7 +25,7 @@ Das System soll nicht der kompletten Verwaltung eines Krankenhauses dienen. Es i
 | Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
 |---|---|---|---|---|
 | Chefarzt der Dermatologie | Prof. Dr. Heinrich Heiler | Tel. 555 4312, E-Mail: heiler@krankenhaus.de, Von 6-20 Uhr telefonisch und per Mail erreichbar | Kennt das Altsystem, soll mit dem System arbeiten | Übersicht über die eigenen Patienten |
-| Bürger von SmartCity | Kurt Knoche | Tel. 555 336622, E-Mail: kKnoche@city.de, Von 7-18 Uhr telefonisch und per Mail erreichbar | Kennt das Altsystem | Vereinvaren eines Termins zur Nachbehandlung |
+| Bürger von SmartCity | Kurt Knoche | Tel. 555 336622, E-Mail: kKnoche@city.de, Von 7-18 Uhr telefonisch und per Mail erreichbar | Kennt das Altsystem | Vereinbaren eines Termins zur Nachbehandlung |
 
 ## 2.2 Funktionale Anforderungen
 
@@ -85,77 +85,33 @@ Prüfbarkeit |-|-|X|-
 
 ## 2.5 Anforderungen im Detail
 
-#### Grundfunktionen
+###Nutzer
 
-##### Einloggen
+| Als | möchte ich | so dass | Akzeptanz | Priorität |
+|----------|-----------|----------|----------|----------|
+| Nutzer | mich Anmelden können | ich auf die die Funktionen zugreifen kann | Anmelden möglich | muss |
+| Nutzer | mich Abmelden können | andere die mienen PC Nutzen nicht auf meine Daten zugreifen können | Abmelden möglich | muss |
+| Nutzer | das Impressum einsehen können | ich Informiert werde, wer für die Webseite zuständig ist | Impressum einsehen | soll |
+| Nutzer | eine Personalübersicht haben | ich weiß wer in dem Krankenhaus Arbeitet | Personalübersicht | soll |
+| Nutzer | Übersicht über Fachbereiche | mich über die Fachbereiche des Krankenhauses informieren kann | Fachbereiche übersicht | soll |
 
-Es ist möglich sich als registrierter Benutzer einzuloggen. Zusätzlich kann ein Einloggen als Gastuser möglich sein.
+###Patient
+| Als | möchte ich | so dass | Akzeptanz | Priorität |
+|----------|-----------|----------|----------|----------|
+| Patient | einen Termin vereinbaren | ich behandelt werden kann | Termin vereinbar | muss |
+| Patient | die Behandlung bezahlen | meine Rechnungen beglichen werden | Bezahlungsmöglichkeit auf der Webseite | soll |
+| Patient | einen Parkplatz bekommen | ich mein Auto direkt am Krankenhaus parken kann | automatische Reservierung durch Termin machen | soll |
+| Patient | Öffnungszeiten einsehen | ich besser Planen kann | Ansicht der Öffnungszeiten | soll |
 
-| Name      | Rolle  | In meiner Rolle möchte ich | so dass                               | Akzeptanz        | Priorität |
-| --------- | ------ | -------------------------- | ------------------------------------- | ---------------- | --------- |
-| Einloggen | Nutzer | mich einloggen             | ich auf meinen Account zugreifen kann | anmelden möglich | muss      |
+###Personal
 
-##### Ausloggen
-
-Es ist zu jeder Zeit möglich sich aus der Anwendung auszuloggen.
-
-| Name      | Rolle  | In meiner Rolle möchte ich | so dass                            | Akzeptanz        | Priorität |
-| --------- | ------ | -------------------------- | ---------------------------------- | ---------------- | --------- |
-| Ausloggen | Nutzer | mich ausloggen             | ich nicht dauerhaft angemeldet bin | abmelden möglich | muss      |
-
-##### Impressum
-
-Das Impressum muss jeder Zeit erreichbar sein. Es enthält den Namen des Betreibers, Adresse und Kontaktmöglichkeiten.
-
-| Name               | Rolle  | In meiner Rolle möchte ich        | so dass                                                      | Akzeptanz           | Priorität |
-| ------------------ | ------ | --------------------------------- | ------------------------------------------------------------ | ------------------- | --------- |
-| Impressum anzeigen | Nutzer | mir das Impressum anzeigen lassen | ich weitere Informationen zum Betreiber des Dienstes erhalte | Impressum einsehbar | muss      |
-
-##### Hilfe
-
-Die Hilfe zur Anwendung muss jederzeit erreichbar sein.
-
-| Name           | Rolle  | In meiner Rolle möchte ich    | so dass                                   | Akzeptanz       | Priorität |
-| -------------- | ------ | ----------------------------- | ----------------------------------------- | --------------- | --------- |
-| Hilfe anzeigen | Nutzer | mir die Hilfe anzeigen lassen | ich Probleme möglichst alleine lösen kann | Hilfe einsehbar | muss      |
-
-#### Termine
-
-| Name               | Rolle    | In meiner Rolle möchte ich                  | so dass                                                      | Akzeptanz           | Priorität |
-| ------------------ | -------- | ------------------------------------------- | ------------------------------------------------------------ | :------------------ | --------- |
-| Termin anvordern   | Patient  | mir einen Termin anfordern können           | ein Termin gegeben werden kann                               | Termin anfordern    | muss      |
-| Termin verschieben | Patient  | einen bestehenden Termin verschieben können | einen bestehenden Termin ein neuer Zeitpunkt zugewiesen wird | Termin verschiebbar | soll      |
-| Termin absagen     | Patient  | einen Termin absagen können                 | sodass ein vorhandener Termin wieder entfernt wird           | Termin löschen      | muss      |
-| Termin bestätigen  | Personal | Einen Termin bestätigen können              | um Patienten Termine zuweisen zu können                      | Termin zuweisen     | muss      |
-| Termin eintragen   | Personal | Einen Termin erstellen können               | perönlich mit dem Patienten vereinbarte Termine berücksichtigt werden | Termin erstellen    | muss      |
-
-
-
-#### Veranstalltungen
-
-| Name                       | Rolle    | In meiner Rolle möchte ich          | so dass                                                      | Akzeptanz                          | Priorität |
-| -------------------------- | -------- | ----------------------------------- | ------------------------------------------------------------ | :--------------------------------- | --------- |
-| Veranstalltung erstellen   | Personal | eine Veranstallung erstellen können | User sich über bevorstehende Veanstallungen informieren können | Veranstallung erstellen            | kann      |
-| Veranstalltung teilnehemen | Nutzer   | an Veranstalltungen teilnehmen      | der Veranstallter weiß wie viel Personen an der Veranstalltung teilnehmen | Teilnehmer kann hinzugefügt werden | kann      |
-
-#### Überweisung
-
-| Name                       | Rolle    | In meiner Rolle möchte ich                       | so dass                                              | Akzeptanz                  | Priorität |
-| -------------------------- | -------- | ------------------------------------------------ | ---------------------------------------------------- | :------------------------- | --------- |
-| Überweisung entgegennehmen | Personal | die Überwisung von einem Hausarzt entgegennehmen | die nötige Behandlung zugeteilt wird                 | Überweisung entgegennehmen | muss      |
-| Überweisung an Hausarzt    | Personal | einen Patienten an seinen Hausarzt überweisen    | die Nachversorgung des Pateinten sichergestellt wird | Patient übertragbar        | soll      |
-
-#### Patientendaten
-
-| Name        | Rolle    | In meiner Rolle möchte ich                      | so dass                                     | Akzeptanz                | Prioritöt |
-| ----------- | -------- | ----------------------------------------------- | ------------------------------------------- | :----------------------- | --------- |
-| Krankenakte | Personal | die Krankenakte eines Patienten einsehen können | der Patient die richtige Behandlung bekommt | Pateintendaten einsehbar | soll      |
-
-#### Essen
-
-| Name            | Rolle   | In meiner Rolle möchte ich | so dass                            | Akzeptanz               | Prioritöt |
-| --------------- | ------- | -------------------------- | ---------------------------------- | :---------------------- | --------- |
-| Essen bestellen | Patient | Essen bestellen können     | mir mein Wunschessen gebracht wird | Essen aus Liste wählbar | kann      |
+| Als | möchte ich | so dass | Akzeptanz | Priorität |
+|----------|-----------|----------|----------|----------|
+| Personal | das nur Personal zugriff  auf bestimmte Funktionen hat | kein unbefugter Änderungen machen kann | Personalkonto | muss |
+| Personal | einen Überblick über die Patienten haben | einen Überblick über die aktuelle Patientenlage bekomme | Personal zugriff auf Patientenübersicht | muss |
+| Personal | die Krankenakte des Patienten einsehen | der Patient die entsprechende Behandlung bekommt | Krankenakte von Personal einsehbar | soll |
+| Personal | die Krankenakte bearbeiten | die Informationen des Patienten aktuell blieben | Krankenakte editieren | soll |
+| Personal | Patienten an den Hausarzt überweisen | die Nachbehandlung des Patienten gesichert ist | Weiterleitungsfunktion | soll |
 
 
 # 3 Technische Beschreibung
@@ -170,37 +126,136 @@ Die Hilfe zur Anwendung muss jederzeit erreichbar sein.
 
 ## 3.3 Schnittstellen
 
-- **Bank**: bezahlen von Rechnungen
-- **Apotheke**: übermitteln von Rezepten
-- **Hausarzt**: überweisung von Patienten
-- **Parkplätze**: reservieren von Parkplätzen
+### Termin erstellen
+
+```json
+"sgse.models.krankenhaus.termin":{
+
+	"description": "Creates a new appointment", 
+
+	"fields": [
+
+		{"name": "patientID", "type": "string", "required": true},
+		{"name": "date", "type": "string", "required": true}
+
+	]
+
+}
+```
+
+### Patient übergeben
+
+```json
+"sgse.models.krankenhaus.add_patient":{
+
+	"description": "Adds a new patient to the hospital", 
+
+	"fields": [
+
+		{"name": "userID", "type": "string", "required": true},
+		{"name": "symtomps", "type": "string", "required": false},
+    {"name": "diagnosis", "type": "string", "required": false},
+    {"name": "medication", "type": "string", "required": false}
+
+	]
+
+}
+```
+
+### Patient abrufen
+
+```json
+"sgse.models.krankenhaus.get_patient":{
+
+	"description": "Adds a new patient to the hospital", 
+
+	"fields": [
+
+		{"name": "patientID", "type": "string", "required": true}
+
+	]
+
+}
+```
+
+### Patientendaten bearbeiten
+
+```json
+"sgse.models.krankenhaus.edit_patient":{
+
+	"description": "Adds a new patient to the hospital", 
+
+	"fields": [
+
+		{"name": "userID", "type": "string", "required": true},
+    {"name": "station", "type": "string", "required": false},
+    {"name": "faculty", "type": "string", "required": false},
+		{"name": "symtomps", "type": "string", "required": false},
+    {"name": "diagnosis", "type": "string", "required": false},
+    {"name": "medication", "type": "string", "required": false}
+
+	]
+
+}
+```
 
 ## 3.3.1 Ereignisse
 
-- In Event-gesteuerten Systemen: Definition der Ereignisse und deren Attribute
+**Senden**
+
+##### Patient verstorben
+
+Name Event: Patient verstorben
+
+Payload: PatientenID (BürgerID)
+
+#### Empfangen
+
+##### Bürger verstorben
+
+Details siehe Bürgerbüro
 
 ## 3.4 Datenmodell 
 
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
-- Modellierung des physikalischen Datenmodells 
-  - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
+### Patient
 
-## 3.5 Abläufe
+```json
+"sgse.models.krankenhaus.patient":{
 
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
+	"description": "A Patient", 
 
-## 3.6 Entwurf
+	"fields": [
 
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
+		{"name": "userID", "type": "string", "required": true},
+    {"name": "station", "type": "string", "required": false},
+    {"name": "faculty", "type": "string", "required": false},
+		{"name": "symtomps", "type": "string", "required": false},
+    {"name": "diagnosis", "type": "string", "required": false},
+    {"name": "medication", "type": "string", "required": false}
 
-## 3.7 Fehlerbehandlung 
+	]
 
-* Mögliche Fehler / Exceptions auflisten
+}
+```
 
-## 3.8 Validierung
+### Personal
 
-* Relevante (Integrations)-Testfälle, die aus den Use Cases abgeleitet werden können
+```json
+"sgse.models.krankenhaus.patient":{
+
+	"description": "A medical worker", 
+
+	"fields": [
+
+		{"name": "userID", "type": "string", "required": true},
+    {"name": "station", "type": "string", "required": false},
+		{"name": "faculty", "type": "string", "required": true},
+    {"name": "titel", "type": "string", "required": false}
+
+	]
+
+}
+```
 
 # 4 Projektorganisation
 
@@ -252,13 +307,12 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 
 ## 5.1 Glossar 
 
-- Definitionen, Abkürzungen, Begriffe
-
-## 5.2 Referenzen
-
-- Handbücher, Gesetze
-
-## 5.3 Index
+| Begriff     | Beschreibung     |
+|----------|-----------|
+| Patient | Bürger der im Krankenhaus behandelt wird |
+| Fachbereich | Bezeichnet einen organisatorisch zusammengefassten medizinischen Bereich |
+| Station | Bezeichnet eine Abteilung des Krankenhauses. |
+| Personal | Bezeichnet das medizinische Personal des Krankenhauses |
 
 
 
