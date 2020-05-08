@@ -274,6 +274,26 @@ Details siehe Bürgerbüro
 }
 ```
 
+### Termin
+
+```json
+"sgse.models.krankenhaus.termin":{
+
+	"description": "A Termin", 
+
+	"fields": [
+
+		{"name": "patientID", "type": "string", "required": true},
+    {"name": "time", "type": "string", "required": true},
+		{"name": "faculty", "type": "string", "required": false},
+    {"name": "station", "type": "string", "required": false},
+    {"name": "doctor", "type": "string", "required": false},
+
+	]
+
+}
+```
+
 # 4 Projektorganisation
 
 ## 4.1 Annahmen
