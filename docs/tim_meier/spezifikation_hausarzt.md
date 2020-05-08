@@ -130,6 +130,7 @@ Prüfbarkeit |X|-|-|-|
 | Benutzer | einen Parkplatz bekommen | ich nicht so weit laufen muss | automatische Reservierung durch Termin machen | mittel |
 | Benutzer | Öffnungszeiten einsehen | ich planen kann | Ansicht der Öffnungszeiten | mittel |
 | Benutzer | Impressum einsehen | ich weitere Kontaktinformationen habe | Ansicht des Impressums | mittel |
+| Benutzer | Krankheitsstatistik einsehen | ich weiß, welche Krankheiten im Moment verbreitet sind | Ansicht der Krankheitsstatistik | mittel |
 
 
 
@@ -140,7 +141,7 @@ Prüfbarkeit |X|-|-|-|
 
 | **Als**  | **möchte ich**| **so dass** | **Akzeptanz**| **Priorität** |
 | ---- | :----| :----- | :---- | ---- |
-| Administrator | nur der Admin Zugriff auf Admin Funktionen hat | kein unbefugter Änderungen machen kann | Adminkonto                                         | hoch |
+| Administrator | nur der Admin Zugriff auf Admin Funktionen hat | kein unbefugter Änderungen machen kann | Adminkonto | hoch |
 | Administrator | einen Überblick über die Patienten haben | ich einen Überblick über die Patienten habe | Übersicht bei Admin Zugriff | hoch |
 | Administrator | einen Blick in die Krankenakte der Patienten werfen | die Patienten die beste mögliche Behandlung bekommen | genauere Übersicht im Admin Zugriff | mittel |
 | Administrator | Rezepte für Medikamente an Kunden geben | der Kunde Medikamente kaufen kann | Herausgabe von Rezepten | mittel |
@@ -162,8 +163,88 @@ Prüfbarkeit |X|-|-|-|
 
 ## 3.3 Schnittstellen
 
-- Schnittstellenbeschreibung (API)
-- Auflistung der nach außen sichtbaren Schnittstelle der Softwarebausteine
+
+
+#### Überweisung eines Patienten an den Hausarzt
+
+Mithilfe der "user_id" kann ein Patient an den Hausarzt übergeben werden. Dabei muss ein Grund angegeben werden, warum der Patient überwiesen werden soll.
+
+```json
+"sgse.model.hausarzt.ueberweisung": {
+    "description": "Object um einen Patienten an den Hausarzt zu ueberweisen",
+    "fields": [
+      {"name": "user_id", "type": "string", "required": true},
+      {"name": "reason", "type": "string", "required": true}  
+    ]
+}
+```
+
+
+
+#### Krankenakte eines Patienten anfordern
+
+Mithilfe der "user_id" kann die Krankenakte eines Patienten angefordert werden.
+
+```json
+// Anforderung
+"sgse.model.hausarzt.anforderung_krankenakte": {
+    "description": "Object um die Krankeakte eines Patienten anzufordern",
+    "fields": [
+      {"name": "user_id", "type": "string", "required": true}
+    ]
+}
+
+// Antwort des Hausarztes
+"sgse.model.hausarzt.krankenakte": {
+    "description": "Object um die Krankeakte eines Patienten anzufordern",
+    "fields": [
+      {"name": "user_id", "type": "string", "required": true},
+      {"name": "patientenakten", "type": "list[patientenakte]", "required": true}
+    ]
+}
+```
+
+
+
+#### Krankenakte eines Patienten aktualisieren
+
+Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, welche danach gespeichert wird.
+
+```json
+"sgse.model.hausarzt.aktualisierung_krankenakte": {
+    "description": "objekt einer patientenakte, welches zum aktualisieren ist",
+    "fields": [
+      {"name": "user_id", "type": "string", "required": true},
+      {"name": "datum", "type": "string", "required": true},
+      {"name": "anamnese", "type": "string", "required": false},
+      {"name": "symptome", "type": "string", "required": false},
+      {"name": "diagnose", "type": "string", "required": false},
+      {"name": "medikation", "type": "string", "required": false},
+      {"name": "sonstiges", "type": "string", "required": false},
+      {"name": "sonstiges", "type": "string", "required": false}
+    ]
+}
+```
+
+
+
+#### Meldung eines psychisch Kranken
+
+
+
+```json
+"sgse.model.hausarzt.meldung_psychisch_krank": {
+    "description": "objekt zum melden eines psychisch kranken",
+    "fields": [
+      {"name": "user_id", "type": "string", "required": true},
+      {"name": "datum", "type": "string", "required": true},
+      {"name": "diagnose", "type": "string", "required": true},
+      {"name": "sonstiges", "type": "string", "required": false}
+    ]
+}
+```
+
+
 
 ## 3.3.1 Ereignisse
 
