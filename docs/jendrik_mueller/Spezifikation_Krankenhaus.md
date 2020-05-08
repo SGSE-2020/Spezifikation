@@ -167,7 +167,7 @@ Prüfbarkeit |-|-|X|-
 ```json
 "sgse.models.krankenhaus.get_patient":{
 
-	"description": "Adds a new patient to the hospital", 
+	"description": "Returns a single patient", 
 
 	"fields": [
 
@@ -183,7 +183,7 @@ Prüfbarkeit |-|-|X|-
 ```json
 "sgse.models.krankenhaus.edit_patient":{
 
-	"description": "Adds a new patient to the hospital", 
+	"description": "Eddits a single patient", 
 
 	"fields": [
 
