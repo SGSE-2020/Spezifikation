@@ -203,10 +203,10 @@ Die resultierende Payload dieser Schnittstelle ist wie folgt definiert:
 Die zu veröffentlichenden Ereignisse enthalten sehr allgemeine Informationen, für die es in der Microservice-Architektur
 zu diesem Zeitpunkt keinen bestimmten Konsumenten gibt. Die Implementierung dieser Funktion erfolgt daher auf einer 
 freien Basis, um die verwendeten Technologien kennenzulernen. Zu einem späteren Zeitpunkt könnten diese Informationen 
-beispielsweise für statistische Zwecke von Konsumenten verarbeitet werden, um Bewegungsbilder und das Konsumverhalten 
-der Einwohner zu beobachten.
+beispielsweise für statistische Zwecke von Konsumenten verarbeitet werden, um Bewegungsbilder zu erzeugen und das 
+Konsumverhalten der Einwohner zu beobachten.
 
-#### Neue Reservierung
+#### Reservierung aufgenommen
 Wurde eine neue Parkplatzreservierung aufgenommen, wird dieses Ereignis als Event veröffentlicht. 
 
 Die resultierende Payload dieses Ereignisses ist wie folgt definiert:
@@ -225,7 +225,7 @@ Wurde eine bestehende Parkplatzreservierung storniert, wird dieses Ereignis als 
 
 Die resultierende Payload dieses Ereignisses ist wie folgt definiert:
 ```json
-"sgse.messages.parkplatz.reservation":{
+"sgse.messages.parkplatz.cancellation":{
 	"description": "Represents a cancelled reservation.", 
 	"fields": [
         {"name": "userUUID", "type": "string"},
