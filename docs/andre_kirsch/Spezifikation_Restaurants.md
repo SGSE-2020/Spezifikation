@@ -26,11 +26,11 @@ Der SmartCity Service Restaurant soll Restaurantbesitzer ermöglichen, eine Onli
 
 ##### Kundenportal
 
-<img src="andre_kirsch\img\UseCases_User.png" alt="UseCases_User" style="zoom: 50%;" />
+![UseCases_User](img\UseCases_User.png)
 
 ##### Restaurantverwaltung
 
-<img src="andre_kirsch\img\UseCases_Besitzer.png" alt="UseCases_Besitzer" style="zoom: 50%;" />
+![UseCases_Besitzer](img\UseCases_Besitzer.png)
 
 ## 2.3 Nicht-funktionale Anforderungen 
 
