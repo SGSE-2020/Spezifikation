@@ -8,15 +8,19 @@
 
 ## 1.1 Beschreibung
 
-Das Krankehaus in der SmartCity stellt einen wesentlichen Faktor im Bereich der öffentlichen ärztlichen Versorgung dar. Ein zuverlässiges System kann die ärztliche Versorgung eines Patienten begleiten, um einen effizienten Informationsaustausch zu gewährleisten.  Somit kann eine Informationskette im Zusammenspiel mit Hausarzt und Rettungsdienst über die komplette Behandlungsphase des Patienten erfolgen. Das System dient zusätzlich als Anlaufstelle für Bürger, die sich über Veranstelltungen im Krankehaus und dessen Abteilungen informieren wollen.
+Das Krankehaus in der SmartCity stellt einen wesentlichen Faktor im Bereich der öffentlichen ärztlichen Versorgung dar. Ein zuverlässiges System kann die ärztliche Versorgung eines Patienten begleiten, um einen effizienten Informationsaustausch zu gewährleisten.  Somit kann eine Informationskette im Zusammenspiel mit Hausarzt und Rettungsdienst über die komplette Behandlungsphase des Patienten erfolgen. Gleichzeitig können sich Bürger über die Fachbereiche und Ausrüstung des Krankenhauses informieren.
+
+Viele Krankenhäuser haben bereits digitale Verwaltungsysteme. Allerdings erfolgt das Überweisen von Patienten immer noch analog über Überweisungszettel. Das System soll eine lückenlose Übergabe zwischen dem Krankenhaus und anderen medizinischen Versorgungseinritungen ermöglichen.
 
 ## 1.2 Ziele
 
-Das System dient als schnittstellen zwischen Bürgern der SmartCity und dem medizinischen Personal des Krankenhauses. Es richtet sich somit an Bürger und Personal gleichermaßen und soll die Kommunikation zwischen diesen vördern.
+Das System dient als schnittstellen zwischen Bürgern der SmartCity und dem medizinischen Personal des Krankenhauses. Es richtet sich somit an Bürger und Personal gleichermaßen und soll die Kommunikation zwischen diesen fördern.
 
-Bürger sollen über im Krankenhaus stattfindene Veranstalltungen informiert werden und an diesen Teilnehmen können. Die Bürger sollen sich ebenfalls über das Personal, Fachbereiche und medizinische Ausrüstung informieren und Termine vereinbareren können.
+Bürger sollen sich über die Fachbereich des Krankenhauses informieren und bequem Termine vereinbaren können. 
 
-Das System soll nicht der kompletten Verwaltung eines Krankenhauses dienen. Es ist dementspechend nicht für das Erstellen eines OP-Planes, der Verwaltung des technischen Personals und ähnlichem zuständig.
+Das medizinische Personal soll einer übersicht über die Patienten haben und Informationen mit dem Hausarzt austauschen können.
+
+Das System soll nicht der kompletten Verwaltung eines Krankenhauses dienen. Es ist dementspechend nicht für das Erstellen eines OP-Planes, der Verwaltung des technischen Personals des Belegungsplans oder änliches zuständig.
 
 # 2 Anforderungen
 
