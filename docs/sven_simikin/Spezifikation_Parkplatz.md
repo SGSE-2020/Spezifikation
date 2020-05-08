@@ -106,10 +106,10 @@ Anforderungen.
 | Zeitverhalten              |X         |-    |-       |-               |
 | Effizienz                  |-         |-    |-       |X               |
 | **Sicherheit**             |          |     |        |                |
-| Analysierbarkeit           |-         |-    |-       |X               |
-| Modifizierbarkeit          |-         |-    |-       |X               |
-| Stabilität                 |-         |-    |-       |X               |
-| Prüfbarkeit                |-         |-    |-       |X               |
+| Analysierbarkeit           |-         |-    |X       |-               |
+| Modifizierbarkeit          |-         |-    |X       |-               |
+| Stabilität                 |-         |-    |X       |-               |
+| Prüfbarkeit                |-         |-    |X       |-               |
 
 ## 2.4 Graphische Benutzerschnittstelle
 
@@ -168,8 +168,8 @@ Die resultierende Payload dieser Schnittstelle ist wie folgt definiert:
         {"name": "location", "type": "string"},
         {"name": "provided_spots", "type": "number"},
         {"name": "occupied_spots", "type": "number"},
-		{"name": "utilization", "type": "number"}
-	]
+        {"name": "utilization", "type": "number"}
+    ]
 }
 ```
 
@@ -192,13 +192,48 @@ Die resultierende Payload dieser Schnittstelle ist wie folgt definiert:
         {"name": "location", "type": "string"},
         {"name": "state", "type": "string"},
         {"name": "cost", "type": "number"}
-	]
+    ]
 }
 ```
 
 ## 3.3.1 Ereignisse
 
-- In Event-gesteuerten Systemen: Definition der Ereignisse und deren Attribute
+### Veröffentlichung neuer Ereignisse
+
+Die zu veröffentlichenden Ereignisse enthalten sehr allgemeine Informationen, für die es in der Microservice-Architektur
+zu diesem Zeitpunkt keinen bestimmten Konsumenten gibt. Die Implementierung dieser Funktion erfolgt daher auf einer 
+freien Basis, um die verwendeten Technologien kennenzulernen. Zu einem späteren Zeitpunkt könnten diese Informationen 
+beispielsweise für statistische Zwecke von Konsumenten verarbeitet werden, um Bewegungsbilder und das Konsumverhalten 
+der Einwohner zu beobachten.
+
+#### Neue Reservierung
+Wurde eine neue Parkplatzreservierung aufgenommen, wird dieses Ereignis als Event veröffentlicht. 
+
+Die resultierende Payload dieses Ereignisses ist wie folgt definiert:
+```json
+"sgse.messages.parkplatz.reservation":{
+	"description": "Represents a newly created reservation.", 
+	"fields": [
+        {"name": "userUUID", "type": "string"},
+        {"name": "location", "type": "string"},
+        {"name": "datetime", "type": "string"}
+    ]
+}
+```
+#### Reservierung storniert
+Wurde eine bestehende Parkplatzreservierung storniert, wird dieses Ereignis als Event veröffentlicht. 
+
+Die resultierende Payload dieses Ereignisses ist wie folgt definiert:
+```json
+"sgse.messages.parkplatz.reservation":{
+	"description": "Represents a cancelled reservation.", 
+	"fields": [
+        {"name": "userUUID", "type": "string"},
+        {"name": "location", "type": "string"},
+        {"name": "datetime", "type": "string"}
+    ]
+}
+```
 
 ## 3.4 Datenmodell 
 
