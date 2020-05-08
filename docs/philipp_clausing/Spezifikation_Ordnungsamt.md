@@ -8,28 +8,13 @@
 
 ## 1.1 Beschreibung
 
-* Projektname
-* Darstellung der Produktvision in Prosa (5-10 Sätze)
-* Ziele
-* Für wen ist das Produkt/der Service?
-* Was ist das Bedürfnis? 
-* Was ist das Produkt/der Service?
-* Warum sollte der Kunde dieses Produkt/den Service „kaufen“ oder nutzen?
-* Im Gegensatz zu welchen anderen Produkten/Services steht dies?
-* Was macht dieses Produkt/der Service anders?
-* Warum ist das Projekt sinnvoll?
-* Welche Stakeholder sind betroffen und wie stehen Sie zu der Projektidee?
-* Welche alternativen Lösungsideen existieren für den identifizierten Bedarf?
-* Wie hoch sind Aufwand und erwarteter Nutzen und stehen sie in einem sinnvollen Verhältnis? (Lohnt sich das Projekt?)
-* Verfügen wir über die notwendigen Kompetenzen? (Umsetzbarkeit)
-* Welche Risiken und negativen Nebeneffekte sind zu erwarten?
+Das Ordnungsamt ist eine Kontrollbehörde der Smart City. Es bietet eine Plattform für die Bürger und auch die Mitarbeiter um Anträge und Meldungen effektiv zu stellen oder auch anzuarbeiten. Jeder Bürger ist dazu angehalten die Weboberfläche des Ordnungsamtes zu nutzen.
 
 ## 1.2 Ziele
 
-- Anwendungsbereiche, Motivation, Umfang, Alleinstellungsmerkmale, Marktanforderungen
-- Informationen zu Zielbenutzergruppen und deren Merkmale (Bildung, Erfahrung, Sachkenntnis)
-- Abgrenzung (Was ist das Softwaresystem _nicht_)
-- ggfs. SWOT-Analyse
+Das Ordnungsamt mit Weboberfläche soll ein zentraler Punkt für Meldungen von ordnungswidrigem Verhalten und Anträge sein.
+
+Alle Bewohner der Stadt (Benutzer und Mitarbeiter) sollen die Plattform ohne Probleme, intuitiv nutzen können.
 
 # 2 Anforderungen
 
@@ -37,19 +22,76 @@
 
 | Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
 |---|---|---|---|---|
-|  |   |   |    |   |
+| Bürger | Heinz Müller | Tel. 42345634, von 10-19 Uhr telefonisch erreichbar,EMail 24/7 | Kennt die Funktionen welche ein Ordnungsamt bieten sollte | Will Ordnungswidrigkeiten sehen und melden dazu noch Genehmigungen beantragen und einsehen |
+| Ordnungsamt Mitarbeiter | Sarah Steinmann | Tel. 6546724, von 8-25 Uhr telefonisch erreichbar, EMail 24/7 | Kennt das System und die Stadt | Möchte das Ordnungsamt steuern und Anträge bearbeiten außerdem Ordnungswidrigkeiten nachgehen |
+
+
 
 ## 2.2 Funktionale Anforderungen
+
+### Use Case Diagramm
+
+![uc diagram](./img/Ordnungsamt.png)
 
 ## 2.3 Nicht-funktionale Anforderungen 
 
 ### 2.3.1 Rahmenbedingungen
 
+Die Kommunikation mit den anderen Mikroservices findet sowohl asynchron(Messaging) als auch synchron statt.
+
+### Asynchron
+
+Die asynchrone Kommunikation findet über Messaging statt. Dazu wird für alle Microservices ein RabbitMQ Server erstellt welcher die Nachrichten mittels Queues verarbeitet bzw. durchleitet.
+
+### Synchron
+
+Die Kommunikation zwischen den Microservices direkt findet mittels GRPC statt. Die technischen Details werden in der Datein mit dem Format ```proto3``` verfasst.
+
 ### 2.3.2 Betriebsbedingungen
+
+Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem Gerät mit einem Webbrowser möglich.
 
 ### 2.3.3 Qualitätsmerkmale
 
+| Qualitätsmerkmal       | sehr gut | gut  | normal | nicht relevant |
+| ---------------------- | -------- | ---- | ------ | -------------- |
+| Zuverlässigkeit        |          | X    |        |                |
+| Fehlertoleranz         |          |      | X      |                |
+| Wiederherstellbarkeit  | X        |      |        |                |
+| Ordnungsmäßigkeit      | X        |      |        |                |
+| Richtigkeit            | X        |      |        |                |
+| Konformität            | X        |      |        |                |
+| Benutzerfreundlichkeit |          |      | X      |                |
+| Installierbarkeit      |          |      |        | X              |
+| Verständlichkeit       | X        |      |        |                |
+| Erlernbarkeit          |          | X    |        |                |
+| Bedienbarkeit          |          | X    |        |                |
+| Performance            | X        |      |        |                |
+| Zeitverhalten          |          |      |        | X              |
+| Effizienz              |          |      |        | X              |
+| Sicherheit             | X        |      |        |                |
+| Analysierbarkeit       |          |      | X      |                |
+| Modifizierbarkeit      |          |      | X      |                |
+| Stabilität             | X        |      |        |                |
+| Prüfbarkeit            |          |      | X      |                |
+
+
+
 ## 2.4 Graphische Benutzerschnittstelle
+
+### Startpunkt Ordnungsamt
+
+![startbildschirm](.\img\ordnungsamt_start.PNG)
+
+### Mitarbeiteransicht
+
+![startbildschirm](.\img\mitarbeiteransicht.PNG)
+
+### Benutzeransicht
+
+![startbildschirm](.\img\buergersicht.PNG)
+
+
 
 ## 2.5 Anforderungen im Detail
 
@@ -76,15 +118,17 @@
 | OAMTM | Meldung von psychisch Kranken einsehen | Ich alle Meldungen auf einen Blick sehe | Alle Meldungen werden angezeigt | Must |
 | OAMTM | Meldung von psychisch Kranken bearbeiten | Ich den Meldungen nachgehen kann und diese aktualisieren kann | Status der Meldung ändert sich | Must |
 
-### Use Case Diagramme
 
-![uc diagram](./img/Ordnungsamt.png)
 
 # 3 Technische Beschreibung
 
 ## 3.1 Systemübersicht
 
+![Systemarchitektur](./img/systemarchitektur.png)
+
 ## 3.2 Softwarearchitektur
+
+![architekturdiagramm](./img/architekturdiagramm.PNG)
 
 ## 3.3 Schnittstellen
 
@@ -93,13 +137,72 @@
 * Zugriff auf Mitarbeiter (Ankunftszeit, Verweildauer, BearbeiterID)
 * Psychisch Kranke Meldungen Zugriff für Krankenhaus/Medizinische Einrichtungen (Meldung, Meldungszeit, BürgerID)
 
+### Bestehende Genehmigungen anfragen
+
+```
+"sgse.models.ordnungsamt.genehmigungen":{
+    "description": "Returns a complete list of the genehmigungen"  
+}
+```
+
+### Bestehende Ordnungswidrigkeiten
+
+```json
+"sgse.models.ordnungsamt.ordnungswidrigkeiten" : {
+    "description": "Returns a complete list of the ordnungswidrigkeiten"
+}
+```
+
+### Ordnungswidrigkeiten melden
+
+```json
+"sgse.models.ordnungsamt.ordnungswidrigkeiten" : {
+    "description": "Returns a complete list of the ordnungswidrigkeiten",
+    "fields": [
+        {"name": "uuid", "type": "string", "required": true},
+        {"name": "tag", "type": "string", "required": false},
+        {"name": "description", "type": "string", "required": true}
+    ]
+}
+```
+
+### Psychisch Kranke melden
+
+```json
+"sgse.models.ordnungsamt.psychkrank" : {
+    "description": "Sends a new Message about a psych. patient to the Ordnungsamt",
+    "fields": [
+        {"name": "uuid", "type": "string", "required": true},
+        {"name": "tag", "type": "string", "required": true},
+        {"name": "description", "type": "string", "required": false}
+    ]
+}
+```
+
+
+
+
+
 ## 3.3.1 Ereignisse
+
+### Empfangen
+
+### Senden
+
+### Messagequeues mit RabbitMQ
+
+- Bewilligte Genehmigungen: Genehmigungen 
+- Bearbeitete Ordnungswidrigkeiten: Ordnungswidrigkeiten
 
 ## 3.4 Datenmodell
 
 ## 3.5 Abläufe
 
+- Aktivitätsdiagramme
+
 ## 3.6 Entwurf
+
+- Softwarebestandteile darstellen
 
 ## 3.7 Fehlerbehandlung 
 
@@ -109,24 +212,30 @@
 
 ## 4.1 Annahmen
 
-## 4.2 Verantwortlichkeiten
+### Verwendete Technologien
 
-### Rollen
+- HTML
+- JavaScript
+- CSS
+- NoSQL
+- JavaScript(Node)
+- Docker
+- GRPC
 
-#### Softwarearchitekt
-
-#### Frontend-Entwickler
-
-#### Backend-Entwickler
-
-### Rollenzuordnung
-
-## 4.3 Grober Projektplan
+## 4.2 Grober Projektplan
 
 ### Meilensteine
 
 * KW 18 (27.04)
     * Spezifikation schreiben
+* KW 20 (11.05.2020)
+    - Abgabe Software-Spezifikation
+* KW 24 (8.06.2020)
+    - Fertigstellung Prototyp
+* KW 27 (30.06.2020)
+    - Microservice abgeschlossen
+* KW 27 (03.07.2020)
+    - Abgabe und Projektende
 
 # 5 Anhänge
 
@@ -139,3 +248,5 @@
 - Handbücher, Gesetze
 
 ## 5.3 Index
+
+-
