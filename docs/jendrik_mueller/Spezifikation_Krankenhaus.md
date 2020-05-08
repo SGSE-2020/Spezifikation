@@ -126,7 +126,7 @@ Prüfbarkeit |-|-|X|-
 
 ## 3.2 Softwarearchitektur
 
-![architektur](/Users/jendrikmuller/Documents/Master/SGSE/Spezifikation/docs/jendrik_mueller/img/architektur.png)
+![architektur](img/architektur.png)
 
 ## 3.3 Schnittstellen
 
