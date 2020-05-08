@@ -270,12 +270,12 @@ Die resultierende Payload dieses Ereignisses ist wie folgt definiert:
 
 ## 4.2 Verantwortlichkeiten
 
-- Zuordnung von Personen zu Softwarebausteinen aus Kapitel 3.1 und 3.2
-- Rollendefinition und Zuordnung
-
-| Softwarebaustein  | Person(en)        |
-| ----------------- | ----------------- |
-| Komponente A      | Thomas Mustermann |
+| Softwarebaustein  | Person(en)           |
+| ----------------- | -------------------- |
+| Frontend          | Sven                 |
+| Backend           | Sven                 |
+| Database          | Sven                 |
+| RabbitMQ          | Phillip, Malte, Sven |
 
 ### Rollen
 
