@@ -1,57 +1,13 @@
 # Anforderungs- und Entwurfsspezifikation ("Pflichtenheft")
 
-**Title:** Parkplatz
+**Title:** SmartCity - Parkplatz
 
 **Autor:** Sven Simikin
 
 **Repositories:** 
 [Source code](https://github.com/SGSE-2020/MS_Parkplatz), 
-[Spezifikation](https://github.com/SGSE-2020/Spezifikation/tree/master/docs), 
+[Spezifikation](https://sgse-2020.github.io/Spezifikation/#/./sven_simikin/Spezifikation_Parkplatz), 
 [Praktikumstagebuch](https://github.com/SGSE-2020/Praktikumstagebuch/blob/master/sven_simikin/ProjektTagebuch.md)
-
-# Inhaltsverzeichnis
-
-- [1 Einführung](#1-einf-hrung)
-  * [1.1 Beschreibung](#11-beschreibung)
-  * [1.2 Ziele](#12-ziele)
-    + [Zielbenutzergruppen und deren Merkmale](#zielbenutzergruppen-und-deren-merkmale)
-    + [Abgrenzung](#abgrenzung)
-- [2 Anforderungen](#2-anforderungen)
-  * [2.1 Stakeholder](#21-stakeholder)
-  * [2.2 Funktionale Anforderungen](#22-funktionale-anforderungen)
-  * [2.3 Nicht-funktionale Anforderungen](#23-nicht-funktionale-anforderungen)
-    + [2.3.1 Rahmenbedingungen](#231-rahmenbedingungen)
-    + [2.3.2 Betriebsbedingungen](#232-betriebsbedingungen)
-    + [2.3.3 Qualitätsmerkmale](#233-qualit-tsmerkmale)
-  * [2.4 Graphische Benutzerschnittstelle](#24-graphische-benutzerschnittstelle)
-  * [2.5 Anforderungen im Detail](#25-anforderungen-im-detail)
-    + [Schablone für User Stories](#schablone-f-r-user-stories)
-    + [Beispiel 1](#beispiel-1)
-    + [Beispiel 2](#beispiel-2)
-- [3 Technische Beschreibung](#3-technische-beschreibung)
-  * [3.1 Systemübersicht](#31-system-bersicht)
-  * [3.2 Softwarearchitektur](#32-softwarearchitektur)
-  * [3.3 Schnittstellen](#33-schnittstellen)
-  * [3.3.1 Ereignisse](#331-ereignisse)
-  * [3.4 Datenmodell](#34-datenmodell)
-  * [3.5 Abläufe](#35-abl-ufe)
-  * [3.6 Entwurf](#36-entwurf)
-  * [3.7 Fehlerbehandlung](#37-fehlerbehandlung)
-  * [3.8 Validierung](#38-validierung)
-- [4 Projektorganisation](#4-projektorganisation)
-  * [4.1 Annahmen](#41-annahmen)
-  * [4.2 Verantwortlichkeiten](#42-verantwortlichkeiten)
-    + [Rollen](#rollen)
-      - [Softwarearchitekt](#softwarearchitekt)
-      - [Frontend-Entwickler](#frontend-entwickler)
-      - [Backend-Entwickler](#backend-entwickler)
-    + [Rollenzuordnung](#rollenzuordnung)
-  * [4.3 Grober Projektplan](#43-grober-projektplan)
-    + [Meilensteine](#meilensteine)
-- [5 Anhänge](#5-anh-nge)
-  * [5.1 Glossar](#51-glossar)
-  * [5.2 Referenzen](#52-referenzen)
-  * [5.3 Index](#53-index)
 
 # 1 Einführung
 
@@ -59,40 +15,27 @@
 
 Das Projekt __Parkplatz__ erlaubt Kunden und Entitäten der MS-Architektur Parkplätze innerhalb definiter Zeiträume zu 
 reservieren. Die Reservierung von Parkflächen macht die aufwendige manuelle Suche nach Parkplätzen überflüssig und 
-ersetzt herkömmliche Park-Leitsystem welche auf Statistischen- oder Vorhersagemodellen basieren. Die genaue 
+ersetzt herkömmliche Park-Leitsysteme welche auf Statistischen- oder Vorhersagemodellen basieren. Die genaue 
 Spezifizierung von Parkmöglichkeiten erlaubt es Kunden Termine fristgerecht wahrzunehmen und garantiert die abstellplatz 
 findung. 
-
-* ~~Projektname~~
-* Darstellung der Produktvision in Prosa (5-10 Sätze)
-* Ziele
-* Für wen ist das Produkt/der Service?
-* Was ist das Bedürfnis? 
-* Was ist das Produkt/der Service?
-* Warum sollte der Kunde dieses Produkt/den Service „kaufen“ oder nutzen?
-* Im Gegensatz zu welchen anderen Produkten/Services steht dies?
-* Was macht dieses Produkt/der Service anders?
-* Warum ist das Projekt sinnvoll?
-* Welche Stakeholder sind betroffen und wie stehen Sie zu der Projektidee?
-* Welche alternativen Lösungsideen existieren für den identifizierten Bedarf?
-* Wie hoch sind Aufwand und erwarteter Nutzen und stehen sie in einem sinnvollen Verhältnis? (Lohnt sich das Projekt?)
-* Verfügen wir über die notwendigen Kompetenzen? (Umsetzbarkeit)
-* Welche Risiken und negativen Nebeneffekte sind zu erwarten?
 
 ## 1.2 Ziele
 Das Softwaresystem "Parkplatz" soll Kunden und Entitäten (andere Services) das Reservieren von Parkplätzen ermöglichen.
 Parkplätze können für bestimmte Zeiträume reserviert werden und ermöglichen damit, Kunden spezifische Parkplätze 
 innerhalb festgelegter Zeiträume zu nutzen. Dieser Prozess garantiert Kunden einen Parkplatz für ihr Kraftfahrzeug (PKW) 
-zu finden und somit Termine oder andere zeitkritische Aktivitäten sicher wahrnehmen zu können. Im Unterschied zu 
+zu finden und somit Termine oder andere zeitkritische Aktivitäten sicher wahrnehmen zu können. Das Abfragen von 
+Auslastungen und verfügbaren Parkflächen soll Kunden bei der Terminfindungen unterstützen und ermöglicht dem 
+Parkplatzservice das intelligente verwalten von Preisen in abhängigkeit der aktuellen Auslastung. Im Unterschied zu 
 gängigen Park-Leitsystemen garantiert das Softwaresystem "Parkplatz" die Findung eines spezifischen Parkplatzes und 
-zeigt nicht wage Statistiken über etwaig verfügbare freie Parkflächen an. Das Signalisieren mit Hinweisschildern und 
-Anzeigetafeln für Parkplätze und Parkflächen entfällt, da einem Kunden stets spezifische Parkplätze zugewiesen werden 
-können. 
+zeigt nicht wage Statistiken über etwaig verfügbare freie Parkflächen und Preise an. Das Signalisieren mit 
+Hinweisschildern und Anzeigetafeln für Parkplätze und Parkflächen entfällt, da einem Kunden stets spezifische Parkplätze 
+zugewiesen werden können. 
 
 Die Hauptmotivationen der Parkplatzreservierung sind:
 * Termingerechte Reservierung für zeitkritische Aktivitäten
 * Chancengleiches zuweisen von Parkplätzen ohne Priorisierung und Präferenz
 * Schaffung neuer Parkplätze, welche bisher durch "Dauerparker" blockiert sind
+* Schaffung eines auslastungsbedingten automatischen Preismodells
 
 Anforderungen an den Markt und insbesondere an die Kunden sind die ausnahmslose Einhaltung der festgelegten Parkzeiten 
 sowie das Melden von verstoßen gegen einzuhaltende Parkzeiten und das Abstellen von Fahrzeugen an verbindlichen 
@@ -200,17 +143,58 @@ Anforderungen.
 
 ## 3.1 Systemübersicht
 
-- Systemarchitekturdiagramm ("Box-And-Arrow" Diagramm)
-- Kommunikationsprotokolle, Datenformate
+![system_schematic](img/system_schematic.png)
 
 ## 3.2 Softwarearchitektur
 
-- Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
+![system_architecture](img/system_architecture.png)
 
 ## 3.3 Schnittstellen
 
-- Schnittstellenbeschreibung (API)
-- Auflistung der nach außen sichtbaren Schnittstelle der Softwarebausteine
+### Auslastung abfragen
+
+Diese Schnittstelle dient dazu, die Auslastung aller im System bekannten Parkflächen abzufragen. Es ist vorgesehen, 
+Informationen bezüglich der aktuellen Auslastung der Parkfläche als auch Informationen bezüglich des Bereistellers der 
+Parkfläche zur Verfügung zu stellen. Sie steht Kunden als auch weiteren Entitäten der Microservice-Architektur zur 
+Verfügung. Für die Abfrage werden außer der obligatorischen __MS__ Authentifizierung keine weiteren Parameter benötigt.
+
+Die resultierende Payload dieser Schnittstelle ist wie folgt definiert:
+
+```json
+"sgse.models.parkplatz.utilization":{
+	"description": "Represents the utilization of a Parkfläche object", 
+	"fields": [
+        {"name": "provider", "type": "string"},
+        {"name": "location", "type": "string"},
+        {"name": "provided_spots", "type": "number"},
+        {"name": "occupied_spots", "type": "number"},
+		{"name": "utilization", "type": "number"}
+	]
+}
+```
+
+### Reservierungen anzeigen
+
+Diese Schnittstelle dient dazu, Kunden einen Überblick über Ihre Reservierungen zu verschaffen. Sie ist ausschließlich 
+für den internen Gebrauch, sowie für die Verwendung durch den aktuell im System authentifizierten Kunden vorgesehen, 
+sodass das Abfragen von Reservierungen beliebiger Kunden durch weitere __MS__ der Microservice-Architektur verhindert 
+wird. Es werden aktuelle Reservierungen als auch Reservierungen der Vergangenheit durch diese Schnittstelle vermittelt 
+und ermöglichen damit eine historische Übersicht für Kunden. Zusätzlich wird zwischen ausstehenden, stornierten und 
+stattgefundenen Reservierungen unterschieden.
+
+Die resultierende Payload dieser Schnittstelle ist wie folgt definiert:
+
+```json
+"sgse.models.parkplatz.history":{
+	"description": "Represents a historic reservation record.", 
+	"fields": [
+        {"name": "datetime", "type": "string"},
+        {"name": "location", "type": "string"},
+        {"name": "state", "type": "string"},
+        {"name": "cost", "type": "number"}
+	]
+}
+```
 
 ## 3.3.1 Ereignisse
 
@@ -295,6 +279,8 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 
 - __MS__ - Microservice
 - __Entität__ - Microservice in der Architektur
+- __Parkfläche__ - Menge von Parkplätzen
+- __Parkplatz__ - Abstellplatz für einen PKW
 
 ## 5.2 Referenzen
 
