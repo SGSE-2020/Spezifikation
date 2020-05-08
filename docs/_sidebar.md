@@ -10,5 +10,6 @@
 * [Strassenverkehrsamt](./benedikt_struzek/Spezifikation_Strassenverkehrsamt.md)
 * [ÖPNV](./alexander_bergmann/Spezifikation_OPNV.md)
 * [Bank](./fabian_husemann/Spezifikation_Bank.md)
+* [Hausarzt](./tim_meier/spezifikation_hausarzt.md)
 
 
