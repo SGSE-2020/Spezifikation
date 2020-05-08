@@ -1,26 +1,16 @@
-# Smart City: Microservice Tierarzt  
-Autor: Mattis Küper  
-[Link zum Repository](https://github.com/SGSE-2020/MS_Tierarzt) 
+# Anforderungs- und Entwurfsspezifikation ("Pflichtenheft")
+**Titel**: SmartCity - Tierarzt  
+**Autor**: Mattis Küper  
+**Repositories**: [Quellcode](https://github.com/SGSE-2020/MS_Tierarzt), [Spezifikation](!https://sgse-2020.github.io/Spezifikation/#/./mattis_kueper/Spezifikation_Tierarzt), [Projekttagebuch](!https://github.com/SGSE-2020/Praktikumstagebuch/blob/master/Mattis_Kueper/ProjektTagebuch.md) 
 
 # 1 Einführung
 
 ## 1.1 Beschreibung
 
-* Projektname
-* Darstellung der Produktvision in Prosa (5-10 Sätze)
-* Ziele
-* Für wen ist das Produkt/der Service?
-* Was ist das Bedürfnis? 
-* Was ist das Produkt/der Service?
-* Warum sollte der Kunde dieses Produkt/den Service „kaufen“ oder nutzen?
-* Im Gegensatz zu welchen anderen Produkten/Services steht dies?
-* Was macht dieses Produkt/der Service anders?
-* Warum ist das Projekt sinnvoll?
-* Welche Stakeholder sind betroffen und wie stehen Sie zu der Projektidee?
-* Welche alternativen Lösungsideen existieren für den identifizierten Bedarf?
-* Wie hoch sind Aufwand und erwarteter Nutzen und stehen sie in einem sinnvollen Verhältnis? (Lohnt sich das Projekt?)
-* Verfügen wir über die notwendigen Kompetenzen? (Umsetzbarkeit)
-* Welche Risiken und negativen Nebeneffekte sind zu erwarten?
+Das Projekt **Tierarzt** soll Kunden ermöglichen Termine zu vereinbaren, abzusagen und einzusehen. Es soll außerdem ermöglicht 
+werden Futter und Medizin über den Tierarzt zu bestellen, und aufkommende Kosten direkt zu bezahlen. Somit stellt der Tierarzt
+den Hauptschnittstelle für alles zum Thema Haustiere dar. Das Abrufen der Termine soll es außerdem anderen Microservices erlauben zu prüfen,
+ob zwei Termine sich eventuell kreuzen und können den Benutzer an Termine erinnern.
 
 ## 1.2 Ziele
 
@@ -73,18 +63,18 @@ Ordnungsmäßigkeit |X|-|-|-|
 Richtigkeit |X|-|-|-|
 Konformität |-|X|-|-|
 **Benutzerfreundlichkeit** | | | | |
-Installierbarkeit |-|-|X|-|
+Installierbarkeit |-|-|-|X|
 Verständlichkeit |X|-|-|-|
-Erlernbarkeit |-|X|-|-|
-Bedienbarkeit |-|X|-|-|
+Erlernbarkeit |X|-|-|-|
+Bedienbarkeit |X|-|-|-|
 **Performance** | | | | |
-Zeitverhalten |-|-|X|-|
+Zeitverhalten |-|X|-|-|
 Effizienz|-|-|-|X|
 **Sicherheit** | | | | |
-Analysierbarkeit |X|-|-|-|
-Modifizierbarkeit |-|-|-|X|
-Stabilität |X|-|-|-|
-Prüfbarkeit |X|-|-|-|
+Analysierbarkeit |-|-|X|-|
+Modifizierbarkeit |-|-|X|-|
+Stabilität |-|-|X|-|
+Prüfbarkeit |-|-|X|-|
 
 ## 2.4 Graphische Benutzerschnittstelle
 
@@ -124,19 +114,131 @@ Prüfbarkeit |X|-|-|-|
 
 ## 3.3 Schnittstellen
 
-- Termine von Kunden und Mitarbeitern mit
-  - BürgerID
-  - Ankunftszeit
-  - ungefähre Aufenthaltsdauer
-- Informationen über angemeldete Tiere mit 
-  - BürgerID des Besitzers
-  - Art und Rasse des Tieres
-  - Gewicht
-  - Krankheiten
+### Termine abfragen
+Mit Hilfe dieser Schnittstelle können alle vereinbarten Termine bestimmter User angefragt werden. Dies kann verwendet werden,
+um eventuelle Termin Uberschneidungen zu prüfen, und so den Benutzer vor einer Termin Erstellung zu warnen, dass er in diesem
+Zeitraum bereits einen Termin mit Service X hat.
+
+Das Payload dieser Schnittstelle wäre dazu wie folgt:
+    
+    "sgse.models.tierarzt.appointments":{
+        "description": "Holds all appointments of a specific user with the Tierarzt",
+        "fields": [
+            {"name": "uid", "type": "string"},
+            {"appointments": [
+                {
+                    {"name": "appointmentid", "type": "string"},
+                    {"name": "arrivaltime", "type": "string"},
+                    {"name": "duration", "type": "double"}
+                },
+            ]}
+        ]
+    }
 
 ## 3.3.1 Ereignisse
 
-- In Event-gesteuerten Systemen: Definition der Ereignisse und deren Attribute
+### Termin vereinbaren
+Durch dieses Ereignis kann ein Benutzer einen Termin vereinbaren. Dazu muss der Benutzer zunächst seine UserID und einen
+Wunschtermin mit Beschreibung für die durchzuführende Tätigkeit zum Tierarzt schicken.
+
+Hierbei sähe der Payload wie folgt aus:
+
+    "sgse.models.tierarzt.appointmentrequest":{
+        "description": "Holds a wish date and the necessary treatment",
+        "fields": [
+            {"name": "uid", "type": "string"},
+            {"name": "arrivaltime", "type": "string"},
+            {"name": "treatment", "type": "string"},
+        ]
+    }
+
+Der Benutzer bekommt nun vom Tierarzt eine Liste mit möglichen Terminen zurück, und eine Einschätzung der Dauer für die
+Behandlung.
+
+Dies wurde in folgender Form versendet werden:
+
+    "sgse.models.tierarzt.appointmentresponse":{
+        "description": "Gives the user dates to choose from, and a rough estimation on the duration of the treatment",
+        "fields": [
+            {"name": "uid", "type": "string"},
+            {"name": "duration", "type": "double"},
+            {"name": "cost", "type": "double"},
+            "possibleappointments":[
+                {
+                    {"name": "appointmentid", "type": "string"},
+                    {"name": "arrivaltime", "type": "string"}
+                }
+            ]
+        ]
+    }
+    
+Nun kann der User sich für einen der Termine Entscheiden oder den Vorgang abbrechen. Dazu wird die jeweilige appoointmentid
+versendet, oder **null**, falls der Vorgang abgebrochen werden soll.
+
+    "sgse.models.tierarzt.appointmentchoice":{
+        "description": "The user sends the ID of the appointment he wants to attend",
+        "fields": [
+            {"name": "uid", "type": "string"},
+            {"name": "appointmentid", "type": "string"},
+            {"name": "arrivaltime", "type": "string"},
+            {"name": "duration", "type": "double"},
+            {"name": "cost", "type": "double"}
+        ]
+    }
+    
+Anhand dieser Daten kann nun ein Termin vermerkt werden, welcher abgerufen, storniert oder bezahlt werden kann.
+ 
+### Termin stornieren
+
+Der Benutzer kann Termine stornieren. Dafür wird die appointmentid des zu stornierenden Termins übertragen und aus der
+Datenbank entfernt.
+
+    "sgse.models.tierarzt.appointmentcancel":{
+        "description": "The user sends the ID of the appointment he wants to cancel",
+        "fields": [
+            {"name": "uid", "type": "string"},
+            {"name": "appointmentid", "type": "string"}
+        ]
+    }
+
+### Tierdaten erstellen
+
+Diese Funktion wird von Mitabeitern verwendet, um neue Tiere in die Datenbank aufzunehmen. Hierbei werden zunächst allgemeine Daten
+wie die Tierart, Rasse, Gewicht und Größe erfasst, aber auch alle bekannten Krankheiten.
+
+    "sgse.models.tierarzt.animalinfocreate":{
+        "description": "Creates new information about a new animal.",
+        "fields": [
+            {"name": "uid", "type": "string"},
+            {"name": "type", "type": "string"},
+            {"name": "race", "type": "string"},
+            {"name": "weight", "type": "double"},
+            {"name": "height", "type": "double"},
+            {"diseases": [
+                {"name": "diseasename", "type": "string"},
+                {"name": "diseasedescription", "type": "string"}
+            ]}
+        ]
+    }
+
+### Tierdaten bearbeiten
+
+Durch diese Funktion kann der Mitarbeiter Daten über Tiere ändern. So können zum Beispiel Größe und Gewicht sich geändert
+haben, aber auch neue Krankheiten hinzugekommen sein.
+
+    "sgse.models.tierarzt.animalinfocreate":{
+        "description": "Manipulates the information about an existing animal.",
+        "fields": [
+            {"name": "animalid", "type": "string"},
+            {"name": "weight", "type": "double"},
+            {"name": "height", "type": "double"},
+            {"diseases": [
+                {"name": "diseasename", "type": "string"},
+                {"name": "diseasedescription", "type": "string"}
+            ]}
+        ]
+    }
+
 
 ## 3.4 Datenmodell 
 
@@ -195,29 +297,29 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 
 | Name     | Rolle     |
 |----------|-----------|
-| Thomas Mustermann | Softwarearchitekt |
+| Mattis Küper | Softwarearchitekt |
+| Mattis Küper | Frontend-Entwickler |
+| Mattis Küper | Backend-Entwickler |
 
 
 ## 4.3 Grober Projektplan
 
-- Meilensteine
-
 ### Meilensteine
-* KW 43 (21.10)
-  * Abgabe Pflichtenheft
-* KW 44 (28.10) / Projekt aufsetzen
-  * Repository Struktur
-* KW 45 (4.11) / Implementierung
-  * Implementierung #3 (Final)
-* KW 48 (18.12) / Abnahmetests
-  * manuelle Abnahmetestss
-  * Präsentation / Software-Demo
+* KW 19 (08.05.2020)
+  * Fertigstellung Api-Schnittstellen-Spezifikation
+* KW 20 (11.05.2020) 
+  * Abgabe Software-Spezifikation
+* KW 24 (08.06.2020) 
+  * Abgabe Softwareprodukt (Version 0)
+* KW 27 (03.07.2020) 
+  * Abgabe Softwareprodukt
 
 # 5 Anhänge
 
 ## 5.1 Glossar 
 
-- Definitionen, Abkürzungen, Begriffe
+- **MS** - Microservice
+- **Entität** - Microservice in der Architektur
 
 ## 5.2 Referenzen
 
