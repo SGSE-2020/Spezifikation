@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export Aktivität_NutzerTot.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="9.29005in" height="1.40639in"
+		viewBox="0 0 668.884 101.26" xml:space="preserve" color-interpolation-filters="sRGB" class="st9">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvNoAutoConnect" v:prompt="" v:val="VT0(0):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#5b9bd5;stroke:#5b9bd5;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st2 {fill:#73ae42;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st3 {fill:#ffffff;font-family:Calibri;font-size:1.00001em}
+		.st4 {font-size:1em}
+		.st5 {marker-end:url(#mrkr4-12);stroke:#5592c9;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st6 {fill:#5592c9;fill-opacity:1;stroke:#5592c9;stroke-opacity:1;stroke-width:0.16556291390728}
+		.st7 {fill:#a5a5a5}
+		.st8 {stroke:#a5a5a5;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st9 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend4">
+			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr4-12" class="st6" v:arrowType="4" v:arrowSize="2" v:setback="12.08" refX="-12.08" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-6.04,-6.04) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<v:userDefs>
+			<v:ud v:nameU="msvThemeOrder" v:val="VT0(0):26"/>
+		</v:userDefs>
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="Verbinder" v:index="0"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(18.25,-40.4)">
+			<title>Anfangsknoten</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<ellipse cx="17.0079" cy="84.252" rx="17.0079" ry="17.0079" class="st1"/>
+		</g>
+		<g id="shape2-3" v:mID="2" v:groupContext="shape" transform="translate(93.2393,-39.006)">
+			<title>Aktion</title>
+			<desc>UID in Backend empfangen</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="66.743" cy="82.8579" width="133.49" height="36.8038"/>
+			<rect x="0" y="64.456" width="133.486" height="36.8038" rx="8.50394" ry="8.50394" class="st2"/>
+			<text x="29.76" y="79.26" class="st3" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>UID in Backend <tspan
+						x="38.99" dy="1.2em" class="st4">empfangen</tspan></text>		</g>
+		<g id="shape5-7" v:mID="5" v:groupContext="shape" v:layerMember="0" transform="translate(52.2657,-64.4945)">
+			<title>Dynamischer Verbinder</title>
+			<path d="M0 108.35 L34.93 108.35" class="st5"/>
+		</g>
+		<g id="shape8-13" v:mID="8" v:groupContext="shape" transform="translate(616.618,-40.4)">
+			<title>Abschlussknoten</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M30.61 84.25 A13.6063 13.6063 -180 1 0 3.4 84.25 A13.6063 13.6063 -180 1 0 30.61 84.25 Z" class="st7"/>
+			<path d="M34.02 84.25 A17.0079 17.0079 -180 1 0 0 84.25 A17.0079 17.0079 -180 1 0 34.02 84.25" class="st8"/>
+			<path d="M30.61 84.25 A13.6063 13.6063 -180 1 0 3.4 84.25 A13.6063 13.6063 -180 1 0 30.61 84.25" class="st8"/>
+		</g>
+		<g id="shape10-17" v:mID="10" v:groupContext="shape" transform="translate(267.699,-31.8059)">
+			<title>Aktion.10</title>
+			<desc>Datensatz zu UID in PostgreDB als deaktiviert setzen</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="66.743" cy="75.6579" width="133.49" height="51.2039"/>
+			<rect x="0" y="50.0559" width="133.486" height="51.2039" rx="8.50394" ry="8.50394" class="st2"/>
+			<text x="19.26" y="64.86" class="st3" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Datensatz zu UID in <tspan
+						x="5.66" dy="1.2em" class="st4">PostgreDB als deaktiviert </tspan><tspan x="50.89" dy="1.2em" class="st4">setzen</tspan></text>		</g>
+		<g id="shape20-22" v:mID="20" v:groupContext="shape" v:layerMember="0" transform="translate(226.725,-50.3213)">
+			<title>Dynamischer Verbinder.20</title>
+			<path d="M0 94.17 L34.93 94.17" class="st5"/>
+		</g>
+		<g id="shape46-27" v:mID="46" v:groupContext="shape" transform="translate(442.158,-39.006)">
+			<title>Aktion.46</title>
+			<desc>Nutzerkonto in Firebase deaktiveren</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="66.743" cy="82.8579" width="133.49" height="36.8038"/>
+			<rect x="0" y="64.456" width="133.486" height="36.8038" rx="8.50394" ry="8.50394" class="st2"/>
+			<text x="8.23" y="79.26" class="st3" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Nutzerkonto in Firebase <tspan
+						x="37.69" dy="1.2em" class="st4">deaktiveren</tspan></text>		</g>
+		<g id="shape47-31" v:mID="47" v:groupContext="shape" v:layerMember="0" transform="translate(401.185,-50.3213)">
+			<title>Dynamischer Verbinder.47</title>
+			<path d="M0 94.17 L34.93 94.17" class="st5"/>
+		</g>
+		<g id="shape48-36" v:mID="48" v:groupContext="shape" v:layerMember="0" transform="translate(575.644,-50.3213)">
+			<title>Dynamischer Verbinder.48</title>
+			<path d="M0 94.17 L34.93 94.17" class="st5"/>
+		</g>
+	</g>
+</svg>

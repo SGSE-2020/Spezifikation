@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export Aktivität_Verifizierung.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="7.76982in" height="3.31716in"
+		viewBox="0 0 559.427 238.835" xml:space="preserve" color-interpolation-filters="sRGB" class="st12">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvNoAutoConnect" v:prompt="" v:val="VT0(0):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#5b9bd5;stroke:#5b9bd5;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st2 {fill:#73ae42;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st3 {fill:#ffffff;font-family:Calibri;font-size:1.00001em}
+		.st4 {font-size:1em}
+		.st5 {marker-end:url(#mrkr4-12);stroke:#5592c9;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st6 {fill:#5592c9;fill-opacity:1;stroke:#5592c9;stroke-opacity:1;stroke-width:0.16556291390728}
+		.st7 {fill:#a5a5a5}
+		.st8 {stroke:#a5a5a5;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st9 {fill:#5b9bd5;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st10 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+		.st11 {fill:#41719d;font-family:Calibri;font-size:0.666664em}
+		.st12 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend4">
+			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr4-12" class="st6" v:arrowType="4" v:arrowSize="2" v:setback="12.08" refX="-12.08" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-6.04,-6.04) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<v:userDefs>
+			<v:ud v:nameU="msvThemeOrder" v:val="VT0(0):26"/>
+		</v:userDefs>
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="Verbinder" v:index="0"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(18.25,-177.975)">
+			<title>Anfangsknoten</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<ellipse cx="17.0079" cy="221.827" rx="17.0079" ry="17.0079" class="st1"/>
+		</g>
+		<g id="shape2-3" v:mID="2" v:groupContext="shape" transform="translate(93.2393,-176.581)">
+			<title>Aktion</title>
+			<desc>Token in Backend empfangen</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="66.743" cy="220.433" width="133.49" height="36.8038"/>
+			<rect x="0" y="202.031" width="133.486" height="36.8038" rx="8.50394" ry="8.50394" class="st2"/>
+			<text x="23.86" y="216.83" class="st3" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Token in Backend<v:newlineChar/><tspan
+						x="38.99" dy="1.2em" class="st4">empfangen</tspan></text>		</g>
+		<g id="shape5-7" v:mID="5" v:groupContext="shape" v:layerMember="0" transform="translate(52.2657,-202.07)">
+			<title>Dynamischer Verbinder</title>
+			<path d="M0 245.92 L34.93 245.92" class="st5"/>
+		</g>
+		<g id="shape8-13" v:mID="8" v:groupContext="shape" transform="translate(457.426,-40.4)">
+			<title>Abschlussknoten</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M30.61 221.83 A13.6063 13.6063 -180 1 0 3.4 221.83 A13.6063 13.6063 -180 1 0 30.61 221.83 Z" class="st7"/>
+			<path d="M34.02 221.83 A17.0079 17.0079 -180 1 0 0 221.83 A17.0079 17.0079 -180 1 0 34.02 221.83" class="st8"/>
+			<path d="M30.61 221.83 A13.6063 13.6063 -180 1 0 3.4 221.83 A13.6063 13.6063 -180 1 0 30.61 221.83" class="st8"/>
+		</g>
+		<g id="shape10-17" v:mID="10" v:groupContext="shape" transform="translate(267.699,-169.381)">
+			<title>Aktion.10</title>
+			<desc>Token an Firebase senden und Validierung durchführen</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="66.743" cy="213.233" width="133.49" height="51.2039"/>
+			<rect x="0" y="187.631" width="133.486" height="51.2039" rx="8.50394" ry="8.50394" class="st2"/>
+			<text x="22.48" y="202.43" class="st3" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Token an Firebase <tspan
+						x="9.03" dy="1.2em" class="st4">senden und Validierung<v:newlineChar/></tspan><tspan x="36.29" dy="1.2em"
+						class="st4">durchführen</tspan></text>		</g>
+		<g id="shape11-22" v:mID="11" v:groupContext="shape" transform="translate(407.691,-97.0929)">
+			<title>Aktion.11</title>
+			<desc>Null zurückgeben</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="66.743" cy="221.827" width="133.49" height="34.0157"/>
+			<rect x="0" y="204.819" width="133.486" height="34.0157" rx="8.50394" ry="8.50394" class="st2"/>
+			<text x="24.48" y="225.43" class="st3" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Null zurückgeben</text>		</g>
+		<g id="shape12-25" v:mID="12" v:groupContext="shape" transform="translate(317.434,-97.0929)">
+			<title>Entscheidung</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M17.01 238.84 L34.02 221.83 L17.01 204.82 L0 221.83 L17.01 238.84 Z" class="st9"/>
+		</g>
+		<g id="shape13-27" v:mID="13" v:groupContext="shape" v:layerMember="0" transform="translate(327.355,-169.381)">
+			<title>Dynamischer Verbinder.13</title>
+			<desc>Validierung erfolgreich?</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="49.6527" cy="257.832" width="87.58" height="17.6036"/>
+			<path d="M7.09 238.84 L7.09 271.07" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="10.7724" y="253.032" width="77.7607" height="9.59985" class="st10"/>
+			<text x="10.77" y="260.23" class="st11" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Validierung erfolgreich?</text>		</g>
+		<g id="shape20-34" v:mID="20" v:groupContext="shape" v:layerMember="0" transform="translate(226.725,-187.897)">
+			<title>Dynamischer Verbinder.20</title>
+			<path d="M0 231.75 L34.93 231.75" class="st5"/>
+		</g>
+		<g id="shape39-39" v:mID="39" v:groupContext="shape" transform="translate(187.492,-40.4)">
+			<title>Abschlussknoten.39</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M30.61 221.83 A13.6063 13.6063 -180 1 0 3.4 221.83 A13.6063 13.6063 -180 1 0 30.61 221.83 Z" class="st7"/>
+			<path d="M34.02 221.83 A17.0079 17.0079 -180 1 0 0 221.83 A17.0079 17.0079 -180 1 0 34.02 221.83" class="st8"/>
+			<path d="M30.61 221.83 A13.6063 13.6063 -180 1 0 3.4 221.83 A13.6063 13.6063 -180 1 0 30.61 221.83" class="st8"/>
+		</g>
+		<g id="shape41-43" v:mID="41" v:groupContext="shape" transform="translate(147.807,-95.6989)">
+			<title>Aktion.41</title>
+			<desc>UID vom Nutzer zurückgeben</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="220.433" width="113.39" height="36.8038"/>
+			<rect x="0" y="202.031" width="113.386" height="36.8038" rx="8.50394" ry="8.50394" class="st2"/>
+			<text x="17.78" y="216.83" class="st3" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>UID vom Nutzer <tspan
+						x="25.56" dy="1.2em" class="st4">zurückgeben</tspan></text>		</g>
+		<g id="shape42-47" v:mID="42" v:groupContext="shape" v:layerMember="0" transform="translate(467.348,-97.0929)">
+			<title>Dynamischer Verbinder.42</title>
+			<path d="M7.09 238.84 L7.09 255.47" class="st5"/>
+		</g>
+		<g id="shape43-52" v:mID="43" v:groupContext="shape" v:layerMember="0" transform="translate(197.413,-95.6989)">
+			<title>Dynamischer Verbinder.43</title>
+			<path d="M7.09 238.84 L7.09 254.08" class="st5"/>
+		</g>
+		<g id="shape44-57" v:mID="44" v:groupContext="shape" v:layerMember="0" transform="translate(351.45,-107.014)">
+			<title>Dynamischer Verbinder.44</title>
+			<desc>nein</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="26.9755" cy="238.835" width="40" height="17.6036"/>
+			<path d="M0 231.75 L50.2 231.75" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="19.8644" y="234.035" width="14.2224" height="9.59985" class="st10"/>
+			<text x="19.86" y="241.24" class="st11" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>nein</text>		</g>
+		<g id="shape45-64" v:mID="45" v:groupContext="shape" v:layerMember="0" transform="translate(317.434,-107.014)">
+			<title>Dynamischer Verbinder.45</title>
+			<desc>ja</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="-24.0481" cy="238.835" width="40" height="17.6036"/>
+			<path d="M0 231.75 L-50.2 231.75" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="-26.9213" y="234.035" width="5.74612" height="9.59985" class="st10"/>
+			<text x="-26.92" y="241.24" class="st11" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>ja</text>		</g>
+	</g>
+</svg>
