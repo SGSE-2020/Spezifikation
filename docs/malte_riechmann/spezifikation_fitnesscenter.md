@@ -58,6 +58,9 @@ Das System soll die persönliche Kommunikation zwischen Kunde und Trainer/Physio
 
 ### 2.3.1 Rahmenbedingungen
 
+- Kommunikation mit anderen Microservices
+  - Asynchron: RabbitMQ
+  - Synchron: gRPC
 - Normen, Standards, Protokolle, Hardware, externe Vorgaben
 
 ### 2.3.2 Betriebsbedingungen
@@ -185,7 +188,7 @@ PDF-Version mit Verlinkung im Projekt Repository
 
 ## 3.1 Systemübersicht
 
-![system](./img/system.png)
+![system](img/system.png)
 
 - Kommunikationsprotokolle, Datenformate
 
@@ -197,31 +200,35 @@ PDF-Version mit Verlinkung im Projekt Repository
 
 ### Trainingsplan anfordern
 
+* Registrierte Nutzer können einen neuen Trainingsplan anfordern. Dafür muss die ID angegeben werden und optional ein Datum, an dem sie das nächste mal im Fitness Center sind. Der Trainer muss den Plan Vorort, zusammen mit dem Kunden erstellen.
+
 ````json
 "sgse.model.fitness_center.trainingsplan_antrag": {
     "description": "Object to request a new training plan",
     "fields": [
       {"name": "member_id", "type": "string", "required": true},
-      {"name": "date", "type": "date", "required": true}  
+      {"name": "date", "type": "date", "required": false}  
     ]
 }
 ````
 
 ### Physiotherapeuten Termin anfordern
+
+* Jeder kann einen Termin beim Physiotherapeuten beantragen. Dafür wird die ID der Person benötigt und ggf. ein Wunsch Termin. Optional kann auch noch eine Notiz des behandelnden Arzt mit angehängt werden.
+
 ````json
 "sgse.model.fitness_center.physiotherapeut_antrag": {
     "description": "Object to request an appointment with the physiotherapist",
     "fields": [
       {"name": "member_id", "type": "string", "required": true},
-      {"name": "date", "type": "date", "required": true},
+      {"name": "date", "type": "date", "required": false},
       {"name": "note", "type": "string", "required": false}
     ]
 }
 ````
 
 
-- Schnittstellenbeschreibung (API)
-- Auflistung der nach außen sichtbaren Schnittstelle der Softwarebausteine
+- 
 
 ## 3.3.1 Ereignisse
 
@@ -231,7 +238,7 @@ PDF-Version mit Verlinkung im Projekt Repository
 
 - Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
 
-![model](D:\Uni\SE\Repos\Spezifikation\docs\malte_riechmann\img\model.png)
+![model](img/model.png)
 
 ## 3.5 Abläufe
 
