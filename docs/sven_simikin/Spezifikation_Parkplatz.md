@@ -68,8 +68,11 @@ ist nicht vorgesehen.
 | Stammkunde welcher Parkplatz reservieren möchte  | Stammkunde | Ist mit dem Reservierungsprozess aus Erfahrung vertraut       | Möchte Parkplatz für sich selbst reservieren                                               |
 
 ## 2.2 Funktionale Anforderungen
+### Kunde
+![customer_use_case](img/customer_use_case.png)
 
-![customer_entity_use_case](img/customer_entity_use_case.png)
+### Entität
+![entity_use_case](img/entity_use_case.png)
 
 ## 2.3 Nicht-funktionale Anforderungen 
 
@@ -112,9 +115,6 @@ Anforderungen.
 | Prüfbarkeit                |-         |-    |X       |-               |
 
 ## 2.4 Graphische Benutzerschnittstelle
-
-## Login
-![login](img/login.png)
 
 ## Meine Reservierungen
 ![my_reservations](img/my_reservations.png)
@@ -374,18 +374,18 @@ Die resultierende Payload dieses Ereignisses ist wie folgt definiert:
 
 ## 3.7 Fehlerbehandlung 
 
-* Der Service(Backend) ist nicht Verfügbar
-* Der Benutzer kann sich nicht einloggen
-* Der Benutzer kann sich nicht ausloggen
-* Benutzerdaten konnten nicht abgerufen werden
-* Es konnte kein Parkplatz reserviert werden
-* Falschparker konnten nicht gemeldet werden
-* Die Reservierungshistorie kann nicht angezeigt werden
-* Eine Reservierung konnte nicht bearbeitet werden
-* Eine Reservierung konnte nicht storniert werden
-* Parkfläche konnte nicht bereitgestellt werden
-* Parkfläche konnte nicht bearbeitet werden
-* Parkfläche konnte nicht entfernt werden
+* Der Service(Backend) ist nicht verfügbar → Fehlermeldung im Frontend anzeigen
+* Der Service(Frontend) ist nicht verfügbar → Fehler nicht behandeln
+* Der Benutzer kann sich nicht einloggen → Fehlermeldung im Frontend anzeigen
+* Der Benutzer kann sich nicht ausloggen → Fehlermeldung im Frontend anzeigen
+* Benutzerdaten konnten nicht abgerufen werden → Fehlermeldung im Frontend anzeigen
+* Falschparker konnten nicht gemeldet werden → Fehlermeldung im Frontend anzeigen
+* Die Reservierungshistorie kann nicht angezeigt werden → Fehlermeldung im Frontend anzeigen
+* Es konnte kein Parkplatz reserviert werden → Fehlermeldung im Frontend anzeigen / Fehlermeldung per gRPC zurückgeben
+* Eine Reservierung konnte nicht storniert werden → Fehlermeldung im Frontend anzeigen / Fehlermeldung per gRPC zurückgeben
+* Parkfläche konnte nicht bereitgestellt werden → Fehlermeldung per gRPC zurückgeben
+* Parkfläche konnte nicht bearbeitet werden → Fehlermeldung per gRPC zurückgeben
+* Parkfläche konnte nicht entfernt werden → Fehlermeldung per gRPC zurückgeben
 
 ## 3.8 Validierung
 
@@ -395,11 +395,18 @@ Die resultierende Payload dieses Ereignisses ist wie folgt definiert:
 
 ## 4.1 Annahmen
 
-- Nicht durch den Kunden definierte spezifische Annahmen, Anforderungen und Abhängigkeiten
-- Verwendete Technologien (Programmiersprache, Frameworks, etc.)
-- Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen 
-- Einschränkungen, Betriebsbedingungen und Faktoren, die die Entwicklung beeinflussen (Betriebssysteme, Entwicklungsumgebung)
-- Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
+### Verwendete Technologien 
+#### Frontend
+- Angular - Front-End-Webapplikationsframework 
+- NGINX - Webserver
+- AngularFire - Angular Firebase client library
+#### Backend
+- amqplib - RabbitMQ AMQP Client
+- nodemon/node - Webserver
+- Node gRPC Library - gRPC Framework for Node 
+- Node Redis - Redis client for Node
+#### Database
+- Redis - In-Memory Database 
 
 ## 4.2 Verantwortlichkeiten
 
