@@ -10,17 +10,17 @@
 
 ## 1.1 Beschreibung
 
-Das Bürgerbüro ist ein Service innerhalb der Smart City. Er dient als Anlaufstelle für alle Bürgerinnen und Bürger die neu in die Stadt einziehen wollen oder schon in der Stadt wohnen. Jeder Interessent der in die Smart City einziehen möchte kann im Bürgerbüro ein zentrales Nutzerkonto eröffnen, welches für alles Dienstleister innerhalb der Smart City genutzt wird. Außerdem steht jedem die Einsicht auf das schwarze Brett offen, an welchem Infos über die neusten Informationen, sowie abgegebene Fundgestände zu finden sind. 
+Das Bürgerbüro ist ein Service innerhalb der Smart City. Er dient als Anlaufstelle für alle Bürgerinnen und Bürger, die neu in die Stadt einziehen wollen oder schon in der Stadt wohnen. Jeder Interessent, der in die Smart City einziehen möchte, kann im Bürgerbüro ein zentrales Nutzerkonto eröffnen, welches für alle Dienstleister innerhalb der Smart City genutzt wird. Außerdem steht jedem die Einsicht auf das schwarze Brett offen, an welchem Aushänge über die neusten Informationen sowie abgegebene Fundgestände zu finden sind. 
 
-Bürgerinnen und Bürger, welche bereits in der Smart City wohnen und ein Nutzerkonto besitzen können Ihre Daten anpassen, sowie eigene Aushänge für das schwarze Brett erstellen. Zudem können sie Fundgegenstände abgeben oder auch abholen.
+Bürgerinnen und Bürger, welche bereits in der Smart City wohnen und ein Nutzerkonto besitzen, können ihre Daten anpassen sowie eigene Aushänge für das schwarze Brett erstellen. Zudem können sie Fundgegenstände abgeben oder auch abholen.
 
 ## 1.2 Ziele
 
-Die zentrale Anlaufstelle für alle Bürger, spielt in jeder Gemeinde eine große Rolle. Das Ziel des Bürgerbüros ist es eine zentrale Organisation zu bieten und die Informationen über alle Bürgerinnen und Bürger, sowie alle Informationen zentral zu sammeln und zur Verfügung zu stellen. 
+Die zentrale Anlaufstelle für alle Bürger spielt in jeder Gemeinde eine große Rolle. Das Ziel des Bürgerbüros ist es, eine zentrale Organisation zu bieten und die Informationen über alle Bürgerinnen und Bürger, sowie alle Informationen zentral zu sammeln und zur Verfügung zu stellen. 
 
-Weiterhin sollen alle Bürgerinnen und Bürger einfach und ohne viel Zeitaufwand Ihre eigenen Daten zu aktualisieren oder das schwarze Brett nutzen können um immer auf dem neusten Stand zu sein.
+Weiterhin sollen alle Bürgerinnen und Bürger einfach und ohne viel Zeitaufwand ihre eigenen Daten aktualisieren oder das schwarze Brett nutzen können, um immer auf dem neusten Stand zu sein.
 
-Ziel ist es, dass alle Bürger hier her kommen um Organisatorische Themen zu klären oder sich über neue Aushänge zu informieren.
+Ziel ist es, dass alle Bürger hier her kommen, um organisatorische Themen zu klären oder sich über neue Aushänge zu informieren.
 
 # 2 Anforderungen
 
@@ -28,7 +28,7 @@ Ziel ist es, dass alle Bürger hier her kommen um Organisatorische Themen zu kl�
 
 | Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
 |---|---|---|---|---|
-| Interessent (Möchte in die Smart City einziehen)  |  Martin Meyer   |  Tel. 2837462, von 16-20 Uhr telefonisch erreichbar | Kennt das System in anderen Städten, ist interessiert am System der Smart City | Übersichtliche Darstellung aller angebotenen Inhalte, um sich zurechtzufinden |
+| Interessent (Möchte in die Smart City einziehen)  |  Martin Meyer   |  Tel. 2837462, von 16-20 Uhr telefonisch erreichbar | Kennt das System in anderen Städten, ist interessiert am System der Smart City | Übersichtliche Darstellung aller angebotenen Inhalte, um sich zurecht zu finden |
 | Bürger                                            |  Ulla Friedrich |  Tel. 1027363, ulla-f@web.de, von 12-18 Uhr telefonisch erreichbar, per E-Mail immer erreichbar | Kennt das bisherige System der Smart City | Einfache Handhabung um Daten zu ändern und Informationen zu erhalten |
 | Angestellter des Bürgerbüros                      |  Lukas Schmidt  |  Tel. 5847236, l.schmidt@web.de, von 8-16 Uhr telefonisch erreichbar, per E-Mail immer erreichbar | Kennt das bisherige System der Smart City | Vereinfachung der organisatorischen Tätigkeiten  |
 
@@ -41,12 +41,28 @@ Ziel ist es, dass alle Bürger hier her kommen um Organisatorische Themen zu kl�
 ### Bürger
 ![UseCase_Buerger](./img/UseCase_Buerger.svg)
 
+//TODO Aushänge ansehen entfernen
+
+//TODO Abgegebenen Aushang löschen
+
+//TODO Nutzerkonto löschen (Firebase) -> Nutzerkonto als deaktiv markieren (PostgreSQL
+
+
+
 ### Mitarbeiter Bürgerbüro
+
 ![UseCase_Mitarbeiter](./img/UseCase_Mitarbeiter.svg)
+
+//TODO Aushänge ansehen entfernen
 
 ### Dienstleister
 
 ![UseCase_Dienstleister](./img/UseCase_Dienstleister.svg)
+//TODO get User
+
+//TODO Aushang abgeben
+
+//TODO Abgegebenen Aushang entfernen
 
 ## 2.3 Nicht-funktionale Anforderungen 
 
@@ -56,11 +72,11 @@ Kommunikation mit anderen Dienstleistern findet sowohl synchron als auch asynchr
 
 #### Synchrone Kommunikation
 
-Synchrone Kommunikation zwischen den anderen Dienstleistern findet mittels gRPC statt. Dabei werden alle Protokoll Buffer Dateien zur Kommunikation in der Syntax `proto3` formuliert. Die Kommunikation zwischen der Webanwendung und dem Backendserver finden über REST statt.
+Synchrone Kommunikation zwischen den anderen Dienstleistern findet mittels gRPC statt. Dabei werden alle Protokoll Buffer Dateien zur Kommunikation in der Syntax `proto3` formuliert. Die Kommunikation zwischen der Webanwendung und dem Backendserver findet über REST statt.
 
 #### Asynchrone Kommunikation
 
-Zwischen Dienstleitern werden Messagequeues mit Hilfe von RabbitMQ für asynchrone Kommunikation genutzt. 
+Zwischen Dienstleistern werden Messagequeues mit Hilfe von RabbitMQ für asynchrone Kommunikation genutzt. Es wird ein eigener Exchange für die Nachrichten vom Bürgerbüro genutzt. Je nach Thema der Message wird diese in vers. Queues gelagert.
 
 ### 2.3.2 Betriebsbedingungen
 
@@ -150,12 +166,14 @@ Prüfbarkeit |X|-|-|-
 
 ## 2.5 Anforderungen im Detail
 
+//TODO überarbeiten
+
 ### Interessent
 
-| Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Priorität |
-| --| --| -- | -- | -- | -- |
-| Registrierung/Anmeldung | Interessent | mich beim Bürgerbüro registrieren| für mich ein Konto erstellt wird | Registrierung möglich | Hoch |
-| Schwarzes Brett lesen| Interessent | Zugriff auf das schwarze Brett haben | ich interessante Aushänge zur Smart City ansehen kann und mich besser zurechtfinde | Schwarzes Brett ist zugänglich | Mittel |
+Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Priorität
+-- | -- | -- | -- | -- | --
+Registrierung/Anmeldung | Interessent | mich beim Bürgerbüro registrieren | für mich ein Konto erstellt wird | Registrierung möglich | Hoch
+Schwarzes Brett lesen | Interessent | Zugriff auf das schwarze Brett haben | ich interessante Aushänge zur Smart City ansehen kann und mich besser zurechtfinde | Schwarzes Brett ist zugänglich | Mittel
 
 ### Bürger
 
@@ -200,10 +218,10 @@ Prüfbarkeit |X|-|-|-
 
 ### Bürgerdaten abfragen
 
-Diese Schnittstelle dient dazu, allen anderen Dienstleistungen alle Daten von einem Bürger zukommen zu lassen. Sie erwartet die ID des Bürgers und gibt den kompletten Datensatz des Bürgers zurück.
+Diese Schnittstelle dient dazu, allen anderen Dienstleistern jegliche Daten von einem Bürger zukommen zu lassen. Sie erwartet die UID des Bürgers und gibt den kompletten Datensatz des Bürgers zurück.
 
 ```json
-"sgse.models.buergerbuero.userdata":{
+"sgse.models.buergerbuero.userdata": {
 	"description": "Returns a complete data set for the requested user", 
 	"fields": [
 		{"name": "uid", "type": "string", "required": true}
@@ -213,10 +231,10 @@ Diese Schnittstelle dient dazu, allen anderen Dienstleistungen alle Daten von ei
 
 ### Bürger verifizieren
 
-Diese Schnittstelle dient dazu, einen Bürger zu verifizieren, um sicherzustellen, dass dieser auch in der Smart City wohnt und Services von anderen Dienstleistungen nutzen darf. Sie erwartet ein Nutzertoken und gibt wenn die Verifizierung erfolgreich die ID des Bürgers zurück.
+Diese Schnittstelle dient dazu, einen Bürger zu verifizieren, um sicherzustellen, dass dieser auch in der Smart City wohnt und Services von anderen Dienstleistern nutzen darf. Sie erwartet ein Nutzertoken und gibt, wenn die Verifizierung erfolgreich ist, die UID des Bürgers zurück. Bei Misserfolg wird null übergeben.
 
 ```json
-"sgse.models.buergerbuero.tokenverification":{
+"sgse.models.buergerbuero.tokenverification": {
 	"description": "Verifies a usertoken", 
 	"fields": [
 		{"name": "token", "type": "string", "required": true}
@@ -226,10 +244,10 @@ Diese Schnittstelle dient dazu, einen Bürger zu verifizieren, um sicherzustelle
 
 ### Bürger für tot erklären
 
-Diese Schnittstelle dient dazu, einen Bürger der gestorben ist für tot zu erklären. Dieser Vorgang deaktiviert das Konto des Bürgers. Sie erwartet eine ID des Bürgers, welcher gestorben ist.
+Diese Schnittstelle dient dazu, einen Bürger, der gestorben ist, für tot zu erklären. Dieser Vorgang deaktiviert das Konto des Bürgers. Sie erwartet eine UID des Bürgers, welcher gestorben ist.
 
 ```json
-"sgse.models.buergerbuero.deactivation":{
+"sgse.models.buergerbuero.deactivation": {
 	"description": "Returns a complete data set for the requested user", 
 	"fields": [
 		{"name": "uid", "type": "string", "required": true}
@@ -239,14 +257,30 @@ Diese Schnittstelle dient dazu, einen Bürger der gestorben ist für tot zu erkl
 
 ### Aushang für das schwarze Brett entgegennehmen
 
-Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzunehmen. 
+Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzunehmen.  Beim Senden eines Aushangs für das schwarze Brett muss der Name des Microservices im Parameter ´service´ übergeben werden. Nach erfolgreichem Erstellen des Aushangs wird die ID des Aushangs zurückgegeben, um diesen anschließend wieder vom schwarzen Brett entfernen zu können.
 
 ```json
-"sgse.models.buergerbuero.anouncementcreation":{
+"sgse.models.buergerbuero.anouncementcreation": {
 	"description": "Sends a new anouncement to be shown at the blackboard", 
 	"fields": [
 		{"name": "title", "type": "string", "required": true},
-        {"name": "text", "type": "string", "required": true}
+		{"name": "text",  "type": "string", "required": true},
+        {"name": "image",  "type": "string", "required": false},
+        {"name": "service",  "type": "string", "required": false},
+	]
+}
+```
+
+### Aushang vom schwarzen Brett entfernen
+
+Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu entfernen. Die Validierung findet dabei mittels der ID des Aushangs, sowie dem Namen des Services statt. 
+
+```json
+"sgse.models.buergerbuero.anouncementdeletion": {
+	"description": "Removes an existing anouncement from the blackboard", 
+	"fields": [
+		{"name": "id", "type": "string", "required": true},
+		{"name": "service",  "type": "string", "required": true}
 	]
 }
 ```
@@ -258,37 +292,40 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzun
 ### Empfangen
 
 - Bürger gestorben
-
 - Aushang für das schwarze Brett entgegennehmen
+- Aushang vom schwarzen Brett löschen
 
 ### Senden
 
 - Nutzer verifizieren
-- Nutzerdaten rausgeben
+- Nutzerdaten ausgeben
+- Aushang ID zurückgeben an Dienstleister
 
 ### Messagequeues mit RabbitMQ
 
 - Bürgerdaten haben sich aktualisiert (Adressänderung, Namensänderung)
-- Nutzer wurde für tot erklärt (Nutzerkonto wurde deaktiviert)
+- Nutzerkonto wurde deaktiviert (z.B durch Nutzer wurde für tot erklärt)
 
 ## 3.4 Datenmodell 
 
 ### Nutzer
 
 ```json
-"sgse.models.buergerbuero.user":{
+"sgse.models.buergerbuero.user": {
 	"description": "Represents a dataset for one user", 
 	"fields": [
 		{"name": "uid", "type": "string", "required": true},
-        {"name": "prename", "type": "string", "required": true},
-        {"name": "lastname", "type": "string", "required": true},
+		{"name": "gender", "type": "int", "required": true},
+		{"name": "firstname", "type": "string", "required": true},
+		{"name": "lastname", "type": "string", "required": true},
+        {"name": "nickname", "type": "string", "required": false},
         {"name": "email", "type": "string", "required": true},
         {"name": "birthdate", "type": "date", "required": false},
-        {"name": "street", "type": "string", "required": true},
-        {"name": "streetnr", "type": "int", "required": true},
-        {"name": "zipcode", "type": "int", "required": true},
-        {"name": "location", "type": "string", "required": true},
-        {"name": "phonenr", "type": "string", "required": false}
+        {"name": "street_address", "type": "string", "required": true},
+        {"name": "zipcode", "type": "string", "required": true},
+        {"name": "city", "type": "string", "required": true},
+        {"name": "phone", "type": "string", "required": false},
+        {"name": "image", "type": "string", "required": false}
 	]
 }
 ```
@@ -296,13 +333,16 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzun
 ### Aushang
 
 ```json
-"sgse.models.buergerbuero.announcement":{
+"sgse.models.buergerbuero.announcement": {
 	"description": "Represents an anouncement on the blackboard", 
 	"fields": [
 		{"name": "id", "type": "string", "required": true},
         {"name": "title", "type": "string", "required": true},
         {"name": "text", "type": "string", "required": true},
-        {"name": "type", "type": "string", "required": true}
+        {"name": "type", "type": "string", "required": true},
+        {"name": "image", "type": "string", "required": false},
+        {"name": "source", "type": "string", "required": true},
+        {"name": "service", "type": "string", "required": false},
 	]
 }
 ```
@@ -311,16 +351,32 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzun
 
 ## 3.5 Abläufe
 
+//TODO
+
 - Aktivitätsdiagramme für relevante Use Cases
 - Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
 
 ## 3.6 Entwurf
 
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
+//TODO
+
+- Klassendiagramm
+- ERD
 
 ## 3.7 Fehlerbehandlung 
 
-### 
+Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglichen dem Nutzer eine Diagnose.
+
+### Mögliche Fehler:
+
+- Zugriff auf Firebase nicht möglich 
+    - Firebase ist nicht erreichbar -> Anfrage verwerfen -> Fehlermeldung weitergeben an Dienstleister
+- Privater Key ist abgelaufen -> Es muss dafür gesorgt werden, dass in diesem Fall ein neuer Schlüssel beantragt und zwischengespeichert wird
+- Zugriff auf RabbitMQ nicht möglich -> Produce wird nicht durchgeführt -> Alle Produce Anfragen zwischenspeichern bis RabbitMQ wieder verfügbar ist und anschließend die Queue füllen
+- Zugriff zwischen Front- und Backend nicht möglich -> Frontend zeigt die Fehlermeldung  "Service nicht verfügbar. Bitte versuchen Sie es später noch einmal."
+- Zugriff auf PostgreSQL nicht möglich -> Antwort mit Fehlermeldung "Service nicht verfügbar. Bitte versuchen Sie es später noch einmal."
+   - Gegebenenfalls Möglichkeit für DB-Redundanz um Fehler auszugleichen
+- Fehlender Parameter bei externer Anfrage -> Hinweisende Antwort
 
 # 4 Projektorganisation
 
@@ -359,13 +415,34 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzun
 
 ## 5.1 Glossar 
 
-- Definitionen, Abkürzungen, Begriffe
+//TODO
+
+- Mikro-Service
+- RabbitMQ
+- Exchange
+- Channel
+- catchALL
+- Protokoll Buffer
+- gRPC
+- REST 
+- proto3
+- (a)snychonität
+- uid (unique id, also generierende seite weiß, dass es sie schon gibt, bedingung: nur 1 darf generieren)
+- Firebase -> cloud service von google
+
+
 
 ## 5.2 Referenzen
 
-- Handbücher, Gesetze
+//TODO
+
+- +Quellenangabe
 
 ## 5.3 Index
 
+//TODO
 
+- Bilderverzeichnis
+
+- Tabellenverzeichnis
 
