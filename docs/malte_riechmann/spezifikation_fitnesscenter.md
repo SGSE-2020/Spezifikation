@@ -194,7 +194,7 @@ PDF-Version mit Verlinkung im Projekt Repository
 
 ## 3.2 Softwarearchitektur
 
-- Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
+![software](img/software.png)
 
 ## 3.3 Schnittstellen
 
