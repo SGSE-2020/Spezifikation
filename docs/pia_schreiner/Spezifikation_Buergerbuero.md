@@ -41,28 +41,13 @@ Ziel ist es, dass alle Bürger hier her kommen, um organisatorische Themen zu kl
 ### Bürger
 ![UseCase_Buerger](./img/UseCase_Buerger.svg)
 
-//TODO Aushänge ansehen entfernen
-
-//TODO Abgegebenen Aushang löschen
-
-//TODO Nutzerkonto löschen (Firebase) -> Nutzerkonto als deaktiv markieren (PostgreSQL
-
-
-
 ### Mitarbeiter Bürgerbüro
 
 ![UseCase_Mitarbeiter](./img/UseCase_Mitarbeiter.svg)
 
-//TODO Aushänge ansehen entfernen
-
 ### Dienstleister
 
 ![UseCase_Dienstleister](./img/UseCase_Dienstleister.svg)
-//TODO get User
-
-//TODO Aushang abgeben
-
-//TODO Abgegebenen Aushang entfernen
 
 ## 2.3 Nicht-funktionale Anforderungen 
 
@@ -76,7 +61,7 @@ Synchrone Kommunikation zwischen den anderen Dienstleistern findet mittels gRPC 
 
 #### Asynchrone Kommunikation
 
-Zwischen Dienstleistern werden Messagequeues mit Hilfe von RabbitMQ für asynchrone Kommunikation genutzt. Es wird ein eigener Exchange für die Nachrichten vom Bürgerbüro genutzt. Je nach Thema der Message wird diese in vers. Queues gelagert.
+Zwischen Dienstleistern werden Messagequeues mit Hilfe von RabbitMQ für asynchrone Kommunikation genutzt. Es wird ein eigener Exchange für die Nachrichten vom Bürgerbüro genutzt. Je nach Thema der Message wird diese in verschiedene Queues gelagert.
 
 ### 2.3.2 Betriebsbedingungen
 
@@ -172,7 +157,7 @@ Prüfbarkeit |X|-|-|-
 
 Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Priorität
 -- | -- | -- | -- | -- | --
-Registrierung/Anmeldung | Interessent | mich beim Bürgerbüro registrieren | für mich ein Konto erstellt wird | Registrierung möglich | Hoch
+Registrierung | Interessent | mich beim Bürgerbüro registrieren | für mich ein Konto erstellt wird | Registrierung möglich | Hoch
 Schwarzes Brett lesen | Interessent | Zugriff auf das schwarze Brett haben | ich interessante Aushänge zur Smart City ansehen kann und mich besser zurechtfinde | Schwarzes Brett ist zugänglich | Mittel
 
 ### Bürger
@@ -180,9 +165,10 @@ Schwarzes Brett lesen | Interessent | Zugriff auf das schwarze Brett haben | ich
 | Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Priorität |
 | --| --| -- | -- | -- | -- |
 | Ummeldung| Bürger | mich beim Bürgerbüro anmelden | ich auf meine Daten zugreifen kann, um diese zu ändern | Änderung meiner Daten möglich | Hoch |
-| Abmeldung | Bürger | mich beim Bürgerbüro abmelden | mein Nutzerkonto gelöscht wird | Nutzerkonto wird gelöscht | Hoch |
+| Wegziehen | Bürger | aus der Stadt ausziehen | mein Nutzerkonto deaktiviert wird | Nutzerkonto wird deaktiviert | Hoch |
 | Schwarzes Brett lesen| Bürger | Zugriff auf das schwarze Brett haben | ich das Fundbüro nutzen kann und wichtige Aushänge sehen kann | Schwarzes Brett ist zugänglich | Mittel |
 | Aushang abgeben | Bürger | einen Aushang für das schwarze Brett im Bürgerbüro abgeben | ich meine Anliegen für alle Bürger teilen kann| Aushang muss angenommen werden | Mittel |
+| Aushang löschen | Bürger | einen selber erstellen Aushang wieder löschen | dieser nicht mehr am schwarzen Brett für alle sichtbar ist | Aushang muss gelöscht werden | Mittel |
 | Fundbüro Annahme | Bürger | Dinge im Fundbüro des Bürgerbüros abgeben können | Bürger, die etwas verloren haben, dies abholen können | Bürger hat gefundenen Gegenstand abgegeben und Aushang am schwarzen Brett ist erstellt worden | Niedrig |
 | Fundbüro Rückgabe | Bürger | Dinge im Fundbüro des Bürgerbüros abholen | Dinge wieder zum rechtmäßigen Besitzer zurück gelangen können | Bürger hat gefundenen Gegenstand abgeholt und Aushang ist vom schwarzen Brett entfernt | Niedrig |
 
@@ -197,10 +183,13 @@ Schwarzes Brett lesen | Interessent | Zugriff auf das schwarze Brett haben | ich
 
 ### Andere Dienstleister
 
-| Funktion                  | Rolle         | In meiner Rolle möchte ich                                   | so dass                                                      | Akzeptanz                            | Priorität |
-| ------------------------- | ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------ | --------- |
-| Deaktivierung Nutzer      | Dienstleister | einen Bürger für tot erklären lassen können                  | das Nutzerkonto deaktiviert wird                             | Deaktivierung von Nutzer möglich     | Hoch      |
-| Verifizierung des Nutzers | Dienstleister | nachvollziehen können ob ein Bürger auch in der Smart City wohnt | sichergestellt ist, dass nur Bürger der Stadt meine Dienstleistungen nutzen können | Verifizierung von Nutzer ist möglich | Hoch      |
+| Funktion                    | Rolle         | In meiner Rolle möchte ich                                   | so dass                                                      | Akzeptanz                                     | Priorität |
+| --------------------------- | ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------------------------------------- | --------- |
+| Deaktivierung Nutzer        | Dienstleister | einen Bürger für tot erklären lassen können                  | das Nutzerkonto deaktiviert wird                             | Deaktivierung von Nutzer möglich              | Hoch      |
+| Bürgerdaten anfragen        | Dienstleister | zu einer Nutzer ID Nutzerdaten anfragen                      | ich diese für meine Services verwenden kann                  | Nutzerdaten zu einer UID werden zurückgegeben | Hoch      |
+| Verifizierung des Nutzers   | Dienstleister | nachvollziehen können ob ein Bürger auch in der Smart City wohnt | sichergestellt ist, dass nur Bürger der Stadt meine Dienstleistungen nutzen können | Verifizierung von Nutzer ist möglich          | Hoch      |
+| Aushang abgeben             | Dienstleister | einen Aushang an das Bürgerbüro senden                       | neue Informationen meiner Services allen Bürgern zur Verfügung stehen | Aushang abgeben ist möglich                   | Mittel    |
+| Abgegebenen Aushang löschen | Dienstleister | einen an das Bürgerbüro gesendeten Aushang wieder löschen    | die Information nicht mehr auf dem schwarzen Brett zu sehen sind | Aushang wird vom schwarzen Brett gelöscht     | Mittel    |
 
 
 
@@ -436,7 +425,7 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 
 //TODO
 
-- +Quellenangabe
+- Quellenangabe
 
 ## 5.3 Index
 
