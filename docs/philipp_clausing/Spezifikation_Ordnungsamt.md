@@ -41,11 +41,11 @@ Die Kommunikation mit den anderen Mikroservices findet sowohl asynchron(Messagin
 
 ### Asynchron
 
-Die asynchrone Kommunikation findet über Messaging statt. Dazu wird für alle Microservices ein RabbitMQ Server erstellt welcher die Nachrichten mittels Queues verarbeitet bzw. durchleitet.
+Die asynchrone Kommunikation findet über Messaging statt. Dazu wird für alle Microservices ein RabbitMQ Server erstellt welcher die Nachrichten mittels Queues verarbeitet beziehungsweise durchleitet.
 
 ### Synchron
 
-Die Kommunikation zwischen den Microservices direkt findet mittels GRPC statt. Die technischen Details werden in der Datein mit dem Format ```proto3``` verfasst.
+Die Kommunikation zwischen den Microservices direkt findet mittels GRPC statt. Die technischen Details werden in der Dateien mit dem Format ```proto3``` verfasst.
 
 ### 2.3.2 Betriebsbedingungen
 
@@ -81,15 +81,15 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ### Startpunkt Ordnungsamt
 
-![startbildschirm](.\img\ordnungsamt_start.PNG)
+![startbildschirm](.\img\ordnungsamt_start.png)
 
 ### Mitarbeiteransicht
 
-![startbildschirm](.\img\mitarbeiteransicht.PNG)
+![startbildschirm](.\img\mitarbeiteransicht.png)
 
 ### Benutzeransicht
 
-![startbildschirm](.\img\buergersicht.PNG)
+![startbildschirm](.\img\buergersicht.png)
 
 
 
@@ -124,11 +124,11 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ## 3.1 Systemübersicht
 
-![Systemarchitektur](./img/systemarchitektur.png)
+![Systemarchitektur](.\img\systemarchitektur.png)
 
 ## 3.2 Softwarearchitektur
 
-![architekturdiagramm](./img/architekturdiagramm.PNG)
+![architekturdiagramm](.\img\architekturdiagramm.png)
 
 ## 3.3 Schnittstellen
 
@@ -139,8 +139,8 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ### Bestehende Genehmigungen anfragen
 
-```
-"sgse.models.ordnungsamt.genehmigungen":{
+```json
+"sgse.models.ordnungsamt.genehmigungen" : {
     "description": "Returns a complete list of the genehmigungen"  
 }
 ```
