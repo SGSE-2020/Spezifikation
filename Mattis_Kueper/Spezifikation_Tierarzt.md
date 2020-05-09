@@ -14,10 +14,13 @@ ob zwei Termine sich eventuell kreuzen und können den Benutzer an Termine erinn
 
 ## 1.2 Ziele
 
-- Anwendungsbereiche, Motivation, Umfang, Alleinstellungsmerkmale, Marktanforderungen
-- Informationen zu Zielbenutzergruppen und deren Merkmale (Bildung, Erfahrung, Sachkenntnis)
-- Abgrenzung (Was ist das Softwaresystem _nicht_)
-- ggfs. SWOT-Analyse
+Das Ziel des Tierarzt Microservices ist es, das Verwalten von Terminen sowohl für Tier Besitzer als auch 
+Tierarzt Mitarbeiter so einfach wie möglich zu gestalten. Viele Besitzer verlieren schnell den Überblick, 
+wann beispielsweise an Impfung ansteht, der Terminkalender des Microservices soll es erleichtern, all diese
+Termine im Bick zu behalten.  
+
+Tierarzt Mitarbeiter können sich durch die genauen Pläne besser auf Behandlungen vorbereiten, und ihre Tage besser planen.
+Allerdings müssen für Notfälle immer genug Tierärzte anwesend sein. 
 
 # 2 Anforderungen
 
@@ -32,9 +35,9 @@ ob zwei Termine sich eventuell kreuzen und können den Benutzer an Termine erinn
 
 | Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  | 
 |---|---|---|---|---|
-| Leiter der Bibliothek, Fachlicher Entscheider  |  Herr Bauer | Tel. 409000, Von 9-19 Uhr telefonisch erreichbar, Mitarbeit zu 30% möglich, Nürnberg  | Kennt das Altsystem aus der Anwendersicht, soll mit dem System arbeiten  | Vereinfachung der Ausleihprozesse  |  
-| Administrator, Informationslieferant bzgl. Wartungsanforderungen  | Herr Heiner  | Heiner@gmx.net, Per E-Mail, immer erreichbar, Verfügbarkeit 50%, Nürnberg  | Vertraut mit vergleichbarer Verwaltungssoftware   |  Stabiles System, geringer Wartungsaufwand | 
-| Product-Owner, Entscheider - als Koordinator der Stakeholderanforderungen   | Paul Ottmer  |  po@ottmer.de, Per E-Mail und tel. tagsüber, Verfügbarkeit 100%, Nürnberg  | Koordinator für die Inputs der Stakeholder  | ROI des Systems sicherstellen  | 
+| Tierbesitzer  |  Herr Budde | Tel. 0174 0815420, Jederrzeit telefonisch erreichbar  | Kennt sich mit der Bedienung von Webseiten aus | Möchte für seinen Hund Impftermine und eine generelle Untersuchung anmelden  |  
+| Tierärztin  | Frau Dr. Sperling  | anette.sperling@gmail.com, Per E-Mail, immer erreichbar, Verfügbarkeit Wochentags 8-15 Uhr  | Behandelnde Tierärztin, führt Operationen durch | Möchte sich auf anstehende Behandlungen vorbereiten können | 
+| Besitzer der Tierarzt Praxis   | Herr Goldlinde  |  smartcity.tierarzt_goldlinde@web.de, Per E-Mail auch an Wochenenden erreichbar, von 8-20 Uhr  | Verwaltet die Tierarzt Praxis, macht Arbeitspläne, bestellt Produkte | Möchte Arbeitspläne so schnell wie möglich erstellen | 
 
 ## 2.2 Funktionale Anforderungen
 
@@ -44,15 +47,18 @@ ob zwei Termine sich eventuell kreuzen und können den Benutzer an Termine erinn
 
 ### 2.3.1 Rahmenbedingungen
 
-- Normen, Standards, Protokolle, Hardware, externe Vorgaben
+Kommunikation mit anderen Microservices und Geräten findet sowohl Asynchron als auch Synchron statt.
+
+Für die Synchrone Kommunikation mit anderen Diensteistern wird gRPC verwendet. Die Kommunikation zwischen
+Frontend und Backend findet über REST statt.
+
+Asynchrone Kommunikation wird über RabbitMQ ermöglicht.
 
 ### 2.3.2 Betriebsbedingungen
 
-- Vorgaben des Kunden (z.B. Web Browser / Betriebssystem Versionen, Programmiersprache)
+Tierarzt Microservice ist über moderne Webbrowser erreichbar und bedienbar.
 
 ### 2.3.3 Qualitätsmerkmale
-
-- Externe Qualitätsanforderungen (z.B. Performance, Sicherheit, Zuverlässigkeit, Benutzerfreundlichkeit)
 
 Qualitätsmerkmal | sehr gut | gut | normal | nicht relevant
 ---|---|---|---|---
@@ -78,10 +84,26 @@ Prüfbarkeit |-|-|X|-|
 
 ## 2.4 Graphische Benutzerschnittstelle
 
-- GUI-Mockups passend zu User Stories
-- Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
-- Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
+### Tierarzt Hauptseite
+![Tierarzt Hauptseite](TierarztMain.png)
+
+### Tierarzt Hauptseite eingeloggt
+![Tierarzt Hauptseite Eingeloggt](TierarztMainLoggedIn.png)
+
+### Terminkalendar Übersicht
+![Tierarzt Kalendar Übersicht](TierarztTermineOverview.png)
+
+### Terminkalendar Termin Anfordern
+![Tierarzt Kalendar Anfordern](TierarztTerminAnfordern.png)
+
+### Terminkalendar Termin Absagen
+![Tierarzt Kalendar Löschen](TierarztTerminLöschen.png)
+
+### Terminkalendar Übersicht Pro Tag
+![Tierarzt Kalendar Übersicht](TierarztTermineProTag.png)
+
+### Terminkalendar Termin Info
+![Tierarzt Kalendar Übersicht](TierarztTerminInfo.png)
 
 ## 2.5 Anforderungen im Detail
 
@@ -105,8 +127,7 @@ Prüfbarkeit |-|-|X|-|
 
 ## 3.1 Systemübersicht
 
-- Systemarchitekturdiagramm ("Box-And-Arrow" Diagramm)
-- Kommunikationsprotokolle, Datenformate
+![System Overview](SystemOverview.png)
 
 ## 3.2 Softwarearchitektur
 
