@@ -210,6 +210,7 @@ wie die Tierart, Rasse, Gewicht und Größe erfasst, aber auch alle bekannten Kr
         "description": "Creates new information about a new animal.",
         "fields": [
             {"name": "uid", "type": "string"},
+            {"name": "name", "type": "string"},
             {"name": "type", "type": "string"},
             {"name": "race", "type": "string"},
             {"name": "weight", "type": "double"},
