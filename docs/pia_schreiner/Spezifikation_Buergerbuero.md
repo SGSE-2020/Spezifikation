@@ -4,7 +4,7 @@
 * **Author:** Pia Schreiner
 * **Source Code:** [Link zum Code Repository](https://github.com/SGSE-2020/MS_Buergerbuero)
 
-
+[[_TOC_]]
 
 # 1 Einführung
 
@@ -36,18 +36,18 @@ Ziel ist es, dass alle Bürger hier her kommen, um organisatorische Themen zu kl
 
 ### Interessent
 
-![UseCase_Interessent](./img/usecase/UseCase_Interessent.svg)
+![UseCases - Interessent](./img/usecase/UseCase_Interessent.svg)
 
 ### Bürger
-![UseCase_Buerger](./img/usecase/UseCase_Buerger.svg)
+![UseCases - Bürger](./img/usecase/UseCase_Buerger.svg)
 
 ### Mitarbeiter Bürgerbüro
 
-![UseCase_Mitarbeiter](./img/usecase/UseCase_Mitarbeiter.svg)
+![UseCases - Mitarbeiter Bürgerbüro](./img/usecase/UseCase_Mitarbeiter.svg)
 
 ### Dienstleister
 
-![UseCase_Dienstleister](./img/usecase/UseCase_Dienstleister.svg)
+![UseCases - Dienstleister](./img/usecase/UseCase_Dienstleister.svg)
 
 ## 2.3 Nicht-funktionale Anforderungen 
 
@@ -97,69 +97,69 @@ Prüfbarkeit |X|-|-|-
 
 #### Ansicht des Foyers
 
-![Interessent_Foyer](./img/mockups/Interessent_Foyer.png)
+![Mockup: Interessent - Ansicht Foyer](./img/mockups/Interessent_Foyer.png)
 
 #### Übersicht der Aushänge
 
-![Interessent_Aushaenge](./img/mockups/Interessent_Aushänge.png)
+![Mockup: Interessent - Aushänge Übersicht](./img/mockups/Interessent_Aushänge.png)
 
 #### Detailansicht von Aushang
 
-![Interessent_Aushangdetail](./img/mockups/Interessent_Aushänge_Detail.png)
+![Mockup: Interessent - Aushänge Detailansicht](./img/mockups/Interessent_Aushänge_Detail.png)
 
 #### Registrierung
 
-![Interessent_Registrierung](./img/mockups/Foyer_Anmeldung.png)
+![Mockup: Interessent - Registrierung](./img/mockups/Foyer_Anmeldung.png)
 
 #### Einloggen in ein bestehendes Nutzerkonto
 
-![Interessent_Anmeldung](./img/mockups/Foyer_Login.png)
+![Mockup: Interessent - Einloggen](./img/mockups/Foyer_Login.png)
 
 ### Bürger
 
 #### Ansicht des Foyers
 
-![Buerger_Nutzerkonto](./img/mockups/Buerger_Foyer.png)
+![Mockup: Bürger - Foyeransicht](./img/mockups/Buerger_Foyer.png)
 
 #### Übersicht der Anhänge für angemeldete Bürger
 
-![Buerger_Nutzerkonto](./img/mockups/Buerger_Aushänge.png)
+![Mockup: Bürger - Anhänge Übersicht](./img/mockups/Buerger_Aushänge.png)
 
 #### Übersicht des Nutzerkontos
 
-![Buerger_Nutzerkonto](./img/mockups/Buerger_Konto.png)
+![Mockup: Bürger - Nutzerkonto Übersicht](./img/mockups/Buerger_Konto.png)
 
 #### Nutzerkonto - Daten ändern
 
-![Buerger_Nutzerkonto_DatenAnpassen](./img/mockups/Buerger_Konto_DatenAnpassen.png)
+![Mockup: Bürger - Daten ändern](./img/mockups/Buerger_Konto_DatenAnpassen.png)
 
 #### Nutzerkonto - Neuen Aushang erstellen
 
-![Buerger_Nutzerkonto_neuerAushang](./img/mockups/Buerger_neuerAushang.png)
+![Mockup: Bürger - Aushang erstellen](./img/mockups/Buerger_neuerAushang.png)
 
 #### Nutzerkonto - Fundgegenstand abgeben
 
-![Buerger_Nutzerkonto_neuerAushang](./img/mockups/Buerger_FundsacheAbgeben.png)
+![Mockup: Bürger - Fundgegenstand abgeben](./img/mockups/Buerger_FundsacheAbgeben.png)
 
 #### Aushänge- Fundgegenstand abholen
 
-![Buerger_Nutzerkonto_neuerAushang](./img/mockups/Buerger_FundsacheAbholen.png)
+![Mockup: Bürger - Fundgegenstand abholen](./img/mockups/Buerger_FundsacheAbholen.png)
 
 ### Mitarbeiter
 
 #### Übersicht der Anhänge für Mitarbeiter
 
-![Mitarbeiter_](./img/mockups/Mitarbeiter_Aushänge.png)
+![Mockup: Mitarbeiter - Übersicht Aushänge](./img/mockups/Mitarbeiter_Aushänge.png)
 
 #### Mitarbeiter - Work Stack
 
-![Mitarbeiter_](./img/mockups/Mitarbeiter_Work.png)
+![Mockup: Mitarbeiter - Work Stack](./img/mockups/Mitarbeiter_Work.png)
 
 
 
 ### Zustandsdiagramm
 
-![Mitarbeiter_](./img/ZustandsdiagrammGUI.svg)
+![GUI Zustandsdiagramm](./img/ZustandsdiagrammGUI.svg)
 
 
 
@@ -209,11 +209,11 @@ Schwarzes Brett lesen | Interessent | Zugriff auf das schwarze Brett haben | ich
 
 ## 3.1 Systemübersicht
 
-![SystemOverview](./img/SystemOverview.svg)
+![System Übersicht](./img/SystemOverview.svg)
 
 ## 3.2 Softwarearchitektur
 
-![Interessent_Foyer](./img/SWArchitecture.svg)
+![Software Architektur](./img/SWArchitecture.svg)
 
 ## 3.3 Schnittstellen
 
@@ -290,22 +290,33 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 
 ## 3.3.1 Ereignisse
 
-### Empfangen
+### Veröffentlichung von Ereignissen mittels RabbitMQ
 
-- Bürger gestorben
-- Aushang für das schwarze Brett entgegennehmen
-- Aushang vom schwarzen Brett löschen
+#### Bürgerdaten aktualisiert
 
-### Senden
+```json
+"sgse.messages.buergerbuero.updateuser":{
+    "description": "The following user was updated", 
+        "fields": [
+            {"name": "uid", "type": "string", "required": true}
+        ]
+}
+```
 
-- Nutzer verifizieren
-- Nutzerdaten ausgeben
-- Aushang ID zurückgeben an Dienstleister
+#### Nutzerkonto deaktiviert
 
-### Messagequeues mit RabbitMQ
+```json
+"sgse.messages.buergerbuero.deactivateuser":{
+    "description": "The following user was deactivated", 
+        "fields": [
+            {"name": "uid", "type": "string", "required": true}
+        ]
+}
+```
 
-- Bürgerdaten haben sich aktualisiert (Adressänderung, Namensänderung)
-- Nutzerkonto wurde deaktiviert (z.B durch Nutzer wurde für tot erklärt)
+
+
+//TODO Konsumieren von Ereignissen anderer Microservices?
 
 ## 3.4 Datenmodell 
 
@@ -321,7 +332,7 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 		{"name": "lastname", "type": "string", "required": true},
         {"name": "nickname", "type": "string", "required": false},
         {"name": "email", "type": "string", "required": true},
-        {"name": "birthdate", "type": "date", "required": false},
+        {"name": "birthdate", "type": "date", "required": true},
         {"name": "street_address", "type": "string", "required": true},
         {"name": "zipcode", "type": "string", "required": true},
         {"name": "city", "type": "string", "required": true},
@@ -356,33 +367,33 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 
 #### Registrieren
 
-<img src="./img/activity/Aktivität_Registrierung.svg" alt="Buerger_Nutzerkonto" style="zoom:200%;" />
+![Aktivität: Interessent - Registrierung](./img/activity/Aktivität_Registrierung.svg)
 
 ### Bürger
 
 #### Daten anpassen
 
-![Buerger_Nutzerkonto](./img/activity/Aktivität_Datenanpassung.svg)
+![Aktivität: Bürger - Daten anpassen](./img/activity/Aktivität_Datenanpassung.svg)
 
-#### Aus der Stadt wegziegen
+#### Aus der Stadt wegziehen
 
-![Buerger_Nutzerkonto](./img/activity/Aktivität_Wegziehen.svg)
+![Aktivität: Bürger - Aus der Stadt wegziehen](./img/activity/Aktivität_Wegziehen.svg)
 
 #### Aushang erstellen
 
-![Buerger_Nutzerkonto](./img/activity/Aktivität_AushangErstellen.svg)
+![Aktivität: Bürger - Aushang erstellen](./img/activity/Aktivität_AushangErstellen.svg)
 
 #### Aushang löschen
 
-![Buerger_Nutzerkonto](./img/activity/Aktivität_AushangLöschen.svg)
+![Aktivität: Bürger Aushang löschen](./img/activity/Aktivität_AushangLöschen.svg)
 
 #### Fundsache abgeben
 
-![Buerger_Nutzerkonto](./img/activity/Aktivität_FundsacheAbgeben.svg)
+![Aktivität: Bürger - Fundsache abgeben](./img/activity/Aktivität_FundsacheAbgeben.svg)
 
 #### Fundsache abholen
 
-![Buerger_Nutzerkonto](./img/activity/Aktivität_FundsacheAbholen.svg)
+![Aktivität: Bürger - Fundsache abholen](./img/activity/Aktivität_FundsacheAbholen.svg)
 
 
 
@@ -398,30 +409,33 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 
 #### Verifizierung des Bürgers
 
-![Buerger_Nutzerkonto](./img/activity/Aktivität_Verifizierung.svg)
+![Aktivität: Dienstleister - Verifizierung](./img/activity/Aktivität_Verifizierung.svg)
 
 #### Nutzerdaten abfragen
 
-![Buerger_Nutzerkonto](./img/activity/Aktivität_Nutzeranfrage.svg)
+![Aktivität: Dienstleister - Nutzerdaten abfragen](./img/activity/Aktivität_Nutzeranfrage.svg)
 
 #### Bürger für tot erklären
 
-![Buerger_Nutzerkonto](./img/activity/Aktivität_NutzerTot.svg)
+![Aktivität: Dienstleister - Bürger für tot erklären](./img/activity/Aktivität_NutzerTot.svg)
 
 #### Aushang abgeben
 
-![Buerger_Nutzerkonto](./img/activity/Aktivität_DLAushangAbgeben.svg)
+![Aktivität: Dienstleister - Aushang abgeben](./img/activity/Aktivität_DLAushangAbgeben.svg)
 
 #### Abgegebenen Aushang löschen
 
-![Buerger_Nutzerkonto](./img/activity/Aktivität_DLAushangLöschen.svg)
+![Aktivität: Dienstleister - Aushang löschen](./img/activity/Aktivität_DLAushangLöschen.svg)
 
 ## 3.6 Entwurf
 
-//TODO
+### Datenbankübersicht
 
-- Klassendiagramm
-- ERD
+Das Modell wird mit Hilfe von TypeORM und einer PostgreSQL Datenbank umgesetzt.
+
+![EntityRelation](./img/EntityRelation.svg)
+
+//TODO Evtl. noch weitere Diagramme?
 
 ## 3.7 Fehlerbehandlung 
 
@@ -438,6 +452,8 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
    - Gegebenenfalls Möglichkeit für DB-Redundanz um Fehler auszugleichen
 - Fehlender Parameter bei externer Anfrage -> Hinweisende Antwort
 
+
+
 # 4 Projektorganisation
 
 ## 4.1 Annahmen
@@ -448,6 +464,8 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 - JavaScript
 - TypeScript
 - SQL
+- Docker
+- Protokoll Buffer
 
 ### Aufteilung
 
@@ -471,6 +489,8 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 * __KW 27__ _(03.07.2020)_
   * Finale Abgabe und Präsentation
 
+
+
 # 5 Anhänge
 
 ## 5.1 Glossar 
@@ -488,6 +508,8 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 
 
 ## 5.2 Referenzen
+
+//TODO
 
 - Quellenangabe
 
