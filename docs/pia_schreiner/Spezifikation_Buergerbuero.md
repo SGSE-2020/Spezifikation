@@ -36,18 +36,18 @@ Ziel ist es, dass alle Bürger hier her kommen, um organisatorische Themen zu kl
 
 ### Interessent
 
-![UseCase_Interessent](./img/UseCase_Interessent.svg)
+![UseCase_Interessent](./img/usecase/UseCase_Interessent.svg)
 
 ### Bürger
-![UseCase_Buerger](./img/UseCase_Buerger.svg)
+![UseCase_Buerger](./img/usecase/UseCase_Buerger.svg)
 
 ### Mitarbeiter Bürgerbüro
 
-![UseCase_Mitarbeiter](./img/UseCase_Mitarbeiter.svg)
+![UseCase_Mitarbeiter](./img/usecase/UseCase_Mitarbeiter.svg)
 
 ### Dienstleister
 
-![UseCase_Dienstleister](./img/UseCase_Dienstleister.svg)
+![UseCase_Dienstleister](./img/usecase/UseCase_Dienstleister.svg)
 
 ## 2.3 Nicht-funktionale Anforderungen 
 
@@ -95,11 +95,11 @@ Prüfbarkeit |X|-|-|-
 
 ### Interessent
 
-#### Foyer Ansicht
+#### Ansicht des Foyers
 
 ![Interessent_Foyer](./img/mockups/Interessent_Foyer.png)
 
-#### Aushänge Übersicht
+#### Übersicht der Aushänge
 
 ![Interessent_Aushaenge](./img/mockups/Interessent_Aushänge.png)
 
@@ -111,17 +111,25 @@ Prüfbarkeit |X|-|-|-
 
 ![Interessent_Registrierung](./img/mockups/Foyer_Anmeldung.png)
 
-#### Anmeldung
+#### Einloggen in ein bestehendes Nutzerkonto
 
 ![Interessent_Anmeldung](./img/mockups/Foyer_Login.png)
 
 ### Bürger
 
-#### Nutzerkonto - Übersicht
+#### Ansicht des Foyers
+
+![Buerger_Nutzerkonto](./img/mockups/Buerger_Foyer.png)
+
+#### Übersicht der Anhänge für angemeldete Bürger
+
+![Buerger_Nutzerkonto](./img/mockups/Buerger_Aushänge.png)
+
+#### Übersicht des Nutzerkontos
 
 ![Buerger_Nutzerkonto](./img/mockups/Buerger_Konto.png)
 
-#### Nutzerkonto - Daten anpassen
+#### Nutzerkonto - Daten ändern
 
 ![Buerger_Nutzerkonto_DatenAnpassen](./img/mockups/Buerger_Konto_DatenAnpassen.png)
 
@@ -129,11 +137,17 @@ Prüfbarkeit |X|-|-|-
 
 ![Buerger_Nutzerkonto_neuerAushang](./img/mockups/Buerger_neuerAushang.png)
 
+#### Nutzerkonto - Fundgegenstand abgeben
 
+![Buerger_Nutzerkonto_neuerAushang](./img/mockups/Buerger_FundsacheAbgeben.png)
+
+#### Aushänge- Fundgegenstand abholen
+
+![Buerger_Nutzerkonto_neuerAushang](./img/mockups/Buerger_FundsacheAbholen.png)
 
 ### Mitarbeiter
 
-#### Mitarbeiter - Aushänge Übersicht
+#### Übersicht der Anhänge für Mitarbeiter
 
 ![Mitarbeiter_](./img/mockups/Mitarbeiter_Aushänge.png)
 
@@ -150,8 +164,6 @@ Prüfbarkeit |X|-|-|-
 
 
 ## 2.5 Anforderungen im Detail
-
-//TODO überarbeiten
 
 ### Interessent
 
@@ -340,10 +352,69 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 
 ## 3.5 Abläufe
 
-//TODO
+### Interessent
 
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
+#### Registrieren
+
+<img src="./img/activity/Aktivität_Registrierung.svg" alt="Buerger_Nutzerkonto" style="zoom:200%;" />
+
+### Bürger
+
+#### Daten anpassen
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_Datenanpassung.svg)
+
+#### Aus der Stadt wegziegen
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_Wegziehen.svg)
+
+#### Aushang erstellen
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_AushangErstellen.svg)
+
+#### Aushang löschen
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_AushangLöschen.svg)
+
+#### Fundsache abgeben
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_FundsacheAbgeben.svg)
+
+#### Fundsache abholen
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_FundsacheAbholen.svg)
+
+
+
+### Mitarbeiter Bürgerbüro
+
+#### Aushang aushängen
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_AushangAushängen.svg)
+
+
+
+### Dienstleister
+
+#### Verifizierung des Bürgers
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_Verifizierung.svg)
+
+#### Nutzerdaten abfragen
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_Nutzeranfrage.svg)
+
+#### Bürger für tot erklären
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_NutzerTot.svg)
+
+#### Aushang abgeben
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_DLAushangAbgeben.svg)
+
+#### Abgegebenen Aushang löschen
+
+![Buerger_Nutzerkonto](./img/activity/Aktivität_DLAushangLöschen.svg)
 
 ## 3.6 Entwurf
 
@@ -404,26 +475,19 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 
 ## 5.1 Glossar 
 
-//TODO
-
-- Mikro-Service
-- RabbitMQ
-- Exchange
-- Channel
-- catchALL
-- Protokoll Buffer
-- gRPC
-- REST 
-- proto3
-- (a)snychonität
-- uid (unique id, also generierende seite weiß, dass es sie schon gibt, bedingung: nur 1 darf generieren)
-- Firebase -> cloud service von google
+- **Mikroservice** - Architekturmuster für unabhängige Prozesse
+- **RabbitMQ** - Open Source Message Broker Software zur Implementierung von AMQP 
+- **AMQP** - Advanced Message Queuing Protocol. Stellt ein Netzwerkprotokoll auf Anwendungsebene für eine Message-orientierte Middleware dar.
+- **gRPC** - Protokoll zum Aufruf von Funktionen in verteilten Systemen. Basiert auf HTTP/2 und Protokoll            Buffern
+- **Protokoll Buffer** - Datenformat zur Serialisierung mit einer Schnittstellen Beschreibungssprache
+- **REST ** - Programmierparadigma für verteilte Systeme, insbesondere Webservices
+- **proto3** - Dritte Version der Sprachdefinition für ein Protokoll Buffer
+- **UID** - Unique ID (einzigartig, darf nur einmal existieren)
+- **Firebase** - Cloud Service von Google
 
 
 
 ## 5.2 Referenzen
-
-//TODO
 
 - Quellenangabe
 
