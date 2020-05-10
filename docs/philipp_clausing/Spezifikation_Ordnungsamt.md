@@ -241,12 +241,10 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ## 5.1 Glossar
 
-- Definitionen, Abkürzungen, Begriffe
+- OAMTM - Ordnungsamt Microservice
 
 ## 5.2 Referenzen
 
 - Handbücher, Gesetze
 
 ## 5.3 Index
-
--
