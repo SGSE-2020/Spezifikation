@@ -128,7 +128,7 @@ Behandelt User Stories: Reservierungen anzeigen, Reservierung stornieren
 
 Behandelt User Stories: Parkplatz reservieren, Auslastung abfragen
 
-## Reservierung stornieren
+## Reservierung stornieren (Meine Reservierungen Detail)
 ![my_reservation_cancellation](img/my_reservation_cancellation.png)
 
 Behandelt User Stories: Reservierungen anzeigen, Reservierung stornieren 
@@ -470,14 +470,15 @@ Abläufe, wie das Melden von Vorfällen werden aufgrund ihrer einfachheit nicht 
 2. [Entity Use Case Diagramm](#entität)
 3. [Meine Reservierungen Mockup](#meine-reservierungen)
 4. [Neue Reservierung Mockup](#neue-reservierung)
-5. [Melden Mockup](#melden)
-6. [Zustandsdiagramm](#zustandsdiagramm)
-7. [Systemübersicht](#_31-systemübersicht)
-8. [Softwarearchitektur](#_32-softwarearchitektur)
-9. [Datenmodell](#_34-datenmodell)
-10. [Ablauf Auslastung abfragen](#auslastung-abfragen-1)
-11. [Ablauf Reservierung aufgeben](#reservierung-aufgeben)
-12. [Ablauf Reservierung stornieren](#reservierung-stornieren)
+5. [Reservierung stornieren Mockup](#reservierung-stornieren)
+6. [Melden Mockup](#melden)
+7. [Zustandsdiagramm](#zustandsdiagramm)
+8. [Systemübersicht](#_31-systemübersicht)
+9. [Softwarearchitektur](#_32-softwarearchitektur)
+10. [Datenmodell](#_34-datenmodell)
+11. [Ablauf Auslastung abfragen](#auslastung-abfragen-1)
+12. [Ablauf Reservierung aufgeben](#reservierung-aufgeben)
+13. [Ablauf Reservierung stornieren](#reservierung-stornieren)
 
 ### Tabellenverzeichnis
 1. [Stackeholder](#_21-stakeholder)
