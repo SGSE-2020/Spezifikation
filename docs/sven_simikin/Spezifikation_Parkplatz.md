@@ -470,7 +470,7 @@ Abläufe, wie das Melden von Vorfällen werden aufgrund ihrer einfachheit nicht 
 2. [Entity Use Case Diagramm](#entität)
 3. [Meine Reservierungen Mockup](#meine-reservierungen)
 4. [Neue Reservierung Mockup](#neue-reservierung)
-5. [Reservierung stornieren Mockup](#reservierung-stornieren)
+5. [Reservierung stornieren Mockup](#reservierung-stornieren-meine-reservierungen-detail)
 6. [Melden Mockup](#melden)
 7. [Zustandsdiagramm](#zustandsdiagramm)
 8. [Systemübersicht](#_31-systemübersicht)
