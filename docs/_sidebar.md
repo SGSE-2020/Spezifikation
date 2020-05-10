@@ -3,7 +3,7 @@
 * [Ordnungsamt](./philipp_clausing/Spezifikation_Ordnungsamt.md)
 * [Bürgerbüro](./pia_schreiner/Spezifikation_Buergerbuero.md)
 * [Rettungsdienst](./patrick_poppe/Spezifikation_Rettungsdienst.md)
-* [Krankenhaus](./jendrikmueller/Spezifikation_Krankenhaus.md)
+* [Krankenhaus](./jendrik_mueller/Spezifikation_Krankenhaus.md)
 * [Parkplatz](./sven_simikin/Spezifikation_Parkplatz.md)
 * [Fitness Center](./malte_riechmann/spezifikation_fitnesscenter.md)
 * [Restaurants](./andre_kirsch/Spezifikation_Restaurants.md)

@@ -79,30 +79,50 @@ Prüfbarkeit |-|-|X|-
 
 ![Login](img/Login.png)
 
+Behandelte User-Storie: Anmelden
+
 ![Übersicht](img/Übersicht.png)
+
+Behandelte User-Storie: Öffnungszeiten einsehen
 
 ![Personal](img/Personal.png)
 
+Behandelte User-Storie: Personalübersicht bekommen
+
 ![Fachbereiche](img/Fachbereiche.png)
 
-###Patienten
+Behandelte User-Storie: Übersicht über Fachbereiche
+
+### Patienten
 
 ![Termine](img/Termine.png)
 
+Behandelte User-Storie: Termin vereinbaren
+
 ![Rechnungen](img/Rechnungen.png)
+
+Behandelte User-Storie: Behandlungen bezahlen
 
 ### Personal
 
 ![Patienten](img/Patienten.png)
 
+Behandelte User-Storie: Überblick über Patienten
+
 ![PatientenDetails](img/PatientenDetails.png)
 
+Behandelte User-Stories: Krankenakte des Patienten einsehen, Patient an Hausarzt überweisen, Krankenakte bearbeiten
+
 ![TerminePersonal](img/TerminePersonal.png)
+
+Behandelte User-Storie: Termine Einsehen
+
+
 
 
 ## 2.5 Anforderungen im Detail
 
-###Nutzer
+### Nutzer
 
 | Als | möchte ich | so dass | Akzeptanz | Priorität |
 |----------|-----------|----------|----------|----------|
@@ -112,7 +132,7 @@ Prüfbarkeit |-|-|X|-
 | Nutzer | eine Personalübersicht haben | ich weiß wer in dem Krankenhaus Arbeitet | Personalübersicht | soll |
 | Nutzer | Übersicht über Fachbereiche | mich über die Fachbereiche des Krankenhauses informieren kann | Fachbereiche übersicht | soll |
 
-###Patient
+### Patient
 | Als | möchte ich | so dass | Akzeptanz | Priorität |
 |----------|-----------|----------|----------|----------|
 | Patient | einen Termin vereinbaren | ich behandelt werden kann | Termin vereinbar | muss |
@@ -120,7 +140,7 @@ Prüfbarkeit |-|-|X|-
 | Patient | einen Parkplatz bekommen | ich mein Auto direkt am Krankenhaus parken kann | automatische Reservierung durch Termin machen | soll |
 | Patient | Öffnungszeiten einsehen | ich besser Planen kann | Ansicht der Öffnungszeiten | soll |
 
-###Personal
+### Personal
 
 | Als | möchte ich | so dass | Akzeptanz | Priorität |
 |----------|-----------|----------|----------|----------|
@@ -129,6 +149,7 @@ Prüfbarkeit |-|-|X|-
 | Personal | die Krankenakte des Patienten einsehen | der Patient die entsprechende Behandlung bekommt | Krankenakte von Personal einsehbar | soll |
 | Personal | die Krankenakte bearbeiten | die Informationen des Patienten aktuell blieben | Krankenakte editieren | soll |
 | Personal | Patienten an den Hausarzt überweisen | die Nachbehandlung des Patienten gesichert ist | Weiterleitungsfunktion | soll |
+| Personal | meine Termine einsehen können | ich besser Planen kann | Termine einsehen | soll |
 
 
 # 3 Technische Beschreibung
@@ -145,74 +166,62 @@ Prüfbarkeit |-|-|X|-
 
 ### Termin erstellen
 
+Diese Schnittstelle dient zum Erstellen eines neuen Termins für einen Patienten.
+
 ```json
 "sgse.models.krankenhaus.termin":{
-
 	"description": "Creates a new appointment", 
-
 	"fields": [
-
 		{"name": "patientID", "type": "string", "required": true},
 		{"name": "date", "type": "string", "required": true}
-
 	]
-
 }
 ```
 
 ### Patient übergeben
 
+Über diese Schnittstelle können dem Krankenhaus neue Patienten übergeben werden. Sie soll vor allem dem Hausarzt und Rettungsdienst zum Überweisen von Patienten an das Krankenhaus dienen. Dabei soll die UserID des Bürgers und bisher aufgenommene Krankendaten übergeben werden.
+
 ```json
 "sgse.models.krankenhaus.add_patient":{
-
 	"description": "Adds a new patient to the hospital", 
-
 	"fields": [
-
 		{"name": "userID", "type": "string", "required": true},
 		{"name": "symtomps", "type": "string", "required": false},
     {"name": "diagnosis", "type": "string", "required": false},
     {"name": "medication", "type": "string", "required": false}
-
 	]
-
 }
 ```
 
 ### Patient abrufen
 
+Gibt die Daten eines Patienten, einschließlich der Krankendaten zurück
+
 ```json
 "sgse.models.krankenhaus.get_patient":{
-
 	"description": "Returns a single patient", 
-
 	"fields": [
-
 		{"name": "patientID", "type": "string", "required": true}
-
 	]
-
 }
 ```
 
 ### Patientendaten bearbeiten
 
+Diese Schnittstelle dient dazu dem Personal die möglichkeit zu geben Pateintendaten zu ändern. Dabei soll die ID des Patienten und die neuen Daten übergeben werden. Werte die nicht geändert wurden. müssen nicht mit übertragen werden
+
 ```json
 "sgse.models.krankenhaus.edit_patient":{
-
 	"description": "Eddits a single patient", 
-
 	"fields": [
-
 		{"name": "userID", "type": "string", "required": true},
     {"name": "station", "type": "string", "required": false},
     {"name": "faculty", "type": "string", "required": false},
 		{"name": "symtomps", "type": "string", "required": false},
     {"name": "diagnosis", "type": "string", "required": false},
     {"name": "medication", "type": "string", "required": false}
-
 	]
-
 }
 ```
 
@@ -238,20 +247,15 @@ Details siehe Bürgerbüro
 
 ```json
 "sgse.models.krankenhaus.patient":{
-
 	"description": "A Patient", 
-
 	"fields": [
-
 		{"name": "userID", "type": "string", "required": true},
     {"name": "station", "type": "string", "required": false},
     {"name": "faculty", "type": "string", "required": false},
 		{"name": "symtomps", "type": "string", "required": false},
     {"name": "diagnosis", "type": "string", "required": false},
     {"name": "medication", "type": "string", "required": false}
-
 	]
-
 }
 ```
 
@@ -259,18 +263,13 @@ Details siehe Bürgerbüro
 
 ```json
 "sgse.models.krankenhaus.patient":{
-
 	"description": "A medical worker", 
-
 	"fields": [
-
 		{"name": "userID", "type": "string", "required": true},
     {"name": "station", "type": "string", "required": false},
 		{"name": "faculty", "type": "string", "required": true},
     {"name": "titel", "type": "string", "required": false}
-
 	]
-
 }
 ```
 
@@ -278,19 +277,14 @@ Details siehe Bürgerbüro
 
 ```json
 "sgse.models.krankenhaus.termin":{
-
 	"description": "A Termin", 
-
 	"fields": [
-
 		{"name": "patientID", "type": "string", "required": true},
     {"name": "time", "type": "string", "required": true},
 		{"name": "faculty", "type": "string", "required": false},
     {"name": "station", "type": "string", "required": false},
     {"name": "doctor", "type": "string", "required": false},
-
 	]
-
 }
 ```
 
