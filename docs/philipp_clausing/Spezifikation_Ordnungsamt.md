@@ -157,7 +157,7 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ```json
 "sgse.models.ordnungsamt.ordnungswidrigkeiten" : {
-    "description": "Returns a complete list of the ordnungswidrigkeiten",
+    "description": "Sends a new report to the Ordnungsamt",
     "fields": [
         {"name": "uuid", "type": "string", "required": true},
         {"name": "tag", "type": "string", "required": false},
