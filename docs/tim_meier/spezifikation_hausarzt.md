@@ -113,7 +113,7 @@ Prüfbarkeit |-|-|X|-
 
 ![Profil-default](mockups\Profil-default.png)
 
-![Profil-neuer termin](mockups\Profil-neuer termin.png)
+![Profil-neuertermin](mockups\Profil-neuertermin.png)
 
 #### Krankheitsstatistik
 
@@ -121,7 +121,7 @@ Prüfbarkeit |-|-|X|-
 
 #### Impressum
 
-![Impressum copy](mockups\Impressum copy.png)
+![Impressum](mockups\Impressum.png)
 
 #### Admin/Mitarbeiter Patientenübersicht
 
