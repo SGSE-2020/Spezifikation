@@ -283,7 +283,19 @@ User Story: Behandlungsakte einsehen/bearbeiten
 
 ## 3.3.1 Ereignisse
 
-- In Event-gesteuerten Systemen: Definition der Ereignisse und deren Attribute
+### Neues Gerät
+
+- Jedes mal wenn ein neues Gerät hinzugefügt wird eine Event rausgeschickt, damit Nutzer informiert werden können
+
+````json
+"sgse.model.fitness_center.neues_geraet": {
+    "description": "Object to about a new trainigs device",
+    "fields": [
+      {"name": "name", "type": "string", "required": true},
+      {"name": "description", "type": "string", "required": true}
+    ]
+}
+````
 
 ## 3.4 Datenmodell 
 
@@ -381,8 +393,6 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 | Kunde                    | Mitglieder des Fitness Centers, die ein aktives Abonnement haben. |
 
 ## 5.2 Referenzen
-
-- Handbücher, Gesetze
 
 ## 5.3 Index
 
