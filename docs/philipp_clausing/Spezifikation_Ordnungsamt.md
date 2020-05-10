@@ -41,11 +41,11 @@ Die Kommunikation mit den anderen Mikroservices findet sowohl asynchron(Messagin
 
 ### Asynchron
 
-Die asynchrone Kommunikation findet über Messaging statt. Dazu wird für alle Microservices ein RabbitMQ Server erstellt welcher die Nachrichten mittels Queues verarbeitet bzw. durchleitet.
+Die asynchrone Kommunikation findet über Messaging statt. Dazu wird für alle Microservices ein RabbitMQ Server erstellt welcher die Nachrichten mittels Queues verarbeitet beziehungsweise durchleitet.
 
 ### Synchron
 
-Die Kommunikation zwischen den Microservices direkt findet mittels GRPC statt. Die technischen Details werden in der Datein mit dem Format ```proto3``` verfasst.
+Die Kommunikation zwischen den Microservices direkt findet mittels GRPC statt. Die technischen Details werden in der Dateien mit dem Format ```proto3``` verfasst.
 
 ### 2.3.2 Betriebsbedingungen
 
@@ -81,17 +81,21 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ### Startpunkt Ordnungsamt
 
-![startbildschirm](.\img\ordnungsamt_start.PNG)
+![startbildschirm](./img/ordnungsamt_start.png)
+
+**User Stories:** Genehmigungen anzeigen, Ordnungswidrigkeiten anzeigen
 
 ### Mitarbeiteransicht
 
-![startbildschirm](.\img\mitarbeiteransicht.PNG)
+![startbildschirm](./img/mitarbeiteransicht.png)
+
+**User Stories:** Genehmigung bearbeiten, Ordnungswidrigkeit bearbeiten, Psych. Kranke organisieren
 
 ### Benutzeransicht
 
-![startbildschirm](.\img\buergersicht.PNG)
+![startbildschirm](./img/buergersicht.png)
 
-
+**User Stories:** Ordnungswidrigkeit melden, Ordnungswidrigkeit ansehen, Anträge/Genehmigung ansehen, Anträge stellen
 
 ## 2.5 Anforderungen im Detail
 
@@ -128,7 +132,7 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ## 3.2 Softwarearchitektur
 
-![architekturdiagramm](./img/architekturdiagramm.PNG)
+![architekturdiagramm](./img/softwarearchitektur.png)
 
 ## 3.3 Schnittstellen
 
@@ -139,11 +143,13 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ### Bestehende Genehmigungen anfragen
 
-```
-"sgse.models.ordnungsamt.genehmigungen":{
+```json
+"sgse.models.ordnungsamt.genehmigungen" : {
     "description": "Returns a complete list of the genehmigungen"  
 }
 ```
+
+Diese Schnittstelle dient zur Information anderer Microservices über aktuelle Genehmigungen welche bereits bearbeitet wurden.
 
 ### Bestehende Ordnungswidrigkeiten
 
@@ -153,11 +159,13 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 }
 ```
 
+Diese Schnittstelle stellt Informationen über alle aktuellen gemeldeten und auch bearbeiteten Ordnungswidrigkeiten bereit.
+
 ### Ordnungswidrigkeiten melden
 
 ```json
 "sgse.models.ordnungsamt.ordnungswidrigkeiten" : {
-    "description": "Returns a complete list of the ordnungswidrigkeiten",
+    "description": "Sends a new report to the Ordnungsamt",
     "fields": [
         {"name": "uuid", "type": "string", "required": true},
         {"name": "tag", "type": "string", "required": false},
@@ -165,6 +173,8 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
     ]
 }
 ```
+
+Mittels dieser Schnittstelle kann eine neue Ordnungswidrigkeit an das Ordnungsamt gesendet werden. Diese enthält die UUID des Beschuldigten. Mittels eines Tags eine ein bis zwei Wörter Kurzbeschreibung und eine umfangreiche Beschreibung in "Description". 
 
 ### Psychisch Kranke melden
 
@@ -179,9 +189,7 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 }
 ```
 
-
-
-
+Durch diese Schnittstelle ist es möglich psychisch Kranke zu melden. Diese werden dann vom Ordnungsamt zur Unterbringung gebracht. Das Datenmodell ist ähnlich dem "Ordnungswidrigkeiten melden" Modell
 
 ## 3.3.1 Ereignisse
 
@@ -241,12 +249,10 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ## 5.1 Glossar
 
-- Definitionen, Abkürzungen, Begriffe
+- OAMTM - Ordnungsamt Microservice
 
 ## 5.2 Referenzen
 
 - Handbücher, Gesetze
 
 ## 5.3 Index
-
--

@@ -1,7 +1,7 @@
 # Bürgerbüro - Anforderungs- und Entwurfsspezifikation
 
-* **Titel:** SmartCity - Bürgerbüro
-* **Author:** Pia Schreiner
+* **Titel:** Smart City - Bürgerbüro
+* **Autor:** Pia Schreiner
 * **Source Code:** [Link zum Code Repository](https://github.com/SGSE-2020/MS_Buergerbuero)
 
 
@@ -258,7 +258,7 @@ Diese Schnittstelle dient dazu, einen Bürger, der gestorben ist, für tot zu er
 
 ### Aushang für das schwarze Brett entgegennehmen
 
-Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzunehmen.  Beim Senden eines Aushangs für das schwarze Brett muss der Name des Microservices im Parameter ´service´ übergeben werden. Nach erfolgreichem Erstellen des Aushangs wird die ID des Aushangs zurückgegeben, um diesen anschließend wieder vom schwarzen Brett entfernen zu können.
+Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzunehmen.  Beim Senden eines Aushangs für das schwarze Brett muss der Name des Microservices im Parameter `service` übergeben werden. Nach erfolgreichem Erstellen des Aushangs wird die ID des Aushangs zurückgegeben, um diesen anschließend wieder vom schwarzen Brett entfernen zu können.
 
 ```json
 "sgse.models.buergerbuero.anouncementcreation": {
@@ -337,7 +337,8 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
         {"name": "zipcode", "type": "string", "required": true},
         {"name": "city", "type": "string", "required": true},
         {"name": "phone", "type": "string", "required": false},
-        {"name": "image", "type": "string", "required": false}
+        {"name": "image", "type": "string", "required": false},
+        {"name": "is_active", "type": "boolean", "required": true}
 	]
 }
 ```
@@ -355,6 +356,7 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
         {"name": "image", "type": "string", "required": false},
         {"name": "source", "type": "string", "required": true},
         {"name": "service", "type": "string", "required": false},
+        {"name": "is_active", "type": "boolean", "required": true}
 	]
 }
 ```
@@ -431,11 +433,9 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 
 ### Datenbankübersicht
 
-Das Modell wird mit Hilfe von TypeORM und einer PostgreSQL Datenbank umgesetzt.
+Das Modell wird mit Hilfe von ORM und einer PostgreSQL Datenbank umgesetzt. Das objektrelationale Mapping soll mit dem TypeORM Framework erfolgen.
 
 ![EntityRelation](./img/EntityRelation.svg)
-
-//TODO Evtl. noch weitere Diagramme?
 
 ## 3.7 Fehlerbehandlung 
 
@@ -446,7 +446,7 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 - Zugriff auf Firebase nicht möglich 
     - Firebase ist nicht erreichbar -> Anfrage verwerfen -> Fehlermeldung weitergeben an Dienstleister
 - Privater Key ist abgelaufen -> Es muss dafür gesorgt werden, dass in diesem Fall ein neuer Schlüssel beantragt und zwischengespeichert wird
-- Zugriff auf RabbitMQ nicht möglich -> Produce wird nicht durchgeführt -> Alle Produce Anfragen zwischenspeichern bis RabbitMQ wieder verfügbar ist und anschließend die Queue füllen
+- Zugriff auf RabbitMQ nicht möglich -> Veröffentlichung von Messages wird nicht durchgeführt -> Alle zu veröffentlichen Messages zwischenspeichern bis RabbitMQ wieder verfügbar ist und anschließend die Queue füllen
 - Zugriff zwischen Front- und Backend nicht möglich -> Frontend zeigt die Fehlermeldung  "Service nicht verfügbar. Bitte versuchen Sie es später noch einmal."
 - Zugriff auf PostgreSQL nicht möglich -> Antwort mit Fehlermeldung "Service nicht verfügbar. Bitte versuchen Sie es später noch einmal."
    - Gegebenenfalls Möglichkeit für DB-Redundanz um Fehler auszugleichen
@@ -466,6 +466,7 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 - SQL
 - Docker
 - Protokoll Buffer
+- ORM
 
 ### Aufteilung
 
@@ -495,29 +496,28 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 
 ## 5.1 Glossar 
 
-- **Mikroservice** - Architekturmuster für unabhängige Prozesse
-- **RabbitMQ** - Open Source Message Broker Software zur Implementierung von AMQP 
-- **AMQP** - Advanced Message Queuing Protocol. Stellt ein Netzwerkprotokoll auf Anwendungsebene für eine Message-orientierte Middleware dar.
-- **gRPC** - Protokoll zum Aufruf von Funktionen in verteilten Systemen. Basiert auf HTTP/2 und Protokoll            Buffern
-- **Protokoll Buffer** - Datenformat zur Serialisierung mit einer Schnittstellen Beschreibungssprache
-- **REST ** - Programmierparadigma für verteilte Systeme, insbesondere Webservices
-- **proto3** - Dritte Version der Sprachdefinition für ein Protokoll Buffer
-- **UID** - Unique ID (einzigartig, darf nur einmal existieren)
-- **Firebase** - Cloud Service von Google
+| Begriff          | Definition                                                   |
+| ---------------- | ------------------------------------------------------------ |
+| Schwarzes Brett  | Digitale Pinnwand, welche Bürger zu aktuellen wechselnden Sachverhalten der Smart City informiert. |
+| Microservice     | Architekturmuster für unabhängige Prozesse                   |
+| RabbitMQ         | Open Source Message Broker Software zur Implementierung von AMQP |
+| M                | Advanced Message Queuing Protocol. Stellt ein Netzwerkprotokoll auf Anwendungsebene für eine Message-orientierte Middleware dar. |
+| gRPC             | Protokoll zum Aufruf von Funktionen in verteilten Systemen. Basiert auf HTTP/2 und Protokoll Buffern. |
+| Protokoll Buffer | Datenformat zur Serialisierung mit einer Schnittstellen Beschreibungssprache |
+| proto3           | Dritte Version der Sprachdefinition für ein Protokoll Buffer |
+| REST             | Programmierparadigma für verteilte Systeme, insbesondere Webservices |
+| UID              | Unique ID (einzigartig, darf nur einmal existieren)          |
+| Firebase         | Cloud Service von Google                                     |
+| ORM              | Steht für `Object Relation Mapping` und ist eine Technik um Objekte aus einer Anwendung in einer relationalen Datenbank ablegen und auslesen kann. |
+| TypeORM          | ORM Framework für JavaScript und TypeScript.                 |
 
 
 
 ## 5.2 Referenzen
 
-//TODO
+- [Wikipedia: Einwohnermeldeamt](https://de.wikipedia.org/wiki/Einwohnermeldeamt)
+- [Mali Framework für gRPC und NodeJS](https://mali.js.org/)
 
-- Quellenangabe
-
-## 5.3 Index
-
-//TODO
-
-- Bilderverzeichnis
-
-- Tabellenverzeichnis
+- [Tutorial für RabbitMQ mit NodeJS](https://www.cloudamqp.com/blog/2015-05-19-part2-2-rabbitmq-for-beginners_example-and-sample-code-node-js.html)
+- [ORM Framework für NodeJS](https://typeorm.io/#/)
 

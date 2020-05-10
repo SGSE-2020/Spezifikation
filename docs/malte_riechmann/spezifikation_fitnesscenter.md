@@ -105,29 +105,85 @@ PDF-Version mit Verlinkung im Projekt Repository
 
 ![abos](./img/mockups/home.png)
 
+User Story: Standorte anschauen
+
 #### Geräte
 
 ![abos](./img/mockups/geraete.png)
+
+User Story: Geräte anschauen/hinzufügen/bearbeiten/löschen
 
 #### Kurse
 
 ![abos](./img/mockups/kurse.png)
 
+User Story: Kurse anschauen/hinzufügen/bearbeiten/löschen
+
 #### Abos
 
 ![abos](./img/mockups/abos.png)
+
+User Story: Abonnement anschauen/hinzufügen/bearbeiten/löschen
 
 #### Profil
 
 ![abos](./img/mockups/profil.png)
 
+User Story: Persönlichen Daten ansehen/bearbeiten, Termin beim Physiotherapeuten beantragen
+
+#### Trainingsplan herunterladen
+
+![abos](./img/mockups/trainingsplan.png)
+
+User Story: Trainingsplan herunterladen
+
+#### Trainingsplan beantragen
+
+![abos](./img/mockups/trainingplan_antrag.png)
+
+User Story: Trainingsplan beantragen und Anamnese ausfüllen
+
 #### Mitglieder
 
 ![abos](./img/mockups/mitglieder.png)
 
+User Story: Alle Mitglieder anzeigen
+
+#### Mitglied einfügen
+
+![abos](./img/mockups/add_mitglied.png)
+
+User Story: Mitglied einfügen
+
+#### Trainingsplan Anträge
+
+![abos](./img/mockups/plan_antrag.png)
+
+User Story: Trainingsplan Anträge anzeigen
+
+#### Behandlungs-Anträge
+
+![abos](./img/mockups/behandlungs_antrag.png)
+
+User Story: Behandlungsanträge ansehen
+
 #### Mitglied Details
 
 ![abos](./img/mockups/mitglied_detail.png)
+
+User Story: Mitglied ansehen/bearbeiten/entfernen, Mitglieder Rolle einstellen
+
+#### Trainingsplan hochladen
+
+![abos](./img/mockups/trainingsplan_hochladen.png)
+
+User Story: Trainingsplan hinzufügen/ändern
+
+#### Behandlungsakte
+
+![abos](./img/mockups/akte_ansehen.png)
+
+User Story: Behandlungsakte einsehen/bearbeiten
 
 
 ## 2.5 Anforderungen im Detail
@@ -143,6 +199,8 @@ PDF-Version mit Verlinkung im Projekt Repository
 | Kunde | einen Termin beim Physiotherapeuten beantragen können | behandelte werden kann. | Anmeldungsformular für Physiotherapeuten vorhanden | optional |
 | Kunde | einen neuen Trainingsplan beantragen können | ich mein Training an meine aktuelle Verfassung anpassen kann. | Antragsformular für Trainingsplan vorhanden | optional |
 | Kunde | meine Trainingspläne  einsehen können | ich meine Fortschritte sehen kann. | Persönlicher Trainingsplan angezeigt wird | optional |
+| Kunde | meine persönlichen Daten einsehen können | ich sehe, was über mich gespeichert ist. | Persönliche Daten werden angezeigt | mittel |
+| Kunde | meine persönlichen Daten bearbeiten können | veraltete Informationen aktualisiert werden können- | Persönliche Daten werden geändert | mittel |
 
 **Allgemeine Verwaltung**
 
@@ -166,12 +224,8 @@ PDF-Version mit Verlinkung im Projekt Repository
 | Trainer/ Chef/ Physiotherapeut | Mitglieder ansehen können | ich die jeweiligen Mitglieder optimal beraten kann | Mitglieder angezeigt werden | hoch |
 | Trainer/ Chef/ Physiotherapeut | Mitglieder bearbeiten können | ich neue Information einfügen und veraltete entfernen kann | Mitglieder werden bearbeitet | mittel |
 | Trainer/ Chef/ Physiotherapeut | Mitglieder entfernen können | Persönlich Daten nicht gespeichert werden müssen, wenn es nicht nötig ist | Mitglieder werden gelöscht | hoch |
-| Chef | Trainerrollen vergeben können | neue Trainer alle wichtige Funktionen nutzen können | Trainerrolle hinzufügen | niedrig |
-| Chef | Trainerrollen entfernen können | ehemalige Trainer keinen Zugriff auf persönliche Daten haben | Trainerrolle entfernen | niedrig |
-| Chef | Physiotherapeuten-rolle vergeben können | neue Physiotherapeuten alle wichtige Funktionen nutzen können | Physiotherapeuten hinzufügen | niedrig |
-| Chef | Physiotherapeuten-rolle entfernen können | ehemalige Physiotherapeuten keinen Zugriff auf persönliche Daten haben | Physiotherapeuten entfernen | optional |
-| Chef | neue Chefs hinzufügen können | neue Führungspersonen auf alle Funktionen zugreifen können | Chef hinzufügen | optional |
-| Chef | Chefs entfernen können | ehemalige Führungspersonen keinen Zugriff auf persönliche Daten haben | Chef entfernen | optional |
+| Chef | Mitgliederrollen vergeben können | jeder Zugriff auf die relevanten Funktionen hat | Rolle ändern | niedrig |
+| Trainer/ Chef/ Physiotherapeut | alle Mitglieder ansehen können   | ich dann die Information zu den einzelnen Mitgliedern abrufen kann | Mitglieder anzeigen          | hoch          |
 
 **Trainer und Therapeuten Funktionen**
 
@@ -227,12 +281,21 @@ PDF-Version mit Verlinkung im Projekt Repository
 }
 ````
 
-
-- 
-
 ## 3.3.1 Ereignisse
 
-- In Event-gesteuerten Systemen: Definition der Ereignisse und deren Attribute
+### Neues Gerät
+
+- Jedes mal wenn ein neues Gerät hinzugefügt wird eine Event rausgeschickt, damit Nutzer informiert werden können
+
+````json
+"sgse.model.fitness_center.neues_geraet": {
+    "description": "Object to about a new trainigs device",
+    "fields": [
+      {"name": "name", "type": "string", "required": true},
+      {"name": "description", "type": "string", "required": true}
+    ]
+}
+````
 
 ## 3.4 Datenmodell 
 
@@ -258,8 +321,6 @@ An dieser Stellen werden drei wichtige Abläufe in Form von Aktivitätsdiagramme
 
 ## 3.6 Entwurf
 
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
-
 ## 3.7 Fehlerbehandlung 
 
 * Mögliche Fehler / Exceptions auflisten
@@ -280,12 +341,9 @@ An dieser Stellen werden drei wichtige Abläufe in Form von Aktivitätsdiagramme
 
 ## 4.2 Verantwortlichkeiten
 
-- Zuordnung von Personen zu Softwarebausteinen aus Kapitel 3.1 und 3.2
-- Rollendefinition und Zuordnung
-
 | Softwarebaustein | Person(en) |
 |----------|-----------|
-| Komponente A-Z | Malte Riechmann |
+| Alle | Malte Riechmann |
 
 ### Rollen
 
@@ -320,11 +378,21 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 
 ## 5.1 Glossar 
 
-- Definitionen, Abkürzungen, Begriffe
+| Begriff                  | Erläuterung des Begriffs im Kontext diese Spezifikation      |
+| ------------------------ | ------------------------------------------------------------ |
+| Trainingsplan            | Ein Trainingsplan enthält die verschiedenen Geräte, an denen der Kunde pro Trainingseinheit trainiert. Außerdem enthält er Information wie viele Sätze je Gerät getätigt werden sollen (Anzahl aktiver Phasen) und wie viele Wiederholungen in jedem Satz (bei zyklischen Übungen) oder einer Dauer (bei nicht zyklischen Übungen) |
+| Abonnement               | Ein Kunde der aktiv trainiert muss für die Nutzung der Services monatlich einen bestimmten Betrag Zahlen. Die höhe dieses Betrages und wie Anzahl der Monate, die der Kunde mindestens bezahlen muss werden in einem Abonnement festgehalten. |
+| Physiotherapeut (Physio) | Ausgebildet Fachkräfte zur Prävention, Behandlung und Rehabilitation von Verletzungen im Bereich oder Bedingt durch Körperhaltung, Beweglichkeit, Kraft, Geschicklichkeit und ähnlichem. Außerdem können sie Funktionen im Wellnessbereich übernehmen zur Erhaltung der körperlichen und geistigen Gesundheit und Leistungsfähigkeit. Ein Physiotherapeut ist zudem auch ein ausgebildeter Trainer. |
+| Trainer                  | Sind Fachkräfte mit mindestens einer C-Lizenz im Fitnesstrainer Bereich |
+| Chef                     | Der Chef übernimmt Verwaltungsaufgaben. Er stellt Arbeitspläne auf und kümmert sich um alle finanziellen und organisatorischen Aufgaben. |
+| Kurs                     | Ein Kurs ist ein festes Fitness-Programm welches ein Trainer mit einer Gruppe von bis zu 20 Leuten durchführt. Dies kann Materialien um fassen, muss es aber nicht. Kurse sollten intensiv sein und eine Dauer von 2 Stunden nicht überschreiten, da nicht so gut auf einzelne Personen eingegangen werden kann. |
+| (Trainings-)Gerät        | Alle Geräte die in einer bestimmten Sportart nur dem Training dienen (Beispiel:Laufband, Hometrainer) oder die sportartenübergreifenden als Trainingsgeräte genutzt werden |
+| Behandlungsakte          | Die Behandlungsakte dient als Protokoll zu den einzelnen Terminen eines Kunden beim Physiotherapeuten. Sie enthält Daten bezüglich der angewendeten Methoden, dem gesundheitlichen Zustand und dem geplanten weiteren Vorgehen. |
+| Rollen                   | Ein Mitglied kann die Rollen Trainer, Kunde, Physiotherapeut und Chef einnehmen. |
+| Trainer Lizenzen         | Die Fitnesstrainer Lizenzen beginnen bei Stufe C und gehen bis Stufe A. Die Stufe C umfasst Grundlagen bezüglich der Anatomie und Physiologie des menschlichen Körpers. Außerdem enthält er Vorgehensweisen zum Umgang mit Kunden. Bei höheren Stufen wird diese Wissen erheblich vertieft. |
+| Kunde                    | Mitglieder des Fitness Centers, die ein aktives Abonnement haben. |
 
 ## 5.2 Referenzen
-
-- Handbücher, Gesetze
 
 ## 5.3 Index
 
