@@ -40,23 +40,15 @@
 
 ## 2.1 Stakeholder
 
-| Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
-|---|---|---|---|---|
-|  |   |   |    |   |
 
 
-### Beispiel
-
-| Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
-|---|---|---|---|---|
-| Leiter der Bibliothek, Fachlicher Entscheider  |  Herr Bauer | Tel. 409000, Von 9-19 Uhr telefonisch erreichbar, Mitarbeit zu 30% möglich, Nürnberg  | Kennt das Altsystem aus der Anwendersicht, soll mit dem System arbeiten  | Vereinfachung der Ausleihprozesse  |
-| Administrator, Informationslieferant bzgl. Wartungsanforderungen  | Herr Heiner  | Heiner@gmx.net, Per E-Mail, immer erreichbar, Verfügbarkeit 50%, Nürnberg  | Vertraut mit vergleichbarer Verwaltungssoftware   |  Stabiles System, geringer Wartungsaufwand |
-| Product-Owner, Entscheider - als Koordinator der Stakeholderanforderungen   | Paul Ottmer  |  po@ottmer.de, Per E-Mail und tel. tagsüber, Verfügbarkeit 100%, Nürnberg  | Koordinator für die Inputs der Stakeholder  | ROI des Systems sicherstellen  |
+| Funktion / Relevanz | Name | Wissen  | Interessen / Ziele  |
+|---|---|---|---|
+| Arzt | Alexander Arzt | Kennt sich mit Medizin aus | Vereinfachung der Terminverwaltung und  Patientenakten |
+| Mitarbeiter | Manfred Mitarbeiter |  Erfahren im Umgang mit Patienten  | Einfache Einsicht in Patientenbegehren                      |
+| Stammkunde | Gerd Grippe | Häufiger Patient | Einfacher Termine bekommen, Einsicht in seine Patientenakte |
 
 ## 2.2 Funktionale Anforderungen
-
-- Use-Case Diagramme
-- Strukturierung der Diagramme in funktionale Gruppen
 
 
 
@@ -74,50 +66,76 @@
 
 ### 2.3.1 Rahmenbedingungen
 
-- Normen, Standards, Protokolle, Hardware, externe Vorgaben
+- Kommunikation mit anderen Microservices
+  - Asynchron: RabbitMQ
+  - Synchron: gRPC
 
 ### 2.3.2 Betriebsbedingungen
 
-- Vorgaben des Kunden (z.B. Web Browser / Betriebssystem Versionen, Programmiersprache)
+- Website mit Microservice Hausarzt
+- Datenbank um wichtige Daten zu speichern
 
 ### 2.3.3 Qualitätsmerkmale
 
-- Externe Qualitätsanforderungen (z.B. Performance, Sicherheit, Zuverlässigkeit, Benutzerfreundlichkeit)
-
 Qualitätsmerkmal | sehr gut | gut | normal | nicht relevant
 ---|---|---|---|---
-**Zuverlässigkeit** | | | | |
-Fehlertoleranz |X|-|-|-|
-Wiederherstellbarkeit |X|-|-|-|
-Ordnungsmäßigkeit |X|-|-|-|
-Richtigkeit |X|-|-|-|
-Konformität |-|X|-|-|
-**Benutzerfreundlichkeit** | | | | |
-Installierbarkeit |-|-|X|-|
-Verständlichkeit |X|-|-|-|
-Erlernbarkeit |-|X|-|-|
-Bedienbarkeit |-|X|-|-|
-**Performance** | | | | |
-Zeitverhalten |-|-|X|-|
-Effizienz|-|-|-|X|
-**Sicherheit** | | | | |
-Analysierbarkeit |X|-|-|-|
-Modifizierbarkeit |-|-|-|X|
-Stabilität |X|-|-|-|
-Prüfbarkeit |X|-|-|-|
+**Zuverlässigkeit** | | | | 
+Fehlertoleranz |X|-|-|-
+Wiederherstellbarkeit |X|-|-|-
+Ordnungsmäßigkeit |X|-|-|-
+Richtigkeit |X|-|-|-
+Konformität |-|X|-|-
+**Benutzerfreundlichkeit** | | | | 
+Installierbarkeit |-|-|-|X
+Verständlichkeit |X|-|-|-
+Erlernbarkeit |-|X|-|-
+Bedienbarkeit |-|X|-|-
+**Performance** | | | | 
+Zeitverhalten |-|X|-|-
+Effizienz|-|X|-|-
+**Sicherheit** | | | | 
+Analysierbarkeit ||X|-|-
+Modifizierbarkeit |-|X|-|-
+Stabilität |X|-|-|-
+Prüfbarkeit |-|-|X|-
 
 ## 2.4 Graphische Benutzerschnittstelle
 
-- GUI-Mockups passend zu User Stories
-- Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
-- Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
+#### Login
+
+![Login](mockups\Login.png)
+
+#### Home
+
+![Home](mockups\Home.png)
+
+#### Profil
+
+![Profil-default](mockups\Profil-default.png)
+
+![Profil-neuer termin](mockups\Profil-neuer termin.png)
+
+#### Krankheitsstatistik
+
+![Krankheitsstatistik](mockups\Krankheitsstatistik.png)
+
+#### Impressum
+
+![Impressum copy](mockups\Impressum copy.png)
+
+#### Admin/Mitarbeiter Patientenübersicht
+
+![Admin_patienten_uebersicht](mockups\Admin_patienten_uebersicht.png)
+
+#### Admin/Mitarbeiter Mitarbeiterübersicht
+
+![Admin_mitarbeiter_uebersicht](mockups\Admin_mitarbeiter_uebersicht.png)
+
+#### Admin/Mitarbeiter Termine
+
+![Admin_termine_uebersicht](mockups\Admin_termine_uebersicht.png)
 
 ## 2.5 Anforderungen im Detail
-
-- User Stories mit Akzeptanzkritierien 
-- Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
-- Strukturierung der User Stories in funktionale Gruppen
 
 
 #### Benutzer
@@ -125,7 +143,6 @@ Prüfbarkeit |X|-|-|-|
 | **Als**  | **möchte ich**| **so dass** | **Akzeptanz**| **Priorität** |
 | ---- | :----| :----- | :---- | ---- |
 | Benutzer | einen Termin machen     | ich auf Krankheiten überprüft werden kann | Termin machen, auf der Online Website | hoch  |
-| Benutzer | Rezepte erhalten | ich Medikamente bei der Apotheke erhalten kann | Erhalt des Rezepts | mittel |
 | Benutzer | den Besuch bezahlen | ich eine Behandlung bekomme | Bezahlmöglichkeit in der Online Website | hoch  |
 | Benutzer | einen Parkplatz bekommen | ich nicht so weit laufen muss | automatische Reservierung durch Termin machen | mittel |
 | Benutzer | Öffnungszeiten einsehen | ich planen kann | Ansicht der Öffnungszeiten | mittel |
@@ -145,7 +162,6 @@ Prüfbarkeit |X|-|-|-|
 | Administrator | einen Überblick über die Patienten haben | ich einen Überblick über die Patienten habe | Übersicht bei Admin Zugriff | hoch |
 | Administrator | einen Blick in die Krankenakte der Patienten werfen | die Patienten die beste mögliche Behandlung bekommen | genauere Übersicht im Admin Zugriff | mittel |
 | Administrator | Rezepte für Medikamente an Kunden geben | der Kunde Medikamente kaufen kann | Herausgabe von Rezepten | mittel |
-| Administrator | die Stadtapotheke nach Herausgabe von Rezepten vorwarnen | sich die Apotheke besser vorbereiten kann | bei Herausgabe von Rezepten die Apotheke vorwarnen | mittel |
 | Administrator | Patienten an das Krankenhaus weiterleiten | die Patienten die beste mögliche Behandlung bekommen | Weiterleitungsfunktion | mittel |
 | Administrator | eine Mitarbeiterübersicht haben| ich einen Überblick über die Mitarbeiter habe | Übersicht bei Admin Zugriff | mittel |
 | Administrator | meine Mitarbeiter bezahlen | die Mitarbeiter arbeiten | Mitarbeiter Bezahlmöglichkeit | mittel |
@@ -154,12 +170,11 @@ Prüfbarkeit |X|-|-|-|
 
 ## 3.1 Systemübersicht
 
-- Systemarchitekturdiagramm ("Box-And-Arrow" Diagramm)
-- Kommunikationsprotokolle, Datenformate
+![system](system.png)
 
 ## 3.2 Softwarearchitektur
 
-- Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
+![architecture](architecture.png)
 
 ## 3.3 Schnittstellen
 
@@ -206,7 +221,7 @@ Mithilfe der "user_id" kann die Krankenakte eines Patienten angefordert werden.
 
 
 
-#### Krankenakte eines Patienten aktualisieren
+#### Krankenakte eines Patienten aktualisieren/einreichen
 
 Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, welche danach gespeichert wird.
 
@@ -220,25 +235,7 @@ Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, 
       {"name": "symptome", "type": "string", "required": false},
       {"name": "diagnose", "type": "string", "required": false},
       {"name": "medikation", "type": "string", "required": false},
-      {"name": "sonstiges", "type": "string", "required": false},
-      {"name": "sonstiges", "type": "string", "required": false}
-    ]
-}
-```
-
-
-
-#### Meldung eines psychisch Kranken
-
-
-
-```json
-"sgse.model.hausarzt.meldung_psychisch_krank": {
-    "description": "objekt zum melden eines psychisch kranken",
-    "fields": [
-      {"name": "user_id", "type": "string", "required": true},
-      {"name": "datum", "type": "string", "required": true},
-      {"name": "diagnose", "type": "string", "required": true},
+      {"name": "psychisch_krank", "type": "string", "required": false},
       {"name": "sonstiges", "type": "string", "required": false}
     ]
 }
@@ -252,14 +249,23 @@ Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, 
 
 ## 3.4 Datenmodell 
 
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
-- Modellierung des physikalischen Datenmodells 
-  - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
+
+
+![database](database.png)
+
+
 
 ## 3.5 Abläufe
 
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
+#### Aktivität Benutzer
+
+![activity_user](activity_user.png)
+
+#### Aktivität Admin
+
+![activity_admin](activity_admin.png)
+
+
 
 ## 3.6 Entwurf
 
@@ -277,11 +283,10 @@ Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, 
 
 ## 4.1 Annahmen
 
-- Nicht durch den Kunden definierte spezifische Annahmen, Anforderungen und Abhängigkeiten
-- Verwendete Technologien (Programmiersprache, Frameworks, etc.)
-- Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen 
-- Einschränkungen, Betriebsbedingungen und Faktoren, die die Entwicklung beeinflussen (Betriebssysteme, Entwicklungsumgebung)
-- Interne Qualitätsanforderungen (z.B. Softwarequalitätsmerkmale wie z.B. Erweiterbarkeit)
+- Das Frontend wird mit JavaScript entwickelt
+- Für den API-Server wird Node.js verwendet
+- Die Bausteine Datenbank, Frontend und Backend müssen als Docker Container vorliegen
+- Für die Kommunikation mit anderen Prozessen wir gRPC verwendet
 
 ## 4.2 Verantwortlichkeiten
 
