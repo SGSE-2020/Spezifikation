@@ -149,6 +149,8 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 }
 ```
 
+Diese Schnittstelle dient zur Information anderer Microservices über aktuelle Genehmigungen welche bereits bearbeitet wurden.
+
 ### Bestehende Ordnungswidrigkeiten
 
 ```json
@@ -156,6 +158,8 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
     "description": "Returns a complete list of the ordnungswidrigkeiten"
 }
 ```
+
+Diese Schnittstelle stellt Informationen über alle aktuellen gemeldeten und auch bearbeiteten Ordnungswidrigkeiten bereit.
 
 ### Ordnungswidrigkeiten melden
 
@@ -170,6 +174,8 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 }
 ```
 
+Mittels dieser Schnittstelle kann eine neue Ordnungswidrigkeit an das Ordnungsamt gesendet werden. Diese enthält die UUID des Beschuldigten. Mittels eines Tags eine ein bis zwei Wörter Kurzbeschreibung und eine umfangreiche Beschreibung in "Description". 
+
 ### Psychisch Kranke melden
 
 ```json
@@ -183,9 +189,7 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 }
 ```
 
-
-
-
+Durch diese Schnittstelle ist es möglich psychisch Kranke zu melden. Diese werden dann vom Ordnungsamt zur Unterbringung gebracht. Das Datenmodell ist ähnlich dem "Ordnungswidrigkeiten melden" Modell
 
 ## 3.3.1 Ereignisse
 
