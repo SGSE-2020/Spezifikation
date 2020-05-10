@@ -85,7 +85,7 @@ Prüfbarkeit |-|-|X|-
 
 ![Fachbereiche](img/Fachbereiche.png)
 
-###Patienten
+### Patienten
 
 ![Termine](img/Termine.png)
 
@@ -102,7 +102,7 @@ Prüfbarkeit |-|-|X|-
 
 ## 2.5 Anforderungen im Detail
 
-###Nutzer
+### Nutzer
 
 | Als | möchte ich | so dass | Akzeptanz | Priorität |
 |----------|-----------|----------|----------|----------|
@@ -112,7 +112,7 @@ Prüfbarkeit |-|-|X|-
 | Nutzer | eine Personalübersicht haben | ich weiß wer in dem Krankenhaus Arbeitet | Personalübersicht | soll |
 | Nutzer | Übersicht über Fachbereiche | mich über die Fachbereiche des Krankenhauses informieren kann | Fachbereiche übersicht | soll |
 
-###Patient
+### Patient
 | Als | möchte ich | so dass | Akzeptanz | Priorität |
 |----------|-----------|----------|----------|----------|
 | Patient | einen Termin vereinbaren | ich behandelt werden kann | Termin vereinbar | muss |
@@ -120,7 +120,7 @@ Prüfbarkeit |-|-|X|-
 | Patient | einen Parkplatz bekommen | ich mein Auto direkt am Krankenhaus parken kann | automatische Reservierung durch Termin machen | soll |
 | Patient | Öffnungszeiten einsehen | ich besser Planen kann | Ansicht der Öffnungszeiten | soll |
 
-###Personal
+### Personal
 
 | Als | möchte ich | so dass | Akzeptanz | Priorität |
 |----------|-----------|----------|----------|----------|
