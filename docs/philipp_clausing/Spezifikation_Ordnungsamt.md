@@ -31,7 +31,7 @@ Alle Bewohner der Stadt (Benutzer und Mitarbeiter) sollen die Plattform ohne Pro
 
 ### Use Case Diagramm
 
-![uc diagram](./img/Ordnungsamt.png)
+![uc diagram](/img/Ordnungsamt.png)
 
 ## 2.3 Nicht-funktionale Anforderungen 
 
@@ -81,15 +81,15 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ### Startpunkt Ordnungsamt
 
-![startbildschirm](.\img\ordnungsamt_start.png)
+![startbildschirm](/img/ordnungsamt_start.png)
 
 ### Mitarbeiteransicht
 
-![startbildschirm](.\img\mitarbeiteransicht.png)
+![startbildschirm](/img/mitarbeiteransicht.png)
 
 ### Benutzeransicht
 
-![startbildschirm](.\img\buergersicht.png)
+![startbildschirm](/img/buergersicht.png)
 
 
 
@@ -124,11 +124,11 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ## 3.1 Systemübersicht
 
-![Systemarchitektur](.\img\systemarchitektur.png)
+![Systemarchitektur](/img/systemarchitektur.png)
 
 ## 3.2 Softwarearchitektur
 
-![architekturdiagramm](.\img\architekturdiagramm.png)
+![architekturdiagramm](/img/softwarearchitektur.png)
 
 ## 3.3 Schnittstellen
 
