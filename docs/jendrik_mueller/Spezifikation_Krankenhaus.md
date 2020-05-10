@@ -145,6 +145,8 @@ Prüfbarkeit |-|-|X|-
 
 ### Termin erstellen
 
+Diese Schnittstelle dient zum Erstellen eines neuen Termins für einen Patienten.
+
 ```json
 "sgse.models.krankenhaus.termin":{
 
@@ -161,6 +163,8 @@ Prüfbarkeit |-|-|X|-
 ```
 
 ### Patient übergeben
+
+Über diese Schnittstelle können dem Krankenhaus neue Patienten übergeben werden. Sie soll vor allem dem Hausarzt und Rettungsdienst zum Überweisen von Patienten an das Krankenhaus dienen. Dabei soll die UserID des Bürgers und bisher aufgenommene Krankendaten übergeben werden.
 
 ```json
 "sgse.models.krankenhaus.add_patient":{
@@ -181,6 +185,8 @@ Prüfbarkeit |-|-|X|-
 
 ### Patient abrufen
 
+Gibt die Daten eines Patienten, einschließlich der Krankendaten zurück
+
 ```json
 "sgse.models.krankenhaus.get_patient":{
 
@@ -196,6 +202,8 @@ Prüfbarkeit |-|-|X|-
 ```
 
 ### Patientendaten bearbeiten
+
+Diese Schnittstelle dient dazu dem Personal die möglichkeit zu geben Pateintendaten zu ändern. Dabei soll die ID des Patienten und die neuen Daten übergeben werden. Werte die nicht geändert wurden. müssen nicht mit übertragen werden
 
 ```json
 "sgse.models.krankenhaus.edit_patient":{
