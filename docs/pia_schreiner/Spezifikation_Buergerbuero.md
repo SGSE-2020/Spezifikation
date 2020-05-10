@@ -4,7 +4,7 @@
 * **Author:** Pia Schreiner
 * **Source Code:** [Link zum Code Repository](https://github.com/SGSE-2020/MS_Buergerbuero)
 
-[[_TOC_]]
+
 
 # 1 Einführung
 
@@ -169,29 +169,29 @@ Prüfbarkeit |X|-|-|-
 
 Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Priorität
 -- | -- | -- | -- | -- | --
-Registrierung | Interessent | mich beim Bürgerbüro registrieren | für mich ein Konto erstellt wird | Registrierung möglich | Hoch
-Schwarzes Brett lesen | Interessent | Zugriff auf das schwarze Brett haben | ich interessante Aushänge zur Smart City ansehen kann und mich besser zurechtfinde | Schwarzes Brett ist zugänglich | Mittel
+[Registrierung](#registrierung) | Interessent | mich beim Bürgerbüro registrieren | für mich ein Konto erstellt wird | Registrierung möglich | Hoch
+[Schwarzes Brett lesen](#Übersicht-der-aushänge) | Interessent | Zugriff auf das schwarze Brett haben | ich interessante Aushänge zur Smart City ansehen kann und mich besser zurechtfinde | Schwarzes Brett ist zugänglich | Mittel
 
 ### Bürger
 
 | Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Priorität |
 | --| --| -- | -- | -- | -- |
-| Ummeldung| Bürger | mich beim Bürgerbüro anmelden | ich auf meine Daten zugreifen kann, um diese zu ändern | Änderung meiner Daten möglich | Hoch |
-| Wegziehen | Bürger | aus der Stadt ausziehen | mein Nutzerkonto deaktiviert wird | Nutzerkonto wird deaktiviert | Hoch |
-| Schwarzes Brett lesen| Bürger | Zugriff auf das schwarze Brett haben | ich das Fundbüro nutzen kann und wichtige Aushänge sehen kann | Schwarzes Brett ist zugänglich | Mittel |
-| Aushang abgeben | Bürger | einen Aushang für das schwarze Brett im Bürgerbüro abgeben | ich meine Anliegen für alle Bürger teilen kann| Aushang muss angenommen werden | Mittel |
-| Aushang löschen | Bürger | einen selber erstellen Aushang wieder löschen | dieser nicht mehr am schwarzen Brett für alle sichtbar ist | Aushang muss gelöscht werden | Mittel |
-| Fundbüro Annahme | Bürger | Dinge im Fundbüro des Bürgerbüros abgeben können | Bürger, die etwas verloren haben, dies abholen können | Bürger hat gefundenen Gegenstand abgegeben und Aushang am schwarzen Brett ist erstellt worden | Niedrig |
-| Fundbüro Rückgabe | Bürger | Dinge im Fundbüro des Bürgerbüros abholen | Dinge wieder zum rechtmäßigen Besitzer zurück gelangen können | Bürger hat gefundenen Gegenstand abgeholt und Aushang ist vom schwarzen Brett entfernt | Niedrig |
+| [Ummeldung](#nutzerkonto-daten-ändern) | Bürger | mich beim Bürgerbüro anmelden | ich auf meine Daten zugreifen kann, um diese zu ändern | Änderung meiner Daten möglich | Hoch |
+| [Wegziehen](#Übersicht-des-nutzerkontos) | Bürger | aus der Stadt ausziehen | mein Nutzerkonto deaktiviert wird | Nutzerkonto wird deaktiviert | Hoch |
+| [Schwarzes Brett lesen](#Übersicht-der-anhänge-für-angemeldete-bürger) | Bürger | Zugriff auf das schwarze Brett haben | ich das Fundbüro nutzen kann und wichtige Aushänge sehen kann | Schwarzes Brett ist zugänglich | Mittel |
+| [Aushang abgeben](#nutzerkonto-neuen-aushang-erstellen) | Bürger | einen Aushang für das schwarze Brett im Bürgerbüro abgeben | ich meine Anliegen für alle Bürger teilen kann| Aushang muss angenommen werden | Mittel |
+| [Aushang löschen](#Übersicht-der-anhänge-für-angemeldete-bürger) | Bürger | einen selber erstellen Aushang wieder löschen | dieser nicht mehr am schwarzen Brett für alle sichtbar ist | Aushang muss gelöscht werden | Mittel |
+| [Fundbüro Annahme](#nutzerkonto-fundgegenstand-abgeben) | Bürger | Dinge im Fundbüro des Bürgerbüros abgeben können | Bürger, die etwas verloren haben, dies abholen können | Bürger hat gefundenen Gegenstand abgegeben und Aushang am schwarzen Brett ist erstellt worden | Niedrig |
+| [Fundbüro Rückgabe](#aushänge-fundgegenstand-abholen) | Bürger | Dinge im Fundbüro des Bürgerbüros abholen | Dinge wieder zum rechtmäßigen Besitzer zurück gelangen können | Bürger hat gefundenen Gegenstand abgeholt und Aushang ist vom schwarzen Brett entfernt | Niedrig |
 
 
 ### Bürgerbüro Mitarbeiter
 
 | Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Priorität |
 | --| --| -- | -- | -- | -- |
-| Schwarzes Brett lesen| Bürgerbüro Mitarbeiter | Zugriff auf das schwarze Brett haben | ich das Fundbüro nutzen kann und wichtige Aushänge sehen kann | Schwarzes Brett ist zugänglich | Mittel |
-| Aushang aushängen | Bürgerbüro Mitarbeiter | abgegebene oder gesendete Aushänge am schwarzen Brett anbringen | alle Bürger diese sehen können| Aushang ist am schwarzen Brett zu sehen | Mittel|
-| Aushang entfernen | Bürgerbüro Mitarbeiter | Aushänge vom schwarzen Brett wieder entfernen | Bürger diese nicht mehr einsehen können | Aushang ist vom schwarzen Brett entfernt | Mittel |
+| [Schwarzes Brett lesen](#Übersicht-der-anhänge-für-mitarbeiter) | Bürgerbüro Mitarbeiter | Zugriff auf das schwarze Brett haben | ich das Fundbüro nutzen kann und wichtige Aushänge sehen kann | Schwarzes Brett ist zugänglich | Mittel |
+| [Aushang aushängen](#mitarbeiter-work-stack) | Bürgerbüro Mitarbeiter | abgegebene oder gesendete Aushänge am schwarzen Brett anbringen | alle Bürger diese sehen können| Aushang ist am schwarzen Brett zu sehen | Mittel|
+| [Aushang entfernen](#Übersicht-der-anhänge-für-mitarbeiter) | Bürgerbüro Mitarbeiter | Aushänge vom schwarzen Brett wieder entfernen | Bürger diese nicht mehr einsehen können | Aushang ist vom schwarzen Brett entfernt | Mittel |
 
 ### Andere Dienstleister
 

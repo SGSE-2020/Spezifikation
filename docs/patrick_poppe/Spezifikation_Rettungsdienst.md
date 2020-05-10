@@ -92,37 +92,53 @@ Prüfbarkeit |X|-|-|-
 
 ##### Historie ansehen
 
+Über diese Ansicht kann eine Einsatz-Historie angesehen werden. Dient ausschließlich zu Dokumentationszwecken.
+
 ![Historie ansehen](./img/MockupHistorieWeb.png)
 
 #### Sanitäter
 
 ##### Hauptmenü
 
+Dies ist das Hauptmenü, welches Sanitäter sehen, wenn Sie sich nicht im Einsatz befinden. Sie können entweder den Status ändern oder die Historie ansehen.
+
 ![Hauptmenü Sanitäter](./img/MockupMainMenuSani.png)
 
 ##### Einsatz Annehmen
+
+Sollte dem Sanitäter ein Einsatz zugeordnet werden, erscheint eine entsprechende Meldung.
 
 ![Einsatz Annehmen](./img/MockupEinsatzAnnehmen.png)
 
 ##### Hauptmenü Einsatz
 
-![Hauptmenü Einsatz](./img/MockupEinsatzHauptmenu.png)
+Im Einsatz sieht der Sanitäter dann dieses Hauptmenü.
+
+![Hauptmenü Einsatz](./img/MockUpEinsatzHauptmenu.png)
 
 ##### Einsatz Weg Anzeigen
+
+Um sich seinen Weg zum Einsatzort aufrufen zu können, kann er ein Karte aufrufen.
 
 ![Weg anzeigen](./img/MockupWegAnzeigen.png)
 
 ##### Patientendaten abrufen
 
+Über die ID eines Bürgers kann er sich die Patientenakte anzeigen lassen.
+
 ![Patientendaten abrufen](./img/MockupPatientinfos.png)
 
 ##### Einsatzbericht schreiben
+
+Um den Einsatz abzuschließen, muss der Sanitäter einen Einsatzbericht ausfüllen. Über den Button "Patient verstorben" wird der Patient offiziell als tot erklärt. Mit "Bericht Senden" wird der Einsatz abgeschlossen.
 
 ![EInsatzbericht schreiben](./img/MockupEinsatzberichtSchreiben.png)
 
 #### Leitstelle
 
 ##### Einsatz erstellen
+
+Nur die Leitstelle kann über einen Monitor einen Einsatz erstellen und diese den Kräften zuweisen. Farben zeigen dabei die Verfügbarkeit der Einsatzkräfte an.
 
 ![Einsatz erstellen](./img/EinsatzErstellen.png)
 
@@ -143,8 +159,6 @@ Prüfbarkeit |X|-|-|-
 | Leitstelle | Einsätze zuteilen | eine bestmögliche Abarbeitung erfolgen kann | Einsatzkräfte können Einsatz zugeteilt werden | Must |
 | System | Einsätze erstellen | um Krankentransporte entgegennehmen zu können | Einsätze werden automatisch erstellt | Must |
 
-### 
-
 
 # 3 Technische Beschreibung
 
@@ -159,54 +173,29 @@ Prüfbarkeit |X|-|-|-
 ## 3.3 Schnittstellen
 
 ### Einsatzbericht abfragen
+
+Über diese Schnittstelle kann ein Einsatzbericht abgefragt werden. Hierfür wird nur die ID des Einsatz benötigt. Der komplette Bericht, siehe Datenmodell Einsatzbericht, wird zurückgegeben.
+
 ```json
 "sgse.models.rettungsdienst.einsatzbericht":{
-
 	"description": "Returns a  specific mission report", 
-
 	"fields": [
-
 		{"name": "missionID", "type": "string", "required": true}
-
 	]
-
 }
-```
-
-### Notruf auslösen
-
-```json
-
-"sgse.models.rettungsdienst.emergency":{
-
-	"description" : "Create an emergency",
-
-	"fields":[
-
-		{"name": "location", "type": "string", "required": true},
-
-		{"name": "patientID", "type": "string", "required": false}
-
-	]
-
-} 
 ```
 
 ### Krankentransport anmelden
 
+Über diese Schnittstelle können andere Dienste einen Transport von kranken anmelden. Benötigt wird nur die PatientenID und der Einsatzort.
+
 ```json
 "sgse.models.rettungsdienst.transport":{
-
 	"description" : "Create a transport for a patient",
-
 	"fields":[
-
 		{"name": "location", "type": "string", "required": true},
-
 		{"name": "patientID", "type": "string", "required": true}
-
 	]
-
 }
 ```
 
@@ -216,15 +205,29 @@ Prüfbarkeit |X|-|-|-
 
 ##### Patient verstorben
 
-Name Event: Patient verstorben
+Dieses Ereignis teilt mit, dass ein Patient verstorben ist.
 
-Payload: PatientenID (BürgerID)
+```json
+"sgse.messages.rettungsdienst.deadUser":{
+    "description": "The following User is dead",
+    "fields": [
+        {"name": "userID", "type": "string", "required": true}
+    ]
+}
+```
 
 ##### Einsatzbericht verfügbar
 
-Name Event: EInsatzbericht Verfügbar
+Dieses Ereignis teilt mit, dass ein spezieller Einsatzbericht jetzt zum Abruf bereit steht.
 
-Payload: EinsatzNr
+```json
+"sgse.messages.rettungsdienst.reportAvailable":{
+    "description": "The following mission report is available now",
+    "fields": [
+        {"name": "missionID", "type": "string", "required": true}
+    ]
+}
+```
 
 #### Empfangen
 
@@ -267,9 +270,13 @@ Details siehe Bürgerbüro
 
 ##### ENUM-Rolle
 
+0=Zivilist
+
 1 = Sanitäter
 
 2 = Leitstelle
+
+In der Datenbank stehen nur die ID's der Sanitäter, bzw. Leistellenmitarbeiter. Alle anderen bekommen automatisch die ID 0 zugewiesen.
 
 ## 3.5 Abläufe
 
@@ -342,13 +349,15 @@ Implementiert und entwirft anhängende Datenbanken für den Dienst.
 
 ## 5.1 Glossar 
 
-- Definitionen, Abkürzungen, Begriffe
+- **Mikroservice** - Architekturmuster für unabhängige Prozesse
+- **RabbitMQ** - Open Source Message Broker Software zur Implementierung von AMQP
+- **gRPC** - Protokoll zum Aufruf von Funktionen in verteilten Systemen. Basiert auf HTTP/2 und Protokoll Buffern
+- __Rettungsdienst__ - Umfasst nur die Serviceleistungen des Rettungsdienstes. Notärztliche Betreuung wird von Ärzten aus dem Krankenhaus übernommen. Umfasst ebenfalls keine Tätigkeiten der Polizeit/ Feuerwehr
 
 ## 5.2 Referenzen
 
-- Handbücher, Gesetze
-
-## 5.3 Index
+- [Wikipedia Rettungsdienst](https://de.wikipedia.org/wiki/Rettungsdienst)
+- [Wikipedia Alarmierungssysteme](https://de.wikipedia.org/wiki/Alarmierungssysteme_der_Feuerwehr)
 
 
 
