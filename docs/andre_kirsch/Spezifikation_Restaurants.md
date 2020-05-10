@@ -18,9 +18,10 @@ Der SmartCity Service Restaurant soll Restaurantbesitzer ermöglichen, eine Onli
 
 ## 2.1 Stakeholder
 
-| Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
-|---|---|---|---|---|
-|  |   |   |    |   |
+| Funktion / Relevanz | Name | Wissen  | Interessen / Ziele  |
+|---|---|---|---|
+| Restaurantkunde, der Bestellungen tätigen und Tische reservieren möchte | Kunde | Hat Grundwissen beim Bestell- und Reservierungsprozess | Möchte sich über ein Restaurant informieren, Bestellungen aufgeben oder Tische reservieren |
+| Restaurantbesitzer, der sein Restaurant im Internet vorstellen möchte | Restaurantbesitzer | Weiß vllt schon, wie er mit der Webseite umgehen muss. Ist aber vorsichtig, weil er nichts falsch machen möchte | Möchte sein Restaurant im Internet vorstellen und über das Internet mit dem Restaurant Geld verdienen |
 
 ## 2.2 Funktionale Anforderungen
 
@@ -59,7 +60,7 @@ Erlernbarkeit |X|-|-|-
 Bedienbarkeit |X|-|-|-
 **Performance** | | | | 
 Zeitverhalten |-|X|-|-
-Effizienz|-| X-   |        |-
+Effizienz|-| X   | - |-
 **Sicherheit** | | | | 
 Analysierbarkeit |-|-|X|-
 Modifizierbarkeit |-|-|-|X
@@ -68,25 +69,75 @@ Prüfbarkeit |-|-|X|-
 
 ## 2.4 Graphische Benutzerschnittstelle
 
+### Home
+
 ![home](img\mockups\home.png)
+
+(Restaurantliste einsehen)
+
+### Restaurant erstellen
 
 ![restauranterstellen](img\mockups\restauranterstellen.png)
 
+(Restaurant eintragen)
+
+### Restaurantübersicht
+
 ![restaurant](img\mockups\restaurant.png)
+
+(Speisekarte einsehen, Öffnungszeiten einsehen, Bewertungen einsehen, Restaurant bewerten, Restaurantauslastung einsehen, Parkplatzauslastung einsehen)
+
+### Tisch reservieren
 
 ![tisch_reservieren](img\mockups\tisch_reservieren.png)
 
+(Tisch reservieren, Parkplatz reservieren, Terminkollision überprüfen)
+
+### Bestellung aufgeben
+
 ![bestellung](img\mockups\bestellung.png)
+
+(Nach Hause bestellen)
+
+### Bestellbestätigung
 
 ![bestellbestaetigung](img\mockups\bestellbestaetigung.png)
 
+(Nach Hause bestellen)
+
+### Restaurantübersicht als Restaurantbesitzer
+
 ![restaurantbesitzer](img\mockups\restaurantbesitzer.png)
+
+### Speise bearbeiten/hinzufügen
 
 ![speisebearbeitenhinzufgen](img\mockups\speisebearbeitenhinzufgen.png)
 
+(Speisekarte eintragen)
+
+### Restaurantinfos bearbeiten
+
 ![restaurantinfosbearbeiten](img\mockups\restaurantinfosbearbeiten.png)
 
+(Öffnungszeiten eintragen, Tischdaten eintragen, Restaurantlogo einfügen, Bestellungen erlauben, Reservierungen erlauben)
+
+### Bestellliste
+
 ![bestellliste](img\mockups\bestellliste.png)
+
+(Bestellungen einsehen, Bestellungen annehmen, Bestellungen abschließen)
+
+### Restaurantangebot veröffentlichen
+
+![restaurantangebote](img\mockups\restaurantangebote.png)
+
+(Restaurantangebote im Bürgerbüro teilen)
+
+### Lebensmittelbestellung
+
+![lebensmittelbestellung](img\mockups\lebensmittelbestellung.png)
+
+(Lebensmittel bestellen)
 
 ## 2.5 Anforderungen im Detail
 
@@ -133,15 +184,17 @@ Prüfbarkeit |-|-|X|-
 
 ## 3.2 Softwarearchitektur
 
-![softwarearchitekturdiagramm](G:\Informatik\Master 1\Softwareengineering\Spezifikation\docs\andre_kirsch\img\softwarearchitekturdiagramm.png)
+![softwarearchitekturdiagramm](img\softwarearchitekturdiagramm.png)
 
 ## 3.3 Schnittstellen
 
 ##### Terminkollision überprüfen
 
+Mit dieser Schnittstelle soll ein anderer Microservice überprüfen können, ob ein Benutzer zu einem bestimmten Zeitpunkt einen Tisch in einem Restaurant reserviert hat. Damit hat der Microservice die Möglichkeit eine Warnung auszugeben, wenn bei diesem ein Termin für den Benutzer erstellt werden soll, dieser aber zu dem Zeitpunkt keine Zeit hat. (*timespan soll in Minuten angegeben werden)
+
 ```json
 "sgse.model.restaurants.appointment": {
-	"Check whether a user has made a reservation at a given time.",
+	"description": "Check whether a user has made a reservation at a given time.",
 	"fields": {
 	    {"name": "uuid", "type": "string", "required": true},
     	{"name": "time", "type": "datetime", "required": true},
@@ -150,11 +203,42 @@ Prüfbarkeit |-|-|X|-
 }
 ```
 
-*timespan* ist in Minute anzugeben.
+### 3.3.1 Ereignisse
+
+##### Neues Restaurant erstellt
+
+Dieses Ereignis wird versendet, wenn ein Besucher auf der Restaurant Webseite ein neues Restaurant erstellt.
+
+```json
+"sgse.model.restaurants.new_restaurant": {
+    "description": "A new restaurant has been created",
+    "fields": {
+        {"name": "restaurant_name", "type": "string"},
+        {"name": "owner", "type": "string"},
+        {"name": "creation_date", "type": "datetime"}
+    }
+}
+```
+
+
 
 ## 3.4 Datenmodell
 
+![erm](img\erm.png)
+
 ## 3.5 Abläufe
+
+##### Gerichte bestellen
+
+![activity_diagram_1](img\activity_diagram_1.png)
+
+##### Tisch reservieren
+
+![activity_diagram_2](img\activity_diagram_2.png)
+
+##### Restaurant erstellen
+
+![activity_diagram_3](img\activity_diagram_3.png)
 
 ## 3.6 Entwurf
 
@@ -165,6 +249,22 @@ Prüfbarkeit |-|-|X|-
 # 4 Projektorganisation
 
 ## 4.1 Annahmen
+
+- Das Projekt wird als Microservice implementiert
+- Der Microservice unterteilt sich in die drei Container Frontend, Backend, Datenbank
+
+##### Frontend
+
+- Vue.js
+
+##### Backend
+
+- NodeJS
+- Express
+
+##### Datenbank
+
+- MongoDB
 
 ## 4.2 Verantwortlichkeiten
 

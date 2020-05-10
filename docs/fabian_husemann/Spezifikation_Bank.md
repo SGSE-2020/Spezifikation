@@ -45,7 +45,7 @@
 
 ## 2.2 Funktionale Anforderungen
 
-## ![uc diagram](./img/Benutzer_Story.jpg)
+![uc diagram](./img/Benutzer_Story.jpg)
 
 ![uc diagram](./img/Admin_Story.jpg)
 
@@ -179,7 +179,7 @@
 ### Terminale Überweisung tätigen
 
 ```json
-"bank.ueberweisung":{
+"bank.terminal_ueberweisung":{
     "iban": "DE46 4585 4585 2000 5145 20",
     "purpose": "Einkauf",  
     
@@ -193,9 +193,9 @@
 
 
 
-* Zugriff auf jedes Microservice mit Geldanbindung
-
 ## 3.4 Datenmodell
+
+![Softwarearchitektur](./img/Datenbankenmodel.png)
 
 ## 3.5 Abläufe
 

@@ -2,8 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generiert durch Microsoft Visio, SVG Export UseCase_Mitarbeiter.svg Page-1 -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
-		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="6.96842in" height="3.37749in"
-		viewBox="0 0 501.726 243.179" xml:space="preserve" color-interpolation-filters="sRGB" class="st15">
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="4.8563in" height="2.41686in"
+		viewBox="0 0 349.654 174.014" xml:space="preserve" color-interpolation-filters="sRGB" class="st11">
 	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false">
 		<v:userDefs>
 			<v:ud v:nameU="msvNoAutoConnect" v:prompt="" v:val="VT0(0):26"/>
@@ -22,11 +22,7 @@
 		.st8 {fill:#3862ae;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
 		.st9 {fill:#feffff;font-family:Calibri;font-size:1.00001em;font-weight:bold}
 		.st10 {stroke:#5592c9;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
-		.st11 {marker-end:url(#mrkr1-57);stroke:#5592c9;stroke-dasharray:3.5,2.5;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
-		.st12 {fill:#5592c9;fill-opacity:1;stroke:#5592c9;stroke-opacity:1;stroke-width:0.16556291390728}
-		.st13 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
-		.st14 {fill:#41719d;font-family:Calibri;font-size:0.666664em}
-		.st15 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+		.st11 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
 	</style>
 
@@ -41,15 +37,6 @@
 			<stop offset="1" stop-color="#ffffff" stop-opacity="1"/>
 		</linearGradient>
 	</defs>
-	<defs id="Markers">
-		<g id="lend1">
-			<path d="M 1 -1 L 0 0 L 1 1 " style="stroke-linecap:round;stroke-linejoin:round;fill:none"/>
-		</g>
-		<marker id="mrkr1-57" class="st12" v:arrowType="1" v:arrowSize="2" orient="auto" markerUnits="strokeWidth"
-				overflow="visible">
-			<use xlink:href="#lend1" transform="scale(-6.04,-6.04) "/>
-		</marker>
-	</defs>
 	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
 		<v:userDefs>
 			<v:ud v:nameU="msvThemeOrder" v:val="VT0(0):26"/>
@@ -59,7 +46,7 @@
 				v:shadowOffsetY="-8.50394"/>
 		<v:layer v:name="Container" v:index="0"/>
 		<v:layer v:name="Verbinder" v:index="1"/>
-		<g id="group1-1" transform="translate(101.049,-20.8346)" v:mID="1" v:groupContext="group" v:layerMember="0">
+		<g id="group1-1" transform="translate(102.885,-20.8346)" v:mID="1" v:groupContext="group" v:layerMember="0">
 			<v:userDefs>
 				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
 				<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
@@ -127,10 +114,10 @@
 					</v:userDefs>
 				</g>
 				<g id="shape2-5" v:mID="2" v:groupContext="groupContent" v:layerMember="0">
-					<path d="M0 243.18 L189.92 243.18 L379.84 243.18 L379.84 39.08 L189.92 39.08 L0 39.08 L0 243.18 Z" class="st1"/>
+					<path d="M0 174.01 L112.97 174.01 L225.93 174.01 L225.93 39.08 L112.97 39.08 L0 39.08 L0 174.01 Z" class="st1"/>
 				</g>
 			</g>
-			<g id="group4-7" transform="translate(0,-182.835)" v:mID="4" v:groupContext="group" v:layerMember="0">
+			<g id="group4-7" transform="translate(0,-113.669)" v:mID="4" v:groupContext="group" v:layerMember="0">
 				<v:userDefs>
 					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
 					<v:ud v:nameU="CStyle" v:prompt="" v:val="VT0(1):26"/>
@@ -167,8 +154,8 @@
 					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
 					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
 					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
-					<v:ud v:nameU="HTxtWidth" v:prompt="" v:val="VT0(5.2755903256763):1"/>
-					<v:ud v:nameU="HRight" v:prompt="" v:val="VT0(5.2755903256763):1"/>
+					<v:ud v:nameU="HTxtWidth" v:prompt="" v:val="VT0(3.1379692120321):1"/>
+					<v:ud v:nameU="HRight" v:prompt="" v:val="VT0(3.1379692120321):1"/>
 					<v:ud v:nameU="FillForegndIn" v:prompt="" v:val="VT5(#d3d3d3)"/>
 					<v:ud v:nameU="FillBkgndIn" v:prompt="" v:val="VT5(#ffffff)"/>
 					<v:ud v:nameU="BaseColor" v:prompt="" v:val="VT5(#ffffff)"/>
@@ -196,46 +183,46 @@
 						<v:ud v:nameU="AnchorPt7" v:prompt="" v:val="VT0(0.55581528871391):24"/>
 						<v:ud v:nameU="HSide" v:prompt="" v:val="VT0(0):26"/>
 						<v:ud v:nameU="HAlign" v:prompt="" v:val="VT0(0):26"/>
-						<v:ud v:nameU="HRight" v:prompt="" v:val="VT0(5.2755903256763):1"/>
+						<v:ud v:nameU="HRight" v:prompt="" v:val="VT0(3.1379692120321):1"/>
 						<v:ud v:nameU="Offset7" v:prompt="" v:val="VT0(0.0034722222222222):29"/>
 						<v:ud v:nameU="AnchorPt7" v:prompt="" v:val="VT0(0.55755139982502):24"/>
 					</v:userDefs>
 				</g>
 				<g id="shape4-12" v:mID="4" v:groupContext="groupContent" v:layerMember="0">
 					<v:textBlock v:margins="rect(4,6,4,6)" v:tabSpace="42.5197"/>
-					<v:textRect cx="189.921" cy="232.549" width="379.85" height="21.2598"/>
-					<text x="6" y="235.55" class="st2" v:langID="1031"><v:paragraph/><v:tabList/>Bürgerbüro</text>				</g>
+					<v:textRect cx="112.967" cy="163.384" width="225.94" height="21.2598"/>
+					<text x="6" y="166.38" class="st2" v:langID="1031"><v:paragraph/><v:tabList/>Bürgerbüro</text>				</g>
 			</g>
 		</g>
-		<g id="shape6-17" v:mID="6" v:groupContext="shape" transform="translate(41.5213,-97.3701)">
+		<g id="shape6-17" v:mID="6" v:groupContext="shape" transform="translate(41.5213,-74.9764)">
 			<title>Akteur</title>
 			<desc>Mitarbeiter Bürgerbüro</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="9.92126" cy="261.581" width="66.89" height="36.8038"/>
-			<path d="M3.97 243.18 L3.97 225.46 L3.97 232.55 L0 232.55 L0 218.38 L1.98 216.6 L17.86 216.6 L19.84 218.38 L19.84 232.55
-						 L15.87 232.55 L15.87 225.46 L15.87 243.18 L9.92 243.18 L9.92 229.01 L9.92 243.18 L3.97 243.18 ZM13.46 211.29
-						 A3.54331 3.54331 -180 1 0 6.38 211.29 A3.54331 3.54331 -180 1 0 13.46 211.29 Z" class="st3"/>
-			<text x="-18.16" y="257.98" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Mitarbeiter<v:newlineChar/><tspan
+			<v:textRect cx="9.92126" cy="192.416" width="66.89" height="36.8038"/>
+			<path d="M3.97 174.01 L3.97 156.3 L3.97 163.38 L0 163.38 L0 149.21 L1.98 147.44 L17.86 147.44 L19.84 149.21 L19.84 163.38
+						 L15.87 163.38 L15.87 156.3 L15.87 174.01 L9.92 174.01 L9.92 159.84 L9.92 174.01 L3.97 174.01 ZM13.46 142.12
+						 A3.54331 3.54331 -180 1 0 6.38 142.12 A3.54331 3.54331 -180 1 0 13.46 142.12 Z" class="st3"/>
+			<text x="-18.16" y="188.82" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Mitarbeiter<v:newlineChar/><tspan
 						x="-18.05" dy="1.2em" class="st5">Bürgerbüro</tspan></text>		</g>
-		<g id="shape13-21" v:mID="13" v:groupContext="shape" transform="translate(157.165,-161.706)">
+		<g id="shape13-21" v:mID="13" v:groupContext="shape" transform="translate(159.001,-82.4882)">
 			<title>Anwendungsfall.13</title>
-			<desc>Aushänge ansehen</desc>
+			<desc>Aushang aushängen</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="43.719" cy="228.297" width="87.44" height="29.7638"/>
+			<v:textRect cx="43.719" cy="152.258" width="87.44" height="43.5118"/>
 			<g id="shadow13-22" v:groupContext="shadow" v:shadowOffsetX="2.12399" v:shadowOffsetY="-2.12399" v:shadowType="1"
 					transform="matrix(1,0,0,1,2.12399,2.12399)" class="st6">
-				<ellipse cx="43.719" cy="228.297" rx="43.719" ry="14.8819" class="st7"/>
+				<ellipse cx="43.719" cy="152.258" rx="43.719" ry="21.7559" class="st7"/>
 			</g>
-			<ellipse cx="43.719" cy="228.297" rx="43.719" ry="14.8819" class="st8"/>
-			<text x="19.2" y="224.7" class="st9" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Aushänge <tspan
-						x="22.66" dy="1.2em" class="st5">ansehen</tspan></text>		</g>
-		<g id="group14-27" transform="translate(61.3638,-119.17)" v:mID="14" v:groupContext="group" v:layerMember="1">
+			<ellipse cx="43.719" cy="152.258" rx="43.719" ry="21.7559" class="st8"/>
+			<text x="22.22" y="148.66" class="st9" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Aushang<v:newlineChar/><tspan
+						x="16.66" dy="1.2em" class="st5">aushängen</tspan></text>		</g>
+		<g id="group14-27" transform="translate(61.3638,-90.1108)" v:mID="14" v:groupContext="group" v:layerMember="1">
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
 				<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4()"/>
@@ -247,19 +234,19 @@
 				<v:ud v:nameU="DYEnd" v:prompt="" v:val="VT0(-6.6613381477509E-16):1"/>
 				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(2.819966397845E-14):32"/>
 				<v:ud v:nameU="EndAngle" v:prompt="" v:val="VT0(-2.8199663978446E-14):32"/>
-				<v:ud v:nameU="DXBegin" v:prompt="" v:val="VT0(0.023261467294845):1"/>
-				<v:ud v:nameU="DYBegin" v:prompt="" v:val="VT0(0.0095730106051131):1"/>
-				<v:ud v:nameU="DXEnd" v:prompt="" v:val="VT0(0.02326146729484):1"/>
-				<v:ud v:nameU="DYEnd" v:prompt="" v:val="VT0(0.0095730106051111):1"/>
-				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(0.39041439667316):32"/>
-				<v:ud v:nameU="EndAngle" v:prompt="" v:val="VT0(0.39041439667316):32"/>
+				<v:ud v:nameU="DXBegin" v:prompt="" v:val="VT0(0.0204464351434):1"/>
+				<v:ud v:nameU="DYBegin" v:prompt="" v:val="VT0(0.0015612411891572):1"/>
+				<v:ud v:nameU="DXEnd" v:prompt="" v:val="VT0(0.020446435143398):1"/>
+				<v:ud v:nameU="DYEnd" v:prompt="" v:val="VT0(0.001561241189157):1"/>
+				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(0.076209739433025):32"/>
+				<v:ud v:nameU="EndAngle" v:prompt="" v:val="VT0(0.076209739433023):32"/>
 			</v:userDefs>
 			<title>Abhängigkeit.14</title>
 			<g id="shape14-28" v:mID="14" v:groupContext="groupContent" v:layerMember="1">
-				<path d="M0 243.18 L111.66 197.23" class="st10"/>
+				<path d="M0 170.67 L98.14 163.18" class="st10"/>
 			</g>
 		</g>
-		<g id="group25-31" transform="translate(61.3638,-111.357)" v:mID="25" v:groupContext="group" v:layerMember="1">
+		<g id="group25-31" transform="translate(61.3638,-89.9648)" v:mID="25" v:groupContext="group" v:layerMember="1">
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
 				<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4()"/>
@@ -271,99 +258,32 @@
 				<v:ud v:nameU="DYEnd" v:prompt="" v:val="VT0(-6.6613381477509E-16):1"/>
 				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(2.819966397845E-14):32"/>
 				<v:ud v:nameU="EndAngle" v:prompt="" v:val="VT0(-2.8199663978446E-14):32"/>
-				<v:ud v:nameU="DXBegin" v:prompt="" v:val="VT0(0.022953474753597):1"/>
-				<v:ud v:nameU="DYBegin" v:prompt="" v:val="VT0(-0.0086296274781485):1"/>
-				<v:ud v:nameU="DXEnd" v:prompt="" v:val="VT0(0.022953474753772):1"/>
-				<v:ud v:nameU="DYEnd" v:prompt="" v:val="VT0(-0.0086296274782142):1"/>
-				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-0.35961354121615):32"/>
-				<v:ud v:nameU="EndAngle" v:prompt="" v:val="VT0(-0.35961354121615):32"/>
+				<v:ud v:nameU="DXBegin" v:prompt="" v:val="VT0(0.021477211092814):1"/>
+				<v:ud v:nameU="DYBegin" v:prompt="" v:val="VT0(-0.0059058289186626):1"/>
+				<v:ud v:nameU="DXEnd" v:prompt="" v:val="VT0(0.021477211092978):1"/>
+				<v:ud v:nameU="DYEnd" v:prompt="" v:val="VT0(-0.0059058289187074):1"/>
+				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-0.26834871701528):32"/>
+				<v:ud v:nameU="EndAngle" v:prompt="" v:val="VT0(-0.26834871701527):32"/>
 			</v:userDefs>
 			<title>Abhängigkeit.25</title>
 			<g id="shape25-32" v:mID="25" v:groupContext="groupContent" v:layerMember="1">
-				<path d="M0 243.18 L110.18 284.6" class="st10"/>
+				<path d="M0 174.01 L103.09 202.36" class="st10"/>
 			</g>
 		</g>
-		<g id="shape30-35" v:mID="30" v:groupContext="shape" transform="translate(157.165,-44.0206)">
+		<g id="shape30-35" v:mID="30" v:groupContext="shape" transform="translate(159.001,-29.3386)">
 			<title>Anwendungsfall.30</title>
 			<desc>Aushang entfernen</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="43.719" cy="228.297" width="87.44" height="29.7638"/>
+			<v:textRect cx="43.719" cy="152.258" width="87.44" height="43.5118"/>
 			<g id="shadow30-36" v:groupContext="shadow" v:shadowOffsetX="2.12399" v:shadowOffsetY="-2.12399" v:shadowType="1"
 					transform="matrix(1,0,0,1,2.12399,2.12399)" class="st6">
-				<ellipse cx="43.719" cy="228.297" rx="43.719" ry="14.8819" class="st7"/>
+				<ellipse cx="43.719" cy="152.258" rx="43.719" ry="21.7559" class="st7"/>
 			</g>
-			<ellipse cx="43.719" cy="228.297" rx="43.719" ry="14.8819" class="st8"/>
-			<text x="22.22" y="224.7" class="st9" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Aushang <tspan
+			<ellipse cx="43.719" cy="152.258" rx="43.719" ry="21.7559" class="st8"/>
+			<text x="22.22" y="148.66" class="st9" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Aushang <tspan
 						x="18.89" dy="1.2em" class="st5">entfernen</tspan></text>		</g>
-		<g id="shape42-41" v:mID="42" v:groupContext="shape" transform="translate(157.165,-102.887)">
-			<title>Anwendungsfall.42</title>
-			<desc>Aushang aushängen</desc>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="43.719" cy="228.297" width="87.44" height="29.7638"/>
-			<g id="shadow42-42" v:groupContext="shadow" v:shadowOffsetX="2.12399" v:shadowOffsetY="-2.12399" v:shadowType="1"
-					transform="matrix(1,0,0,1,2.12399,2.12399)" class="st6">
-				<ellipse cx="43.719" cy="228.297" rx="43.719" ry="14.8819" class="st7"/>
-			</g>
-			<ellipse cx="43.719" cy="228.297" rx="43.719" ry="14.8819" class="st8"/>
-			<text x="22.22" y="224.7" class="st9" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Aushang <tspan
-						x="16.66" dy="1.2em" class="st5">aushängen</tspan></text>		</g>
-		<g id="group47-47" transform="translate(61.3638,-109.038)" v:mID="47" v:groupContext="group" v:layerMember="1">
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4()"/>
-				<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="Identifying" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="DXBegin" v:prompt="" v:val="VT0(0.023622047953626):1"/>
-				<v:ud v:nameU="DYBegin" v:prompt="" v:val="VT0(-1.6653345369377E-16):1"/>
-				<v:ud v:nameU="DXEnd" v:prompt="" v:val="VT0(0.02362204795363):1"/>
-				<v:ud v:nameU="DYEnd" v:prompt="" v:val="VT0(-6.6613381477509E-16):1"/>
-				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(2.819966397845E-14):32"/>
-				<v:ud v:nameU="EndAngle" v:prompt="" v:val="VT0(-2.8199663978446E-14):32"/>
-				<v:ud v:nameU="DXBegin" v:prompt="" v:val="VT0(0.019971148997217):1"/>
-				<v:ud v:nameU="DYBegin" v:prompt="" v:val="VT0(0.00035842051948265):1"/>
-				<v:ud v:nameU="DXEnd" v:prompt="" v:val="VT0(0.019971148997216):1"/>
-				<v:ud v:nameU="DYEnd" v:prompt="" v:val="VT0(0.00035842051948287):1"/>
-				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(0.017944988820341):32"/>
-				<v:ud v:nameU="EndAngle" v:prompt="" v:val="VT0(0.017944988820363):32"/>
-			</v:userDefs>
-			<title>Abhängigkeit.47</title>
-			<g id="shape47-48" v:mID="47" v:groupContext="groupContent" v:layerMember="1">
-				<path d="M0 236.95 L95.86 235.23" class="st10"/>
-			</g>
-		</g>
-		<g id="group59-51" transform="translate(244.602,-169.602)" v:mID="59" v:groupContext="group" v:layerMember="1">
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4(&#60;&#60;einschließen&#62;&#62;)"/>
-				<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="Identifying" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="DXBegin" v:prompt="" v:val="VT0(0.02362204795363):1"/>
-				<v:ud v:nameU="DYBegin" v:prompt="" v:val="VT0(-1.0547118733939E-15):1"/>
-				<v:ud v:nameU="DXEnd" v:prompt="" v:val="VT0(0.023622047953632):1"/>
-				<v:ud v:nameU="DYEnd" v:prompt="" v:val="VT0(1.6653345369377E-16):1"/>
-				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(2.8199663978446E-14):32"/>
-				<v:ud v:nameU="EndAngle" v:prompt="" v:val="VT0(-2.8199663978443E-14):32"/>
-				<v:ud v:nameU="DXBegin" v:prompt="" v:val="VT0(0.018518215292111):1"/>
-				<v:ud v:nameU="DYBegin" v:prompt="" v:val="VT0(2.1315753655493E-05):1"/>
-				<v:ud v:nameU="DXEnd" v:prompt="" v:val="VT0(0.018518215292111):1"/>
-				<v:ud v:nameU="DYEnd" v:prompt="" v:val="VT0(2.1315753655493E-05):1"/>
-				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(0.0011510690368958):32"/>
-				<v:ud v:nameU="EndAngle" v:prompt="" v:val="VT0(0.0011510690368958):32"/>
-			</v:userDefs>
-			<title>Einschließen</title>
-			<desc>&#60;&#60;einschließen&#62;&#62;</desc>
-			<g id="shape59-52" v:mID="59" v:groupContext="groupContent" v:layerMember="1">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="44.4437" cy="236.093" width="66.54" height="17.6036"/>
-				<path d="M0 236.14 L88.89 236.04" class="st11"/>
-				<rect v:rectContext="textBkgnd" x="16.0808" y="231.293" width="56.726" height="9.59985" class="st13"/>
-				<text x="16.08" y="238.49" class="st14" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>&#60;&#60;einschließen&#62;&#62;</text>			</g>
-		</g>
 	</g>
 </svg>
