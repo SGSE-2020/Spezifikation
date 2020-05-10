@@ -165,32 +165,62 @@
 
 ### Überweisung tätigen
 
+Diese Schnittstelle wird benutzt um Überweisungen von einem Konto zu einem anderen Konto zu tätigen. Dabei <u>müssen</u> die Kontonummern der beiden Konten angegeben sein, sowie der Verwendungszweck und der Betrag der Überweisen wird.
+
+Außerdem <u>kann</u> ein Startdatum angegeben werden der bestimmt, wann die Überweisung getätigt wird. Zusätzlich <u>kann</u> eine Wiederholung der Überweisung angegeben werden. 
+
+Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
+
 ```json
 "bank.ueberweisung":{
     "iban": "DE46 4585 4585 2000 5145 20",
     "purpose": "Einkauf",  
     
-    "dest_name": "Supermarkt",
     "dest_iban": "DE46 7845 2998 2554 8461 20",
     "amount": "20.00",
-}
-```
-
-### Terminale Überweisung tätigen
-
-```json
-"bank.terminal_ueberweisung":{
-    "iban": "DE46 4585 4585 2000 5145 20",
-    "purpose": "Einkauf",  
     
-    "name": "Supermarkt",
-    "dest_iban": "DE46 7845 2998 2554 8461 20",
-    "amount": "20.00",
     "start_date": "07.05.2020",
     "repeat": "monthly | daily | yearly"
 }
 ```
 
+### Bankkonto anlegen
+
+Diese Schnittstelle dient dazu einen neues Bankkonto anzulegen. Dabei <u>müssen</u> Informationen über eine Kundennummer und eine Kontobeschreibung mit angegeben werden. Als Rückgabewert wird die neu erstellte *IBAN* ausgegeben.
+
+Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
+
+```json
+"bank.createAccount":{
+    "customerNr": "1",
+    "description": "Kontobeschreibung: Firmenkonto | Sparkonto"
+}
+```
+## 3.3.1 Ereignisse
+
+### Überweisungsnachricht
+
+Die Überweisungsnachricht wird für jede Überweisung verschickt. Dabei bekommen alle Kunden die mit den Konto-A oder mit dem Konto-B verknüpft sind diese Nachricht. 
+
+````json
+"bank.transferMessage": {
+    "customerNr": "1",
+    "lastname": "Husemann",
+    
+    "iban": "DE46 0202 0202 0202 0020 56",
+    "message": "Ihre Überweisung von KontoA auf KontoB war erfolgreich. Für weitere 					Details rufen sie bitte die angebenen Link zu ihrere Kontoseite auf."
+}
+````
+
+### Beraterverfügbarkeit
+
+Dieses Ereignis wird aufgerufen wenn ein Kunde einen Berater kontaktiert und der Berater nicht verfügbar ist. Der Berater muss die Kontaktanfrage bestätigen und die Nachricht wird gesendet.
+
+```json
+"bank.answerMessage":{
+    "message": "Ihr Berater ist für sie Verfügbar."
+}
+```
 
 
 ## 3.4 Datenmodell
@@ -199,9 +229,31 @@
 
 ## 3.5 Abläufe
 
+### Konto löschen
+
+![Softwarearchitektur](./img/deleteKonto.png)
+
+### Überweisung
+
+![Softwarearchitektur](./img/ueberweisung.png)
+
+
+
 ## 3.6 Entwurf
 
-## 3.7 Fehlerbehandlung 
+## 3.7 Fehlerbehandlung
+
+Passwort\PIN wird falsch eingeben → Fehlermeldung im Frontend
+
+Backend nicht verfügbar → Fehlermeldung im Frontend
+
+Datenbank nicht verfügbar → Fehlermeldung im Frontend
+
+Schnittstelle nicht verfügbar → Fehlermeldung per gRPC zurück liefern
+
+Überweisung tätigen ohne genug Kontoguthaben → Fehlermeldung im Frontend
+
+Konto löschen obwohl Geldvorhanden ist → Fehlermeldung im Frontend
 
 ## 3.8 Validierung
 
@@ -211,19 +263,37 @@
 
 ## 4.2 Verantwortlichkeiten
 
+| Softwarebaustein | Person(en)      |
+| ---------------- | --------------- |
+| Frontend         | Fabian Husemann |
+| Backend          | Fabian Husemann |
+| Datenbanken      | Fabian Husemann |
+
 ### Rollen
 
 #### Softwarearchitekt
 
+Entwirft den Aufbau von Softwaresystemen und trifft Entscheidungen über das Zusammenspiel der Softwarebausteine.
+
 #### Frontend-Entwickler
+
+Entwickelt graphische oder andere Benutzerschnittstellen, insbesondere das Layout einer Anwendung.
 
 #### Backend-Entwickler
 
-### Rollenzuordnung
+Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse Datenquellen und externe Dienste integriert und für die Anwendung bereitgestellt.
 
 ## 4.3 Grober Projektplan
 
 ### Meilensteine
+
+* Meilenstein 1: 11.05.2020 KW 43
+  * Pflichtenhelft abgeben
+* Meilenstein 2: 08.06.2020 KW 45
+  * Implementierung
+* Meilenstein 3: 03.07.2020 KW 48
+  * Abnahmetests
+  * Präsentation / Software-Demo
 
 # 5 Anhänge
 

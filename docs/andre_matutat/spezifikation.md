@@ -139,29 +139,27 @@ Prüfbarkeit |X|-|-|-
 
 ### Produkt bestellen
 
+API um ein Produkt direkt (ohne Umweg über die Webseite) zu bestellen. Es kann nur ein Produkt (mit beliebiger Stückzahl) pro Anfrage bestellt werden. 
+
 ```
 "sgse.models.supermarkt.bestellen":{
-
 	"description": "Create an order. Returns orderID", 
-
 	"fields": [
-
 		{"name": "userID", "type": "id", "required": true}
 		{"name": "productID", "type": "id", "required": true}
 		{"name": "number", "type": "int", "required": true}
 		{"name": "usePoints", "type": "boolean", "required": true}
-
 	]
-
 }
 ```
 
 ### Bestellstatus einsehen
+
+API um den Bestellstatus direkt (ohne Umweg über die Webseite) abzufragen. 
+
 ```
 "sgse.models.supermarkt.verfolgen":{
-
 	"description": "Returns order status", 
-
 	"fields": [
 		{"name": "orderID", "type": "id", "required": true}
 	]
@@ -187,8 +185,8 @@ Prüfbarkeit |X|-|-|-
         {"name": "supplierID", "type": "id", "required": true},
         {"name": "name", "type": "string", "required": true},
         {"name": "price", "type": "float", "required": true},
-  		{"name": "taxes", "type": "float", "required": true},
-  		{"name": "stock", "type": "int", "required": true} 		
+        {"name": "taxes", "type": "float", "required": true},
+        {"name": "stock", "type": "int", "required": true} 		
     ]
 }
 ```
@@ -200,8 +198,8 @@ Prüfbarkeit |X|-|-|-
         {"name": "supplierID", "type": "id", "required": true},
         {"name": "name", "type": "string", "required": true},
         {"name": "address", "type": "string", "required": true},
-  		{"name": "phone", "type": "string", "required": true},
-  		{"name": "mail", "type": "string", "required": true}, 		
+        {"name": "phone", "type": "string", "required": true},
+        {"name": "mail", "type": "string", "required": true}, 		
     ]
 }
 ```
@@ -213,7 +211,7 @@ Prüfbarkeit |X|-|-|-
         {"name": "productID", "type": "id", "required": true},
         {"name": "supplierID", "type": "id", "required": true},
         {"name": "date", "type": "Date", "required": true},
-		{"name": "number", "type": "int", "required": true},  
+        {"name": "number", "type": "int", "required": true},  
         {"name": "status", "type": "string", "required": true}        
     ]
 }
@@ -276,8 +274,6 @@ Prüfbarkeit |X|-|-|-
 
 
 ## 4.2 Grober Projektplan
-
-- Meilensteine
 
 ### Meilensteine
 * 11.05.2020
