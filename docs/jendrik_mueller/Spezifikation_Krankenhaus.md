@@ -196,7 +196,7 @@ Diese Schnittstelle dient zum Erstellen eines neuen Termins für einen Patienten
 
 ### Patient abrufen
 
-Gibt die Daten eines Patienten, einschließlich der Krankendaten zurück
+Gibt die Daten eines Patienten, einschließlich der Krankendaten zurück. Die Krankendaten selbst werden vom Hausarzt des Patienten gespeichert und bei diesem abgerufen.
 
 ```json
 "sgse.models.krankenhaus.get_patient":{
@@ -209,7 +209,7 @@ Gibt die Daten eines Patienten, einschließlich der Krankendaten zurück
 
 ### Patientendaten bearbeiten
 
-Diese Schnittstelle dient dazu dem Personal die möglichkeit zu geben Pateintendaten zu ändern. Dabei soll die ID des Patienten und die neuen Daten übergeben werden. Werte die nicht geändert wurden. müssen nicht mit übertragen werden
+Diese Schnittstelle dient dazu dem Personal die möglichkeit zu geben Pateintendaten zu ändern. Dabei soll die ID des Patienten und die neuen Daten übergeben werden. Werte die nicht geändert wurden, müssen nicht mit übertragen werden. Die neuen Daten werden anschließend an den Hausarzt weitergeleitet.
 
 ```json
 "sgse.models.krankenhaus.edit_patient":{
