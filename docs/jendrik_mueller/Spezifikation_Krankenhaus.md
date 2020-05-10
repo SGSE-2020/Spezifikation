@@ -79,25 +79,45 @@ Prüfbarkeit |-|-|X|-
 
 ![Login](img/Login.png)
 
+Behandelte User-Storie: Anmelden
+
 ![Übersicht](img/Übersicht.png)
+
+Behandelte User-Storie: Öffnungszeiten einsehen
 
 ![Personal](img/Personal.png)
 
+Behandelte User-Storie: Personalübersicht bekommen
+
 ![Fachbereiche](img/Fachbereiche.png)
+
+Behandelte User-Storie: Übersicht über Fachbereiche
 
 ### Patienten
 
 ![Termine](img/Termine.png)
 
+Behandelte User-Storie: Termin vereinbaren
+
 ![Rechnungen](img/Rechnungen.png)
+
+Behandelte User-Storie: Behandlungen bezahlen
 
 ### Personal
 
 ![Patienten](img/Patienten.png)
 
+Behandelte User-Storie: Überblick über Patienten
+
 ![PatientenDetails](img/PatientenDetails.png)
 
+Behandelte User-Stories: Krankenakte des Patienten einsehen, Patient an Hausarzt überweisen, Krankenakte bearbeiten
+
 ![TerminePersonal](img/TerminePersonal.png)
+
+Behandelte User-Storie: Termine Einsehen
+
+
 
 
 ## 2.5 Anforderungen im Detail
@@ -129,6 +149,7 @@ Prüfbarkeit |-|-|X|-
 | Personal | die Krankenakte des Patienten einsehen | der Patient die entsprechende Behandlung bekommt | Krankenakte von Personal einsehbar | soll |
 | Personal | die Krankenakte bearbeiten | die Informationen des Patienten aktuell blieben | Krankenakte editieren | soll |
 | Personal | Patienten an den Hausarzt überweisen | die Nachbehandlung des Patienten gesichert ist | Weiterleitungsfunktion | soll |
+| Personal | meine Termine einsehen können | ich besser Planen kann | Termine einsehen | soll |
 
 
 # 3 Technische Beschreibung
