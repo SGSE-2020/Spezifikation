@@ -295,36 +295,8 @@ Details siehe Bürgerbüro
 - Verwendete Technologien: HTML, JavaScript, Angular, PostgreSQL, gRPC, RabbitMQ, GraphQL, Python
 - Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen
 
-## 4.2 Verantwortlichkeiten
 
-| Softwarebaustein | Person(en)Frontend |
-|----------|-----------|
-| Frontend | Jendrik Müller |
-| Backend | Jendrik Müller |
-| Dantenbank | Jendrik Müller |
-
-### Rollen
-
-#### Softwarearchitekt
-Entwirft den Aufbau von Softwaresystemen und trifft Entscheidungen über das Zusammenspiel der Softwarebausteine.
-
-#### Frontend-Entwickler
-Entwickelt graphische oder andere Benutzerschnittstellen, insbesondere das Layout einer Anwendung.
-
-#### Backend-Entwickler
-Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse Datenquellen und externe Dienste integriert und für die Anwendung bereitgestellt.
-
-### Rollenzuordnung
-
-| Name     | Rolle     |
-|----------|-----------|
-| Jendrik Müller | Softwarearchitekt |
-| Jendrik Müller | Frontend-Entwickler |
-| Jendrik Müller | Backend-Entwickler |
-| Jendrik Müller | Datenbank-Entwickler |
-
-
-## 4.3 Grober Projektplan
+## 4.2 Grober Projektplan
 
 ### Meilensteine
 - 11.05.2020

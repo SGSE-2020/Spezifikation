@@ -331,31 +331,7 @@ An dieser Stellen werden drei wichtige Abläufe in Form von Aktivitätsdiagramme
 - Die Bausteine müssen als Docker Container vorliegen
 - Für die Kommunikation mit andere Prozessen wir gRPC verwendet
 
-## 4.2 Verantwortlichkeiten
-
-| Softwarebaustein | Person(en) |
-|----------|-----------|
-| Alle | Malte Riechmann |
-
-### Rollen
-
-#### Softwarearchitekt
-Entwirft den Aufbau von Softwaresystemen und trifft Entscheidungen über das Zusammenspiel der Softwarebausteine.
-
-#### Frontend-Entwickler
-Entwickelt graphische oder andere Benutzerschnittstellen, insbesondere das Layout einer Anwendung.
-
-#### Backend-Entwickler
-Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse Datenquellen und externe Dienste integriert und für die Anwendung bereitgestellt.
-
-### Rollenzuordnung
-
-| Name     | Rolle     |
-|----------|-----------|
-| Malte Riechmann | Softwarearchitekt, Frontend-Entwickler, Backend-Entwickler |
-
-
-## 4.3 Grober Projektplan
+## 4.2 Grober Projektplan
 
 ### Meilensteine
 * KW 43 (11.05)
