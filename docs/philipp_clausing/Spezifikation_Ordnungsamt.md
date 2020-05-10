@@ -83,15 +83,19 @@ Die Applikation wird als Webanwendung implementiert. Der Zugriff ist von jedem G
 
 ![startbildschirm](./img/ordnungsamt_start.png)
 
+**User Stories:** Genehmigungen anzeigen, Ordnungswidrigkeiten anzeigen
+
 ### Mitarbeiteransicht
 
 ![startbildschirm](./img/mitarbeiteransicht.png)
+
+**User Stories:** Genehmigung bearbeiten, Ordnungswidrigkeit bearbeiten, Psych. Kranke organisieren
 
 ### Benutzeransicht
 
 ![startbildschirm](./img/buergersicht.png)
 
-
+**User Stories:** Ordnungswidrigkeit melden, Ordnungswidrigkeit ansehen, Anträge/Genehmigung ansehen, Anträge stellen
 
 ## 2.5 Anforderungen im Detail
 
