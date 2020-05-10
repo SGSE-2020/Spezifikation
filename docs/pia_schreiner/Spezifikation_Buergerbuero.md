@@ -290,6 +290,28 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 }
 ```
 
+#### Nutzerkonto deaktiviert (Bürger für tot erklärt oder weggezogen)
+
+```json
+"sgse.messages.buergerbuero.deactivateuser":{
+    "description": "The following user was deactivated", 
+        "fields": [
+            {"name": "uid", "type": "string", "required": true}
+        ]
+}
+```
+
+#### Neuer Bürger zugezogen
+
+```json
+"sgse.messages.buergerbuero.newuser":{
+    "description": "The following user was created", 
+        "fields": [
+            {"name": "uid", "type": "string", "required": true}
+        ]
+}
+```
+
 
 
 ### Konsumieren von Ereignissen mittels RabbitMQ
