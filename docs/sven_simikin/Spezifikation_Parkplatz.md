@@ -1,10 +1,8 @@
 # Anforderungs- und Entwurfsspezifikation ("Pflichtenheft")
 
-**Title:** SmartCity - Parkplatz
-
-**Autor:** Sven Simikin
-
-**Repositories:** 
+* **Title:** SmartCity - Parkplatz
+* **Autor:** Sven Simikin
+* **Repositories:** 
 [Source code](https://github.com/SGSE-2020/MS_Parkplatz), 
 [Spezifikation](https://sgse-2020.github.io/Spezifikation/#/./sven_simikin/Spezifikation_Parkplatz), 
 [Praktikumstagebuch](https://github.com/SGSE-2020/Praktikumstagebuch/blob/master/sven_simikin/ProjektTagebuch.md)
@@ -25,7 +23,7 @@ Parkplätze können für bestimmte Zeiträume reserviert werden und ermöglichen
 innerhalb festgelegter Zeiträume zu nutzen. Dieser Prozess garantiert Kunden einen Parkplatz für ihr Kraftfahrzeug (PKW) 
 zu finden und somit Termine oder andere zeitkritische Aktivitäten sicher wahrnehmen zu können. Das Abfragen von 
 Auslastungen und verfügbaren Parkflächen soll Kunden bei der Terminfindungen unterstützen und ermöglicht dem 
-Parkplatzservice das intelligente verwalten von Preisen in abhängigkeit der aktuellen Auslastung. Im Unterschied zu 
+Parkplatzservice das intelligente Verwalten von Preisen in Abhängigkeit der aktuellen Auslastung. Im Unterschied zu 
 gängigen Park-Leitsystemen garantiert das Softwaresystem "Parkplatz" die Findung eines spezifischen Parkplatzes und 
 zeigt nicht wage Statistiken über etwaig verfügbare freie Parkflächen und Preise an. Das Signalisieren mit 
 Hinweisschildern und Anzeigetafeln für Parkplätze und Parkflächen entfällt, da einem Kunden stets spezifische Parkplätze 
@@ -35,7 +33,7 @@ Die Hauptmotivationen der Parkplatzreservierung sind:
 * Termingerechte Reservierung für zeitkritische Aktivitäten
 * Chancengleiches zuweisen von Parkplätzen ohne Priorisierung und Präferenz
 * Schaffung neuer Parkplätze, welche bisher durch "Dauerparker" blockiert sind
-* Schaffung eines auslastungsbedingten automatischen Preismodells
+* Schaffung eines auslastungsbedingten, automatischen Preismodells
 
 Anforderungen an den Markt und insbesondere an die Kunden sind die ausnahmslose Einhaltung der festgelegten Parkzeiten 
 sowie das Melden von verstoßen gegen einzuhaltende Parkzeiten und das Abstellen von Fahrzeugen an verbindlichen 
@@ -78,19 +76,23 @@ ist nicht vorgesehen.
 
 ### 2.3.1 Rahmenbedingungen
 
-- Normen, Standards, Protokolle, Hardware, externe Vorgaben
+- Kommunikation innerhalb des eigenen services
+    - Synchron: RESTful zwischen Front- und Backend
+- Kommunikation mit anderen Microservices
+    - Asynchron: Massaging mit RabbitMQ
+    - Synchron: Unary/Streaming mit gRPC
+- Kommunikation mit Dritten
+    - Synchron: Firebase RESTful Authentifizierung
 
 ### 2.3.2 Betriebsbedingungen
 
 Der Kunde soll die Anwendung als Website im Browser verwenden können. In diesem Sinne kann der Kunde die Anwendung mobil 
 auf seinem Smartphone verwenden aber auch einen Laptop oder Personal Computer für den Aufruf der Website benutzen. Es 
 ist notwendig, einen Webbrowser in einer aktuellen Version zu verwenden, um die korrekte Darstellung der Website zu 
-gewährleisten. Es gibt hinsichtlich des Betriebssystems und der zu verwendenden Programmiersprache keine besonderen 
+gewährleisten. Es gibt hinsichtlich des Betriebssystems oder weiterer Betriebsbedingungen keine besonderen 
 Anforderungen.
 
 ### 2.3.3 Qualitätsmerkmale
-
-- Externe Qualitätsanforderungen (z.B. Performance, Sicherheit, Zuverlässigkeit, Benutzerfreundlichkeit)
 
 | Qualitätsmerkmal           | sehr gut | gut | normal | nicht relevant |
 | -------------------------- | -------- | --- | ------ | -------------- |
@@ -126,6 +128,11 @@ Behandelt User Stories: Reservierungen anzeigen, Reservierung stornieren
 
 Behandelt User Stories: Parkplatz reservieren, Auslastung abfragen
 
+## Reservierung stornieren
+![my_reservation_cancellation](img/my_reservation_cancellation.png)
+
+Behandelt User Stories: Reservierungen anzeigen, Reservierung stornieren 
+
 ## Melden
 ![news_reservation](img/report.png)
 
@@ -136,7 +143,7 @@ Behandelt User Stories: Falschparker melden
 
 ## 2.5 Anforderungen im Detail
 
-### Entität (Microservice)
+### Entität
 | Funktion                 | Als     | möchte ich                                      | so dass                                                      | Akzeptanz                                         | Priorität |
 | ------------------------ | ------- | ----------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------- | --------- |
 | Auslastung abfragen      | Entität | die Auslastung einer Parkfläche abfragen        | ich mir einen überblick über freie Plätze verschaffen kann   | Übersicht über Parkplatzauslastung erhalten       | Hoch      |
@@ -359,18 +366,23 @@ Die resultierende Payload dieses Ereignisses ist wie folgt definiert:
 
 ## 3.4 Datenmodell 
 
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
-- Modellierung des physikalischen Datenmodells 
-  - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
+![datenmodell](img/datenmodell.png)
 
 ## 3.5 Abläufe
+Im Folgenden werden die drei wichtigsten Abläufe dargestellt (Auslastung abfragen, Reservierung aufgeben, 
+Reservierung stornieren). Die Kernelemente und Hauptschritte der Vorgänge sind jeweils hervorgehoben worden. Triviale 
+Abläufe, wie das Melden von Vorfällen werden aufgrund ihrer einfachheit nicht abgebildet.
 
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
+### Auslastung abfragen
+![process_utilization](img/process_utilization.png)
+
+### Reservierung aufgeben
+![process_reservation](img/process_reservation.png)
+
+### Reservierung stornieren
+![process_cancellation](img/process_cancellation.png)
 
 ## 3.6 Entwurf
-
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
 
 ## 3.7 Fehlerbehandlung 
 
@@ -387,54 +399,23 @@ Die resultierende Payload dieses Ereignisses ist wie folgt definiert:
 * Parkfläche konnte nicht bearbeitet werden → Fehlermeldung per gRPC zurückgeben
 * Parkfläche konnte nicht entfernt werden → Fehlermeldung per gRPC zurückgeben
 
-## 3.8 Validierung
-
-* Relevante (Integrations)-Testfälle, die aus den Use Cases abgeleitet werden können
-
 # 4 Projektorganisation
 
 ## 4.1 Annahmen
 
-### Verwendete Technologien 
+### Verwendete Technologien
 #### Frontend
 - Angular - Front-End-Webapplikationsframework 
 - NGINX - Webserver
 - AngularFire - Angular Firebase client library
 #### Backend
+- Node - JavaScript Laufzeitumgebung
 - amqplib - RabbitMQ AMQP Client
 - nodemon/node - Webserver
 - Node gRPC Library - gRPC Framework for Node 
 - Node Redis - Redis client for Node
 #### Database
 - Redis - In-Memory Database 
-
-## 4.2 Verantwortlichkeiten
-
-| Softwarebaustein  | Person(en)           |
-| ----------------- | -------------------- |
-| Frontend          | Sven                 |
-| Backend           | Sven                 |
-| Database          | Sven                 |
-| RabbitMQ          | Phillip, Malte, Sven |
-
-### Rollen
-
-#### Softwarearchitekt
-Entwirft den Aufbau von Softwaresystemen und trifft Entscheidungen über das Zusammenspiel der Softwarebausteine.
-
-#### Frontend-Entwickler
-Entwickelt graphische oder andere Benutzerschnittstellen, insbesondere das Layout einer Anwendung.
-
-#### Backend-Entwickler
-Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse Datenquellen und externe Dienste integriert und für die Anwendung bereitgestellt.
-
-### Rollenzuordnung
-
-| Name         | Rolle               |
-| ------------ | ------------------- |
-| Sven Simikin | Softwarearchitekt   |
-| Sven Simikin | Frontend-Entwickler |
-| Sven Simikin | Backend-Entwickler  |
 
 ## 4.3 Grober Projektplan
 
@@ -452,16 +433,56 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 
 ## 5.1 Glossar 
 
-- __MS__ - Microservice
+- __AMQP__ - Advanced Message Queuing Protocol
 - __Entität__ - Microservice in der Architektur
+- __Firebase__ - Google Cloud Entwicklungsplattform
+- __gRPC__ - Remote Procedure Call Framework
+- __MS__ - Microservice
 - __Parkfläche__ - Menge von Parkplätzen
 - __Parkplatz__ - Abstellplatz für einen PKW
+- __RabbitMQ__ - Message Broker
+- __Redis__ - In-Memory-Datenbank
+- __UUID__ - Universally Unique Identifier
 
 ## 5.2 Referenzen
 
-- Handbücher, Gesetze
+### Offizielle Dokumentationen
+- [Angular](https://angular.io/docs)
+- [Firebase](https://firebase.google.com/docs/auth)
+- [gRPC](https://grpc.io/docs/)
+- [NGINX](https://nginx.org/en/docs/)
+- [Node](https://nodejs.org/en/docs/)
+- [Nodemon](https://github.com/remy/nodemon#nodemon)
+- [RabbitMQ](https://www.rabbitmq.com/documentation.html)
+- [Redis](https://redis.io/documentation)
+
+### Softwarepakete und Bibiliothken
+- [AMQP 0-9-1](https://www.npmjs.com/package/amqplib)
+- [AngularFire](https://www.npmjs.com/package/@angular/fire)
+- [gRPC Client](https://www.npmjs.com/package/@grpc/grpc-js)
+- [nodemon](https://www.npmjs.com/package/nodemon)
+- [redis](https://www.npmjs.com/package/redis)
 
 ## 5.3 Index
 
+### Bilderverzeichnis
+1. [Kunde Use Case Diagramm](#kunde)
+2. [Entity Use Case Diagramm](#entität)
+3. [Meine Reservierungen Mockup](#meine-reservierungen)
+4. [Neue Reservierung Mockup](#neue-reservierung)
+5. [Melden Mockup](#melden)
+6. [Zustandsdiagramm](#zustandsdiagramm)
+7. [Systemübersicht](#_31-systemübersicht)
+8. [Softwarearchitektur](#_32-softwarearchitektur)
+9. [Datenmodell](#_34-datenmodell)
+10. [Ablauf Auslastung abfragen](#auslastung-abfragen-1)
+11. [Ablauf Reservierung aufgeben](#reservierung-aufgeben)
+12. [Ablauf Reservierung stornieren](#reservierung-stornieren)
 
-
+### Tabellenverzeichnis
+1. [Stackeholder](#_21-stakeholder)
+2. [Qualitätsmerkmale](#_233-qualitätsmerkmale)
+3. [Entität User Stories](#entität-1)
+4. [Kunde User Stories](#kunde-1)
+5. [Verantwortlichkeiten](#_42-verantwortlichkeiten)
+6. [Rollenzuordnung](#rollenzuordnung)
