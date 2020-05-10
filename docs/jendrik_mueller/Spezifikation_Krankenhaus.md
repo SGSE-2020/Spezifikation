@@ -170,16 +170,11 @@ Diese Schnittstelle dient zum Erstellen eines neuen Termins für einen Patienten
 
 ```json
 "sgse.models.krankenhaus.termin":{
-
 	"description": "Creates a new appointment", 
-
 	"fields": [
-
 		{"name": "patientID", "type": "string", "required": true},
 		{"name": "date", "type": "string", "required": true}
-
 	]
-
 }
 ```
 
@@ -189,18 +184,13 @@ Diese Schnittstelle dient zum Erstellen eines neuen Termins für einen Patienten
 
 ```json
 "sgse.models.krankenhaus.add_patient":{
-
 	"description": "Adds a new patient to the hospital", 
-
 	"fields": [
-
 		{"name": "userID", "type": "string", "required": true},
 		{"name": "symtomps", "type": "string", "required": false},
     {"name": "diagnosis", "type": "string", "required": false},
     {"name": "medication", "type": "string", "required": false}
-
 	]
-
 }
 ```
 
@@ -210,15 +200,10 @@ Gibt die Daten eines Patienten, einschließlich der Krankendaten zurück
 
 ```json
 "sgse.models.krankenhaus.get_patient":{
-
 	"description": "Returns a single patient", 
-
 	"fields": [
-
 		{"name": "patientID", "type": "string", "required": true}
-
 	]
-
 }
 ```
 
@@ -228,20 +213,15 @@ Diese Schnittstelle dient dazu dem Personal die möglichkeit zu geben Pateintend
 
 ```json
 "sgse.models.krankenhaus.edit_patient":{
-
 	"description": "Eddits a single patient", 
-
 	"fields": [
-
 		{"name": "userID", "type": "string", "required": true},
     {"name": "station", "type": "string", "required": false},
     {"name": "faculty", "type": "string", "required": false},
 		{"name": "symtomps", "type": "string", "required": false},
     {"name": "diagnosis", "type": "string", "required": false},
     {"name": "medication", "type": "string", "required": false}
-
 	]
-
 }
 ```
 
@@ -267,20 +247,15 @@ Details siehe Bürgerbüro
 
 ```json
 "sgse.models.krankenhaus.patient":{
-
 	"description": "A Patient", 
-
 	"fields": [
-
 		{"name": "userID", "type": "string", "required": true},
     {"name": "station", "type": "string", "required": false},
     {"name": "faculty", "type": "string", "required": false},
 		{"name": "symtomps", "type": "string", "required": false},
     {"name": "diagnosis", "type": "string", "required": false},
     {"name": "medication", "type": "string", "required": false}
-
 	]
-
 }
 ```
 
@@ -288,18 +263,13 @@ Details siehe Bürgerbüro
 
 ```json
 "sgse.models.krankenhaus.patient":{
-
 	"description": "A medical worker", 
-
 	"fields": [
-
 		{"name": "userID", "type": "string", "required": true},
     {"name": "station", "type": "string", "required": false},
 		{"name": "faculty", "type": "string", "required": true},
     {"name": "titel", "type": "string", "required": false}
-
 	]
-
 }
 ```
 
@@ -307,19 +277,14 @@ Details siehe Bürgerbüro
 
 ```json
 "sgse.models.krankenhaus.termin":{
-
 	"description": "A Termin", 
-
 	"fields": [
-
 		{"name": "patientID", "type": "string", "required": true},
     {"name": "time", "type": "string", "required": true},
 		{"name": "faculty", "type": "string", "required": false},
     {"name": "station", "type": "string", "required": false},
     {"name": "doctor", "type": "string", "required": false},
-
 	]
-
 }
 ```
 
