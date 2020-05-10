@@ -24,15 +24,6 @@ Allerdings müssen für Notfälle immer genug Tierärzte anwesend sein.
 
 # 2 Anforderungen
 
-## 2.1 Stakeholder
-
-| Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  |
-|---|---|---|---|---|
-|  |   |   |    |   |
-
-
-### Beispiel
-
 | Funktion / Relevanz | Name | Kontakt / Verfügbarkeit | Wissen  | Interessen / Ziele  | 
 |---|---|---|---|---|
 | Tierbesitzer  |  Herr Budde | Tel. 0174 0815420, Jederrzeit telefonisch erreichbar  | Kennt sich mit der Bedienung von Webseiten aus | Möchte für seinen Hund Impftermine und eine generelle Untersuchung anmelden  |  
@@ -96,11 +87,11 @@ Prüfbarkeit |-|-|X|-|
 ### Terminkalendar Termin Anfordern
 ![Tierarzt Kalendar Anfordern](TierarztTerminAnfordern.png)
 
-### Terminkalendar Termin Absagen
-![Tierarzt Kalendar Löschen](TierarztTerminLöschen.png)
-
 ### Terminkalendar Übersicht Pro Tag
 ![Tierarzt Kalendar Übersicht](TierarztTermineProTag.png)
+
+### Terminkalendar Termin Absagen
+![Tierarzt Kalendar Löschen](TierarztTerminLöschen.png)
 
 ### Terminkalendar Termin Info
 ![Tierarzt Kalendar Übersicht](TierarztTerminInfo.png)
@@ -131,7 +122,7 @@ Prüfbarkeit |-|-|X|-|
 
 ## 3.2 Softwarearchitektur
 
-- Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
+![Software_Architektur](Softwarearchitektur.png)
 
 ## 3.3 Schnittstellen
 
@@ -344,8 +335,6 @@ Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse 
 - **Entität** - Microservice in der Architektur
 
 ## 5.2 Referenzen
-
-- Handbücher, Gesetze
 
 ## 5.3 Index
 
