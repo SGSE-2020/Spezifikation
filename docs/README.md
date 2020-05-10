@@ -14,7 +14,7 @@ Die ausgewählten Angebote, jedes bildet einen eigenständigen Microservice, sin
 
 __Asynchrone  Kommunikation:__ RabbitMQ
 
-- Datenaustauschformat: json
+- Datenaustauschformat: JSON
 
 __Synchrone Kommunikation:__ gRPC
 
@@ -24,7 +24,7 @@ __Synchrone Kommunikation:__ gRPC
 
 ### Kommunikationsdiagramm
 
-![Kommunikationsdiagramm](./img/kommunikationsdiagramm.png)
+![Kommunikationsdiagramm](./img/MicroserviceOverview.svg)
 
 ## Zentrales Portal
 
@@ -36,42 +36,28 @@ __Synchrone Kommunikation:__ gRPC
 
 ## Ansprechpartner Microservices
 
-Bürgerbüro - Pia
-
-Öffentlicher Nahverker (ÖPNV) - Alexander
-
-Parkplatz - Sven
-
-Straßenverkehrsamt - Benedikt
-
-Hausarzt - Tim
-
-Restaurant - Andre K.
-
-Krankenhaus - Jendrik
-
-Supermarkt - Andre M.
-
-Fitness Center - Malte
-
-Ordnungsamt - Philipp
-
-Bank - Fabian
-
-Tierarzt - Mattis
-
-Rettungsdienst - Patrick
-
-Apotheke - David
+| Microservice       | Ansprechpartner |
+| ------------------ | --------------- |
+| Bürgerbüro         | Pia             |
+| Parkplatz          | Sven            |
+| ÖPNV               | Alexander       |
+| Straßenverkehrsamt | Benedikt        |
+| Hausarzt           | Tim             |
+| Restaurant         | Andre K.        |
+| Supermarkt         | Andre M.        |
+| Fitness Center     | Malte           |
+| Ordnungsamt        | Philipp         |
+| Bank               | Fabian          |
+| Tierarzt           | Mattis          |
+| Rettungsdienst     | Patrick         |
 
 ## Ansprechpartner Zentrale Themen
 
-RabbitMQ - Philipp, Malte, Sven
+| Thema             | Ansprechpartner      |
+| ----------------- | -------------------- |
+| RabbitMQ          | Philipp, Malte, Sven |
+| Authentifizierung | Pia, Benedikt        |
+| Zentrales Portal  | Andre M.             |
+| Server            | Andre K., Alexander  |
+| CI                | Jendrik, Tim         |
 
-Authentifizierung - Pia, Benedikt
-
-Zentrales Portal - Andre M.
-
-Server - Andre K., Alexander
-
-CI - Jendrik, Tim

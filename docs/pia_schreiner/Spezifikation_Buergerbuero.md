@@ -243,19 +243,6 @@ Diese Schnittstelle dient dazu, einen Bürger zu verifizieren, um sicherzustelle
 }
 ```
 
-### Bürger für tot erklären
-
-Diese Schnittstelle dient dazu, einen Bürger, der gestorben ist, für tot zu erklären. Dieser Vorgang deaktiviert das Konto des Bürgers. Sie erwartet eine UID des Bürgers, welcher gestorben ist.
-
-```json
-"sgse.models.buergerbuero.deactivation": {
-	"description": "Returns a complete data set for the requested user", 
-	"fields": [
-		{"name": "uid", "type": "string", "required": true}
-	]
-}
-```
-
 ### Aushang für das schwarze Brett entgegennehmen
 
 Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzunehmen.  Beim Senden eines Aushangs für das schwarze Brett muss der Name des Microservices im Parameter `service` übergeben werden. Nach erfolgreichem Erstellen des Aushangs wird die ID des Aushangs zurückgegeben, um diesen anschließend wieder vom schwarzen Brett entfernen zu können.
@@ -303,20 +290,13 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 }
 ```
 
-#### Nutzerkonto deaktiviert
-
-```json
-"sgse.messages.buergerbuero.deactivateuser":{
-    "description": "The following user was deactivated", 
-        "fields": [
-            {"name": "uid", "type": "string", "required": true}
-        ]
-}
-```
 
 
+### Konsumieren von Ereignissen mittels RabbitMQ
 
-//TODO Konsumieren von Ereignissen anderer Microservices?
+#### Bürger für tot erklären
+
+Abonnieren der Messagequeue vom Rettungsdienst, welcher meldet wenn ein Bürger gestorben ist. Anschließend soll das Nutzerkonto des verstorbenen Bürgers deaktiviert werden. Definition der Message ist in der Spezifikation des Rettungsdienstes zu finden.
 
 ## 3.4 Datenmodell 
 
@@ -501,7 +481,7 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 | Schwarzes Brett  | Digitale Pinnwand, welche Bürger zu aktuellen wechselnden Sachverhalten der Smart City informiert. |
 | Microservice     | Architekturmuster für unabhängige Prozesse                   |
 | RabbitMQ         | Open Source Message Broker Software zur Implementierung von AMQP |
-| M                | Advanced Message Queuing Protocol. Stellt ein Netzwerkprotokoll auf Anwendungsebene für eine Message-orientierte Middleware dar. |
+| AMQP             | Advanced Message Queuing Protocol. Stellt ein Netzwerkprotokoll auf Anwendungsebene für eine Message-orientierte Middleware dar. |
 | gRPC             | Protokoll zum Aufruf von Funktionen in verteilten Systemen. Basiert auf HTTP/2 und Protokoll Buffern. |
 | Protokoll Buffer | Datenformat zur Serialisierung mit einer Schnittstellen Beschreibungssprache |
 | proto3           | Dritte Version der Sprachdefinition für ein Protokoll Buffer |
