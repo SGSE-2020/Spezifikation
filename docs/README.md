@@ -30,7 +30,7 @@ __Synchrone Kommunikation:__ gRPC
 
 ### Mockup
 
-
+![Startseite](./img/mockuphomepage.png)
 
 
 
