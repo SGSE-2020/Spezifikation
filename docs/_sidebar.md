@@ -1,5 +1,4 @@
 * [Home](/)
-* [Beispiel](./Beispiel/Beispiel.md)
 * [Ordnungsamt](./philipp_clausing/Spezifikation_Ordnungsamt.md)
 * [Bürgerbüro](./pia_schreiner/Spezifikation_Buergerbuero.md)
 * [Rettungsdienst](./patrick_poppe/Spezifikation_Rettungsdienst.md)
@@ -11,5 +10,6 @@
 * [ÖPNV](./alexander_bergmann/Spezifikation_OPNV.md)
 * [Bank](./fabian_husemann/Spezifikation_Bank.md)
 * [Hausarzt](./tim_meier/spezifikation_hausarzt.md)
+* [Tierarzt](./mattis_kueper/Spezifikation_Tierarzt.md)
 
 
