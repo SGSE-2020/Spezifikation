@@ -330,17 +330,17 @@ Abonnieren der Messagequeue vom Rettungsdienst, welcher meldet wenn ein Bürger 
 	"fields": [
 		{"name": "uid", "type": "string", "required": true},
 		{"name": "gender", "type": "int", "required": true},
-		{"name": "firstname", "type": "string", "required": true},
-		{"name": "lastname", "type": "string", "required": true},
-        {"name": "nickname", "type": "string", "required": false},
+		{"name": "firstName", "type": "string", "required": true},
+		{"name": "lastName", "type": "string", "required": true},
+        {"name": "nickName", "type": "string", "required": false},
         {"name": "email", "type": "string", "required": true},
-        {"name": "birthdate", "type": "date", "required": true},
-        {"name": "street_address", "type": "string", "required": true},
+        {"name": "birthDate", "type": "date", "required": true},
+        {"name": "streetAddress", "type": "string", "required": true},
         {"name": "zipcode", "type": "string", "required": true},
         {"name": "city", "type": "string", "required": true},
         {"name": "phone", "type": "string", "required": false},
         {"name": "image", "type": "string", "required": false},
-        {"name": "is_active", "type": "boolean", "required": true}
+        {"name": "isActive", "type": "boolean", "required": true}
 	]
 }
 ```
@@ -358,7 +358,7 @@ Abonnieren der Messagequeue vom Rettungsdienst, welcher meldet wenn ein Bürger 
         {"name": "image", "type": "string", "required": false},
         {"name": "source", "type": "string", "required": true},
         {"name": "service", "type": "string", "required": false},
-        {"name": "is_active", "type": "boolean", "required": true}
+        {"name": "isActive", "type": "boolean", "required": true}
 	]
 }
 ```
