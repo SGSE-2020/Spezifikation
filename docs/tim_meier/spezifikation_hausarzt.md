@@ -7,34 +7,17 @@
 
 ## 1.1 Beschreibung
 
-* Projektname
-  * Microservice Hausarzt
-* Darstellung der Produktvision in Prosa (5-10 Sätze)
-* Ziele
-  * Online Arzttermine
-* Für wen ist das Produkt/der Service?
-  * für die Bürger der Stadt
-* Was ist das Bedürfnis?
-  * Einfach über den Browser mit dem Hausarzt kommunizieren
-* Was ist das Produkt/der Service?
-  * Web Applikation für den Hausarzt
-* Warum sollte der Kunde dieses Produkt/den Service „kaufen“ oder nutzen?
-  * gehört zu Smart City
-* Im Gegensatz zu welchen anderen Produkten/Services steht dies?
-* Was macht dieses Produkt/der Service anders?
-* Warum ist das Projekt sinnvoll?
-* Welche Stakeholder sind betroffen und wie stehen Sie zu der Projektidee?
-* Welche alternativen Lösungsideen existieren für den identifizierten Bedarf?
-* Wie hoch sind Aufwand und erwarteter Nutzen und stehen sie in einem sinnvollen Verhältnis? (Lohnt sich das Projekt?)
-* Verfügen wir über die notwendigen Kompetenzen? (Umsetzbarkeit)
-* Welche Risiken und negativen Nebeneffekte sind zu erwarten?
+Der Hausarzt ist ein wichtiger Bestandteil für die Gesundheit der Bürger aus der Smart City. Er ist die erste Anlaufstelle bei körperlichen Beschwerden und Krankheiten. Als Bürger der Smart City kann man sich mit seiner Nutzer ID anmelden und online einen Termin festlegen. Außerdem ist es jedem Bürger möglich sich seine eigenen Krankenakten anzusehen, welche für gewöhnlich nur mit viel Aufwand einsehbar sind. Es gibt weiterführend auch eine Statistik zu den aktuell verbreiteten Krankheiten und Tipps und Tricks, wie man einer Ansteckung vorbeugen kann.
+
+
 
 ## 1.2 Ziele
 
-- Anwendungsbereiche, Motivation, Umfang, Alleinstellungsmerkmale, Marktanforderungen
-- Informationen zu Zielbenutzergruppen und deren Merkmale (Bildung, Erfahrung, Sachkenntnis)
-- Abgrenzung (Was ist das Softwaresystem _nicht_)
-- ggfs. SWOT-Analyse
+Die Website des Hausarztes dient als Schnittstelle zwischen den Bürgern der Stadt und dem Hausarzt. Dabei vereinfacht es die Terminbeschaffung für Bürger und Mitarbeiter. Außerdem bietet es einen einfachen Einblick in die Krankenakte. Der Hausarzt bekommt auch die Möglichkeit einer Überweisung des Patienten an das Krankenhaus oder das Fitness Center, welche er abhängig von seiner Diagnose ohne großen Aufwand tätigen kann.
+
+Das System richtet sich an alle Bürger der Smart City, welche Beschwerden und Krankheiten haben. Es ist eine einfache Anlaufstelle um diese bei dem Hausarzt zu untersuchen.
+
+Die Website bietet lediglich eine Möglichkeit sich einen Termin bei einem Hausarzt zu machen. Es ist weiterhin erforderlich, dass der Betroffene zu dem Termin erscheint um sich behandeln zu lassen.
 
 # 2 Anforderungen
 
@@ -245,7 +228,21 @@ Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, 
 
 ## 3.3.1 Ereignisse
 
-- In Event-gesteuerten Systemen: Definition der Ereignisse und deren Attribute
+#### Terminbestätigung
+
+Der von ihnen angeforderte Termin wurde bestätigt.
+
+```json
+"sgse.model.hausarzt.termin_bestaetigung": {
+    "description": "objekt einer patientenakte, welches zum aktualisieren ist",
+    "fields": [
+      {"name": "user_id", "type": "string", "required": true},
+      {"name": "datum", "type": "string", "required": true},
+      {"name": "uhrzeit", "type": "string", "required": false},
+      {"name": "anamnese", "type": "string", "required": false}
+    ]
+}
+```
 
 ## 3.4 Datenmodell 
 
@@ -288,47 +285,20 @@ Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, 
 - Die Bausteine Datenbank, Frontend und Backend müssen als Docker Container vorliegen
 - Für die Kommunikation mit anderen Prozessen wir gRPC verwendet
 
-## 4.2 Verantwortlichkeiten
-
-- Zuordnung von Personen zu Softwarebausteinen aus Kapitel 3.1 und 3.2
-- Rollendefinition und Zuordnung
-
-| Softwarebaustein | Person(en) |
-|----------|-----------|
-| Komponente A | Thomas Mustermann |
-
-### Rollen
-
-#### Softwarearchitekt
-Entwirft den Aufbau von Softwaresystemen und trifft Entscheidungen über das Zusammenspiel der Softwarebausteine.
-
-#### Frontend-Entwickler
-Entwickelt graphische oder andere Benutzerschnittstellen, insbesondere das Layout einer Anwendung.
-
-#### Backend-Entwickler
-Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse Datenquellen und externe Dienste integriert und für die Anwendung bereitgestellt.
-
-### Rollenzuordnung
-
-| Name     | Rolle     |
-|----------|-----------|
-| Thomas Mustermann | Softwarearchitekt |
-
 
 ## 4.3 Grober Projektplan
 
-- Meilensteine
-
 ### Meilensteine
-* KW 43 (21.10)
-  * Abgabe Pflichtenheft
-* KW 44 (28.10) / Projekt aufsetzen
-  * Repository Struktur
-* KW 45 (4.11) / Implementierung
-  * Implementierung #3 (Final)
-* KW 48 (18.12) / Abnahmetests
-  * manuelle Abnahmetestss
-  * Präsentation / Software-Demo
+- KW 20(11.05.2020)
+  - Abgabe Software-Spezifikation
+- KW 24(08.06.2020)
+  - Fertigstellung und Präsentation vom Prototyp
+- KW 27(30.06.2020)
+  - Fertigstellung vom Mikro-Service
+- KW 27(02.07.2020)
+  - Einbindung ist vollständig
+- KW 27(03.07.2020)
+  - Finale Abgabe und Präsentation
 
 # 5 Anhänge
 
