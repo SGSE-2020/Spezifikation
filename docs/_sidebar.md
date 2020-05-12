@@ -11,6 +11,6 @@
 * [Bank](./fabian_husemann/Spezifikation_Bank.md)
 * [Hausarzt](./tim_meier/spezifikation_hausarzt.md)
 * [Tierarzt](./mattis_kueper/Spezifikation_Tierarzt.md)
-* [Supermarkt](./ande_matutat/spezifikation.md)
+* [Supermarkt](./andre_matutat/spezifikation.md)
 
 
