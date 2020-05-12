@@ -14,17 +14,145 @@ Die ausgewählten Angebote, jedes bildet einen eigenständigen Microservice, sin
 
 __Asynchrone  Kommunikation:__ RabbitMQ
 
-- Datenaustauschformat: json
+- Datenaustauschformat: JSON
 
 __Synchrone Kommunikation:__ gRPC
 
-### Schnittstellenübersicht
-
-
-
 ### Kommunikationsdiagramm
 
-![Kommunikationsdiagramm](./img/kommunikationsdiagramm.png)
+![Kommunikationsdiagramm](./img/MicroserviceOverview.svg)
+
+### Schnittstellenübersicht
+
+#### Bürgerbüro
+
+**Message Queues**
+
+- Bürgerdaten haben sich geändert
+- Bürger ist zugezogen (Neue Registrierung)
+- Nutzerkonto wurde deaktiviert (weggezogen oder für tot erklärt)
+
+**Schnittstellen**
+
+- Gibt Userdaten raus (Benötigt UserID)
+- Nimmt Anhänge fürs schwarze Brett entgegen
+- Verifiziert User Token und gibt userid zurück
+- Löscht Anhänge vom schwarzen Brett
+
+#### Parkplatz
+
+**Schnittstellen**
+
+- Parkplatz reservieren
+- Auslastung abfragen
+- Parkfläche bereitstellen
+- Parkfläche bearbeiten
+- Parkfläche löschen
+
+#### Straßenverkehrsamt
+
+**Schnittstellen**
+
+- Führerschein abfragen
+- Fahrzeuginhaber abfragen
+
+#### Krankenhaus
+
+**Schnittstellen**
+
+- Überweisung von Patienten an den Hausarzt
+- Entgegennahme von Überweisungen
+- Vereinbaren von Terminen
+- Abrufen von Patientendaten
+
+#### Hausarzt 
+
+**Schnittstellen**
+
+- Überweisungen von Patienten an Krankenhaus/Fitnesscenter
+- Krankenakte rausschicken
+
+#### Restaurants
+
+**Schnittstellen**
+
+- Terminüberschneidung von Benutzer überprüfen
+
+#### Supermarkt
+
+**Schnittstellen**
+
+- Produkt bestellen
+- Bestellstatus einsehen
+
+#### Fitness Center
+
+**Message Queues**
+
+- Neues Gerät
+
+**Schnittstellen**
+
+- Trainingsplan beantragen
+- Termin beim Physiotherapeut anfragen
+
+#### Ordnungsamt
+
+**Message Queues**
+
+- Genehmigungen
+- Ordnungswidrigkeiten
+
+**Schnittstellen**
+
+- Bestehende Genehmigungen anfragen
+- Bestehende Ordnungswidrigkeiten anfragen
+- Ordnungswidrigkeit melden
+- Meldung von psychisch Kranken
+
+#### Bank
+
+**Schnittstellen**
+
+- Geld einzahlen/auszahlen
+- Geld überweisen
+- Geld monatlich(generell Zeitlich) überweisen
+- Konto anlegen
+
+#### Tierarzt
+
+**Schnittstellen**
+
+- Tierarzt Termine anzeigen
+- Tierarzt Termine anfordern/löschen
+- Tierfutter/Medizin bestellen
+- Tierarztkosten bezahlen
+
+#### Rettungsdienst
+
+**Message Queues**
+
+- Person verstorben
+
+**Schnittstellen**
+
+- Einsatzbericht abrufen
+- Transport anmelden
+
+#### ÖPNV
+
+**Message Queues**
+
+- Neue Verkehrsinformationen
+- Fahrplan Änderungen
+
+**Schnittstellen**
+
+- Ticket kosten
+
+- Verkehrsinformationen
+
+  
 
 ## Zentrales Portal
 
@@ -36,42 +164,29 @@ __Synchrone Kommunikation:__ gRPC
 
 ## Ansprechpartner Microservices
 
-Bürgerbüro - Pia
-
-Öffentlicher Nahverker (ÖPNV) - Alexander
-
-Parkplatz - Sven
-
-Straßenverkehrsamt - Benedikt
-
-Hausarzt - Tim
-
-Restaurant - Andre K.
-
-Krankenhaus - Jendrik
-
-Supermarkt - Andre M.
-
-Fitness Center - Malte
-
-Ordnungsamt - Philipp
-
-Bank - Fabian
-
-Tierarzt - Mattis
-
-Rettungsdienst - Patrick
-
-Apotheke - David
+| Microservice       | Ansprechpartner |
+| ------------------ | --------------- |
+| Bürgerbüro         | Pia             |
+| Parkplatz          | Sven            |
+| ÖPNV               | Alexander       |
+| Straßenverkehrsamt | Benedikt        |
+| Hausarzt           | Tim             |
+| Restaurant         | Andre K.        |
+| Supermarkt         | Andre M.        |
+| Fitness Center     | Malte           |
+| Ordnungsamt        | Philipp         |
+| Bank               | Fabian          |
+| Tierarzt           | Mattis          |
+| Rettungsdienst     | Patrick         |
+| Krankenhaus        | Jendrik         |
 
 ## Ansprechpartner Zentrale Themen
 
-RabbitMQ - Philipp, Malte, Sven
+| Thema             | Ansprechpartner      |
+| ----------------- | -------------------- |
+| RabbitMQ          | Philipp, Malte, Sven |
+| Authentifizierung | Pia, Benedikt        |
+| Zentrales Portal  | Andre M.             |
+| Server            | Andre K., Alexander  |
+| CI                | Jendrik, Tim         |
 
-Authentifizierung - Pia, Benedikt
-
-Zentrales Portal - Andre M.
-
-Server - Andre K., Alexander
-
-CI - Jendrik, Tim

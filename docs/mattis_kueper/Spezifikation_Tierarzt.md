@@ -76,25 +76,52 @@ Prüfbarkeit |-|-|X|-|
 ## 2.4 Graphische Benutzerschnittstelle
 
 ### Tierarzt Hauptseite
+Die Hauptseite erlaubt dem Kunden oder Mitarbeiter sich einzuloggen oder aktuelle Information des Tierarztes zu lesen.
 ![Tierarzt Hauptseite](TierarztMain.png)
 
 ### Tierarzt Hauptseite eingeloggt
+Sobald ein Kunde eingeloggt ist, kann er über den Reiter "Termine" in die Termin Ansicht wechseln.
 ![Tierarzt Hauptseite Eingeloggt](TierarztMainLoggedIn.png)
 
 ### Terminkalendar Übersicht
+In dieser Übersicht werden Kunden und Mitarbeitern alle Tage angezeigt, an denen ein Termin ansteht.
 ![Tierarzt Kalendar Übersicht](TierarztTermineOverview.png)
 
 ### Terminkalendar Termin Anfordern
+Diese Ansicht wird über einen Rechtsklick auf einen Tag im Terminkalendar geöffnet. Hier kann ein Kunde einen Tierarzt
+Besuch anfordern, wofür die gewünschte Zeit, das zu behandelnde Tier, und der Grund angegeben werden müssen.
 ![Tierarzt Kalendar Anfordern](TierarztTerminAnfordern.png)
 
 ### Terminkalendar Übersicht Pro Tag
+Diese Ansicht wird über einen Linksklick geöffnet. Hier werden alle Termine an einem Tag aufgelistet. Dies ist notwendig,
+falls Kunden Termine mit mehreren Tieren haben, oder für Mitarbeiter, welche oftmals mehr als eine Behandlung haben.
 ![Tierarzt Kalendar Übersicht](TierarztTermineProTag.png)
 
 ### Terminkalendar Termin Absagen
+Diese Ansicht kann durch einen Rechtsklick auf einen Termin geöffnet werden. Mit ihr kann der Kunde einen Termin absagen.
 ![Tierarzt Kalendar Löschen](TierarztTerminLöschen.png)
 
 ### Terminkalendar Termin Info
+Diese Übersicht wird über einen Linksklick auf einen Termin geöffnet. Hier werden alle relevanten Informationen über einen
+Termin angezeigt.
 ![Tierarzt Kalendar Übersicht](TierarztTerminInfo.png)
+
+### Tierarzt Hauptseite eingeloggt Mitarbeiter
+Wenn ein Mitarbeiter eingeloggt ist, kann er außer den Reiter "Termine" auch noch die "Verwaltung" auswählen.
+![Tierarzt Hauptseite Eingeloggt](TierarztMainLoggedInWorker.png)
+
+### Tierarzt Verwaltung Übersicht
+Hier kann ein Mitarbeiter auswählen, ob er Kunden oder Tiere verwalten möchte.
+![Tierarzt Hauptseite Eingeloggt](TierarztVerwaltungMain.png)
+
+### Tierarzt Verwaltung Tier Bearbeiten
+Hier kann ein Mitarbeiter Tiere nach Namen suchen, und auswählen, ob er ein neues Tier hinzufügen, bearbeiten oder 
+löschen möchte.
+![Tierarzt Hauptseite Eingeloggt](TierarztVerwaltungOverview.png)
+
+### Tierarzt Verwaltung Tier Info
+Dieses Fenster wird verwendet, wenn ein neues Tier angelegt werden soll, oder ein existierendes Beabeitet werden soll.
+![Tierarzt Hauptseite Eingeloggt](TierarztVerwaltungTierbearbeiten.png)
 
 ## 2.5 Anforderungen im Detail
 
@@ -122,7 +149,7 @@ Prüfbarkeit |-|-|X|-|
 
 ## 3.2 Softwarearchitektur
 
-![Software_Architektur](Softwarearchitektur.png)
+![Software_Architektur](SoftwareArchitektur.png)
 
 ## 3.3 Schnittstellen
 
