@@ -178,6 +178,7 @@ __Synchrone Kommunikation:__ gRPC
 | Bank               | Fabian          |
 | Tierarzt           | Mattis          |
 | Rettungsdienst     | Patrick         |
+| Krankenhaus        | Jendrik         |
 
 ## Ansprechpartner Zentrale Themen
 
