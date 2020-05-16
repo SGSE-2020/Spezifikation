@@ -414,8 +414,10 @@ Abläufe, wie das Melden von Vorfällen werden aufgrund ihrer einfachheit nicht 
 - nodemon/node - Webserver
 - Node gRPC Library - gRPC Framework for Node 
 - Node Redis - Redis client for Node
+- TypeORM - Object Relation Mapper
 #### Database
 - Redis - In-Memory Database 
+- MySQL - ER-Datenbank
 
 ## 4.3 Grober Projektplan
 
@@ -450,18 +452,21 @@ Abläufe, wie das Melden von Vorfällen werden aufgrund ihrer einfachheit nicht 
 - [Angular](https://angular.io/docs)
 - [Firebase](https://firebase.google.com/docs/auth)
 - [gRPC](https://grpc.io/docs/)
+- [MySQL](https://dev.mysql.com/doc/)
 - [NGINX](https://nginx.org/en/docs/)
 - [Node](https://nodejs.org/en/docs/)
 - [Nodemon](https://github.com/remy/nodemon#nodemon)
 - [RabbitMQ](https://www.rabbitmq.com/documentation.html)
 - [Redis](https://redis.io/documentation)
+- [TypeORM](https://typeorm.io/#/)
 
-### Softwarepakete und Bibiliothken
+### Softwarepakete und Bibliotheken
 - [AMQP 0-9-1](https://www.npmjs.com/package/amqplib)
 - [AngularFire](https://www.npmjs.com/package/@angular/fire)
 - [gRPC Client](https://www.npmjs.com/package/@grpc/grpc-js)
 - [nodemon](https://www.npmjs.com/package/nodemon)
 - [redis](https://www.npmjs.com/package/redis)
+- [typeorm](https://www.npmjs.com/package/typeorm)
 
 ## 5.3 Index
 
