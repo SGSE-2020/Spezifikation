@@ -292,7 +292,7 @@ Details siehe Bürgerbüro
 
 ## 4.1 Annahmen
 
-- Verwendete Technologien: HTML, JavaScript, Angular, PostgreSQL, gRPC, RabbitMQ, GraphQL, Python
+- Verwendete Technologien: HTML, JavaScript, Angular, PostgreSQL, gRPC, RabbitMQ, GraphQL, Node.js, Typescript, Firebase
 - Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen
 
 
