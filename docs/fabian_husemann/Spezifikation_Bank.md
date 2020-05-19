@@ -157,7 +157,7 @@ Außerdem <u>kann</u> ein Startdatum angegeben werden der bestimmt, wann die Üb
 Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
 
 ```json
-"bank.ueberweisung":{
+"sgse.models.bank.transfer":{
     "iban": "DE46 4585 4585 2000 5145 20",
     "purpose": "Einkauf",  
     
@@ -176,11 +176,25 @@ Diese Schnittstelle dient dazu einen neues Bankkonto anzulegen. Dabei <u>müssen
 Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
 
 ```json
-"bank.createAccount":{
+"sgse.models.bank.createAccount":{
     "customerNr": "1",
     "description": "Kontobeschreibung: Firmenkonto | Sparkonto"
 }
 ```
+
+### Bankkonto löschen
+
+Diese Schnittstelle dient dazu einen Bankkonto zu löschen. Dabei <u>müssen</u> Informationen über eine Kundennummer angegeben werden. Als Rückgabewert wird der Status der Löschung zurück gegeben.
+
+Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
+
+```json
+"sgse.models.bank.deleteAccount":{
+    "customerNr": "1",
+    "iban": "DE46 7845 2998 2554 8461 20"
+}
+```
+
 ## 3.3.1 Ereignisse
 
 ### Überweisungsnachricht
@@ -188,7 +202,7 @@ Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
 Die Überweisungsnachricht wird für jede Überweisung verschickt. Dabei bekommen alle Kunden die mit den Konto-A oder mit dem Konto-B verknüpft sind diese Nachricht. 
 
 ````json
-"bank.transferMessage": {
+"sgse.models.bank.transferMessage": {
     "customerNr": "1",
     "lastname": "Husemann",
     
@@ -202,7 +216,7 @@ Die Überweisungsnachricht wird für jede Überweisung verschickt. Dabei bekomme
 Dieses Ereignis wird aufgerufen wenn ein Kunde einen Berater kontaktiert und der Berater nicht verfügbar ist. Der Berater muss die Kontaktanfrage bestätigen und die Nachricht wird gesendet.
 
 ```json
-"bank.answerMessage":{
+"sgse.models.bank.ContactResponse":{
     "message": "Ihr Berater ist für sie Verfügbarnachricht."
 }
 ```
