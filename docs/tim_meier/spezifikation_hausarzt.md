@@ -168,7 +168,7 @@ Prüfbarkeit |-|-|X|-
 Mithilfe der "user_id" kann ein Patient an den Hausarzt übergeben werden. Dabei muss ein Grund angegeben werden, warum der Patient überwiesen werden soll.
 
 ```json
-"sgse.model.hausarzt.ueberweisung": {
+"sgse.model.hausarzt.sendUeberweisung": {
     "description": "Object um einen Patienten an den Hausarzt zu ueberweisen",
     "fields": [
       {"name": "user_id", "type": "string", "required": true},
@@ -185,19 +185,10 @@ Mithilfe der "user_id" kann die Krankenakte eines Patienten angefordert werden.
 
 ```json
 // Anforderung
-"sgse.model.hausarzt.anforderung_krankenakte": {
+"sgse.model.hausarzt.getKrankenakte": {
     "description": "Object um die Krankeakte eines Patienten anzufordern",
     "fields": [
       {"name": "user_id", "type": "string", "required": true}
-    ]
-}
-
-// Antwort des Hausarztes
-"sgse.model.hausarzt.krankenakte": {
-    "description": "Object um die Krankeakte eines Patienten anzufordern",
-    "fields": [
-      {"name": "user_id", "type": "string", "required": true},
-      {"name": "patientenakten", "type": "list[patientenakte]", "required": true}
     ]
 }
 ```
@@ -209,9 +200,10 @@ Mithilfe der "user_id" kann die Krankenakte eines Patienten angefordert werden.
 Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, welche danach gespeichert wird.
 
 ```json
-"sgse.model.hausarzt.aktualisierung_krankenakte": {
+"sgse.model.hausarzt.updatePatientenakte": {
     "description": "objekt einer patientenakte, welches zum aktualisieren ist",
     "fields": [
+      {"name": "patientenakte_id", "type": "string", "required": true},
       {"name": "user_id", "type": "string", "required": true},
       {"name": "datum", "type": "string", "required": true},
       {"name": "anamnese", "type": "string", "required": false},
