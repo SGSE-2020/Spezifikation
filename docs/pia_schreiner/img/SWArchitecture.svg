@@ -796,14 +796,14 @@
 				<text x="48.5" y="597.27" class="st5" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>&#60;&#60;Komponente&#62;&#62;</text>			</g>
 			<g id="shape233-148" v:mID="233" v:groupContext="shape" v:layerMember="0" transform="translate(0,-9.15998)">
 				<title>Tabelle.233</title>
-				<desc>node-postgres</desc>
+				<desc>sequelize</desc>
 				<v:userDefs>
 					<v:ud v:nameU="Label" v:prompt="" v:val="VT0(1):26"/>
 					<v:ud v:nameU="Label" v:prompt="" v:val="VT0(6):26"/>
 				</v:userDefs>
 				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 				<v:textRect cx="92.126" cy="593.668" width="128.98" height="22.4037"/>
-				<text x="56.91" y="597.27" class="st5" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>node-postgres</text>			</g>
+				<text x="69.39" y="597.27" class="st5" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>sequelize</text>			</g>
 		</g>
 		<g id="group246-150" transform="translate(599.602,-273.745)" v:mID="246" v:groupContext="group">
 			<v:userDefs>
