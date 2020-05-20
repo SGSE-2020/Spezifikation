@@ -222,7 +222,7 @@ Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Prioritä
 Diese Schnittstelle dient dazu, allen anderen Dienstleistern jegliche Daten von einem Bürger zukommen zu lassen. Sie erwartet die UID des Bürgers und gibt den kompletten Datensatz des Bürgers zurück.
 
 ```json
-"sgse.models.buergerbuero.userdata": {
+"sgse.models.buergerbuero.getUser": {
 	"description": "Returns a complete data set for the requested user", 
 	"fields": [
 		{"name": "uid", "type": "string", "required": true}
@@ -235,7 +235,7 @@ Diese Schnittstelle dient dazu, allen anderen Dienstleistern jegliche Daten von 
 Diese Schnittstelle dient dazu, einen Bürger zu verifizieren, um sicherzustellen, dass dieser auch in der Smart City wohnt und Services von anderen Dienstleistern nutzen darf. Sie erwartet ein Nutzertoken und gibt, wenn die Verifizierung erfolgreich ist, die UID des Bürgers zurück. Bei Misserfolg wird null übergeben.
 
 ```json
-"sgse.models.buergerbuero.tokenverification": {
+"sgse.models.buergerbuero.verifyUser": {
 	"description": "Verifies a usertoken", 
 	"fields": [
 		{"name": "token", "type": "string", "required": true}
@@ -248,7 +248,7 @@ Diese Schnittstelle dient dazu, einen Bürger zu verifizieren, um sicherzustelle
 Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzunehmen.  Beim Senden eines Aushangs für das schwarze Brett muss der Name des Microservices im Parameter `service` übergeben werden. Nach erfolgreichem Erstellen des Aushangs wird die ID des Aushangs zurückgegeben, um diesen anschließend wieder vom schwarzen Brett entfernen zu können.
 
 ```json
-"sgse.models.buergerbuero.anouncementcreation": {
+"sgse.models.buergerbuero.sendAnnouncement": {
 	"description": "Sends a new anouncement to be shown at the blackboard", 
 	"fields": [
 		{"name": "title", "type": "string", "required": true},
@@ -264,7 +264,7 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzun
 Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu entfernen. Die Validierung findet dabei mittels der ID des Aushangs, sowie dem Namen des Services statt. 
 
 ```json
-"sgse.models.buergerbuero.anouncementdeletion": {
+"sgse.models.buergerbuero.deleteAnnouncement": {
 	"description": "Removes an existing anouncement from the blackboard", 
 	"fields": [
 		{"name": "id", "type": "string", "required": true},
@@ -282,7 +282,7 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 #### Bürgerdaten aktualisiert
 
 ```json
-"sgse.messages.buergerbuero.updateuser":{
+"sgse.messages.buergerbuero.updateUser":{
     "description": "The following user was updated", 
         "fields": [
             {"name": "uid", "type": "string", "required": true}
@@ -293,7 +293,7 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 #### Nutzerkonto deaktiviert (Bürger für tot erklärt oder weggezogen)
 
 ```json
-"sgse.messages.buergerbuero.deactivateuser":{
+"sgse.messages.buergerbuero.deactivateUser":{
     "description": "The following user was deactivated", 
         "fields": [
             {"name": "uid", "type": "string", "required": true}
@@ -304,7 +304,7 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 #### Neuer Bürger zugezogen
 
 ```json
-"sgse.messages.buergerbuero.newuser":{
+"sgse.messages.buergerbuero.newUser":{
     "description": "The following user was created", 
         "fields": [
             {"name": "uid", "type": "string", "required": true}
@@ -336,7 +336,7 @@ Abonnieren der Messagequeue vom Rettungsdienst, welcher meldet wenn ein Bürger 
         {"name": "email", "type": "string", "required": true},
         {"name": "birthDate", "type": "date", "required": true},
         {"name": "streetAddress", "type": "string", "required": true},
-        {"name": "zipcode", "type": "string", "required": true},
+        {"name": "zipCode", "type": "string", "required": true},
         {"name": "city", "type": "string", "required": true},
         {"name": "phone", "type": "string", "required": false},
         {"name": "image", "type": "string", "required": false},
@@ -435,7 +435,7 @@ Abonnieren der Messagequeue vom Rettungsdienst, welcher meldet wenn ein Bürger 
 
 ### Datenbankübersicht
 
-Das Modell wird mit Hilfe von ORM und einer PostgreSQL Datenbank umgesetzt. Das objektrelationale Mapping soll mit dem TypeORM Framework erfolgen.
+Das Modell wird mit Hilfe von ORM und einer PostgreSQL Datenbank umgesetzt.
 
 ![EntityRelation](./img/EntityRelation.svg)
 
