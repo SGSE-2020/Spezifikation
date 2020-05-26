@@ -47,7 +47,7 @@ Das System ist jedoch keine voll Automatisierung des Einzelhandels. Kundenbestel
 
 ### 2.3.2 Betriebsbedingungen
 
-- Verfügbarkeit per Webzugriff mit den Browsen Google Chrome und Firefox
+- Verfügbarkeit per Webzugriff mit den Browsern Google Chrome und Firefox
 - optimiert Darstellung auf Android Smartphones
 
 ### 2.3.3 Qualitätsmerkmale
@@ -103,8 +103,6 @@ Prüfbarkeit |X|-|-|-
 
 ## 2.5 Anforderungen im Detail
 
-### Schablone für User Stories
-
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
 | Kunde        | Produkte einsehen                        | ich mich entscheiden kann, ob ich sie kaufen möchte          | Produkt Katalog wird im Frontend angezeigt                  |
@@ -117,12 +115,10 @@ Prüfbarkeit |X|-|-|-
 | Kunde| Produkt bewerten| ich Feedback geben kann | Produktbewertung möglich|
 | Angestellter | Bestellungen einsehen                    | ich offene Bestellungen sehen kann                           | Bestellungen werden angezeigt                               |
 | Angestellter | den Lagerbestand einsehen                | ich sehen kann, wie viele Produkte noch im Lager sind        | Lagerbestand einsehbar                                      |
-| Angestellter | Artikel bestellen                        | der Zulieferer den Supermarkt neue Artikel zuschickt         | Bestellungen können beim Zulieferer getätigt werden         |
 | Angestellter | Lager füllen                             | der Lagerbestand gefüllt wird                                | Lagerbestand lässt sich anpassen                            |
 | Angestellter | Preise ändern                            | ich Angebote erstellen oder Preisänderungen durchführen kann | Preise lassen sich ändern                                   |
-| Angestellter | Bestellungen bearbeiten                  | ich die Bestellung bearbeiten kann | Bestellungen lassen sich als "in bearbeitung" markieren     |
-| Angestellter | Bestellungen liefern                     | ich die Bestellung liefern kann | Bestellungen lassen sich als "in zustellung" markieren      |
-| Angestellter | Bestellungen fertigstellen               | ich die Bestellung als Fertiggestellt markieren kann | Bestellungen lassen sich als "fertig" markieren             |
+| Angestellter | Bestellstatus ändern | der aktuelle Bestellstatus einsehbar ist | Bestellstatus lässt sich ändern|
+| User         | mich einloggen                           | damit mir die Funktionen des SmartMarkts zur Verfügung stehen | User kann sich anmelden                                     |
 
 
 # 3 Technische Beschreibung
@@ -137,117 +133,65 @@ Prüfbarkeit |X|-|-|-
 
 ## 3.3 Schnittstellen
 
-### Produkt bestellen
+### 3.3.1 gRPC
 
-API um ein Produkt direkt (ohne Umweg über die Webseite) zu bestellen. Es kann nur ein Produkt (mit beliebiger Stückzahl) pro Anfrage bestellt werden. 
+API um Bestellungen direkt (ohne die Webseite) aufzugeben und den Bestellstatus zu prüfen. 
 
 ```
-"sgse.models.supermarkt.bestellen":{
-	"description": "Create an order. Returns orderID", 
-	"fields": [
-		{"name": "userID", "type": "id", "required": true}
-		{"name": "productID", "type": "id", "required": true}
-		{"name": "number", "type": "int", "required": true}
-		{"name": "usePoints", "type": "boolean", "required": true}
-	]
+syntax = "proto3";
+
+package grpcOrder;
+
+service OrderService { 
+    rpc makeOrder (OrderInformation) returns (OrderID){}
+    rpc trackOrder (OrderID) returns (OrderState){}
+}
+
+message OrderID {
+    int32 orderID=1; //-1 if order failed
+}
+
+message OrderInformation{
+    int32 userID=1;
+    int32 artickeID=2;
+    int32 howMany=3;
+}
+
+message OrderState{
+    string state=1;
 }
 ```
 
-### Bestellstatus einsehen
+### 3.3.2 Ereignisse (RabbitMQ)
 
-API um den Bestellstatus direkt (ohne Umweg über die Webseite) abzufragen. 
+#### Sende
 
 ```
-"sgse.models.supermarkt.verfolgen":{
-	"description": "Returns order status", 
-	"fields": [
-		{"name": "orderID", "type": "id", "required": true}
-	]
+"sgse.messages.supermarkt.updatePrice":{
+    "description": "The following Articleprice was updated", 
+        "fields": [
+            {"name": "articleID", "type": "int", "required": true}
+            {"name" "oldPrice". type: "float". "required": true}
+            {"name" "newPrice". type: "float". "required": true}
+        ]
 }
 ```
 
-## 3.3.1 Ereignisse
 
 #### Empfangen
-- **Bürger verstorben** 
-- **Bürger hinzugezogen**
-- **Bürger weggezogen**
+
+##### Bürger Büro
+
+- Bürgerdaten aktualisiert => Lieferadresse aktualisieren 
+
+- Nutzerkonto deaktiviert => Kundenkonto löschen
+
+- Neuer Bürger hinzugezogen => Kundenkonto erstellen
+
+  
 
 ## 3.4 Datenmodell 
-
-### Produkt
-
-```
-"sgse.supermarkt.produkt": {
-    "description": "A produkt",
-    "fields": [
-        {"name": "productID", "type": "id", "required": true},
-        {"name": "supplierID", "type": "id", "required": true},
-        {"name": "name", "type": "string", "required": true},
-        {"name": "price", "type": "float", "required": true},
-        {"name": "taxes", "type": "float", "required": true},
-        {"name": "stock", "type": "int", "required": true} 		
-    ]
-}
-```
-### Zulieferer
-```
-"sgse.supermarkt.suplier": {
-    "description": "Suplier",
-    "fields": [      
-        {"name": "supplierID", "type": "id", "required": true},
-        {"name": "name", "type": "string", "required": true},
-        {"name": "address", "type": "string", "required": true},
-        {"name": "phone", "type": "string", "required": true},
-        {"name": "mail", "type": "string", "required": true}, 		
-    ]
-}
-```
-### Bestellungen (Zulieferer)
-```
-"sgse.supermarkt.suplierOrder": {
-    "description": "Suplier",
-    "fields": [      
-        {"name": "productID", "type": "id", "required": true},
-        {"name": "supplierID", "type": "id", "required": true},
-        {"name": "date", "type": "Date", "required": true},
-        {"name": "number", "type": "int", "required": true},  
-        {"name": "status", "type": "string", "required": true}        
-    ]
-}
-```
-### Kunden
-```
-"sgse.supermarkt.customer": {
-    "description": "Customer of the market",
-    "fields": [      
-        {"name": "customerID", type: "id", "required": true},
-       	{"name": "paybackPoints", type: "int", "required": true},
-    ]
-}
-```
-### Bestellung (Kunden)
-```
-"sgse.supermarkt.order": {
-    "description": "Customer order",
-    "fields": [      
-        {"name": "customerID", type: "id", "required": true},
-       	{"name": "products", "type": "id[]", "required": true},
-       	{"name": "number", "type": "int[]", "required": true},
-       	{"name": "status", "type": "string", "required": true}       	
-    ]
-}
-```
-### Angestellte 
-```
-"sgse.supermarkt,employee": {
-    "description": "Employee of the market",
-    "fields": [      
-        {"name": "cemployeeID", type: "id", "required": true},    
-        {"name": "salery", type: "float", "required": true}
-    ]
-}
-```
+![m_lager](./img/erd.png)
 
 ## 3.5 Abläufe
 
@@ -269,7 +213,7 @@ API um den Bestellstatus direkt (ohne Umweg über die Webseite) abzufragen.
 
 ## 4.1 Annahmen
 
-- Verwendete Technologien: HTML, JavaScript, react.js, Akka HTTP, Scala, MongoDB
+- Verwendete Technologien: HTML, Scala.js, Scala Playframework, PostgreSQL, gRPC, rabbitMQ, Docker
 - Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen
 
 
