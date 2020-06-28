@@ -150,6 +150,8 @@ Behandelte User-Storie: Termine Einsehen
 | Personal | die Krankenakte bearbeiten | die Informationen des Patienten aktuell blieben | Krankenakte editieren | soll |
 | Personal | Patienten an den Hausarzt überweisen | die Nachbehandlung des Patienten gesichert ist | Weiterleitungsfunktion | soll |
 | Personal | meine Termine einsehen können | ich besser Planen kann | Termine einsehen | soll |
+| Personal | einen Patienten hinzufügen | ich neue Patienten aufnehmen kann | Patient erstellen | muss |
+| Personal | einen Patienten löschen | sodass ich Patienten sie nichtmehr im Krankenhaus/verstorben sind entfernen kann | Patient löschen | kann |
 
 
 # 3 Technische Beschreibung
@@ -292,7 +294,7 @@ Details siehe Bürgerbüro
 
 ## 4.1 Annahmen
 
-- Verwendete Technologien: HTML, JavaScript, Angular, PostgreSQL, gRPC, RabbitMQ, GraphQL, Python
+- Verwendete Technologien: HTML, JavaScript, Angular, PostgreSQL, gRPC, RabbitMQ, HTTP, Node.js, Typescript, Firebase
 - Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen
 
 
