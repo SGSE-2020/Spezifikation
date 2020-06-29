@@ -49,6 +49,12 @@ Ziel ist es, dass alle Bürger hier her kommen, um organisatorische Themen zu kl
 
 ![UseCases - Dienstleister](./img/usecase/UseCase_Dienstleister.svg)
 
+### Admin
+
+![UseCases - Admin](./img/usecase/UseCase_Admin.svg)
+
+
+
 ## 2.3 Nicht-funktionale Anforderungen 
 
 ### 2.3.1 Rahmenbedingungen
@@ -172,6 +178,8 @@ Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Prioritä
 [Registrierung](#registrierung) | Interessent | mich beim Bürgerbüro registrieren | für mich ein Konto erstellt wird | Registrierung möglich | Hoch
 [Schwarzes Brett lesen](#Übersicht-der-aushänge) | Interessent | Zugriff auf das schwarze Brett haben | ich interessante Aushänge zur Smart City ansehen kann und mich besser zurechtfinde | Schwarzes Brett ist zugänglich | Mittel
 
+
+
 ### Bürger
 
 | Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Priorität |
@@ -185,6 +193,7 @@ Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Prioritä
 | [Fundbüro Rückgabe](#aushänge-fundgegenstand-abholen) | Bürger | Dinge im Fundbüro des Bürgerbüros abholen | Dinge wieder zum rechtmäßigen Besitzer zurück gelangen können | Bürger hat gefundenen Gegenstand abgeholt und Aushang ist vom schwarzen Brett entfernt | Niedrig |
 
 
+
 ### Bürgerbüro Mitarbeiter
 
 | Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Priorität |
@@ -192,6 +201,8 @@ Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Prioritä
 | [Schwarzes Brett lesen](#Übersicht-der-anhänge-für-mitarbeiter) | Bürgerbüro Mitarbeiter | Zugriff auf das schwarze Brett haben | ich das Fundbüro nutzen kann und wichtige Aushänge sehen kann | Schwarzes Brett ist zugänglich | Mittel |
 | [Aushang aushängen](#mitarbeiter-work-stack) | Bürgerbüro Mitarbeiter | abgegebene oder gesendete Aushänge am schwarzen Brett anbringen | alle Bürger diese sehen können| Aushang ist am schwarzen Brett zu sehen | Mittel|
 | [Aushang entfernen](#Übersicht-der-anhänge-für-mitarbeiter) | Bürgerbüro Mitarbeiter | Aushänge vom schwarzen Brett wieder entfernen | Bürger diese nicht mehr einsehen können | Aushang ist vom schwarzen Brett entfernt | Mittel |
+
+
 
 ### Andere Dienstleister
 
@@ -204,6 +215,13 @@ Funktion | Rolle | In meiner Rolle möchte ich | so dass | Akzeptanz | Prioritä
 | Abgegebenen Aushang löschen | Dienstleister | einen an das Bürgerbüro gesendeten Aushang wieder löschen    | die Information nicht mehr auf dem schwarzen Brett zu sehen sind | Aushang wird vom schwarzen Brett gelöscht     | Mittel    |
 
 
+
+### Admin
+
+| Funktion                  | Rolle | In meiner Rolle möchte ich                                   | so dass                                                | Akzeptanz                                      | Priorität |
+| ------------------------- | ----- | ------------------------------------------------------------ | ------------------------------------------------------ | ---------------------------------------------- | --------- |
+| Nutzerliste ansehen       | Admin | eine Liste von allen Nutzern einsehen können                 | ich eine Übersicht über Bürger und Mitarbeiter erhalte | Darstellung aller registrierten Nutzer möglich | Hoch      |
+| Nutzerrolle aktualisieren | Admin | die Nutzerrolle von registrierten Nutzern aktualisieren können | ich Mitarbeiter einstellen und kündigen kann           | Anpassen der Nutzerrollen ist möglich          | Hoch      |
 
 # 3 Technische Beschreibung
 
@@ -254,7 +272,7 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern entgegenzun
 		{"name": "title", "type": "string", "required": true},
 		{"name": "text",  "type": "string", "required": true},
         {"name": "image",  "type": "string", "required": false},
-        {"name": "service",  "type": "string", "required": false},
+        {"name": "service",  "type": "string", "required": true},
 	]
 }
 ```
@@ -446,13 +464,13 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 ### Mögliche Fehler:
 
 - Zugriff auf Firebase nicht möglich 
-    - Firebase ist nicht erreichbar -> Anfrage verwerfen -> Fehlermeldung weitergeben an Dienstleister
-- Privater Key ist abgelaufen -> Es muss dafür gesorgt werden, dass in diesem Fall ein neuer Schlüssel beantragt und zwischengespeichert wird
-- Zugriff auf RabbitMQ nicht möglich -> Veröffentlichung von Messages wird nicht durchgeführt -> Alle zu veröffentlichen Messages zwischenspeichern bis RabbitMQ wieder verfügbar ist und anschließend die Queue füllen
-- Zugriff zwischen Front- und Backend nicht möglich -> Frontend zeigt die Fehlermeldung  "Service nicht verfügbar. Bitte versuchen Sie es später noch einmal."
-- Zugriff auf PostgreSQL nicht möglich -> Antwort mit Fehlermeldung "Service nicht verfügbar. Bitte versuchen Sie es später noch einmal."
+    - Firebase ist nicht erreichbar &rarr; Anfrage verwerfen &rarr; Fehlermeldung weitergeben an Dienstleister
+- Privater Key ist abgelaufen &rarr; Es muss dafür gesorgt werden, dass in diesem Fall ein neuer Schlüssel beantragt und zwischengespeichert wird
+- Zugriff auf RabbitMQ nicht möglich &rarr; Veröffentlichung von Messages wird nicht durchgeführt&rarr; Alle zu veröffentlichen Messages zwischenspeichern bis RabbitMQ wieder verfügbar ist und anschließend die Queue füllen
+- Zugriff zwischen Front- und Backend nicht möglich &rarr; Frontend zeigt die Fehlermeldung  "Service nicht verfügbar. Bitte versuchen Sie es später noch einmal."
+- Zugriff auf PostgreSQL nicht möglich &rarr; Antwort mit Fehlermeldung "Service nicht verfügbar. Bitte versuchen Sie es später noch einmal."
    - Gegebenenfalls Möglichkeit für DB-Redundanz um Fehler auszugleichen
-- Fehlender Parameter bei externer Anfrage -> Hinweisende Antwort
+- Fehlender Parameter bei externer Anfrage &rarr; Hinweisende Antwort
 
 
 
@@ -511,7 +529,7 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 | UID              | Unique ID (einzigartig, darf nur einmal existieren)          |
 | Firebase         | Cloud Service von Google                                     |
 | ORM              | Steht für `Object Relation Mapping` und ist eine Technik um Objekte aus einer Anwendung in einer relationalen Datenbank ablegen und auslesen kann. |
-| TypeORM          | ORM Framework für JavaScript und TypeScript.                 |
+| Sequelize        | ORM Framework für JavaScript und TypeScript.                 |
 
 
 
@@ -521,5 +539,5 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
 - [Mali Framework für gRPC und NodeJS](https://mali.js.org/)
 
 - [Tutorial für RabbitMQ mit NodeJS](https://www.cloudamqp.com/blog/2015-05-19-part2-2-rabbitmq-for-beginners_example-and-sample-code-node-js.html)
-- [ORM Framework für NodeJS](https://typeorm.io/#/)
+- [Sequelize - ORM Framework für NodeJS](https://sequelize.org/)
 
