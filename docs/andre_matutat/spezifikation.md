@@ -18,7 +18,7 @@ Ziel des Smart-Markts ist es, jeden Bürger der Smart-City, egal ob jung oder al
 
 Aber auch die Angestellten des Smart-Markts profitieren von der Digitalisierung. Der Lagerbestand jedes Produktes kann schnell und einfach eingesehen werden, ohne seinen Schreibtisch zu verlassen. Bestellungen beim Zuliefere können mit nur wenigen Klicks aufgegeben werden. Preise der Produkte können ebenfalls angepasst werden.
 
-Das System ist jedoch keine voll Automatisierung des Einzelhandels. Kundenbestellungen werden von Menschen bearbeitet, um die best mögliche Qualität zu gewährleisten.  
+Das System ist jedoch keine volle Automatisierung des Einzelhandels. Kundenbestellungen werden von Menschen bearbeitet, um die best mögliche Qualität zu gewährleisten.  
 
 
 
@@ -48,7 +48,6 @@ Das System ist jedoch keine voll Automatisierung des Einzelhandels. Kundenbestel
 ### 2.3.2 Betriebsbedingungen
 
 - Verfügbarkeit per Webzugriff mit den Browsern Google Chrome und Firefox
-- optimiert Darstellung auf Android Smartphones
 
 ### 2.3.3 Qualitätsmerkmale
 
@@ -118,7 +117,10 @@ Prüfbarkeit |X|-|-|-
 | Angestellter | Lager füllen                             | der Lagerbestand gefüllt wird                                | Lagerbestand lässt sich anpassen                            |
 | Angestellter | Preise ändern                            | ich Angebote erstellen oder Preisänderungen durchführen kann | Preise lassen sich ändern                                   |
 | Angestellter | Bestellstatus ändern | der aktuelle Bestellstatus einsehbar ist | Bestellstatus lässt sich ändern|
-| User         | mich einloggen                           | damit mir die Funktionen des SmartMarkts zur Verfügung stehen | User kann sich anmelden                                     |
+| Kunde     | mich einloggen                           | damit mir die Funktionen des SmartMarkts zur Verfügung stehen | User kann sich anmelden                                     |
+|Angestellter|neue Artikel hinzufügen|damit diese von nun an auch gekauft werden können|Neue Artikel können hinzugefügt werden|
+|Angestellter|Artikel bearbeiten|Artikelinformationen aktuell gehalten werden können|Artikel lassen sich bearbeiten|
+|Kunde|Bewertungen ansehen|ich die Meinung anderer Nutzer sehen kann|Reviews werden auf der Artikelseite angezeigt|
 
 
 # 3 Technische Beschreibung
@@ -152,7 +154,7 @@ message OrderID {
 }
 
 message OrderInformation{
-    int32 userID=1;
+    string userID=1;
     int32 artickeID=2;
     int32 howMany=3;
 }
@@ -177,19 +179,6 @@ message OrderState{
 }
 ```
 
-
-#### Empfangen
-
-##### Bürger Büro
-
-- Bürgerdaten aktualisiert => Lieferadresse aktualisieren 
-
-- Nutzerkonto deaktiviert => Kundenkonto löschen
-
-- Neuer Bürger hinzugezogen => Kundenkonto erstellen
-
-  
-
 ## 3.4 Datenmodell 
 ![m_lager](./img/erd.png)
 
@@ -199,14 +188,11 @@ message OrderState{
 
 ![ablaufdiagramm](./img/ablaufdiagramm.png)
 
-## 3.6 Entwurf
-
-- tbd
-
-## 3.7 Fehlerbehandlung 
+## 3.6 Fehlerbehandlung 
 
 * Keine Verbindung zur Bank --> Fehlermeldung
 * Keine Verbindung zum Bürgerbüro --> Fehlermeldung
+* Backend Request Failed -> Fehlermeldung
 * Produkt wird bestellt obwohl es nicht auf Lager ist --> keine Fehlerbehandlung
 
 # 4 Projektorganisation
@@ -230,21 +216,6 @@ message OrderState{
   * Fertigstellung Micro-Service
 * 02.07.2020 
   * Finale Einbindung in die Smart-City
-* 03.07.2020 
+* 02.07.2020 
   * Softwareübergabe
   * Präsentation 
-
-# 5 Anhänge
-
-## 5.1 Glossar 
-
-- tbd
-
-## 5.2 Referenzen
-
-- tbd
-
-## 5.3 Index
-
-
-
