@@ -22,6 +22,8 @@ Weiterhin sollen alle Bürgerinnen und Bürger einfach und ohne viel Zeitaufwand
 
 Ziel ist es, dass alle Bürger hier her kommen, um organisatorische Themen zu klären oder sich über neue Aushänge zu informieren.
 
+
+
 # 2 Anforderungen
 
 ## 2.1 Stakeholder
@@ -31,6 +33,8 @@ Ziel ist es, dass alle Bürger hier her kommen, um organisatorische Themen zu kl
 | Interessent (Möchte in die Smart City einziehen)  |  Martin Meyer   |  Tel. 2837462, von 16-20 Uhr telefonisch erreichbar | Kennt das System in anderen Städten, ist interessiert am System der Smart City | Übersichtliche Darstellung aller angebotenen Inhalte, um sich zurecht zu finden |
 | Bürger                                            |  Ulla Friedrich |  Tel. 1027363, ulla-f@web.de, von 12-18 Uhr telefonisch erreichbar, per E-Mail immer erreichbar | Kennt das bisherige System der Smart City | Einfache Handhabung um Daten zu ändern und Informationen zu erhalten |
 | Angestellter des Bürgerbüros                      |  Lukas Schmidt  |  Tel. 5847236, l.schmidt@web.de, von 8-16 Uhr telefonisch erreichbar, per E-Mail immer erreichbar | Kennt das bisherige System der Smart City | Vereinfachung der organisatorischen Tätigkeiten  |
+
+
 
 ## 2.2 Funktionale Anforderungen
 
@@ -303,7 +307,8 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 "sgse.messages.buergerbuero.updateUser":{
     "description": "The following user was updated", 
         "fields": [
-            {"name": "uid", "type": "string", "required": true}
+            {"name": "uid", "type": "string", "required": true},
+            {"name": "message", type: "string", "required": true}
         ]
 }
 ```
@@ -314,23 +319,11 @@ Diese Schnittstelle dient dazu, Aushänge von anderen Dienstleistern wieder zu e
 "sgse.messages.buergerbuero.deactivateUser":{
     "description": "The following user was deactivated", 
         "fields": [
-            {"name": "uid", "type": "string", "required": true}
+            {"name": "uid", "type": "string", "required": true},
+            {"name": "message", type: "string", "required": true}
         ]
 }
 ```
-
-#### Neuer Bürger zugezogen
-
-```json
-"sgse.messages.buergerbuero.newUser":{
-    "description": "The following user was created", 
-        "fields": [
-            {"name": "uid", "type": "string", "required": true}
-        ]
-}
-```
-
-
 
 ### Konsumieren von Ereignissen mittels RabbitMQ
 
@@ -505,9 +498,9 @@ Fehlermeldungen des Programms sind grundsätzlich aussagekräftig und ermöglich
   * Fertigstellung und Präsentation vom Prototyp
 * **KW 27**  (30.06.2020)
   * Fertigstellung vom Mikro-Service
-* **KW 27** (02.07.2020)
+* **KW 27** (01.07.2020)
   * Einbindung ist vollständig
-* __KW 27__ _(03.07.2020)_
+* __KW 27__ _(02.07.2020)_
   * Finale Abgabe und Präsentation
 
 
