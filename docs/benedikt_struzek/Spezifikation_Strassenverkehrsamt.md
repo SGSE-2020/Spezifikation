@@ -29,13 +29,6 @@ Das Strassenverkehrsamt ist eine der Behörden der Smart City. Anträge mit Bezu
 
 Alle Fahrzeughalter und jene die es werden wollen sollen ihre amtlichen belange bezüglich von Fahrzeugen in der Webapp des Strassenverkehrsamts erledigen können.
 
-__TODO__
-
-- Anwendungsbereiche, Motivation, Umfang, Alleinstellungsmerkmale, Marktanforderungen
-- Informationen zu Zielbenutzergruppen und deren Merkmale (Bildung, Erfahrung, Sachkenntnis)
-- Abgrenzung (Was ist das Softwaresystem _nicht_)
-- ggfs. SWOT-Analyse
-
 # 2 Anforderungen
 
 ## 2.1 Stakeholder
@@ -58,7 +51,7 @@ Um mit anderen Microservices der SmartCity zu kommunizieren werden zwei Systeme 
 
 ### 2.3.2 Betriebsbedingungen
 Der Fahrzeughalter soll die Anwendung im Brwoser und auf dem Smartphone verwenden können. Der Funktionsumfang soll dabei der gleiche sein.
-Die von der Webapp genutzten Schnittstelle soll offen gestaltet sein uim drittanbietern ebenfalls das zur Verfügung stellen eines Clients, für belibige Systeme, zu ermöglichen.
+Die von der Webapp genutzten Schnittstelle soll offen gestaltet sein uim drittanbietern ebenfalls das zur Verfügung stellen eines Clients, für beliebige Systeme, zu ermöglichen.
 
 ### 2.3.3 Qualitätsmerkmale
 | Qualitätsmerkmal           | sehr gut | gut | normal | nicht relevant |
@@ -107,10 +100,9 @@ Die von der Webapp genutzten Schnittstelle soll offen gestaltet sein uim drittan
 |---------|-------------------------------|--------------------------------------------------------------------|----------------------------------|---------------|
 | Bürger  | Führerschein beantragen       | Der Antrag bearbeitet werden kann                                  | Kann abgeholt werden             | Must          |
 | Bürger  | Wunschkennzeichen beantragen  | Nach einer Verfügbarkeitsprüfung der Antrag bearbeitet werden kann | Kann abgeholt werden             | Must          |
-| Bürger  | Fahrzeug abmelden             | Das Kennzeichen wieder abgegeben werden kann                       | Kennzeichen ist wieder verfügbar | Must          |
 | Bürger  | Kurzzeitkennzeichen bestellen | Das Kennzeichen verschickt wird                                    | Kennzeichen ist angekommen       | Should        |
 | Bürger  | Umweltplakette beantragen     | Der Antrag bearbeitet werden kann                                  | Kann abgeholt werden             | Could         |
-| Bürger  | Antragsstatus einsehen        | Der Status eingesehen werden kann                                  | Wird angezeigt                   | Should        |
+| Bürger  | Antragsstatus einsehen        | Der Status eingesehen werden kann                                  | Wird angezeigt                   | Must          |
 
 ### Mitarbeiter
 
@@ -135,7 +127,15 @@ Die von der Webapp genutzten Schnittstelle soll offen gestaltet sein uim drittan
 ### Führerschein abfragen
 ```json
 "sgse.models.strassenverkehrsamt.diverslicense":{
-	"description": "Represents whether someone has a drivers license"
+	"description": "Represents whether someone has a drivers license",
+  "fields": [
+    {"name": "uid", "type": "string"},
+    {"name": "firstName", "type": "string"},
+    {"name": "lastName", "type": "string"},
+    {"name": "birthDate", "type": "Date"},
+    {"name": "validUntil", "type": "int"},
+    {"name": "isValid", "type": "bool"},
+  ]
 }
 ```
 
@@ -144,7 +144,7 @@ Die von der Webapp genutzten Schnittstelle soll offen gestaltet sein uim drittan
 "sgse.models.strassenverkehrsamt.licenseplate":{
 	"description": "Represents the owner of a license plate", 
 	"fields": [
-        {"name": "licenseplate", "type": "string"}
+        {"name": "id", "type": "string"}
     ]
 }
 ```
@@ -152,13 +152,35 @@ Die von der Webapp genutzten Schnittstelle soll offen gestaltet sein uim drittan
 ## 3.3.1 Ereignisse
 
 ### Senden
-- 
+- Ankündigung erstellt
 
 ### Empfangen
-- Parkplatz reservieren
+- Anressänderung
 
 ## 3.4 Datenmodell 
-- *Exemplarische JSONs der MongoDB*
+```json
+{
+    _id: "2WWhXXQsd1fC0a4SD16WjaI3hrq2",
+    firstName: "Der",
+    lastName: "Admin",
+    nickName: "admin",
+    email: "admin@stva.com",
+    birthDate: "01.01.1970",
+    license: {
+        validUntil: 1596268618541
+    },
+    plates: [
+        {
+            plateId: {
+                city: "SC",
+                alpha: "RT",
+                number: "1337"
+            },
+            validUntil: 1596191027160
+        }
+    ]
+}
+```
 
 ## 3.5 Abläufe
 - Aktivitätsdiagramme
@@ -181,6 +203,7 @@ Die von der Webapp genutzten Schnittstelle soll offen gestaltet sein uim drittan
 - Frontend
   - __Vue.js__
   - __Vuetify__
+  - __Nuxt.js__
 
 ## 4.2 Verantwortlichkeiten
 
@@ -205,7 +228,7 @@ Implementiert die Bussinesslogik des Strassenverkehrsamt und stellt diese mittel
 ## 4.3 Grober Projektplan
 
 ### Meilensteine
-* KW 18 (01.05)
+* __KW 18 (01.05)__
     * Spezifikation starten
 	* Use Cases definieren+
 
@@ -213,8 +236,6 @@ Implementiert die Bussinesslogik des Strassenverkehrsamt und stellt diese mittel
   * API-Spezifikation
 * __KW 20__
   * Software-Spezifikation
-* __KW 24__
-  * Abgabe Softwareprodukt
 * __KW 27__
   * Abgabe Softwareprodukt
 
@@ -222,9 +243,10 @@ Implementiert die Bussinesslogik des Strassenverkehrsamt und stellt diese mittel
 
 ## 5.1 Glossar 
 *Definitionen, Abkürzungen, Begriffe*
-- __STV__ - Strassenverkehrsamt
+- __STVA__ - Strassenverkehrsamt
 - __gRPC__ - Serialisiertes Service-to-Service Kommunikationsprotokoll
 - __RabbitMQ__ - Open Source Message Broker
+- __Express.js__ - Node.js Bibliothek für HTTP Server
 
 ## 5.2 Referenzen
 
