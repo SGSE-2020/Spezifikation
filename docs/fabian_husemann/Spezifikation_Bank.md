@@ -32,8 +32,6 @@ Dieser Microservice unterstütz mit dem Umgang von Geld keine Barzahlungen, da e
 
 ![uc diagram](./img/Benutzer_Story.jpg)
 
-![uc diagram](./img/Admin_Story.jpg)
-
 
 
 ## 2.3 Nicht-funktionale Anforderungen 
@@ -42,7 +40,6 @@ Dieser Microservice unterstütz mit dem Umgang von Geld keine Barzahlungen, da e
 
 * Kommunikation
   * Synchron: gRPC
-  * Asynchron: RabbitMQ
 * WebAnwendung
 
 ### 2.3.2 Betriebsbedingungen
@@ -91,10 +88,6 @@ Dieser Microservice unterstütz mit dem Umgang von Geld keine Barzahlungen, da e
 
 ![](./img/Kontoübersicht.png)
 
-#### Konteneinstellungen
-
-![Kontoübersicht](./img/Kontoeinstellung.png)
-
 #### Überweisungen
 
 ![Kontoübersicht](./img/Überweisungen.png)
@@ -124,17 +117,6 @@ Dieser Microservice unterstütz mit dem Umgang von Geld keine Barzahlungen, da e
 | Benutzer | mich sicher Einloggen                 | kein anderer auf mein Konto zugreifen kann       | Zugriff auf den Benutzer und seine Konten | hoch      |
 | Benutzer | mein Konto auch Rückblickend einsehen | ich weiß wo mein Geld diesen Monat geblieben ist | Übersicht über alle Kontobewegungen       | mittel    |
 | Benutzer | mir Geld leihen                       | ich an Geld komme wenn ich es brauche            | Geld wird auf das Konto überwiesen        | gering    |
-
-#### Administrator
-
-
-| **Als**       | **möchte ich**                                               | **so dass**                                                  | **Akzeptanz**                               | Priorität |
-| ------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :------------------------------------------ | --------- |
-| Administrator | mir eine Kundenliste anzeigen                                | alle Kunden auf einem Überblick sehe                         | Übersicht über alle Kunden                  | hoch      |
-| Administrator | von Kunden kontaktiert werden                                | ich alle Kunden zufrieden stellen kann                       | Kunde sieht die Nachricht                   | mittel    |
-| Administrator | mir eine Liste von Kunden anzeigen die sich Geld leihen wollen | ich ihre Konten einsehen kann und ihn ein Darlehen gewähren kann. | Übersicht über alle Kunden mit einem Kredit | mittel    |
-| Administrator | Kunden Konten einsehen                                       | einen Überblick über die Kunden Konten habe                  | Übersicht über den Kunden und seine Konten  | hoch      |
-| Administrator | Kunden Konten bearbeiten                                     | der Kunde sein Konto einstellen kann                         | Kunden Konto bearbeiten und gespeichert     | hoch      |
 
 # 3 Technische Beschreibung
 
@@ -177,7 +159,7 @@ Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
 
 ```json
 "sgse.models.bank.createAccount":{
-    "customerNr": "1",
+    "userId": "inDZ2A0HCIf4nBltWmnLtJOgFRc2",
     "description": "Kontobeschreibung: Firmenkonto | Sparkonto"
 }
 ```
@@ -190,7 +172,7 @@ Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
 
 ```json
 "sgse.models.bank.deleteAccount":{
-    "customerNr": "1",
+    "userId": "inDZ2A0HCIf4nBltWmnLtJOgFRc2",
     "iban": "DE46 7845 2998 2554 8461 20"
 }
 ```
@@ -203,7 +185,7 @@ Die Überweisungsnachricht wird für jede Überweisung verschickt. Dabei bekomme
 
 ````json
 "sgse.models.bank.transferMessage": {
-    "customerNr": "1",
+    "userId": "inDZ2A0HCIf4nBltWmnLtJOgFRc2",
     "lastname": "Husemann",
     
     "iban": "DE46 0202 0202 0202 0020 56",
@@ -260,12 +242,6 @@ Konto löschen obwohl Geldvorhanden ist → Fehlermeldung im Frontend
 
 ## 3.8 Validierung
 
-# 4 Projektorganisation
-
-## 4.1 Annahmen
-
-## 4.2 Grober Projektplan
-
 ### Meilensteine
 
 * Meilenstein 1: 11.05.2020 KW 43
@@ -276,14 +252,3 @@ Konto löschen obwohl Geldvorhanden ist → Fehlermeldung im Frontend
   * Abnahmetests
   * Präsentation / Software-Demo
 
-# 5 Anhänge
-
-## 5.1 Glossar
-
-- Definitionen, Abkürzungen, Begriffe
-
-## 5.2 Referenzen
-
-- Handbücher, Gesetze
-
-## 5.3 Index
