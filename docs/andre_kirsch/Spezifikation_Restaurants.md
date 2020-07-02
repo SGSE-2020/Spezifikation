@@ -37,7 +37,7 @@ Der SmartCity Service Restaurant soll Restaurantbesitzer ermöglichen, eine Onli
 
 ### 2.3.1 Rahmenbedingungen
 
-Im Frontend wird Vue.js als Framework verwendet. Das Backend ist zum einen ein Server, der die Webseite zur Verfügung stellt und eine NodeJS Applikation, welche eine REST Schnittstelle und eine gRPC Schnittstelle bereitstellt. Sollten Nachrichten asynchron verschickt und abgerufen werden, wird RabbitMQ verwendet. Abschließend ist eine MongoDB Datenbank an das Backend angebunden.
+Im Frontend wird Vue.js als Framework verwendet. Das Backend ist zum einen ein Server, der die Webseite zur Verfügung stellt und eine NodeJS Applikation, welche eine REST Schnittstelle und eine gRPC Schnittstelle bereitstellt. Abschließend ist eine MongoDB Datenbank an das Backend angebunden.
 
 ### 2.3.2 Betriebsbedingungen
 
@@ -99,12 +99,6 @@ Prüfbarkeit |-|-|X|-
 
 (Nach Hause bestellen)
 
-### Bestellbestätigung
-
-![bestellbestaetigung](img\mockups\bestellbestaetigung.png)
-
-(Nach Hause bestellen)
-
 ### Restaurantübersicht als Restaurantbesitzer
 
 ![restaurantbesitzer](img\mockups\restaurantbesitzer.png)
@@ -143,38 +137,38 @@ Prüfbarkeit |-|-|X|-
 
 #### Benutzer
 
-| **Name**                      | **In meiner Rolle als**... | ...**möchte ich**...                                         | ..., **so dass**...                                          | **Erfüllt, wenn**...                                         | **Priorität** |
-| :---------------------------- | :------------------------: | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :------------ |
-| Restaurantliste einsehen      |          Benutzer          | eine Liste mit allen Restaurants in meiner Stadt und zusätzlichen Informationen zu diesen Restaurants einsehen | ich weiß, welche Restaurants in der Stadt existieren und welche sich aktuell lohnen zu besuchen. | die Restaurantliste einsehbar ist.                           | Muss          |
-| Speisekarte einsehen          |          Benutzer          | die Speisekarte zu einem von mir ausgewählten Restaurant angezeigt bekommen | ich sehen kann, welche Gerichte in diesem Restaurant bestellt werden können. | die Speisekarte zu jedem Restaurant einsehbar ist.           | Muss          |
-| Öffnungszeiten einsehen       |          Benutzer          | die Öffnungszeiten zu einem von mir ausgewählten Restaurant angezeigt bekommen | ich sehen kann, wann das Restaurant geöffnet hat.            | die Öffnungszeiten zu jedem Restaurant einsehbar sind.       | Muss          |
-| Bewertungen einsehen          |          Benutzer          | die Bewertungen eines Restaurants von anderen Nutzern angezeigt bekommen | ich sehen kann, wie gut das Restaurant bewertet wurde        | die Bewertungen zu jedem Restaurant einsehbar sind.          | Muss          |
-| Tisch reservieren             |          Benutzer          | bei einem ausgewählten Restaurant einen Tisch für eine von mir ausgewählte Anzahl an Personen für einen bestimmten Zeitpunkt reservieren | dieser Tisch verfügbar ist, wenn ich mit meiner Gruppen zu dem gegebenen Zeitpunkt in dem Restaurant essen möchte | Tische über die Webseite reserviert werden können.           | Muss          |
-| Restaurantauslastung einsehen |          Benutzer          | einsehen können, wie stark aktuell die Restaurantauslastung in einem Restaurant ist und wie viele Plätze in dem Restaurant noch frei sind | ich besser einschätzen kann, ob sich aktuell ein Besuch bei dem Restaurant lohnt. | die Restaurantauslastungen und die Anzahl freier Tische einsehbar ist | Kann          |
-| Terminkollision überprüfen    |          Benutzer          | , dass ich bei der Reservierung eines Tisches in einem Restaurant gewarnt werde, wenn in meinem Kalender eine Kollision mit einem anderen Termin existiert | ich zu dem gegebenen Zeitpunkt zusätzlich bestätigen muss, dass ich einen Tisch reservieren möchte. | bei Terminkollision eine zusätzliche Abfrage existiert.      | Muss          |
-| Nach Hause bestellen          |          Benutzer          | eine Bestellung in einem Restaurant, welches Lieferungen unterstützt, aufgeben und online bezahlen | mir diese Bestellung nach Hause geliefert wird.              | Gerichte bestellt und bezahlt werden können.                 | Muss          |
-| Parkplätze reservieren        |          Benutzer          | angeben können, ob und wie viele Parkplätze bei einer Tischreservierung in der Nähe des Restaurants mit reserviert werden können | ich bei der Ankunft am Restaurant keinen Parkplatz suchen muss. | Parkplatzreservierung mit Anzahl angegeben werden kann.      | Muss          |
-| Parkplatzauslastung einsehen  |          Benutzer          | die Parkplatzauslastung am Restaurant einsehen können        | ich weiß, ob ich in der Nähe noch einen Parkplatz finden kann. | die Parkplatzauslastung einsehbar ist.                       | Kann          |
-| Restaurants bewerten          |          Benutzer          | Restaurants bewerten können                                  | andere einsehen können, welche Restaurants gut sind.         | die Restaurantbewertungen einsehbar sind.                    | Muss          |
+| **Name**                          | **In meiner Rolle als**... | ...**möchte ich**...                                         | ..., **so dass**...                                          | **Erfüllt, wenn**...                                         | **Priorität** |
+| :-------------------------------- | :------------------------: | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :------------ |
+| Restaurantliste einsehen          |          Benutzer          | eine Liste mit allen Restaurants in meiner Stadt und zusätzlichen Informationen zu diesen Restaurants einsehen | ich weiß, welche Restaurants in der Stadt existieren und welche sich aktuell lohnen zu besuchen. | die Restaurantliste einsehbar ist.                           | Muss          |
+| Speisekarte einsehen              |          Benutzer          | die Speisekarte zu einem von mir ausgewählten Restaurant angezeigt bekommen | ich sehen kann, welche Gerichte in diesem Restaurant bestellt werden können. | die Speisekarte zu jedem Restaurant einsehbar ist.           | Muss          |
+| Öffnungszeiten einsehen           |          Benutzer          | die Öffnungszeiten zu einem von mir ausgewählten Restaurant angezeigt bekommen | ich sehen kann, wann das Restaurant geöffnet hat.            | die Öffnungszeiten zu jedem Restaurant einsehbar sind.       | Muss          |
+| ~~Bewertungen einsehen~~          |          Benutzer          | die Bewertungen eines Restaurants von anderen Nutzern angezeigt bekommen | ich sehen kann, wie gut das Restaurant bewertet wurde        | die Bewertungen zu jedem Restaurant einsehbar sind.          | Kann          |
+| Tisch reservieren                 |          Benutzer          | bei einem ausgewählten Restaurant einen Tisch für eine von mir ausgewählte Anzahl an Personen für einen bestimmten Zeitpunkt reservieren | dieser Tisch verfügbar ist, wenn ich mit meiner Gruppen zu dem gegebenen Zeitpunkt in dem Restaurant essen möchte | Tische über die Webseite reserviert werden können.           | Muss          |
+| ~~Restaurantauslastung einsehen~~ |          Benutzer          | einsehen können, wie stark aktuell die Restaurantauslastung in einem Restaurant ist und wie viele Plätze in dem Restaurant noch frei sind | ich besser einschätzen kann, ob sich aktuell ein Besuch bei dem Restaurant lohnt. | die Restaurantauslastungen und die Anzahl freier Tische einsehbar ist | Kann          |
+| ~~Terminkollision überprüfen~~    |          Benutzer          | , dass ich bei der Reservierung eines Tisches in einem Restaurant gewarnt werde, wenn in meinem Kalender eine Kollision mit einem anderen Termin existiert | ich zu dem gegebenen Zeitpunkt zusätzlich bestätigen muss, dass ich einen Tisch reservieren möchte. | bei Terminkollision eine zusätzliche Abfrage existiert.      | Kann          |
+| Nach Hause bestellen              |          Benutzer          | eine Bestellung in einem Restaurant, welches Lieferungen unterstützt, aufgeben und online bezahlen | mir diese Bestellung nach Hause geliefert wird.              | Gerichte bestellt und bezahlt werden können.                 | Muss          |
+| Parkplätze reservieren            |          Benutzer          | angeben können, ob und wie viele Parkplätze bei einer Tischreservierung in der Nähe des Restaurants mit reserviert werden können | ich bei der Ankunft am Restaurant keinen Parkplatz suchen muss. | Parkplatzreservierung mit Anzahl angegeben werden kann.      | Muss          |
+| ~~Parkplatzauslastung einsehen~~  |          Benutzer          | die Parkplatzauslastung am Restaurant einsehen können        | ich weiß, ob ich in der Nähe noch einen Parkplatz finden kann. | die Parkplatzauslastung einsehbar ist.                       | Kann          |
+| ~~Restaurants bewerten~~          |          Benutzer          | Restaurants bewerten können                                  | andere einsehen können, welche Restaurants gut sind.         | die Restaurantbewertungen einsehbar sind.                    | Kann          |
 
 #### Administrator
 
 
-| **Name**                                | **In meiner Rolle als**... | ...**möchte ich**...                                         | ..., **so dass**...                                          | **Erfüllt, wenn**...                                         | **Priorität** |
-| :-------------------------------------- | :------------------------: | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :------------ |
-| Restaurant eintragen                    |     Restaurantbesiter      | mein Restaurant eintragen können                             | andere Personen sehen können, dass es mein Restaurant in der Stadt gibt. | neue Restaurants eingetragen werden können.                  | Muss          |
-| Speisekarte eintragen                   |     Restaurantbesitzer     | die Speisekarte meines Restaurants eintragen und ändern können | andere Personen sehen können, welche Gerichte in meinem Restaurant angeboten werden. | Gerichte eingefügt, geändert und gelöscht werden können.     | Muss          |
-| Öffnungszeiten eintragen                |     Restaurantbesitzer     | die Öffnungszeiten meines Restaurants eintragen können       | andere Personen wissen, wann mein Restaurant geöffnet ist.   | Öffnungszeiten eintragbar und von anderen Personen einsehbar sind. | Muss          |
-| Tischdaten eintragen                    |     Restaurantbesitzer     | Tischanzahl und -größe eintragen können                      | Benutzer Tische reservieren kann.                            | Tische reserviert werden können.                             | Muss          |
-| Parkplätze verlinken                    |     Restaurantbesitzer     | Parkplätze verlinken können                                  | Benutzer Parkplatzreservierungen bei Tischreservierungen vornehmen können. | Parkplätze reserviert werden können.                         | Muss          |
-| Restaurantlogo einfügen                 |     Restaurantbesitzer     | das Restaurantlogo hochladen können                          | Besucher der Webseite das Restaurant anhand des Logos erkennen können. | Logo hochgeladen werden kann.                                | Kann          |
-| Bestellungen erlauben                   |     Restaurantbesitzer     | Online-Bestellungen erlauben können                          | andere Personen in meinem Restaurant online Gerichte bestellen und bezahlen können. | Gerichte online bestellt und bezahl werden können und der Restaurantbesitzer diese Funktion aktivieren/deaktivieren kann. | Muss          |
-| Reservierungen erlauben                 |     Restaurantbesitzer     | Reservierungen erlauben könne                                | andere Personen Tische in meinem Restaurant reservieren können | Tisch reserviert werden können und der Restaurantbesitzer diese Funktion aktivieren/deaktivieren kann. | Muss          |
-| Bestellungen einsehen                   |     Restaurantbesitzer     | Online-Bestellungen einsehen können                          | ich weiß, wann ein Besucher der Webseite eine Bestellung aufgegeben hat. | Bestellungen auf der Webseite eingesehen werden können.      | Muss          |
-| Bestellungen annehmen                   |     Restaurantbesitzer     | Online-Bestellungen annehmen können                          | die Bestellung geliefert werden kann.                        | Bestellungen auf der Webseite angenommen werden können       | Muss          |
-| Bestellungen abschließen                |     Restaurantbesitzer     | Online-Bestellungen abschließen können                       | die Bestellung erfüllt werden kann.                          | Bestellungen auf der Webseite abgeschlossen werden können    | Muss          |
-| Restaurantangebote im Bürgerbüro teilen |     Restaurantbesitzer     | spezielle Angebote in einem Restaurant an das Bürgerbüro senden | andere Personen dort diese Angebote sehen können.            | Angebote können an das Bürgerbüro gesendet werden.           | Kann          |
-| Lebensmittel bestellen                  |     Restaurantbesitzer     | Lebensmittel im Supermarkt bestellen                         | man nicht selber zum Supermarkt laufen muss                  | Bestellungen gemacht werden können                           | Muss          |
+| **Name**                                    | **In meiner Rolle als**... | ...**möchte ich**...                                         | ..., **so dass**...                                          | **Erfüllt, wenn**...                                         | **Priorität** |
+| :------------------------------------------ | :------------------------: | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :------------ |
+| ~~Restaurant eintragen~~                    |     Restaurantbesiter      | mein Restaurant eintragen können                             | andere Personen sehen können, dass es mein Restaurant in der Stadt gibt. | neue Restaurants eingetragen werden können.                  | Muss          |
+| ~~Speisekarte eintragen~~                   |     Restaurantbesitzer     | die Speisekarte meines Restaurants eintragen und ändern können | andere Personen sehen können, welche Gerichte in meinem Restaurant angeboten werden. | Gerichte eingefügt, geändert und gelöscht werden können.     | Muss          |
+| ~~Öffnungszeiten eintragen~~                |     Restaurantbesitzer     | die Öffnungszeiten meines Restaurants eintragen können       | andere Personen wissen, wann mein Restaurant geöffnet ist.   | Öffnungszeiten eintragbar und von anderen Personen einsehbar sind. | Muss          |
+| ~~Tischdaten eintragen~~                    |     Restaurantbesitzer     | Tischanzahl und -größe eintragen können                      | Benutzer Tische reservieren kann.                            | Tische reserviert werden können.                             | Muss          |
+| ~~Parkplätze verlinken~~                    |     Restaurantbesitzer     | Parkplätze verlinken können                                  | Benutzer Parkplatzreservierungen bei Tischreservierungen vornehmen können. | Parkplätze reserviert werden können.                         | Muss          |
+| ~~Restaurantlogo einfügen~~                 |     Restaurantbesitzer     | das Restaurantlogo hochladen können                          | Besucher der Webseite das Restaurant anhand des Logos erkennen können. | Logo hochgeladen werden kann.                                | Kann          |
+| ~~Bestellungen erlauben~~                   |     Restaurantbesitzer     | Online-Bestellungen erlauben können                          | andere Personen in meinem Restaurant online Gerichte bestellen und bezahlen können. | Gerichte online bestellt und bezahl werden können und der Restaurantbesitzer diese Funktion aktivieren/deaktivieren kann. | Muss          |
+| ~~Reservierungen erlauben~~                 |     Restaurantbesitzer     | Reservierungen erlauben könne                                | andere Personen Tische in meinem Restaurant reservieren können | Tisch reserviert werden können und der Restaurantbesitzer diese Funktion aktivieren/deaktivieren kann. | Muss          |
+| ~~Bestellungen einsehen~~                   |     Restaurantbesitzer     | Online-Bestellungen einsehen können                          | ich weiß, wann ein Besucher der Webseite eine Bestellung aufgegeben hat. | Bestellungen auf der Webseite eingesehen werden können.      | Muss          |
+| ~~Bestellungen annehmen~~                   |     Restaurantbesitzer     | Online-Bestellungen annehmen können                          | die Bestellung geliefert werden kann.                        | Bestellungen auf der Webseite angenommen werden können       | Muss          |
+| ~~Bestellungen abschließen~~                |     Restaurantbesitzer     | Online-Bestellungen abschließen können                       | die Bestellung erfüllt werden kann.                          | Bestellungen auf der Webseite abgeschlossen werden können    | Muss          |
+| ~~Restaurantangebote im Bürgerbüro teilen~~ |     Restaurantbesitzer     | spezielle Angebote in einem Restaurant an das Bürgerbüro senden | andere Personen dort diese Angebote sehen können.            | Angebote können an das Bürgerbüro gesendet werden.           | Kann          |
+| ~~Lebensmittel bestellen~~                  |     Restaurantbesitzer     | Lebensmittel im Supermarkt bestellen                         | man nicht selber zum Supermarkt laufen muss                  | Bestellungen gemacht werden können                           | Muss          |
 
 # 3 Technische Beschreibung
 
@@ -203,28 +197,53 @@ Mit dieser Schnittstelle soll ein anderer Microservice überprüfen können, ob 
 }
 ```
 
-### 3.3.1 Ereignisse
-
-##### Neues Restaurant erstellt
-
-Dieses Ereignis wird versendet, wenn ein Besucher auf der Restaurant Webseite ein neues Restaurant erstellt.
+## 3.4 Datenmodell
 
 ```json
-"sgse.model.restaurants.new_restaurant": {
-    "description": "A new restaurant has been created",
-    "fields": {
-        {"name": "restaurant_name", "type": "string"},
-        {"name": "owner", "type": "string"},
-        {"name": "creation_date", "type": "datetime"}
+[
+	{
+        "_id": "INTERNAL ID",
+         "restaurantID": "RESTAURANT ID",
+         "owner": "OWNER UID",
+         "logo": "",
+         "name": "RESTAURANT NAME",
+         "parking_id": "PARKING ID",
+         "description": "",
+         "ordersAllowed": true,
+         "reservationsAllowed": true,
+         "orders": [],
+         "tables": [
+                {
+                    "size": 1,
+                    "count": 1
+                }
+         ],
+         "reservations":[],
+         "openingHours": [
+             {
+                 "from": "0:00",
+                 "to": "24:00"
+             }
+         ],
+         "menu": [
+             {
+                 "name": "CATEGORY",
+                 "dishes": [
+                     {
+                         "id": "1",
+                         "name": "DISH NAME",
+                         "priceL": 0.00,
+                         "priceXL": 0.00,
+                         "description": ""
+                     }
+                 ]
+             }
+         ]
     }
-}
+]
 ```
 
 
-
-## 3.4 Datenmodell
-
-![erm](img\erm.png)
 
 ## 3.5 Abläufe
 
@@ -235,16 +254,6 @@ Dieses Ereignis wird versendet, wenn ein Besucher auf der Restaurant Webseite ei
 ##### Tisch reservieren
 
 ![activity_diagram_2](img\activity_diagram_2.png)
-
-##### Restaurant erstellen
-
-![activity_diagram_3](img\activity_diagram_3.png)
-
-## 3.6 Entwurf
-
-## 3.7 Fehlerbehandlung 
-
-## 3.8 Validierung
 
 # 4 Projektorganisation
 
@@ -261,6 +270,8 @@ Dieses Ereignis wird versendet, wenn ein Besucher auf der Restaurant Webseite ei
 
 - NodeJS
 - Express
+- mali
+- grpc
 
 ##### Datenbank
 
