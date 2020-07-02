@@ -227,7 +227,29 @@ Der von ihnen angeforderte Termin wurde bestätigt.
 
 
 
-![database](database.png)
+```json
+db = [
+    {
+        "_id": "5efdac33b04b9f2a08f79b83",
+        "userid": "sl9eLAR4DtVUvqjsxjU4kh9VERJ3",
+        "name": "FranzFieber",
+        "patientenakte": [
+            {
+                "aktenid": "29aa34b9-7def-4c65-a268-3f7ff86d5444",
+                "datum": "07.02.2020",
+                "anamnese": "string",
+                "symptome": "string",
+                "diagnose": "string",
+                "medikation": "string",
+                "psychischkrank": "string",
+                "sonstiges": "string"
+            }
+        ]
+    }
+]
+```
+
+
 
 
 
