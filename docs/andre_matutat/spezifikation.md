@@ -18,7 +18,7 @@ Ziel des Smart-Markts ist es, jeden Bürger der Smart-City, egal ob jung oder al
 
 Aber auch die Angestellten des Smart-Markts profitieren von der Digitalisierung. Der Lagerbestand jedes Produktes kann schnell und einfach eingesehen werden, ohne seinen Schreibtisch zu verlassen. Bestellungen beim Zuliefere können mit nur wenigen Klicks aufgegeben werden. Preise der Produkte können ebenfalls angepasst werden.
 
-Das System ist jedoch keine voll Automatisierung des Einzelhandels. Kundenbestellungen werden von Menschen bearbeitet, um die best mögliche Qualität zu gewährleisten.  
+Das System ist jedoch keine volle Automatisierung des Einzelhandels. Kundenbestellungen werden von Menschen bearbeitet, um die best mögliche Qualität zu gewährleisten.  
 
 
 
@@ -47,8 +47,7 @@ Das System ist jedoch keine voll Automatisierung des Einzelhandels. Kundenbestel
 
 ### 2.3.2 Betriebsbedingungen
 
-- Verfügbarkeit per Webzugriff mit den Browsen Google Chrome und Firefox
-- optimiert Darstellung auf Android Smartphones
+- Verfügbarkeit per Webzugriff mit den Browsern Google Chrome und Firefox
 
 ### 2.3.3 Qualitätsmerkmale
 
@@ -103,8 +102,6 @@ Prüfbarkeit |X|-|-|-
 
 ## 2.5 Anforderungen im Detail
 
-### Schablone für User Stories
-
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
 | Kunde        | Produkte einsehen                        | ich mich entscheiden kann, ob ich sie kaufen möchte          | Produkt Katalog wird im Frontend angezeigt                  |
@@ -117,12 +114,13 @@ Prüfbarkeit |X|-|-|-
 | Kunde| Produkt bewerten| ich Feedback geben kann | Produktbewertung möglich|
 | Angestellter | Bestellungen einsehen                    | ich offene Bestellungen sehen kann                           | Bestellungen werden angezeigt                               |
 | Angestellter | den Lagerbestand einsehen                | ich sehen kann, wie viele Produkte noch im Lager sind        | Lagerbestand einsehbar                                      |
-| Angestellter | Artikel bestellen                        | der Zulieferer den Supermarkt neue Artikel zuschickt         | Bestellungen können beim Zulieferer getätigt werden         |
 | Angestellter | Lager füllen                             | der Lagerbestand gefüllt wird                                | Lagerbestand lässt sich anpassen                            |
 | Angestellter | Preise ändern                            | ich Angebote erstellen oder Preisänderungen durchführen kann | Preise lassen sich ändern                                   |
-| Angestellter | Bestellungen bearbeiten                  | ich die Bestellung bearbeiten kann | Bestellungen lassen sich als "in bearbeitung" markieren     |
-| Angestellter | Bestellungen liefern                     | ich die Bestellung liefern kann | Bestellungen lassen sich als "in zustellung" markieren      |
-| Angestellter | Bestellungen fertigstellen               | ich die Bestellung als Fertiggestellt markieren kann | Bestellungen lassen sich als "fertig" markieren             |
+| Angestellter | Bestellstatus ändern | der aktuelle Bestellstatus einsehbar ist | Bestellstatus lässt sich ändern|
+| Kunde     | mich einloggen                           | damit mir die Funktionen des SmartMarkts zur Verfügung stehen | User kann sich anmelden                                     |
+|Angestellter|neue Artikel hinzufügen|damit diese von nun an auch gekauft werden können|Neue Artikel können hinzugefügt werden|
+|Angestellter|Artikel bearbeiten|Artikelinformationen aktuell gehalten werden können|Artikel lassen sich bearbeiten|
+|Kunde|Bewertungen ansehen|ich die Meinung anderer Nutzer sehen kann|Reviews werden auf der Artikelseite angezeigt|
 
 
 # 3 Technische Beschreibung
@@ -137,117 +135,52 @@ Prüfbarkeit |X|-|-|-
 
 ## 3.3 Schnittstellen
 
-### Produkt bestellen
+### 3.3.1 gRPC
 
-API um ein Produkt direkt (ohne Umweg über die Webseite) zu bestellen. Es kann nur ein Produkt (mit beliebiger Stückzahl) pro Anfrage bestellt werden. 
+API um Bestellungen direkt (ohne die Webseite) aufzugeben und den Bestellstatus zu prüfen. 
 
 ```
-"sgse.models.supermarkt.bestellen":{
-	"description": "Create an order. Returns orderID", 
-	"fields": [
-		{"name": "userID", "type": "id", "required": true}
-		{"name": "productID", "type": "id", "required": true}
-		{"name": "number", "type": "int", "required": true}
-		{"name": "usePoints", "type": "boolean", "required": true}
-	]
+syntax = "proto3";
+
+package grpcOrder;
+
+service OrderService { 
+    rpc makeOrder (OrderInformation) returns (OrderID){}
+    rpc trackOrder (OrderID) returns (OrderState){}
+}
+
+message OrderID {
+    int32 orderID=1; //-1 if order failed
+}
+
+message OrderInformation{
+    string userID=1;
+    int32 artickeID=2;
+    int32 howMany=3;
+}
+
+message OrderState{
+    string state=1;
 }
 ```
 
-### Bestellstatus einsehen
+### 3.3.2 Ereignisse (RabbitMQ)
 
-API um den Bestellstatus direkt (ohne Umweg über die Webseite) abzufragen. 
+#### Sende
 
 ```
-"sgse.models.supermarkt.verfolgen":{
-	"description": "Returns order status", 
-	"fields": [
-		{"name": "orderID", "type": "id", "required": true}
-	]
+"sgse.messages.supermarkt.updatePrice":{
+    "description": "The following Articleprice was updated", 
+        "fields": [
+            {"name": "articleID", "type": "int", "required": true}
+            {"name" "oldPrice". type: "float". "required": true}
+            {"name" "newPrice". type: "float". "required": true}
+        ]
 }
 ```
-
-## 3.3.1 Ereignisse
-
-#### Empfangen
-- **Bürger verstorben** 
-- **Bürger hinzugezogen**
-- **Bürger weggezogen**
 
 ## 3.4 Datenmodell 
-
-### Produkt
-
-```
-"sgse.supermarkt.produkt": {
-    "description": "A produkt",
-    "fields": [
-        {"name": "productID", "type": "id", "required": true},
-        {"name": "supplierID", "type": "id", "required": true},
-        {"name": "name", "type": "string", "required": true},
-        {"name": "price", "type": "float", "required": true},
-        {"name": "taxes", "type": "float", "required": true},
-        {"name": "stock", "type": "int", "required": true} 		
-    ]
-}
-```
-### Zulieferer
-```
-"sgse.supermarkt.suplier": {
-    "description": "Suplier",
-    "fields": [      
-        {"name": "supplierID", "type": "id", "required": true},
-        {"name": "name", "type": "string", "required": true},
-        {"name": "address", "type": "string", "required": true},
-        {"name": "phone", "type": "string", "required": true},
-        {"name": "mail", "type": "string", "required": true}, 		
-    ]
-}
-```
-### Bestellungen (Zulieferer)
-```
-"sgse.supermarkt.suplierOrder": {
-    "description": "Suplier",
-    "fields": [      
-        {"name": "productID", "type": "id", "required": true},
-        {"name": "supplierID", "type": "id", "required": true},
-        {"name": "date", "type": "Date", "required": true},
-        {"name": "number", "type": "int", "required": true},  
-        {"name": "status", "type": "string", "required": true}        
-    ]
-}
-```
-### Kunden
-```
-"sgse.supermarkt.customer": {
-    "description": "Customer of the market",
-    "fields": [      
-        {"name": "customerID", type: "id", "required": true},
-       	{"name": "paybackPoints", type: "int", "required": true},
-    ]
-}
-```
-### Bestellung (Kunden)
-```
-"sgse.supermarkt.order": {
-    "description": "Customer order",
-    "fields": [      
-        {"name": "customerID", type: "id", "required": true},
-       	{"name": "products", "type": "id[]", "required": true},
-       	{"name": "number", "type": "int[]", "required": true},
-       	{"name": "status", "type": "string", "required": true}       	
-    ]
-}
-```
-### Angestellte 
-```
-"sgse.supermarkt,employee": {
-    "description": "Employee of the market",
-    "fields": [      
-        {"name": "cemployeeID", type: "id", "required": true},    
-        {"name": "salery", type: "float", "required": true}
-    ]
-}
-```
+![m_lager](./img/erd.png)
 
 ## 3.5 Abläufe
 
@@ -255,21 +188,18 @@ API um den Bestellstatus direkt (ohne Umweg über die Webseite) abzufragen.
 
 ![ablaufdiagramm](./img/ablaufdiagramm.png)
 
-## 3.6 Entwurf
-
-- tbd
-
-## 3.7 Fehlerbehandlung 
+## 3.6 Fehlerbehandlung 
 
 * Keine Verbindung zur Bank --> Fehlermeldung
 * Keine Verbindung zum Bürgerbüro --> Fehlermeldung
+* Backend Request Failed -> Fehlermeldung
 * Produkt wird bestellt obwohl es nicht auf Lager ist --> keine Fehlerbehandlung
 
 # 4 Projektorganisation
 
 ## 4.1 Annahmen
 
-- Verwendete Technologien: HTML, JavaScript, react.js, Akka HTTP, Scala, MongoDB
+- Verwendete Technologien: HTML, Scala.js, Scala Playframework, PostgreSQL, gRPC, rabbitMQ, Docker
 - Aufteilung in Repositories gemäß Software- und Systemarchitektur und Softwarebbausteinen
 
 
@@ -286,21 +216,6 @@ API um den Bestellstatus direkt (ohne Umweg über die Webseite) abzufragen.
   * Fertigstellung Micro-Service
 * 02.07.2020 
   * Finale Einbindung in die Smart-City
-* 03.07.2020 
+* 02.07.2020 
   * Softwareübergabe
   * Präsentation 
-
-# 5 Anhänge
-
-## 5.1 Glossar 
-
-- tbd
-
-## 5.2 Referenzen
-
-- tbd
-
-## 5.3 Index
-
-
-

@@ -5,7 +5,7 @@
     <id>UMLUseCase</id>
     <coordinates>
       <x>350</x>
-      <y>360</y>
+      <y>460</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -16,60 +16,35 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>350</x>
-      <y>410</y>
-      <w>150</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>Termin machen
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>200</x>
-      <y>370</y>
-      <w>170</w>
-      <h>210</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;190.0;150.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>200</x>
-      <y>410</y>
-      <w>170</w>
-      <h>170</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;150.0;150.0;18.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>350</x>
-      <y>510</y>
-      <w>150</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>Besuch bezahlen
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>350</x>
+      <x>340</x>
       <y>560</y>
-      <w>150</w>
+      <w>170</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>Parkplatz bekommen
-</panel_attributes>
+    <panel_attributes>Beschwerden eintragen</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>470</y>
+      <w>150</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;160.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>560</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;70.0;120.0;18.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
@@ -100,83 +75,38 @@ einsehen
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>520</y>
-      <w>170</w>
-      <h>60</h>
+      <x>220</x>
+      <y>620</y>
+      <w>150</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;40.0;150.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;130.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>550</y>
-      <w>170</w>
-      <h>160</h>
+      <x>220</x>
+      <y>610</y>
+      <w>150</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;10.0;150.0;140.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>200</x>
-      <y>550</y>
-      <w>170</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;150.0;30.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>200</x>
-      <y>550</y>
-      <w>170</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;150.0;80.0</additional_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>330</x>
-      <y>330</y>
+      <y>430</y>
       <w>190</w>
-      <h>460</h>
+      <h>360</h>
     </coordinates>
     <panel_attributes>halign=left
 Website
 
 </panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>350</x>
-      <y>460</y>
-      <w>150</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>Rezept erhalten
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>200</x>
-      <y>470</y>
-      <w>170</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;90.0;150.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
@@ -194,23 +124,45 @@ einsehen
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>550</y>
-      <w>170</w>
-      <h>220</h>
+      <x>220</x>
+      <y>620</y>
+      <w>150</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;10.0;150.0;200.0</additional_attributes>
+    <additional_attributes>10.0;10.0;130.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>140</x>
-      <y>520</y>
+      <x>160</x>
+      <y>590</y>
       <w>80</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>Benutzer</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>340</x>
+      <y>510</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>eigene Akten einsehen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>520</y>
+      <w>140</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;110.0;120.0;10.0</additional_attributes>
   </element>
 </diagram>
