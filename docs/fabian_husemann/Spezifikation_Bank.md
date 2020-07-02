@@ -12,28 +12,13 @@
 
 ## 1.1 Beschreibung
 
-* Projektname
-* Darstellung der Produktvision in Prosa (5-10 Sätze)
-* Ziele
-* Für wen ist das Produkt/der Service?
-* Was ist das Bedürfnis? 
-* Was ist das Produkt/der Service?
-* Warum sollte der Kunde dieses Produkt/den Service „kaufen“ oder nutzen?
-* Im Gegensatz zu welchen anderen Produkten/Services steht dies?
-* Was macht dieses Produkt/der Service anders?
-* Warum ist das Projekt sinnvoll?
-* Welche Stakeholder sind betroffen und wie stehen Sie zu der Projektidee?
-* Welche alternativen Lösungsideen existieren für den identifizierten Bedarf?
-* Wie hoch sind Aufwand und erwarteter Nutzen und stehen sie in einem sinnvollen Verhältnis? (Lohnt sich das Projekt?)
-* Verfügen wir über die notwendigen Kompetenzen? (Umsetzbarkeit)
-* Welche Risiken und negativen Nebeneffekte sind zu erwarten?
+Der Microservice für die Bank erfüllt jede Aufgabe im Umgang mit Geld. Dabei wird über eine Website die Möglichkeit geboten, ein Bankkonto zu erstellen. Für ein Bankkonto können auch mehrere Kunden zugewiesen werden. Außerdem kann der Kunde sein Konto in einer Übersicht anzeigen lassen, um einen Überblick über die Überweisungen zu bekommen. Um den Kunden eine bestmögliche Kooperation mir der Bank zu bieten, gibt es Berater die auf jegliche Fragen reagieren. Die Berater können sich über eine Kundenübersichtsseite eine Liste mit allen Kunden anzeigen. Dort können sie sich ein Kunden auswählen und weitere Daten wie Konten und Kundeninformationen ausgeben. Auch Informationen über die Kreditwürdigkeit stehen in der Kundeninformation, dadurch ist es dem Kunden Möglich mit einer ausreichender Bonität Kredite aufzunehmen.
 
 ## 1.2 Ziele
 
-- Anwendungsbereiche, Motivation, Umfang, Alleinstellungsmerkmale, Marktanforderungen
-- Informationen zu Zielbenutzergruppen und deren Merkmale (Bildung, Erfahrung, Sachkenntnis)
-- Abgrenzung (Was ist das Softwaresystem _nicht_)
-- ggfs. SWOT-Analyse
+Das Ziel des Microservice ist es, dem Kunden ein sicheren Aufbewahrungsort ihres Vermögens zu bieten und einen leichten Umgang mit ihrem Geld. Das umfasst eine übersichtliche Kontoanzeige, damit der Kunde alle Zahlungen auf einem Blick hat. Damit der Berater dem Kunden bestmöglich beraten kann ist außerdem wichtig, dass die Website einfach und schnell bedient werden kann. Der Berater besitzt Fachkenntnisse und hat viel Erfahrung im Umgang mit Computern. Da der Kunde eine normale Person oder auch ein weitere Microservice sein kann ist der Erfahrungsgrad sehr unterschiedlich und kann nicht genau definiert werden.
+
+Dieser Microservice unterstütz mit dem Umgang von Geld keine Barzahlungen, da es nicht möglich ist im Rahmen unseres Projektes Bargeld anzubieten. Außerdem ist es nicht möglich Geld in anderer Währungen einzuzahlen.
 
 # 2 Anforderungen
 
@@ -172,7 +157,7 @@ Außerdem <u>kann</u> ein Startdatum angegeben werden der bestimmt, wann die Üb
 Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
 
 ```json
-"bank.ueberweisung":{
+"sgse.models.bank.transfer":{
     "iban": "DE46 4585 4585 2000 5145 20",
     "purpose": "Einkauf",  
     
@@ -191,11 +176,25 @@ Diese Schnittstelle dient dazu einen neues Bankkonto anzulegen. Dabei <u>müssen
 Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
 
 ```json
-"bank.createAccount":{
+"sgse.models.bank.createAccount":{
     "customerNr": "1",
     "description": "Kontobeschreibung: Firmenkonto | Sparkonto"
 }
 ```
+
+### Bankkonto löschen
+
+Diese Schnittstelle dient dazu einen Bankkonto zu löschen. Dabei <u>müssen</u> Informationen über eine Kundennummer angegeben werden. Als Rückgabewert wird der Status der Löschung zurück gegeben.
+
+Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
+
+```json
+"sgse.models.bank.deleteAccount":{
+    "customerNr": "1",
+    "iban": "DE46 7845 2998 2554 8461 20"
+}
+```
+
 ## 3.3.1 Ereignisse
 
 ### Überweisungsnachricht
@@ -203,7 +202,7 @@ Die Schnittstelle sollte im folgenden JSON Format genutzt werden:
 Die Überweisungsnachricht wird für jede Überweisung verschickt. Dabei bekommen alle Kunden die mit den Konto-A oder mit dem Konto-B verknüpft sind diese Nachricht. 
 
 ````json
-"bank.transferMessage": {
+"sgse.models.bank.transferMessage": {
     "customerNr": "1",
     "lastname": "Husemann",
     
@@ -217,7 +216,7 @@ Die Überweisungsnachricht wird für jede Überweisung verschickt. Dabei bekomme
 Dieses Ereignis wird aufgerufen wenn ein Kunde einen Berater kontaktiert und der Berater nicht verfügbar ist. Der Berater muss die Kontaktanfrage bestätigen und die Nachricht wird gesendet.
 
 ```json
-"bank.answerMessage":{
+"sgse.models.bank.ContactResponse":{
     "message": "Ihr Berater ist für sie Verfügbarnachricht."
 }
 ```
@@ -265,29 +264,7 @@ Konto löschen obwohl Geldvorhanden ist → Fehlermeldung im Frontend
 
 ## 4.1 Annahmen
 
-## 4.2 Verantwortlichkeiten
-
-| Softwarebaustein | Person(en)      |
-| ---------------- | --------------- |
-| Frontend         | Fabian Husemann |
-| Backend          | Fabian Husemann |
-| Datenbanken      | Fabian Husemann |
-
-### Rollen
-
-#### Softwarearchitekt
-
-Entwirft den Aufbau von Softwaresystemen und trifft Entscheidungen über das Zusammenspiel der Softwarebausteine.
-
-#### Frontend-Entwickler
-
-Entwickelt graphische oder andere Benutzerschnittstellen, insbesondere das Layout einer Anwendung.
-
-#### Backend-Entwickler
-
-Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse Datenquellen und externe Dienste integriert und für die Anwendung bereitgestellt.
-
-## 4.3 Grober Projektplan
+## 4.2 Grober Projektplan
 
 ### Meilensteine
 

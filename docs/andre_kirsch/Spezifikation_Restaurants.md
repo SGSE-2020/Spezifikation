@@ -266,33 +266,7 @@ Dieses Ereignis wird versendet, wenn ein Besucher auf der Restaurant Webseite ei
 
 - MongoDB
 
-## 4.2 Verantwortlichkeiten
-
-### Rollen
-
-#### Softwarearchitekt
-
-Entwirft den Aufbau von Softwaresystemen und trifft Entscheidungen über das Zusammenspiel der Softwarebausteine.
-
-#### Frontend-Entwickler
-
-Entwickelt graphische oder andere Benutzerschnittstellen, insbesondere das Layout einer Anwendung.
-
-#### Backend-Entwickler
-
-Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem  diverse Datenquellen und externe Dienste integriert und für die  Anwendung bereitgestellt.
-
-### Rollenzuordnung
-
-| Rolle               | Name         |
-| ------------------- | ------------ |
-| Softwarearchitekt   | André Kirsch |
-| Frontend-Entwickler | André Kirsch |
-| Backend-Entwickler  | André Kirsch |
-
-
-
-## 4.3 Grober Projektplan
+## 4.2 Grober Projektplan
 
 ### Meilensteine
 

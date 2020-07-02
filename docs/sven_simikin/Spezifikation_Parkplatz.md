@@ -144,14 +144,15 @@ Behandelt User Stories: Falschparker melden
 ## 2.5 Anforderungen im Detail
 
 ### Entität
-| Funktion                 | Als     | möchte ich                                      | so dass                                                      | Akzeptanz                                         | Priorität |
-| ------------------------ | ------- | ----------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------- | --------- |
-| Auslastung abfragen      | Entität | die Auslastung einer Parkfläche abfragen        | ich mir einen überblick über freie Plätze verschaffen kann   | Übersicht über Parkplatzauslastung erhalten       | Hoch      |
-| Parkplatz reservieren    | Entität | einen Parkplatz für meinen Kunden reservieren   | ein Parkplatz für meinen Kunden reserviert wird              | Parkplatz wird für Zeitraum reserviert            | Hoch      |
-| Reservierung stornieren  | Entität | eine existierende Reservierung Stornieren       | eine Reservierung wird für meinen Kunden storniert wird      | Reservierung wird storniert                       | Mittel    |
-| Parkfläche bereitstellen | Entität | Parkflächen dem Parkplatz-Service bereitstellen | eine Parkflächen dem Parkplatz-Service bereitgestellt wird   | Parkflächen sind im System verfügbar              | Hoch      |
-| Parkfläche bearbeiten    | Entität | Parkflächen des Parkplatz-Service bearbeiten    | eine Bereitgestellte Parkfläche aktualisiert wird            | Parkflächen wurden aktualisiert                   | Gering    |
-| Parkfläche entfernen     | Entität | Parkflächen des Parkplatz-Service entfernen     | eine Bereitgestellte Parkfläche aus dem System entfernt wird | Parkflächen sind nicht länger im System verfügbar | Gering    |
+| Funktion                  | Als         | möchte ich                                       | so dass                                                      | Akzeptanz                                         | Priorität  |
+| ------------------------- | ----------- | ------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------- | ---------- |
+| Auslastung abfragen       | Entität     | die Auslastung einer Parkfläche abfragen         | ich mir einen überblick über freie Plätze verschaffen kann   | Übersicht über Parkplatzauslastung erhalten       | Hoch       |
+| Parkplatz reservieren     | Entität     | einen Parkplatz für meinen Kunden reservieren    | ein Parkplatz für meinen Kunden reserviert wird              | Parkplatz wird für Zeitraum reserviert            | Hoch       |
+| Reservierung stornieren   | Entität     | eine existierende Reservierung Stornieren        | eine Reservierung wird für meinen Kunden storniert wird      | Reservierung wird storniert                       | Mittel     |
+| Parkfläche bereitstellen  | Entität     | Parkflächen dem Parkplatz-Service bereitstellen  | eine Parkflächen dem Parkplatz-Service bereitgestellt wird   | Parkflächen sind im System verfügbar              | Hoch       |
+| ~~Parkfläche bearbeiten~~ | ~~Entität~~ | ~~Parkflächen des Parkplatz-Service bearbeiten~~ | ~~eine Bereitgestellte Parkfläche aktualisiert wird~~        | ~~Parkflächen wurden aktualisiert~~               | ~~Gering~~ |
+| Parkfläche entfernen      | Entität     | Parkflächen des Parkplatz-Service entfernen      | eine Bereitgestellte Parkfläche aus dem System entfernt wird | Parkflächen sind nicht länger im System verfügbar | Gering     |
+| Falschparker melden       | Entität     | Meldungen bezüglich Falschparkern erhalten       | ich diese Meldungen bearbeiten kann                          | Ein Falschparker wird als Nachricht gemeldet      | Hoch       |
 
 ### Kunde
 | Funktion                | Als     | möchte ich                                | so dass                                | Akzeptanz                              | Priorität |
@@ -414,8 +415,10 @@ Abläufe, wie das Melden von Vorfällen werden aufgrund ihrer einfachheit nicht 
 - nodemon/node - Webserver
 - Node gRPC Library - gRPC Framework for Node 
 - Node Redis - Redis client for Node
+- TypeORM - Object Relation Mapper
 #### Database
 - Redis - In-Memory Database 
+- MySQL - ER-Datenbank
 
 ## 4.3 Grober Projektplan
 
@@ -450,18 +453,21 @@ Abläufe, wie das Melden von Vorfällen werden aufgrund ihrer einfachheit nicht 
 - [Angular](https://angular.io/docs)
 - [Firebase](https://firebase.google.com/docs/auth)
 - [gRPC](https://grpc.io/docs/)
+- [MySQL](https://dev.mysql.com/doc/)
 - [NGINX](https://nginx.org/en/docs/)
 - [Node](https://nodejs.org/en/docs/)
 - [Nodemon](https://github.com/remy/nodemon#nodemon)
 - [RabbitMQ](https://www.rabbitmq.com/documentation.html)
 - [Redis](https://redis.io/documentation)
+- [TypeORM](https://typeorm.io/#/)
 
-### Softwarepakete und Bibiliothken
+### Softwarepakete und Bibliotheken
 - [AMQP 0-9-1](https://www.npmjs.com/package/amqplib)
 - [AngularFire](https://www.npmjs.com/package/@angular/fire)
 - [gRPC Client](https://www.npmjs.com/package/@grpc/grpc-js)
 - [nodemon](https://www.npmjs.com/package/nodemon)
 - [redis](https://www.npmjs.com/package/redis)
+- [typeorm](https://www.npmjs.com/package/typeorm)
 
 ## 5.3 Index
 

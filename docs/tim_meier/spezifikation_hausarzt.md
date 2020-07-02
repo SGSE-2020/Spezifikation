@@ -7,34 +7,17 @@
 
 ## 1.1 Beschreibung
 
-* Projektname
-  * Microservice Hausarzt
-* Darstellung der Produktvision in Prosa (5-10 Sätze)
-* Ziele
-  * Online Arzttermine
-* Für wen ist das Produkt/der Service?
-  * für die Bürger der Stadt
-* Was ist das Bedürfnis?
-  * Einfach über den Browser mit dem Hausarzt kommunizieren
-* Was ist das Produkt/der Service?
-  * Web Applikation für den Hausarzt
-* Warum sollte der Kunde dieses Produkt/den Service „kaufen“ oder nutzen?
-  * gehört zu Smart City
-* Im Gegensatz zu welchen anderen Produkten/Services steht dies?
-* Was macht dieses Produkt/der Service anders?
-* Warum ist das Projekt sinnvoll?
-* Welche Stakeholder sind betroffen und wie stehen Sie zu der Projektidee?
-* Welche alternativen Lösungsideen existieren für den identifizierten Bedarf?
-* Wie hoch sind Aufwand und erwarteter Nutzen und stehen sie in einem sinnvollen Verhältnis? (Lohnt sich das Projekt?)
-* Verfügen wir über die notwendigen Kompetenzen? (Umsetzbarkeit)
-* Welche Risiken und negativen Nebeneffekte sind zu erwarten?
+Der Hausarzt ist ein wichtiger Bestandteil für die Gesundheit der Bürger aus der Smart City. Er ist die erste Anlaufstelle bei körperlichen Beschwerden und Krankheiten. Als Bürger der Smart City kann man sich mit seiner Email anmelden und online seine Beschwerden eintragen. Außerdem ist es jedem Bürger möglich sich seine eigenen Krankenakten anzusehen, welche für gewöhnlich nur mit viel Aufwand einsehbar sind. Es gibt weiterführend auch eine Statistik zu den aktuell verbreiteten Krankheiten und Tipps und Tricks, wie man einer Ansteckung vorbeugen kann.
+
+
 
 ## 1.2 Ziele
 
-- Anwendungsbereiche, Motivation, Umfang, Alleinstellungsmerkmale, Marktanforderungen
-- Informationen zu Zielbenutzergruppen und deren Merkmale (Bildung, Erfahrung, Sachkenntnis)
-- Abgrenzung (Was ist das Softwaresystem _nicht_)
-- ggfs. SWOT-Analyse
+Die Website des Hausarztes dient als Schnittstelle zwischen den Bürgern der Stadt und dem Hausarzt. Dabei vereinfacht es die Kommunikation für Bürger und Mitarbeiter. Außerdem bietet es einen einfachen Einblick in die Krankenakte.
+
+Das System richtet sich an alle Bürger der Smart City, welche Beschwerden und Krankheiten haben. Es ist eine einfache Anlaufstelle um diese bei dem Hausarzt zu untersuchen.
+
+Die Website bietet lediglich eine Möglichkeit seine Beschwerden einzutragen, damit sich der Arzt besser vorbereiten kann. Es ist weiterhin erforderlich, dass der Betroffene zu dem Termin erscheint um sich behandeln zu lassen.
 
 # 2 Anforderungen
 
@@ -44,9 +27,9 @@
 
 | Funktion / Relevanz | Name | Wissen  | Interessen / Ziele  |
 |---|---|---|---|
-| Arzt | Alexander Arzt | Kennt sich mit Medizin aus | Vereinfachung der Terminverwaltung und  Patientenakten |
+| Arzt | Hans Heiler | Kennt sich mit Medizin aus | Vereinfachung der Patientenakten |
 | Mitarbeiter | Manfred Mitarbeiter |  Erfahren im Umgang mit Patienten  | Einfache Einsicht in Patientenbegehren                      |
-| Stammkunde | Gerd Grippe | Häufiger Patient | Einfacher Termine bekommen, Einsicht in seine Patientenakte |
+| Stammkunde | Gerd Grippe | Häufiger Patient | Einsicht in seine Patientenakte |
 
 ## 2.2 Funktionale Anforderungen
 
@@ -109,11 +92,7 @@ Prüfbarkeit |-|-|X|-
 
 ![Home](mockups\Home.png)
 
-#### Profil
 
-![Profil-default](mockups\Profil-default.png)
-
-![Profil-neuertermin](mockups\Profil-neuertermin.png)
 
 #### Krankheitsstatistik
 
@@ -123,17 +102,13 @@ Prüfbarkeit |-|-|X|-
 
 ![Impressum](mockups\Impressum.png)
 
+#### Termin
+
+![Profil-default](mockups\Profil-default.png)
+
 #### Admin/Mitarbeiter Patientenübersicht
 
 ![Admin_patienten_uebersicht](mockups\Admin_patienten_uebersicht.png)
-
-#### Admin/Mitarbeiter Mitarbeiterübersicht
-
-![Admin_mitarbeiter_uebersicht](mockups\Admin_mitarbeiter_uebersicht.png)
-
-#### Admin/Mitarbeiter Termine
-
-![Admin_termine_uebersicht](mockups\Admin_termine_uebersicht.png)
 
 ## 2.5 Anforderungen im Detail
 
@@ -142,9 +117,7 @@ Prüfbarkeit |-|-|X|-
 
 | **Als**  | **möchte ich**| **so dass** | **Akzeptanz**| **Priorität** |
 | ---- | :----| :----- | :---- | ---- |
-| Benutzer | einen Termin machen     | ich auf Krankheiten überprüft werden kann | Termin machen, auf der Online Website | hoch  |
-| Benutzer | den Besuch bezahlen | ich eine Behandlung bekomme | Bezahlmöglichkeit in der Online Website | hoch  |
-| Benutzer | einen Parkplatz bekommen | ich nicht so weit laufen muss | automatische Reservierung durch Termin machen | mittel |
+| Benutzer | meine Beschwerden eintragen     | ich auf Krankheiten überprüft werden kann | Beschwerden eintragen, auf der Online Website | hoch  |
 | Benutzer | Öffnungszeiten einsehen | ich planen kann | Ansicht der Öffnungszeiten | mittel |
 | Benutzer | Impressum einsehen | ich weitere Kontaktinformationen habe | Ansicht des Impressums | mittel |
 | Benutzer | Krankheitsstatistik einsehen | ich weiß, welche Krankheiten im Moment verbreitet sind | Ansicht der Krankheitsstatistik | mittel |
@@ -161,10 +134,7 @@ Prüfbarkeit |-|-|X|-
 | Administrator | nur der Admin Zugriff auf Admin Funktionen hat | kein unbefugter Änderungen machen kann | Adminkonto | hoch |
 | Administrator | einen Überblick über die Patienten haben | ich einen Überblick über die Patienten habe | Übersicht bei Admin Zugriff | hoch |
 | Administrator | einen Blick in die Krankenakte der Patienten werfen | die Patienten die beste mögliche Behandlung bekommen | genauere Übersicht im Admin Zugriff | mittel |
-| Administrator | Rezepte für Medikamente an Kunden geben | der Kunde Medikamente kaufen kann | Herausgabe von Rezepten | mittel |
-| Administrator | Patienten an das Krankenhaus weiterleiten | die Patienten die beste mögliche Behandlung bekommen | Weiterleitungsfunktion | mittel |
-| Administrator | eine Mitarbeiterübersicht haben| ich einen Überblick über die Mitarbeiter habe | Übersicht bei Admin Zugriff | mittel |
-| Administrator | meine Mitarbeiter bezahlen | die Mitarbeiter arbeiten | Mitarbeiter Bezahlmöglichkeit | mittel |
+| Administrator | die Krankenakte der Patienten bearbeiten | die Patienten die beste mögliche Behandlung bekommen | akten bearbeiten | mittel |
 
 # 3 Technische Beschreibung
 
@@ -185,7 +155,7 @@ Prüfbarkeit |-|-|X|-
 Mithilfe der "user_id" kann ein Patient an den Hausarzt übergeben werden. Dabei muss ein Grund angegeben werden, warum der Patient überwiesen werden soll.
 
 ```json
-"sgse.model.hausarzt.ueberweisung": {
+"sgse.model.hausarzt.sendUeberweisung": {
     "description": "Object um einen Patienten an den Hausarzt zu ueberweisen",
     "fields": [
       {"name": "user_id", "type": "string", "required": true},
@@ -202,19 +172,10 @@ Mithilfe der "user_id" kann die Krankenakte eines Patienten angefordert werden.
 
 ```json
 // Anforderung
-"sgse.model.hausarzt.anforderung_krankenakte": {
+"sgse.model.hausarzt.getKrankenakte": {
     "description": "Object um die Krankeakte eines Patienten anzufordern",
     "fields": [
       {"name": "user_id", "type": "string", "required": true}
-    ]
-}
-
-// Antwort des Hausarztes
-"sgse.model.hausarzt.krankenakte": {
-    "description": "Object um die Krankeakte eines Patienten anzufordern",
-    "fields": [
-      {"name": "user_id", "type": "string", "required": true},
-      {"name": "patientenakten", "type": "list[patientenakte]", "required": true}
     ]
 }
 ```
@@ -226,9 +187,10 @@ Mithilfe der "user_id" kann die Krankenakte eines Patienten angefordert werden.
 Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, welche danach gespeichert wird.
 
 ```json
-"sgse.model.hausarzt.aktualisierung_krankenakte": {
+"sgse.model.hausarzt.updatePatientenakte": {
     "description": "objekt einer patientenakte, welches zum aktualisieren ist",
     "fields": [
+      {"name": "patientenakte_id", "type": "string", "required": true},
       {"name": "user_id", "type": "string", "required": true},
       {"name": "datum", "type": "string", "required": true},
       {"name": "anamnese", "type": "string", "required": false},
@@ -245,7 +207,21 @@ Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, 
 
 ## 3.3.1 Ereignisse
 
-- In Event-gesteuerten Systemen: Definition der Ereignisse und deren Attribute
+#### Terminbestätigung
+
+Der von ihnen angeforderte Termin wurde bestätigt.
+
+```json
+"sgse.model.hausarzt.termin_bestaetigung": {
+    "description": "objekt einer patientenakte, welches zum aktualisieren ist",
+    "fields": [
+      {"name": "user_id", "type": "string", "required": true},
+      {"name": "datum", "type": "string", "required": true},
+      {"name": "uhrzeit", "type": "string", "required": false},
+      {"name": "anamnese", "type": "string", "required": false}
+    ]
+}
+```
 
 ## 3.4 Datenmodell 
 
@@ -267,18 +243,6 @@ Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, 
 
 
 
-## 3.6 Entwurf
-
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
-
-## 3.7 Fehlerbehandlung 
-
-* Mögliche Fehler / Exceptions auflisten
-
-## 3.8 Validierung
-
-* Relevante (Integrations)-Testfälle, die aus den Use Cases abgeleitet werden können
-
 # 4 Projektorganisation
 
 ## 4.1 Annahmen
@@ -288,47 +252,20 @@ Beim Aktualisieren muss die gesamte Krankenakte des Patienten geschickt werden, 
 - Die Bausteine Datenbank, Frontend und Backend müssen als Docker Container vorliegen
 - Für die Kommunikation mit anderen Prozessen wir gRPC verwendet
 
-## 4.2 Verantwortlichkeiten
-
-- Zuordnung von Personen zu Softwarebausteinen aus Kapitel 3.1 und 3.2
-- Rollendefinition und Zuordnung
-
-| Softwarebaustein | Person(en) |
-|----------|-----------|
-| Komponente A | Thomas Mustermann |
-
-### Rollen
-
-#### Softwarearchitekt
-Entwirft den Aufbau von Softwaresystemen und trifft Entscheidungen über das Zusammenspiel der Softwarebausteine.
-
-#### Frontend-Entwickler
-Entwickelt graphische oder andere Benutzerschnittstellen, insbesondere das Layout einer Anwendung.
-
-#### Backend-Entwickler
-Implementiert die funktionale Logik der Anwendung. Hierbei werden zudem diverse Datenquellen und externe Dienste integriert und für die Anwendung bereitgestellt.
-
-### Rollenzuordnung
-
-| Name     | Rolle     |
-|----------|-----------|
-| Thomas Mustermann | Softwarearchitekt |
-
 
 ## 4.3 Grober Projektplan
 
-- Meilensteine
-
 ### Meilensteine
-* KW 43 (21.10)
-  * Abgabe Pflichtenheft
-* KW 44 (28.10) / Projekt aufsetzen
-  * Repository Struktur
-* KW 45 (4.11) / Implementierung
-  * Implementierung #3 (Final)
-* KW 48 (18.12) / Abnahmetests
-  * manuelle Abnahmetestss
-  * Präsentation / Software-Demo
+- KW 20(11.05.2020)
+  - Abgabe Software-Spezifikation
+- KW 24(08.06.2020)
+  - Fertigstellung und Präsentation vom Prototyp
+- KW 27(30.06.2020)
+  - Fertigstellung vom Mikro-Service
+- KW 27(02.07.2020)
+  - Einbindung ist vollständig
+- KW 27(03.07.2020)
+  - Finale Abgabe und Präsentation
 
 # 5 Anhänge
 
