@@ -9,7 +9,7 @@
 
 Das Projekt **Tierarzt** soll Kunden ermöglichen Termine anzufragen, abzusagen und einzusehen. Es soll außerdem ermöglicht 
 werden Tierarzt Kosten direkt zu bezahlen und Haustierdaten zu erstellen. Anstehende Termine sollen in einem Kalendar angezeigt werden. 
-Für Mitarbeiter des Tierarztes soll es möglich seine Haustierdaten zu bearbeiten und Terminanfragen anzunehmen oder abzulehnen. 
+Für Mitarbeiter des Tierarztes soll es möglich sein Haustierdaten zu bearbeiten und Terminanfragen anzunehmen oder abzulehnen. 
 
 ## 1.2 Ziele
 
@@ -18,10 +18,10 @@ Tierarzt Mitarbeiter so einfach wie möglich zu gestalten. Viele Besitzer verlie
 wann beispielsweise eine Impfung ansteht. 
 Der Terminkalender des Microservices soll es erleichtern, all diese Termine im Blick zu behalten.  
 
-Tierarzt Mitarbeiter können sich durch die genauen Pläne besser auf Behandlungen vorbereiten, und ihre Tage besser planen.
+Tierarzt Mitarbeiter können sich durch die genauen Pläne besser auf Behandlungen vorbereiten und ihre Tage besser planen.
 
 Es werden außerdem Benachrichtigungen versendet, wenn Termine angenommen, abgelehnt, abgesagt oder angenommen worden sind.
-Sowohl der Kunde als auch der behandelnde Mitarbeiter werden benachrichtigt.
+Dadurch sind sowohl Kunden als auch Mitarbeiter stehts über Termine informiert.
 
 # 2 Anforderungen
 
@@ -78,29 +78,34 @@ Prüfbarkeit |-|-|X|-|
 
 ### Tierarzt Hauptseite
 Die Hauptseite erlaubt dem Kunden oder Mitarbeiter sich einzuloggen oder aktuelle Information des Tierarztes zu lesen.
+
 ![Tierarzt Hauptseite](img/TierarztMain.png)
 
 ### Tierarzt Hauptseite eingeloggt
 Sobald ein Kunde oder Mitarbeiter eingeloggt ist, kann er über die Navigationselemente zu der Terminübersicht, Verwaltungsübersicht
 oder Nachrichtenübersicht wechseln.
+
 ![Tierarzt Hauptseite Eingeloggt](img/TierarztMainLoggedIn.png)
 
 ### Terminkalendar Übersicht
 In dieser Übersicht werden Kunden und Mitarbeitern alle Tage angezeigt, an denen ein Termin ansteht. Wenn auf einen Tag mit Termin geklickt wird,
 werden alle Termine ausgeklappt. Wird nun auf einen dieser Termine geklickt, werden Informationen zu diesem Termin angezeigt 
-und der Termin kann abgesagt werden. Kunden können von hier aus neue Termine anfordern, während Mitarbeiter Anfragen annehmen oder ablehnen können. 
+und der Termin kann abgesagt werden. Kunden können von hier aus neue Termine anfordern, während Mitarbeiter Anfragen annehmen oder ablehnen können.
+ 
 ![Tierarzt Kalendar Übersicht](img/TierarztTermineOverview.png)
 
 ### Terminkalendar Termin Info
 Diese Ansicht wird über einen Linksklick auf den Termin Anfordern Button geöffnet. Hier kann ein Kunde einen Tierarzt
 Besuch anfordern, wofür der Zeitraum, in welchem der Termin liegen soll, das zu behandelnde Tier, und der Grund angegeben 
 werden müssen.
-![Tierarzt Kalendar Anfordern](img/TierarztTerminInfo.png)
+
+![Tierarzt Kalendar Info](img/TierarztTerminInfo.png)
 
 ### Terminkalendar Termin Anfordern
 Diese Ansicht wird über einen Linksklick auf den Termin Anfordern Button geöffnet. Hier kann ein Kunde einen Tierarzt
 Besuch anfordern, wofür der Zeitraum, in welchem der Termin liegen soll, das zu behandelnde Tier, und der Grund angegeben 
 werden müssen.
+
 ![Tierarzt Kalendar Anfordern](img/TierarztTerminAnfordern.png)
 
 ### Terminkalendar Termin Antwort
@@ -110,34 +115,40 @@ Auf der linken Seite werden dazu alle relevanten Daten des Termins angezeigt, we
 welche in den vom Kunden angegeben Zeitraum liegt, die aufkommenden Kosten und den behandelnden Mitarbeiter.
 Wurde ein Termin angelegt, werden Kunde und behandelnder Mitarbeiter mit einer Nachricht Informiert, der Termin in beide
 Kalendar eingetragen und die Kosten als Schulden bei dem Kunden vermerkt. 
-![Tierarzt Kalendar Übersicht](img/TierarztTerminAntwort.png)
+
+![Tierarzt Kalendar Antwort](img/TierarztTerminAntwort.png)
 
 ### Tierarzt Verwaltung Übersicht
 Hier kann ein Kunde auswählen, ob er neue Tiere hinzufügen will, oder, falls es noch Kosten zu bezahlen gibt, er diese 
 bezahlen möchte. Mitarbeiter können hier außerdem die Benutzerverwaltung auswählen.
-![Tierarzt Hauptseite Eingeloggt](img/TierarztVerwaltungMain.png)
+
+![Tierarzt Verwaltung](img/TierarztVerwaltungMain.png)
 
 ### Tierarzt Verwaltung Tier 
 Hier werden Kunden alle eingetragenen Tiere angezeigt. Es können außerdem neue Tiere hinzugefügt werden oder Daten von existierenden
 Tieren angepasst werden. Mitarbeitern werden alle registrierten Tiere angezeigt, welche dann bearbeitet oder gelöscht werden
 können. 
-![Tierarzt Hauptseite Eingeloggt](img/TierarztVerwaltungTier.png)
 
-### Tierarzt Verwaltung Tier Info
+![Tierarzt Tier](img/TierarztVerwaltungTier.png)
+
+### Tierarzt Verwaltung Tier Bearbeiten
 Dieses Fenster wird verwendet, wenn ein neues Tier angelegt werden soll, oder ein existierendes Bearbeitet werden soll.
 Tiere können von diesem Fenster aus auch gelöscht werden.
-![Tierarzt Hauptseite Eingeloggt](img/TierarztVerwaltungTierbearbeiten.png)
+
+![Tierarzt Tier Info](img/TierarztVerwaltungTierbearbeiten.png)
 
 ### Tierarzt Verwaltung Benutzer 
 Hier können Mitarbeiter Benutzerinformationen verwalten, und zum Beispiel Benutzern Mitarbeiter Rechte geben. Das Bearbeitungsfenster ähnelt hierbei dem
 der Tierbearbeitung.
-![Tierarzt Hauptseite Eingeloggt](img/TierarztVerwaltungBenutzer.png)
+
+![Tierarzt Benutzer](img/TierarztVerwaltungBenutzer.png)
 
 ### Tierarzt Verwaltung Nachrichten 
 Dieses Fenster enthält Benachrichtigungen für Kunden und Mitarbeiter. Kunden werden hier informiert, wenn angefragte Termine
 angenommen oder abgelehnt wurden, wie viel angenommene Termine Kosten werden oder Termine abgesagt wurden.
 Mitarbeiter werden hier über bevorstehende Termine informiert und benachrichtigt, wenn Kunden Termine absagen.
-![Tierarzt Hauptseite Eingeloggt](img/TierarztNachrichten.png)
+
+![Tierarzt Nachrichten](img/TierarztNachrichten.png)
 
 ## 2.5 Anforderungen im Detail
 
@@ -171,33 +182,108 @@ Mitarbeiter werden hier über bevorstehende Termine informiert und benachrichtig
 
 ### Termine abfragen
 Mit Hilfe dieser Schnittstelle können alle vereinbarten Termine bestimmter User angefragt werden. Dies kann verwendet werden,
-um eventuelle Termin Überschneidungen zu prüfen, und so den Benutzer vor einer Termin Erstellung zu warnen, dass er in diesem
+um eventuelle Termin Uberschneidungen zu prüfen, und so den Benutzer vor einer Termin Erstellung zu warnen, dass er in diesem
 Zeitraum bereits einen Termin mit Service X hat.
-
 Das Payload dieser Schnittstelle wäre dazu wie folgt:
-    
-```json
-"tierarzt.appointments":{
-    "appointments": [
-        {
-            "appointmentid": string,
-            "starttime": string,
-            "endtime": string
-        },
+````json
+"sgse.models.tierarzt.appointments":{
+    "description": "Holds all appointments of a specific user with the Tierarzt",
+    "fields": [
+        {"name": "uid", "type": "string"},
+        {"appointments": [
+            {
+                {"name": "appointmentid", "type": "string"},
+                {"name": "start", "type": "string"},
+                {"name": "end", "type": "string"}
+            },
+        ]}
     ]
 }
+````
+## 3.3.1 Ereignisse
+### Termin vereinbaren
+Durch dieses Ereignis kann ein Benutzer einen Termin vereinbaren. Dazu muss der Benutzer seinen Wunschzeitraum mit Anfang und
+Endzeitpunkt angeben. Außerdem muss das zu behandelnde Tier angegeben werden und der Termingrund.
+Hierbei sähe der Payload wie folgt aus:
+````json
+"sgse.models.tierarzt.appointmentrequest":{
+    "description": "Holds a wish date and the reason",
+    "fields": [
+        {"name": "requestid", "type": "string"},
+        {"name": "uid", "type": "string"},
+        {"name": "animalid", "type": "string"},
+        {"name": "start", "type": "string"},
+        {"name": "end", "type": "string"},
+        {"name": "reason", "type": "string"},
+    ]
+}
+````
+Der Benutzer bekommt nun vom Tierarzt eine Antwort. Dazu gehört der genaue Beginn, der behandelnde Arzt und die anfallenden
+Kosten
+Dies wurde in folgender Form versendet werden:
+````json
+"sgse.models.tierarzt.appointmentresponse":{
+    "description": "Gives the user dates to choose from, and a rough estimation on the duration of the treatment",
+    "fields": [
+        {"name": "appointmentid", "type": "string"},
+        {"name": "uid", "type": "string"},
+        {"name": "doctorid", "type": "string"},
+        {"name": "animalid", "type": "string"},
+        {"name": "start", "type": "string"},
+        {"name": "end", "type": "string"},
+        {"name": "reason", "type": "string"},
+        {"name": "cost", "type": "double"},
+    ]
+}
+````
+### Termin stornieren
+Der Benutzer kann Termine stornieren. Dafür wird die appointmentid des zu stornierenden Termins übertragen und aus der
+Datenbank entfernt.
+````json
+"sgse.models.tierarzt.appointmentcancel":{
+    "description": "The user sends the ID of the appointment he wants to cancel",
+    "fields": [
+        {"name": "uid", "type": "string"},
+        {"name": "appointmentid", "type": "string"}
+    ]
+}
+````
+### Tierdaten erstellen
+Diese Funktion wird von Benutzern und Mitabeitern verwendet, um neue Tiere in die Datenbank aufzunehmen. Hierbei werden zunächst allgemeine Daten
+wie die Tierart, Rasse, Gewicht und Größe erfasst, aber auch die UID des Besitzers.
+````json
+"sgse.models.tierarzt.animalinfocreate":{
+    "description": "Creates new information about a new animal.",
+    "fields": [
+        {"name": "uid", "type": "string"},
+        {"name": "name", "type": "string"},
+        {"name": "type", "type": "string"},
+        {"name": "race", "type": "string"},
+        {"name": "weight", "type": "double"},
+        {"name": "height", "type": "double"}
+    ]
+}
+````
+### Tierdaten bearbeiten
+Durch diese Funktion kann der Kunde oder Mitarbeiter Daten über Tiere ändern. 
+````json
+    "sgse.models.tierarzt.animalinfocreate":{
+        "description": "Manipulates the information about an existing animal.",
+        "fields": [
+            {"name": "animalid", "type": "string"},
+            {"name": "uid", "type": "string"},
+            {"name": "name", "type": "string"},
+            {"name": "type", "type": "string"},
+            {"name": "race", "type": "string"},
+            {"name": "weight", "type": "double"},
+            {"name": "height", "type": "double"}
+        ]
+    }
 ````
 
 ## 3.4 Datenmodell 
 
 ![ERModel](img/ERModel.png)
-
-## 3.5 Abläufe
-
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
-
-## 3.6 Entwurf
 
 # 4 Projektorganisation
 
@@ -205,19 +291,19 @@ Das Payload dieser Schnittstelle wäre dazu wie folgt:
 
 ### Verwendete Technologien
 
-####Frontend
+#### Frontend
 - Angular - Front-End-Webapplikationsframework 
 - Angular Material - UI Komponenten Library
+- Angular Calendar - Kalender Komponente
 - NGINX - Webserver
-- AngularFire - Library für Angular Firebase
 
-####Backend
+#### Backend
 - Go - Kompilierte Programmiersprache für skalierbare Dienste
 - Gin-Gonic - Library für HTTP-Kommunikation
 - GoCB - Library für Couchbase-Kommunikation
 - Protobuf - Generierung von Go-Dateien aus Proto-Dateien
 
-####Datenbank
+#### Datenbank
 - Couchbase - NoSQL Datenbank
 
 ## 4.2 Grober Projektplan
@@ -242,10 +328,38 @@ Das Payload dieser Schnittstelle wäre dazu wie folgt:
 - **VetUser** - Benutzer des Tierarztservices
 
 ## 5.2 Referenzen
-- Gin-Gonic https://github.com/gin-gonic/gin
-- GoCB https://godoc.org/github.com/couchbase/gocb
+- [Angular](https://angular.io/docs)
+- [Angular-Material](https://material.angular.io/)
+- [Angular-Calendar](https://github.com/mattlewis92/angular-calendar)
+- [NGINX](https://nginx.org/en/docs/)
+- [Firebase](https://firebase.google.com/docs/auth)
+- [gRPC](https://grpc.io/docs/)
+- [Go](https://golang.org/doc/)
+- [Gin-Gonic](https://github.com/gin-gonic/gin)
+- [GoCB](https://godoc.org/github.com/couchbase/gocb)
+- [Protobuf](https://developers.google.com/protocol-buffers)
+- [Couchbase](https://docs.couchbase.com/home/index.html)
 
 ## 5.3 Index
+ 
+### Bilderverzeichnis
+1. [Use-Case Diagramm](#usecase)
+2. [Tierarzt Hauptseite](#mainsite)
+3. [Tierarzt Hauptseite Eingeloggt](#mainloggedin)
+4. [Tierarzt Kalendar Info](#calendarinfo)
+5. [Tierarzt Kalendar Anfordern](#calendarrequest)
+6. [Tierarzt Kalendar Antwort](#calendarresponse)
+7. [Tierarzt Verwaltung](#administration)
+8. [Tierarzt Tier](#animal)
+9. [Tierarzt Tier Info](#animalinfo)
+10. [Tierarzt Benutzer](#vetusers)
+11. [Tierarzt Nachrichten](#messages)
+12. [System Overview](#systemoverview)
+13. [Software_Architektur](#systemarchitecture)
+14. [ERModel](#datamodel)
 
-
-
+### Tabellenverzeichnis
+1. [Stakeholder](#stakeholder)
+2. [Qualitätsmerkmale](#qualitätsmerkmale)
+3. [Kunde User Stories](#kundeuserstory)
+4. [Mitarbeiter User Stories](#mitarbeiteruserstory)
